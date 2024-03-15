@@ -1,0 +1,9 @@
+
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Featured Component" class="cq-placeholder"></p>
+<section>
+    <sly data-sly-test='${properties.Rendition == "home"}' data-sly-include="Homepage-Rendition.html">
+    </sly>
+
+    <sly data-sly-test='${properties.Rendition == "landing"}' data-sly-include="landingPage-Rendition.html">
+    </sly>
+</section>

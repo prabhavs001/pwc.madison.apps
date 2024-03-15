@@ -1,0 +1,20 @@
+<sly data-sly-use.seeAlso="com.pwc.madison.core.models.SeeAlsoModel">
+<sly data-sly-set.allRefList="${seeAlso.allPageReferencesList}"></sly>
+<sly data-sly-set.externalRefList="${seeAlso.externalReferencesList}"></sly>
+<div class="see-also_wrapper" id="see-also-external" data-sly-test="${externalRefList.size > 0}">
+ <div class="see-also_container">
+        <h4 class="see-also_title">${'see_also' @ i18n}</h4>
+        <ul class="see-also_content-wrapper" data-sly-list.reference="${externalRefList}">
+            <li class="see-also_content-list"><p class="see-also_content"><a class="see-also_link xref" href="${reference.path}">${reference.title}</a> ${reference.contentId}</p></li>
+        </ul>
+ </div>
+</div>
+<div class="see-also_wrapper" id="see-also-internal" data-sly-test="${allRefList.size > 0}" style="display:none">
+ <div class="see-also_container">
+        <h4 class="see-also_title">${'see_also' @ i18n}</h4>
+        <ul class="see-also_content-wrapper" data-sly-list.reference="${allRefList}">
+            <li class="see-also_content-list"><p class="see-also_content"><a class="see-also_link xref" href="${reference.path}">${reference.title}</a> ${reference.contentId}</p></li>
+        </ul>
+ </div>
+</div>
+</sly>

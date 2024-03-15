@@ -1,0 +1,53 @@
+<template data-sly-template.videoTemplate="${@ modal}">
+    <div class="modal-multimedia-item" data-sly-test.multimediaWrapperPage="${modal.wrapperPageModel}">
+        <div class="mm-title ellipsis-line">
+            ${multimediaWrapperPage.countryLabel} ${multimediaWrapperPage.contentType @ i18n, locale=pageProperties.jcr:language}
+            <span><sly data-sly-test="${modal.internalUseOnly}">${'Multimedia_Internal_Only_Text' @ i18n, locale=pageProperties.jcr:language}</sly></span>
+        </div>
+        <div class="video-up-next">
+            <div class="video-link-block">
+                <div class="columns modal-multimedia-columns">
+                    <div class="column details" data-content-id="${multimediaWrapperPage.contentId}" data-wrapper-page-title="${multimediaWrapperPage.pageTitle}"
+                         data-page-type="${modal.pageType}" data-country-label="${multimediaWrapperPage.countryLabel}" data-content-type="${multimediaWrapperPage.contentType @ i18n, locale=pageProperties.jcr:language}">
+                        <p class="description video-message ellipsis-line"></p>
+                        <div data-sly-test.dmComponentPath="${modal.dmComponentPath}" data-sly-resource="${@ path=dmComponentPath, selectors='modal', wcmmode='disabled'}"></div>
+                        <p class="description"><span class="clamp-text-slick" data-lines-to-clamp="3"><sly data-sly-test.contentId="${multimediaWrapperPage.contentId}">${contentId} – </sly>${multimediaWrapperPage.pageTitle}</span></p>
+                        <sly data-sly-test="${!multimediaWrapperPage.hidePublicationDate}"> <p class="date">${multimediaWrapperPage.viewDate}</p> </sly>
+                        <p class="note ellipsis-line">
+                            ${multimediaWrapperPage.countryLabel} ${multimediaWrapperPage.contentType @ i18n, locale=pageProperties.jcr:language} •
+                            <sly data-sly-test="${modal.internalUseOnly}">${'Multimedia_Internal_Only_Text' @ i18n, locale=pageProperties.jcr:language}</sly>
+                        </p>
+                        <a href="${multimediaWrapperPage.wrapperPageLink}" class="go-to">${'Multimedia_Transcription_Link_Button_Text' @ i18n, locale=pageProperties.jcr:language}<span class="icon-up-arrow"></span></a>
+                    </div>
+                    <div class="column related">
+                        <h1>${'Multimedia_Related_Content' @ i18n, locale=pageProperties.jcr:language}</h1>
+                        <div class="related-scroll-area">
+                            <ul data-sly-list.relatedWrapperPage="${modal.relatedContentList}">
+                                <li>
+                                    <a href="${relatedWrapperPage.wrapperPageLink}">
+                                        <span class="clamp-text-slick" data-lines-to-clamp="3"><sly data-sly-test.contentId="${relatedWrapperPage.contentId}">${contentId} – </sly>${relatedWrapperPage.pageTitle}</span>
+                                        <sly data-sly-test.formattedRevisedDate="${relatedWrapperPage.formattedRevisedDate}">(${'Multimedia_Revised' @ i18n, locale=pageProperties.jcr:language} ${formattedRevisedDate})</sly>
+                                        <span class="note">${relatedWrapperPage.viewDate}<u>${relatedWrapperPage.countryLabel} ${relatedWrapperPage.contentType @ i18n, locale=pageProperties.jcr:language}</u></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mm-below-info">
+            <div class="info-title">
+                <span class="clamp-text-slick" data-lines-to-clamp="3"><sly data-sly-test.contentId="${multimediaWrapperPage.contentId}">${contentId} – </sly>${multimediaWrapperPage.pageTitle}</span>
+                <span class="mediaLength" data-sly-test.mediaLength="${modal.mediaLength}">(${mediaLength})</span>
+                <sly data-sly-test.formattedRevisedDate="${multimediaWrapperPage.formattedRevisedDate}">(${'Multimedia_Revised' @ i18n, locale=pageProperties.jcr:language} ${formattedRevisedDate})</sly>
+                <sly data-sly-test="${!multimediaWrapperPage.hidePublicationDate}"> <div class="date">${multimediaWrapperPage.viewDate}</div> </sly>
+            </div>
+            <div class="link">
+                <a href="${multimediaWrapperPage.wrapperPageLink}">${'Multimedia_Transcription_Link_Button_Text' @ i18n, locale=pageProperties.jcr:language}
+                    <span class="icon-submit-arrow"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

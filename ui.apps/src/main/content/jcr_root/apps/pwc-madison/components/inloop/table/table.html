@@ -1,0 +1,11 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.table="com.pwc.madison.core.models.InLoopTableModel"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty= !table.tableData , emptyTextAppend='Madison'}"></sly>
+
+<div id="${properties.id}" data-sly-test="${table.tableData && table.hasRichText}" class="text-component" id="${properties.id}">
+    <div class="aem-table-component">
+    ${table.tableData @ context = 'html'}
+    </div>
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='cq.wcm.foundation-main'}"/>

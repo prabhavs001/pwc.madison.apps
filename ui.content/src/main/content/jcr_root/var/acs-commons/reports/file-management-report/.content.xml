@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="File Management Report"
+         jcr:description="A report to view the page references of an Asset."
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <file_management_repo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/file-management-report"
+                pageSize="50"
+                reportExecutor="com.pwc.madison.core.reports.FileManagementReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Asset Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison"
+                validation="root-path-validator"/>
+            <basic
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/parameters/basic"
+                fieldLabel="From Date"
+                name="fromDate"
+                resourceType="granite/ui/components/coral/foundation/form/datepicker"/>
+            <basic_copy
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/parameters/basic"
+                fieldLabel="To Date"
+                name="toDate"
+                resourceType="granite/ui/components/coral/foundation/form/datepicker"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Title"
+                property="jcr:content/metadata/dc:title"/>
+            <assetpath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/assetpath"
+                exporter="com.adobe.acs.commons.reports.models.PathReportCellCSVExporter"
+                heading="Asset Path"
+                link="true"/>
+            <assettype
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/assettype"
+                exporter="com.pwc.madison.core.reports.AssetTypeReportCellCSVExporter"
+                heading="Asset Type"/>
+            <text_2069729709
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Document State"
+                property="jcr:content/metadata/docstate"/>
+            <text_1517478135
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Content State"
+                property="jcr:content/metadata/pwc-content-status"/>
+            <file_management_repo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/file-management-report"
+                exporter="com.pwc.madison.core.reports.columns.FileManagementReportCSVExporter"
+                heading="Page References"
+                value="aempages"/>
+            <file_management_repo_1048167626
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/file-management-report"
+                exporter="com.pwc.madison.core.reports.columns.FileManagementReportCSVExporter"
+                heading="URL to Published Page"
+                value="anchors"/>
+            <file_management_repo_964617895
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/file-management-report"
+                exporter="com.pwc.madison.core.reports.columns.FileManagementReportCSVExporter"
+                heading="Referenced Page Status"
+                value="status"/>
+            <date
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/date"
+                exporter="com.adobe.acs.commons.reports.models.DateReportCellCSVExporter"
+                heading="Published Date"
+                property="jcr:content/metadata/pwc-publicationDate"/>
+             <modified_date
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/date"
+                exporter="com.adobe.acs.commons.reports.models.DateReportCellCSVExporter"
+                heading="Modified Date"
+                property="jcr:content/jcr:lastModified"/>
+            <text_671866901
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Checked Out By"
+                property="jcr:content/cq:drivelock"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

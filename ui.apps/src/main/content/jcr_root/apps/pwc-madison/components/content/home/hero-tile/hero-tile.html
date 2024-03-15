@@ -1,0 +1,11 @@
+<!--/*Publish Mode with personalisation Disabled for Experience Fragment implementation*/-->
+<sly data-sly-test="${wcmmode.disabled && properties.isPersonalisationDisabled}"  data-sly-include="./herotile/herotile.html"></sly>
+
+<!--/*Publish Mode with Personalisation enabled*/-->
+<sly data-sly-test="${wcmmode.disabled && !properties.isPersonalisationDisabled}">
+    <!--#include virtual="${currentNode.path}.herotile.nocache.html" -->
+</sly>
+
+<!--/*Author Mode*/-->
+<sly data-sly-test="${!wcmmode.disabled}" data-sly-include="./herotile/herotile.html">
+</sly>

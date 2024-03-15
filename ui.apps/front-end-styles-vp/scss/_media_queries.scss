@@ -1,0 +1,490 @@
+.insights-wrapper{
+  display: flex;
+img.insights-img {
+  height: 180px;
+  width: 250px;
+  max-width: 250px;
+  box-shadow: 5px 8px #d04a02;
+}
+.insights-extra-info {
+  display: flex;
+  flex-direction: column;
+}
+.power-utility-section-image {
+  .insights-img{
+  margin-right: 20px;
+  }
+}
+}
+.insights {
+  .power-utility-section {
+    .insights-extra-info {
+      //CTA
+      .button.is-radiusless.external {
+        &::before {
+          background-image: url(../resources/images/external_link_hover.svg);
+        }
+        &:hover::before {
+          background-image: url(../resources/images/external-link-white.png) !important;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .insights-wrapper{
+    flex-direction: column;
+    position: relative;
+  
+  img.insights-img{
+    height: 104px;
+    max-height: 104px;
+    object-fit: cover;
+    margin: -5px -5px 15px;
+    border-radius: 5px;
+    width: calc(100% + 10px);
+    max-width: 200%;
+    box-shadow: none;
+  }
+  .power-utility-section {
+      .favorites-toggle-small {
+        top: 0px;
+        right: 0;
+      }
+    }
+}
+}
+.black-section{
+.insights-outer-wrapper{
+  width: auto !important;
+}
+}
+@media screen and (max-width: 1480px) {
+  nav.dark-subnav .navbar-item.text-head-content > p { 
+    padding: 0 0 0 10px;
+  }
+}
+
+@media screen and (max-width: 1400px) { 
+  nav.dark-subnav .steps-section .navbar-item.steps-text { 
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav.dark-subnav .navbar-item.text-head-content > p {
+    font-family: "PwC Helvetica Neue Bold";
+    font-size: 14px;
+    padding: 0 0 0 10px;
+  }
+  nav.dark-subnav .btn-default {
+    font-size: 12px; 
+    padding: 0 15px;
+  }
+  nav.dark-subnav .cross-mark {
+    margin: auto auto auto 15px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .madison-card-block{
+    .madison-card{
+      p.module-heading {
+        font-size: 28px;
+      }
+      p.brief {
+        line-height: normal;
+      }
+    } 
+  } 
+}
+@media screen and (max-width: 1080px) {
+  .language_sub_nav {
+    right: 0px !important;
+    top: 43px !important;
+  }
+  .account_sub_nav{
+    top: 61px !important;
+  }
+ 
+}
+@media (min-width: 768px) {
+.black-section {
+  h5{
+    margin-left: 20px;
+  }
+}
+}
+@media (min-width: 0px) and (max-width: 768px) { 
+  a.primary-orange { 
+    font-size: 12px; 
+    -webkit-tap-highlight-color: transparent;
+    text-transform: uppercase;  
+  }
+  .news-card .tile {
+    padding: 10px 5px;
+  }
+  .navbar-menu {
+    display: block;
+  }
+  .navbar-menu {
+    background-color: #2d2d2d; 
+  }
+  nav.dark-subnav .navbar-item.text-head-content > p {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0 50px 0 0;
+  }
+  .cross-mark {
+    position: absolute;
+    right: 20px;
+    top: -40px;
+  }
+  .navbar-item.highlighted {
+    padding: 0 0 0 10px !important;
+  }
+  .button.is-dark.is-outlined {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 none; 
+    line-height: normal;
+    padding: 0;
+  }
+  .dark-subnav .navbar-end .navbar-item {
+    border-bottom: 1px solid #ffffff;
+    padding: 0 0 0 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .navbar-menu {
+    background-color: #2d2d2d;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    padding: 35px 0 10px;
+  }
+  .navbar-item.text-head-content {
+    padding-bottom: 0;
+  }
+  
+  .steps-section {
+    display: none;
+  }
+
+  .suggested-guidance {
+    .header {
+      h2 {
+        font-size: 38px;
+        line-height: 1.03;
+        text-align: left;
+        color: $color-dark;
+      }
+    }
+  }
+
+  .madison-pagination {
+    .columns {
+      display: flex !important;
+      flex-direction: column;
+      align-items: flex-start;
+      .is-9{
+        order: -1;
+      }
+      .is-3{
+        order: 1;
+      }
+    }
+  }
+
+  .profile_page .menu-item .is-flex {
+    padding: 10px 0 20px;
+  }
+  
+  .account-nav .menu-item,
+  .profile_page .menu-item {
+    padding: 0 8px;
+    .text{
+      font-size: 16px;
+    }
+  }
+
+  .mobile-account-nav .spacer {
+    display: none;
+  }
+
+  .my_account{
+    .column {
+      padding: 0px;
+    }
+  }
+
+  .update-button .btn {
+    width: 45%;
+  }
+
+  .my_account {
+    .profile_page {
+      .account-controls{
+        .mobile-account-nav{
+          padding: 10px 0;
+          div:last-child {
+            border-right: 0 none;
+          }
+          div {
+            border-right: 1px solid #9e9e9e;
+            padding: 6px 0;
+            text-align: center;
+            width: 33.333%;
+          }
+        }
+      }
+      .header {
+        border-bottom: 0 solid #7d7d7d;
+      }
+    }
+    .menu-item {
+      .icon {
+        cursor: pointer;
+        width: 20px;
+      }
+      .expend-input-fields{
+        .text {
+          margin: 0 !important;
+          width: 100% !important;
+          span {
+            color: #464646;
+            display: block;
+            padding: 0 0 10px;
+          }
+          p {
+            display: none;
+          }
+        }
+        .is-flex {
+          align-content: stretch;
+          flex-wrap: wrap;
+          padding-top: 0;
+        }
+      } 
+      .text{
+        span {
+          padding: 0;
+        }
+      } 
+    }
+    .container h2 {
+      margin: 0;
+    }
+  }
+
+  .black-section {
+    padding: 30px 0 50px;
+    .container{
+      width: 95%;
+    }
+    .power-utility-section {
+      padding: 0;
+      margin-bottom: 25px;
+      a{
+        font-size: 14px;
+        line-height: 1;
+        padding: 7px 15px 10px;
+      }
+      span{
+        font-size: 14px;
+        line-height: 1;
+      }
+      .black-section-heading{
+        font-size: 20px;
+      }
+      .black-section-brief{
+        font-size: 14px;
+      }
+    }
+   
+    .line-center-div{
+      padding: 12px;
+    }
+    h5{
+      font-size: 22px;
+      line-height: 1.67;
+      margin: 0;
+      margin-left: 13px;
+    }
+    .button.is-dark.is-outlined.btn-default{
+      width: auto;
+      height: auto;
+    }
+  }
+
+  footer.footer .primary .navbar-item {
+    display: inline-block; 
+    font-family: "PwC Helvetica Neue";
+    font-size: 18px;
+    width: 50%;
+  }
+
+  footer.footer .container {
+    display: block !important;
+  }
+
+  footer.footer .container.spacer {
+    border-top: 1px solid #a5a5a5;
+    float: left;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+  }
+
+  footer.footer .subnav .copyright {
+    display: table;
+    padding-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: calc(100% - 30px);
+
+    @media(max-width: 400px) {
+      margin-left: 0;
+    }
+  }
+
+  .navbar-item.profile-menu {
+    position: static;
+  }
+  .account_sub_nav {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 2px 8px 0 rgba(221, 221, 221, 0.5);
+    position: absolute;
+    right: 0;
+    top: 61px;
+    width: 205px;
+  }
+  .language_sub_nav {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 2px 8px 0 rgba(221, 221, 221, 0.5);
+    position: absolute;
+    right: 0;
+    top: 51px;
+    width: 205px;
+  }
+  .search{
+    .madison-card-block {
+      .madison-card {
+        .madison-card-exta-info {
+          position: relative;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  .language_sub_nav {
+    right: 0px !important;
+    top: 43px !important;
+  }
+  .account_sub_nav{
+    top: 61px !important;
+  }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .navbar-menu {
+    padding: 10px 35px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .modal-search {
+    .modal-content {
+      margin: 0px 2rem;
+    }
+  }
+  .black-section{
+    .container{
+      width: 95%;
+    }
+  }
+  .madison-card-block{
+    .madison-card{
+      p.module-heading {
+        font-size: 28px;
+      }
+      p.brief {
+        line-height: normal;
+      }
+    } 
+  } 
+  .main-news{
+    .tile.is-parent.news-card.is-vertical {
+      padding: 0 5px 10px 5px;
+    }
+    .news-card .tile, .main-news .news-card .tile {
+      padding: 15px 5px;
+    }
+    .news-card .tile h4 {
+      line-height: 1.15;
+      font-size: 15px;
+    }
+    h4 { height: 85px; }
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) { 
+  section .container h2, .section .container h2 {
+    font-size: 38px;
+  }
+  .madison-card-block .madison-card p.brief, .madison-card-block .madison-card p.author {
+    font-size: 12px;
+  }
+  .recently_viewed .news-card .slick-arrow{
+    display: none !important;
+  }
+  .recently_viewed h2 {
+    font-size: 38px;
+  }
+  .recently_viewed .news-card .tile.is-parent.item {
+    padding: 0 15px 0px 7px;
+    border-right: 1px solid #7d7d7d !important;
+    width: 328px !important;
+  }
+  footer.footer {
+    padding: 22px 0px 40px 0px;
+  }
+  footer.footer .primary .navbar-item {
+    font-size: 14px;
+    width: 49%;
+    padding-top: 0px;
+    font-weight: bold;
+    padding-bottom: 24px;
+  }
+  .recently-view-title-top{
+    margin-top: 15px;
+  }
+  .recently_viewed .news-card .tile.is-parent.item h4{
+    font-family: Helvetica !important;
+    min-height: 63px;
+    width: 100%;
+  }
+  footer.footer .container.spacer {
+    margin-top: 15px;
+    margin-bottom: 27px;
+  }
+  footer.footer .navbar-item {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 49%;
+    display: inline-block;
+    padding-bottom: 20px;
+  }
+  footer.footer .container {
+    margin: 0 18px;
+  }
+  footer.footer .subnav .copyright{
+    padding-top: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  @media (min-width: 0px) and (max-width: 768px) {
+    .madison-pagination {
+      .columns {
+        display: block !important;
+      }
+    } 
+  }
+}

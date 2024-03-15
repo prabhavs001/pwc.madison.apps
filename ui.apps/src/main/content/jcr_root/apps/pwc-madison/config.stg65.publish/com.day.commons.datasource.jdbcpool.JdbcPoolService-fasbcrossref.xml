@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    datasource.name="sqldatasource"
+    default.autocommit="{Boolean}true"
+    jdbc.connection.uri="jdbc:sqlserver://GX-ZU2SQLSWC307.glblcloud.ad.pwcinternal.com:14330;databaseName=pwc-vp"
+    jdbc.driver.class="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    jdbc.password="Pwc@@dbwriter$1"
+    jdbc.username="pwc-vp-writer"
+    pool.max.wait.msec="{Long}1000"
+    pool.size="{Long}10"/>

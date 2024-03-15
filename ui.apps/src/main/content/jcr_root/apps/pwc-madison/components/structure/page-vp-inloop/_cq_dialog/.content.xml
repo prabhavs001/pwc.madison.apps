@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <metadata
+                            cq:showOnCreate="{Boolean}true"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="PwC Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Properties"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+			                                <topic-title-image
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        fieldLabel="Topic Title Image"
+			                                        name="./pwc-topicTitleImage"
+			                                        resourceType="granite/ui/components/coral/foundation/form/pathfield"
+			                                        rootPath="/content/dam/pwc-madison">
+			                                    <granite:data
+			                                            jcr:primaryType="nt:unstructured"
+			                                            metaType="path"
+			                                            requiredCascading="default"
+			                                            cq-msm-lockable="pwc-topicTitleImage"
+			                                            visibilityCascading="default"/>
+			                                </topic-title-image>
+                                            <keywords
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Keywords"
+                                                    fieldDescription="Keywords to drive Search."
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        name="./pwc-keywords">
+                                                   		<granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-keywords"/>
+                                                </field>   
+                                            </keywords>
+                                            <guidance-terms
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Guidance Terms"
+                                                    fieldDescription="Guidance terms/keywords to drive search suggested guidance"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        name="./pwc-guidanceTerms">
+				                                    <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-guidanceTerms"/>
+                                            	</field>
+                                            </guidance-terms>
+                                             <sgtitle
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldDescription="Configure curated title to display in suggested guidance"
+                                    				fieldLabel="Suggested Guidance Title"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    name="./pwc-suggestedGuidance">
+				                                    <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-suggestedGuidance"/>
+                                            </sgtitle>
+                                            <guidanceOrder
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldDescription="Guidance order/rank for keywords to drive search suggested guidance ranking"
+                                    				fieldLabel="Guidance Order"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+			                                        min="1"
+												    step="1"
+                                                    name="./pwc-guidanceOrder">
+				                                    <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-guidanceOrder"/>
+                                            </guidanceOrder>               
+                                            <content-id
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Content Id"
+                                                    fieldDescription="Content Id for content"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    name="./pwc-contentId">
+				                                    <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-contentId"/>
+				                            </content-id>
+                                            <content-type
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Content Type for content"
+                                                    name="./pwc-contentType"
+                                                    fieldLabel="Content Type">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-contentType"/>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="pwc-madison/utilities/dialog/datasource"
+                                                        dataType="content-type"
+                                                        sort="{Boolean}true"
+                                                        path="/content/pwc-madison/global/reference-data/metadata/content-type"/>
+                                            </content-type>
+			                                <secondary
+			                                    granite:class="language"
+			                                    jcr:primaryType="nt:unstructured"
+			                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+			                                    emptyText="Select"
+			                                    fieldLabel="Secondary Language"
+			                                    name="./pwc-secondaryLang"
+			                                    renderReadOnly="{Boolean}true"
+			                                    translateOptions="{Boolean}true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-secondaryLang"/>
+			                                    <datasource
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="cq/gui/components/common/datasources/languages"
+			                                        addNone="{Boolean}false"/>
+			                                </secondary>
+			                                <browser-title
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        fieldLabel="Browser Title"
+			                                        name="./default"
+			                                        resourceType="granite/ui/components/coral/foundation/form/textfield">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="default"/>
+			                                </browser-title>
+			                                <scheduled-publishing-date
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        displayedFormat="YYYY-MM-DD HH:mm"
+			                                        fieldLabel="Scheduled publishing date"
+			                                        name="./pwc-embargoedDate"
+			                                        resourceType="granite/ui/components/coral/foundation/form/datepicker"
+			                                        type="datetime">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-embargoedDate"/>
+			                                </scheduled-publishing-date>
+                                            <publication-date
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    displayedFormat="MM/DD/YY, hh:mm a"
+                                                    fieldLabel="Publication Date"
+                                                    name="./pwc-publicationDate"
+                                                    type="datetime">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-publicationDate"/>
+				                            </publication-date>
+                                            <original-release-date
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    fieldLabel="Release Date"
+                                                    name="./pwc-originalReleaseDate"
+                                                    displayedFormat="MM/DD/YY, hh:mm a"
+                                                    type="datetime"
+                                                    required="{Boolean}true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-originalReleaseDate"/>
+				                            </original-release-date>
+                                            <revised-date
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    displayedFormat="MM/DD/YY, hh:mm a"
+                                                    fieldLabel="Revised Date"
+                                                    name="./pwc-revisedDate"
+                                                    type="datetime">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-revisedDate"/>
+				                            </revised-date>
+                                            <expiry-date
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    displayedFormat="MM/DD/YY, hh:mm a"
+                                                    fieldLabel="Expiry Date"
+                                                    name="./pwc-expirationDate"
+                                                    type="datetime"
+                                                    required="{Boolean}true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-expirationDate"/>
+				                            </expiry-date>
+			                                <effective-as-of-date
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        displayedFormat="YYYY-MM-DD HH:mm"
+			                                        fieldLabel="Effective as of date"
+			                                        name="./pwc-effective-date"
+			                                        resourceType="granite/ui/components/coral/foundation/form/datepicker"
+			                                        type="datetime">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-effective-date"/>
+			                                </effective-as-of-date>
+			                                <source
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        emptyText="Select Option"
+			                                        fieldLabel="Source"
+			                                        name="./pwc-standardsetter"
+			                                        resourceType="granite/ui/components/coral/foundation/form/select">
+			                                    <datasource
+			                                            jcr:primaryType="nt:unstructured"
+			                                            sling:resourceType="pwc-madison/utilities/dialog/datasource"
+			                                            path="/content/pwc-madison/global/reference-data/metadata/standard-setter"/>
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-standardsetter"/>
+			                                </source>
+			                                <hide-publication-date
+			                                        cq:showOnCreate="{Boolean}true"
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+			                                        name="./pwc-hidePublicationDate"
+			                                        renderReadOnly="{Boolean}true"
+			                                        uncheckedValue="no"
+			                                        text="Hide Publication Date"
+			                                        value="yes">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-hidePublicationDate"/>
+			                                </hide-publication-date>
+                                            <canonical-url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Canonical URL"
+                                                    name="./pwc-canonicalurl">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-canonicalurl"/>
+				                            </canonical-url>
+                                            <hide-site-search
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./pwc-hiddenFromSiteSearch"
+                                                    renderReadOnly="{Boolean}true"
+                                                    text="Hide page from Site Search"
+                                                    value="true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-hiddenFromSiteSearch"/>
+                                            </hide-site-search>
+                                            <hide-site-search-type
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    name="./hiddenFromSiteSearch@TypeHint"
+                                                    value="Boolean">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="hiddenFromSiteSearch"/>
+				                            </hide-site-search-type>
+                                            <disable-tnc
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./disableTNC"
+                                                    text="Exclude page from terms and conditions check"
+                                                    value="true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="disableTNC"/>
+				                            </disable-tnc>
+                                            <disable-tnc-type
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    name="./disableTNC@TypeHint"
+                                                    value="Boolean"/>
+                                            <disable-completeProfile
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./disableCompleteProfile"
+                                                    text="Exclude page from Complete profile popup"
+                                                    value="true">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="disableCompleteProfile"/>
+				                            </disable-completeProfile>
+                                            <disable-completeProfile-type
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    name="./disableCompleteProfile@TypeHint"
+                                                    value="Boolean"/>
+                                            <meta-robots
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    name="./pwc-metaRobots"
+                                                    fieldLabel="Meta Robots">
+				                                <granite:data
+				                                            jcr:primaryType="nt:unstructured"
+				                                            cq-msm-lockable="pwc-metaRobots"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <index
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="index"
+                                                            value="index"/>
+                                                    <noindex
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="noindex"
+                                                            value="noindex"/>
+                                                    <follow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="follow"
+                                                            value="follow"/>
+                                                    <nofollow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="nofollow"
+                                                            value="nofollow"/>
+                                                    <index_follow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="index,follow"
+                                                            value="index,follow"/>
+                                                    <index_nofollow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="index,nofollow"
+                                                            value="index,nofollow"/>
+                                                    <noindex_follow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="noindex,follow"
+                                                            value="noindex,follow"/>
+                                                    <noindex_nofollow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="noindex,nofollow"
+                                                            value="noindex,nofollow"/>
+                                                </items>
+                                            </meta-robots>
+			                                <featureSummary
+			                                    jcr:primaryType="nt:unstructured"
+			                                    sling:resourceType="dam/gui/components/admin/schemafield"
+			                                    fieldLabel="Feature Summaries"
+			                                    resourceType="granite/ui/components/coral/foundation/form/multifield"
+			                                    validation="multi-validate">
+			                                    <granite:data
+			                                        jcr:primaryType="nt:unstructured"
+			                                        fieldlabel="Feature Summaries"
+			                                        fieldlimit="3"
+			                                        metaType="mvtext"
+			                                        requiredCascading="default"
+			                                        visibilityCascading="default"/>
+			                                    <field
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                                        maxlength="{Long}80"
+			                                        name="./pwc-featureSummary">
+					                                <granite:data
+					                                            jcr:primaryType="nt:unstructured"
+					                                            cq-msm-lockable="pwc-featureSummary"/>
+				                                </field>
+			                                </featureSummary>
+			                                <sortorder
+			                                        jcr:primaryType="nt:unstructured"
+			                                        sling:resourceType="dam/gui/components/admin/schemafield"
+			                                        defaultValue=" "
+			                                        fieldLabel="Sort Order"
+			                                        name="./pwc-sortOrder"
+			                                        max="1000"
+			                                        min="1"
+			                                        resourceType="granite/ui/components/coral/foundation/form/numberfield">
+			                                    <granite:data
+			                                            jcr:primaryType="nt:unstructured"
+			                                            cq-msm-lockable="pwc-sortOrder"
+			                                            metaType="number"/>
+			                                </sortorder>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </metadata>
+                    <pwc-permissions
+                        granite:class="pwc-permissions-tab"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Permissions"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <audience
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="pwc-madison/components/dialogform/select"
+                                        name="./pwc-audience"
+                                        required="{Boolean}true"
+                                        fieldLabel="Audience Type"
+                                        disabledForTemplates="/conf/pwc-madison/settings/wcm/templates/templates-landing-page"
+                                        disabledDefaultValue="internalOnly"
+                                        granite:class="audience-type">
+	                                    <granite:data
+	                                            jcr:primaryType="nt:unstructured"
+	                                            cq-msm-lockable="pwc-audience"/>
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="pwc-madison/utilities/dialog/datasource"
+                                            path="/content/pwc-madison/global/reference-data/authorization/audience-type"/>
+                                    </audience>
+                                    <private-user-groups-container
+                                        granite:class="hide private-user-groups-container"
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <private-user-groups
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                name="./pwc-privateGroup"
+                                                multiple="{Boolean}true"
+                                                fieldLabel="Private User Groups">
+		                                    	<granite:data
+		                                            jcr:primaryType="nt:unstructured"
+		                                            cq-msm-lockable="pwc-privateGroup"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/utilities/dialog/datasource"
+                                                    path="/content/pwc-madison/global/reference-data/authorization/private-user-groups"/>
+                                            </private-user-groups>
+                                        </items>
+                                    </private-user-groups-container>
+                                    <access-level-container
+                                        granite:class="hide access-level-container"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <access-level
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                name="./pwc-access"
+                                                required="{Boolean}true"
+                                                fieldLabel="Access Level">
+		                                    	<granite:data
+		                                            jcr:primaryType="nt:unstructured"
+		                                            cq-msm-lockable="pwc-access"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/utilities/dialog/datasource"
+                                                    path="/content/pwc-madison/global/reference-data/authorization/access-level"/>
+                                            </access-level>
+                                        </items>
+                                    </access-level-container>
+                                    <licenses-container
+                                        granite:class="hide licenses-container"
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <licenses
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                name="./pwc-license"
+                                                multiple="{Boolean}true"
+                                                fieldLabel="Licenses">
+		                                    	<granite:data
+		                                            jcr:primaryType="nt:unstructured"
+		                                            cq-msm-lockable="pwc-license"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/utilities/dialog/datasource"
+                                                    path="/content/pwc-madison/global/reference-data/authorization/licenses"/>
+                                            </licenses>
+                                        </items>
+                                    </licenses-container>
+                                </items>
+                            </column>
+                        </items>
+                    </pwc-permissions>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

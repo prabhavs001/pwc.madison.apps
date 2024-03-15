@@ -1,0 +1,14 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Error Component"
+	class="cq-placeholder"></p>
+<section class="is-paddingless data-analytics-page-error"
+	data-sly-test.errorCode="${properties.errorCode ? properties.errorCode : currentPage.name}"
+	data-analytics-error-code="${errorCode}"
+	data-sly-test.errorTitleKey="${properties.errorTitleI18nKey ? properties.errorTitleI18nKey : ['Error_Title', errorCode] @ join = '_'}"
+	data-sly-test.errorMessageKey="${properties.errorMessageI18nKey ? properties.errorMessageI18nKey : ['Error_Message', errorCode] @ join = '_'}">
+	<div class="container page-404" style="display:${errorCode=='403' ? 'none': '' @ context='styleToken'}">
+		<div class="page-notes">${errorTitleKey @ context="html", i18n,
+			locale=pageProperties.jcr:language}</div>
+		<div class="page-links">${errorMessageKey @ context="html",
+			i18n, locale=pageProperties.jcr:language}</div>
+	</div>
+</section>

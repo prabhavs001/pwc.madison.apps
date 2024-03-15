@@ -1,0 +1,73 @@
+<div class="publish-point-wrapper">
+   <form class="coral-Form coral-Form--vertical"
+      data-sly-use.pubPointItem="com.pwc.madison.core.models.PublishingPointsModel">
+      <label class="coral-Form-fieldlabel" id="label-vertical-radiogroup-0">Topics selected for publishing</label>
+      <coral-list data-sly-test.topicListEmpty="${pubPointItem.topicList.size>0}"
+         data-sly-list="${pubPointItem.topicList}">
+         <coral-list-item icon="arrowRight" name="topics-list-item" value="${item.path}">${item.path}</coral-list-item>
+      </coral-list>
+      <coral-list data-sly-test="${!topicListEmpty}">
+         <coral-list-item icon="alert" class="no-topic-list">No topic selected for publishing
+         </coral-list-item>
+      </coral-list>
+      <sly data-sly-test="${pubPointItem.visibleTopicList.size>0}" data-sly-list="${pubPointItem.visibleTopicList}">
+            <input  type="hidden" name="visibleTopicList" value="${item}">
+      </sly>
+      <section class="coral-Form-fieldset">
+         <div class="coral-Form-fieldwrapper">
+            <label class="coral-Form-fieldlabel" id="label-vertical-radiogroup-0">Select the publishing point</label>
+            <div data-sly-test.pubPointListEmpty="${pubPointItem.publishingPoints.size > 0}"
+               class="coral-Form-field coral-RadioGroup coral-RadioGroup--vertical pub-points-list-container"
+               data-sly-list.pubPointListItem="${pubPointItem.publishingPoints}">
+               <coral-radio class="coral-Form-field" name="pub-points-item" value="${pubPointListItem}"
+                  data-published-page="${pubPointItem.publishingPoints[pubPointListItem]}"
+                  labelledby="label-vertical-radiogroup-0">${pubPointListItem}
+                  <sly data-sly-test.mapsList="${pubPointItem.ditaMapList.size>0}" data-sly-list.map="${pubPointItem.ditaMapList}">
+                     <sly data-sly-test="${map == pubPointListItem}" data-sly-list.mapList="${pubPointItem.ditaMapList[map]}">
+                        <input  type="hidden" name="mapList" value="${mapList}">
+                     </sly>
+                  </sly>
+               </coral-radio>
+            </div>
+            <coral-list data-sly-test="${!pubPointListEmpty}">
+               <coral-list-item icon="alert" class="no-publish-point">There is no publishing point for this map
+               </coral-list-item>
+            </coral-list>
+         </div>
+      </section>
+   </form>
+
+   <coral-dialog class="regenerate-success-modal" backdrop="static" closable="on" variant="success">
+      <coral-dialog-header>Success</coral-dialog-header>
+      <coral-dialog-content>Output for the selected topics regenerated</coral-dialog-content>
+      <coral-dialog-footer><button is="coral-button" variant="primary" coral-close=""
+            class="success-button coral-Button coral-Button--primary" size="M">
+            <coral-button-label>Show generated pages</coral-button-label>
+         </button></coral-dialog-footer>
+   </coral-dialog>
+
+    <coral-dialog class="full-generation-success-modal" backdrop="static" closable="on" variant="success">
+        <coral-dialog-header>Success</coral-dialog-header>
+        <coral-dialog-content>Output for the selected Map is generated</coral-dialog-content>
+        <coral-dialog-footer><button is="coral-button" variant="primary" coral-close=""
+                                     class="success-button coral-Button coral-Button--primary" size="M">
+            <coral-button-label>Show generated pages</coral-button-label>
+        </button></coral-dialog-footer>
+    </coral-dialog>
+
+   <coral-dialog class="regenerate-no-page-modal" backdrop="static" closable="on" variant="error">
+      <coral-dialog-header>Error</coral-dialog-header>
+      <coral-dialog-content>Make sure that the output for the entire Ditamap was generated atleast once.
+      </coral-dialog-content>
+   </coral-dialog>
+
+   <coral-dialog class="regenerate-failure-modal" backdrop="static" closable="on" variant="error">
+      <coral-dialog-header>Error</coral-dialog-header>
+      <coral-dialog-content>Regeneration of topics failed.</coral-dialog-content>
+   </coral-dialog>
+
+   <div class="publish-console-wait hidden">
+      <coral-wait size="M" centered>
+      </coral-wait>
+   </div>
+</div>

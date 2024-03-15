@@ -1,0 +1,1299 @@
+.signin-modal {
+  @media (min-width: 320px) and (max-width: 768px) {
+    .modal-close::before {
+      width: 20px;
+      background-color: $color-dark;
+    }
+    .modal-close::after {
+      height: 20px;
+      background-color: $color-dark;
+    }
+  }
+
+  .modal-content{
+    overflow-x: hidden;
+
+    @media all and (-ms-high-contrast: none) and (min-width: 769px), (-ms-high-contrast: active) and (min-width: 769px) {
+      align-self: center;
+      height: auto !important;
+
+      .columns {
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+  }
+
+  .signin-content{
+    border: 48px solid $border-color;
+    background-color: $color-white;
+    @media (min-width: 320px) and (max-width: 768px) {
+      border: none;
+    }
+
+    &.columns {
+      @media (min-width: 320px) and (max-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    .sign-left {
+      background-color: $background-color-light;
+      @media (min-width: 320px) and (max-width: 768px) {
+        //display: none;
+      }
+
+      .welcome-users {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 33px;
+        @media (min-width: 320px) and (max-width: 768px) {
+          align-items:baseline;
+          padding-top: 62px;
+          padding-left: 15px;
+        }
+        .welcome-note{
+          font-family: $font-itc-charter;
+          font-size: 34px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 0.8;
+          letter-spacing: normal;
+          text-align: center;
+          color: $muted-text-color;
+          @media (min-width: 320px) and (max-width: 768px) {
+            font-size: 38px;
+            line-height: 1.13;
+          }
+        }
+        a {
+          border: 1px solid $color-primary;
+          font-family: $font-helvetica;
+          font-size: 12px !important;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.25;
+          letter-spacing: 0.6px;
+          text-align: center;
+          background-color: $color-primary;
+          color: $color-white;
+          padding: 15px 25px;
+          display: inline-block;
+          margin-top: 37px;
+          margin-bottom: 99px;
+          @media (min-width: 320px) and (max-width: 768px) {
+            margin-bottom: 33px;
+            margin-top: 11px;
+          }
+        }
+      }
+    }
+
+    .signin-right{
+      padding: 30px 40px;
+
+      @media (min-width: 320px) and (max-width: 768px) {
+        height: 100vh;
+        padding: 16px 30px 70px;
+      }
+
+      .title {
+        font-family: $font-itc-charter;
+        font-size: 44px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 0.98;
+        letter-spacing: normal;
+        text-align: left;
+        color: $muted-text-color;
+        @media (min-width: 320px) and (max-width: 768px) {
+          border-bottom: 1px solid $color-light;
+          padding-bottom: 1.5rem;
+          font-size: 38px;
+        }
+      }
+      form{
+        .field{
+          .label{
+            font-family: $font-helvetica;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.21;
+            letter-spacing: normal;
+            text-align: left;
+            color:$color-dark;
+          }
+          .control{
+            input{
+              font-family: $font-helvetica;
+              font-size: 18px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.06;
+              letter-spacing: normal;
+              color:$color-dark;
+              border: none;
+              box-shadow: none;
+              border-bottom: 1px solid $color-loblolly;
+              border-radius: 0px;
+              height: 32px;
+              max-width: 100%;
+              width: 100%;
+            }
+            input:focus{
+              outline: none;
+            }
+          }
+          a{
+            color: $color-dark;
+            i {
+              position: absolute;
+              right: 76px;
+              @media (min-width: 320px) and (max-width: 768px) {
+                right: 20px;
+              }
+              .icon-password_show , .icon-password_hide{
+                position: relative;
+                top: -27px;
+              }
+            }
+          }
+          .help{
+            font-family: $font-helvetica;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-top: 0px;
+          }
+        }
+        .password{
+          padding-top: 27px;
+          @media (min-width: 320px) and (max-width: 768px) {
+            padding-top: 18px;
+          }
+          .control{
+            input{
+              padding: 0 25px 0 0;
+            }
+          }
+        }
+        .forgot-password{
+          padding-top: 30px;
+          a{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            color: $color-light;
+          }
+        }
+        .sign-action{
+          display: flex;
+          padding-top: 30px;
+
+          @media (min-width: 320px) and (max-width: 768px) {
+            display: flex;
+            padding-top: 0px;
+            flex-direction: column;
+            flex-flow: column-reverse;
+          }
+
+          button{
+            border: 1px solid $color-primary;
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: $color-primary;
+            background-color: transparent;
+            padding: 15px 56px;
+            cursor: pointer;
+          }
+          .remember-me{
+            align-self: flex-end;
+            padding-left: 20px;
+
+            @media (min-width: 320px) and (max-width: 768px) {
+              padding-left: 0px;
+              padding-bottom: 20px;
+              padding-top: 30px;
+              align-self: unset;
+            }
+
+            .check {
+              padding-left: 3px;
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              //margin-bottom: 12px;
+              cursor: pointer;
+              font-family: $font-helvetica;
+              font-size: 14px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1;
+              letter-spacing: normal;
+              color: $color-light;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              input { /* Hide the browser's default checkbox */
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              span{
+                display: inline-block;
+                padding-top: 12px;
+              }
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+              position: absolute;
+              top: 6px;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background-color: $color-white;
+              border: 1px solid $muted-text-color;
+            }
+            /* On mouse-over, add a grey background color */
+            .check:hover input ~ .checkmark {
+              background-color: $color-white;
+            }
+            /* When the checkbox is checked, add a blue background */
+            .check input:checked ~ .checkmark {
+              background-color: $color-primary;
+            }
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+            /* Show the checkmark when checked */
+            .check input:checked ~ .checkmark:after {
+              display: block;
+            }
+            /* Style the checkmark/indicator */
+            .check .checkmark:after {
+              left: 6px;
+              top: 3px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+        .register-link{
+          padding-top: 20px;
+          span{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            text-align: left;
+            color: $color-light;
+          }
+          a{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: normal;
+            color: $muted-text-color;
+          }
+        }
+      }
+    }
+  } 
+}
+.signin-mobile{
+  background-color: $color-white !important;
+  .mobile-search-filtersmodal-content{
+    padding: 0px 15px;
+    .sign-title{
+      color: $color-dark;
+      border-bottom: 1px solid #444444;
+      padding-bottom: 15px;
+      margin-bottom: 0 !important;
+      font-family: $font-itc-charter;
+      font-size: 38px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.13;
+      letter-spacing: normal;
+    }
+  }
+  .close-animatedTemplateModal{
+    .icon-close-popup{
+      font-size: 20px;
+      color: $color-dark;
+    }
+  }
+  .signin-content-mobile{
+    .signin-slide{
+      form{
+        padding-top: 10px;
+        .field{
+          margin-bottom: 0px;
+          .label{
+            font-family: $font-helvetica;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.93;
+            letter-spacing: normal;
+            color: $muted-text-color;
+          }
+          .control{
+            input{
+              font-family: $font-helvetica;
+              font-size: 16px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.25;
+              letter-spacing: normal;
+              color:$color-dark;
+              border: none;
+              box-shadow: none;
+              border-bottom: 1px solid $color-dark;
+              border-radius: 0px;
+              height: 32px;
+              max-width: 100%;
+              width: 100%;
+            }
+            input:focus{
+              outline: none;
+            }
+          }
+          a{
+            color: $color-dark;
+            i{
+              position: absolute;
+              right: 16px;
+              .icon-password_show, .icon-password_hide{
+                position: relative;
+                top: -27px;
+              }
+            }
+          }
+          .help{
+            font-family: $font-helvetica;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-top: 0px;
+          }
+        }
+        .password{
+          .control{
+            input{
+              padding: 0 25px 0 0;
+            }
+          }
+        }
+        .forgot-password{
+          padding-top: 28px;
+          a{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            color: $color-light;
+          }
+        }
+        .sign-action{
+          display: flex;
+          padding-top: 45px;
+          flex-direction: column-reverse;
+          button{
+            border: 1px solid $color-primary;
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: $color-primary;
+            background-color: transparent;
+            padding: 15px 48px;
+            cursor: pointer;
+          }
+          .remember-me{
+            padding-bottom: 20px;
+            .check {
+              padding-left: 3px;
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              //margin-bottom: 12px;
+              cursor: pointer;
+              font-family: $font-helvetica;
+              font-size: 14px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1;
+              letter-spacing: normal;
+              color: $color-light;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              input { /* Hide the browser's default checkbox */
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              span{
+                display: inline-block;
+                padding-top: 9px;
+              }
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+              position: absolute;
+              top: 6px;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background-color: $color-white;
+              border: 1px solid $muted-text-color;
+            }
+            /* On mouse-over, add a grey background color */
+            .check:hover input ~ .checkmark {
+              background-color: $color-white;
+            }
+            /* When the checkbox is checked, add a blue background */
+            .check input:checked ~ .checkmark {
+              background-color: $color-primary;
+            }
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+            /* Show the checkmark when checked */
+            .check input:checked ~ .checkmark:after {
+              display: block;
+            }
+            /* Style the checkmark/indicator */
+            .check .checkmark:after {
+              left: 6px;
+              top: 3px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+        .register-link{
+          padding-top: 38px;
+          span{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            text-align: left;
+            color: $color-light;
+          }
+          a{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: normal;
+            color: $muted-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+.signin-inline{
+  display: inline-block;
+}
+
+.register-modal {
+  @media (min-width: 320px) and (max-width: 768px) {
+    .modal-close::before {
+      width: 20px;
+      background-color: $color-dark;
+    }
+    .modal-close::after {
+      height: 20px;
+      background-color: $color-dark;
+    }
+  }
+
+  .subtitle {
+    font-family: $font-helvetica;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color-light;
+    a {
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: left;
+      color: $muted-text-color;
+    }
+  }
+
+  .modal-content {
+    background-color: $color-white;
+    height: 691px;
+    overflow-x: hidden;
+    padding: 30px 40px 40px 40px;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      overflow-x: auto;
+      max-height: 100vh;
+      height: 100vh;
+      padding: 60px 20px 40px 20px;    
+    }
+    .reg-title{
+      font-family: $font-itc-charter;
+      font-size: 44px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 0.98;
+      letter-spacing: normal;
+      color: $muted-text-color;
+      padding-bottom: 20px;
+    }
+    .register-content{
+      form{
+        .columns-margin{
+          .div-decor{
+            margin-bottom: 28px;
+          }
+        }
+        .columns-right-margin{
+          .div-decor{
+            margin-bottom: 28px;
+          }
+        }
+        .multi-fields{
+          display: flex;
+          @media (min-width: 320px) and (max-width: 768px) {
+            flex-direction: column;
+          }
+          .field-one {
+            margin-right: 0.75rem;
+            @media (min-width: 320px) and (max-width: 768px) {
+              margin-right: 0;
+              margin-bottom: 28px;
+            }
+          }
+          .field-two{
+            margin-left: 0.75rem;
+            @media (min-width: 320px) and (max-width: 768px) {
+              margin-left: 0;
+              margin-bottom: 28px;
+            }
+          }
+        }
+        .field{
+          .label{
+            font-family: $font-helvetica;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.21;
+            letter-spacing: normal;
+            color: $muted-text-color;
+          }
+          .control{
+            input{
+              font-family: $font-helvetica;
+              font-size: 18px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.06;
+              letter-spacing: normal;
+              color: $color-dark;
+              border: none;
+              box-shadow: none;
+              border-bottom: 1px solid $color-loblolly;
+              border-radius: 0px;
+              height: 45px;
+              max-width: 100%;
+              width: 100%;
+              @media (min-width: 320px) and (max-width: 768px) {
+                border-bottom: 1px solid $color-athens-grey;
+              }
+            }
+            input:focus{
+              outline: none;
+            }
+            select::-ms-expand {
+              display: none;
+            }
+            .select-option:after {
+              content: '\e9904'; 
+              font-family: 'web-font' !important;
+              font-size: 8px;
+              color: $color-primary;
+              top: 19px;
+              padding: 0 0 2px;
+              right:0px;
+              position: absolute;
+              pointer-events: none;
+            }
+            .select-option{
+              border-bottom: 1px solid $color-loblolly;
+              @media (min-width: 320px) and (max-width: 768px) {
+                border-bottom: 1px solid $color-athens-grey;
+              }
+              select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                display: block;
+                width: 174px;
+                font-family: $font-helvetica;
+                font-size: 18px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.06;
+                letter-spacing: normal;
+                color: $color-dark;
+                padding: 16px 15px 9px 0px;
+                background-color: #ffffff;
+                background-image: none;
+                border: 1px solid #cccccc;
+                border: 0px;
+                -ms-word-break: normal;
+                word-break: normal;
+                @media (min-width: 320px) and (max-width: 768px) {
+                  width: 100%;
+                }
+              }
+              select:focus{
+                //outline: none;
+              }
+            }
+          }
+          a{
+            color: $color-dark;
+            i{
+              position: absolute;
+              right: 0px;
+              .icon-password_show, .icon-password_hide{
+                position: relative;
+                top: -27px;
+                font-size: 16px;
+              }
+            }
+          }
+          .help{
+            min-height: 17px;
+            margin-top: 4px;
+            position: absolute;
+            p{
+              font-family: $font-helvetica;
+              font-size: 12px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.42;
+              letter-spacing: normal;
+              text-align: left;
+              color: $color-primary;
+              cursor: default;
+            }
+          }
+        }
+        .password-instrucation{
+          font-family: $font-helvetica;
+          font-size: 12px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.17;
+          letter-spacing: normal;
+          color:$color-light;
+        }
+        .remember-me{
+          padding-bottom: 20px;
+          a {
+            color: $color-light;
+            text-decoration: underline;
+          }
+          .check {
+            padding-left: 3px;
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            //margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            input { /* Hide the browser's default checkbox */
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+            span{
+              display: inline-block;
+              padding-top: 9px;
+              font-family: $font-helvetica;
+              font-size: 12px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.17;
+              letter-spacing: normal;
+              text-align: left;
+              color: $color-light;
+            }
+          }
+          /* Create a custom checkbox */
+          .checkmark {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: $color-white;
+            border: 1px solid $muted-text-color;
+          }
+          /* On mouse-over, add a grey background color */
+          .check:hover input ~ .checkmark {
+            background-color: $color-white;
+          }
+          /* When the checkbox is checked, add a blue background */
+          .check input:checked ~ .checkmark {
+            background-color: $color-primary;
+          }
+          .check input:focus ~ .checkmark {
+            outline: auto -webkit-focus-ring-color;
+          }
+          /* Create the checkmark/indicator (hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+          /* Show the checkmark when checked */
+          .check input:checked ~ .checkmark:after {
+            display: block;
+          }
+          /* Style the checkmark/indicator */
+          .check .checkmark:after {
+            left: 6px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+        .reg-btn-box{
+          display: flex;
+          align-items: center;
+          .reg-btn {
+            @media (min-width: 320px) and (max-width: 768px) {
+              flex: 1;
+            }
+            button{
+              border: 1px solid $color-primary;
+              font-family: $font-helvetica;
+              font-size: 12px;
+              font-weight: bold;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.25;
+              letter-spacing: 0.6px;
+              text-align: center;
+              color: $color-primary;
+              background-color: transparent;
+              padding: 15px 35px;
+              cursor: pointer;
+              @media (min-width: 320px) and (max-width: 768px) {
+                width: 100%
+              }
+            }
+          }
+          .reg-cancel{
+            padding-left: 45px;
+            @media (min-width: 320px) and (max-width: 768px) {
+              flex: 1;
+              text-align: center;
+              padding-left: 0px;
+            }
+            a{
+              font-family: $font-helvetica;
+              font-size: 12px;
+              font-weight: bold;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.25;
+              letter-spacing: 0.6px;
+              color:$muted-text-color;
+              text-transform: uppercase;
+            }
+          }
+        }
+        .already-account{
+          font-family: $font-helvetica;
+          font-size: 12px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.17;
+          letter-spacing: normal;
+          color: $muted-text-color;
+          padding-bottom: 28px;
+          padding-top: 15px;
+          .lable-text {
+            a {
+              font-family: "PwC Helvetica Neue";
+              font-size: 12px;
+              font-weight: bold;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.25;
+              letter-spacing: normal;
+              color: $muted-text-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.register-mobile-slide{
+  background-color: $color-white !important;
+  overflow-y: hidden !important;
+  //z-index: 999 !important;
+  .mobile-search-filtersmodal-content{
+    padding: 0px 15px;
+  }
+  .close-animatedTemplateModal{
+    .icon-close-popup{
+      font-size: 20px;
+      color: $color-dark;
+    }
+  }
+  .modal-content{
+    max-height: 100vh;
+    margin: 0px 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+
+@media screen and (min-width: 769px), print{
+  .sign-modal{
+    .modal-content, .modal-card {
+      margin: 0 auto;
+      max-height: calc(100vh - 40px);
+      width: 870px;
+    }
+  }
+  .register-modal{
+    .modal-content, .modal-card {
+      margin: 0 auto;
+      max-height: calc(100vh - 40px);
+      width: 864px;
+    }
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  .register-mobile-slide{
+    //z-index: 999 !important;
+    .reg-account-top{
+      padding-left: 15px;
+      padding-right: 15px;
+      .reg-title{
+        font-family: $font-itc-charter;
+        font-size: 38px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        color: $muted-text-color;
+      }
+      .already-account-top{
+        border-bottom: 1px solid #7d7d7d;
+        font-family: $font-helvetica;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        color: $muted-text-color;
+        padding-bottom: 10px;
+        padding-top: 18px;
+        margin-bottom: 25px;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+    .modal-content{
+      max-height: calc(100vh - 160px);
+      margin: 0px 0px;
+      padding-right: 15px;
+      padding-left: 15px;
+      .register-content{
+        form{
+          .columns-margin{
+            .div-decor{
+            }
+          }
+          .columns-right-margin{
+            .div-decor{
+            }
+          }
+          .multi-fields{
+            display: flex;
+            flex-direction: column;
+            .field-one{
+              
+            }
+            .field-two{
+              
+            }
+          }
+          .field{
+            .label{
+              font-family: $font-helvetica;
+              font-size: 14px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.93;
+              letter-spacing: normal;
+              color: $muted-text-color;
+            }
+            .control{
+              input{
+                font-family: $font-helvetica;
+                font-size: 18px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.06;
+                letter-spacing: normal;
+                color: $color-dark;
+                border: none;
+                box-shadow: none;
+                border-bottom: 1px solid $color-dark;
+                border-radius: 0px;
+                height: 46px;
+                max-width: 100%;
+                width: 100%;
+              }
+              input:focus{
+                outline: none;
+              }
+              select::-ms-expand {
+                display: none;
+              }
+              .select-option:after {
+                content: '\e9904'; 
+                font-family: 'web-font' !important;
+                font-size: 12px;
+                color: $color-primary;
+                top: 15px;
+                padding: 0 0 2px;
+                right:0px;
+                position: absolute;
+                pointer-events: none;
+              }
+              .select-option{
+                border-bottom: 1px solid $color-dark;
+                select {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  display: block;
+                  width: 100%;
+                  font-family: $font-helvetica;
+                  font-size: 18px;
+                  font-weight: normal;
+                  font-style: normal;
+                  font-stretch: normal;
+                  line-height: 1.50;
+                  letter-spacing: normal;
+                  color: $color-dark;
+                  padding: 0px 15px 0px 0px;
+                  background-color: #ffffff;
+                  background-image: none;
+                  border: 1px solid #cccccc;
+                  border: 0px;
+                  -ms-word-break: normal;
+                  word-break: normal;
+                  height: 46px;
+                }
+                select:focus{
+                  //outline: none;
+                }
+              }
+            }
+            a{
+              color: $color-dark;
+              i{
+                position: absolute;
+                right: 0px;
+                .icon-password_show, .icon-password_hide{
+                  position: relative;
+                  top: -27px;
+                  font-size: 16px;
+                }
+              }
+            }
+            .help{
+              margin-top: 4px;
+              p{
+                font-family: $font-helvetica;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.42;
+                letter-spacing: normal;
+                text-align: left;
+                color: $color-primary;
+                cursor: default;
+              }
+            }
+          }
+          .password-instrucation{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            color:$color-light;
+          }
+          .remember-me-top {
+            padding-top: 40px;
+          }
+          .remember-me{
+            padding-bottom: 20px;
+            .check {
+              padding-left: 3px;
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              //margin-bottom: 12px;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              input { /* Hide the browser's default checkbox */
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              span{
+                display: inline-block;
+                padding-top: 9px;
+                font-family: $font-helvetica;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.17;
+                letter-spacing: normal;
+                text-align: left;
+                color: $color-light;
+              }
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+              position: absolute;
+              top: 6px;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background-color: $color-white;
+              border: 1px solid $muted-text-color;
+            }
+            /* On mouse-over, add a grey background color */
+            .check:hover input ~ .checkmark {
+              background-color: $color-white;
+            }
+            /* When the checkbox is checked, add a blue background */
+            .check input:checked ~ .checkmark {
+              background-color: $color-primary;
+            }
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+            /* Show the checkmark when checked */
+            .check input:checked ~ .checkmark:after {
+              display: block;
+            }
+            /* Style the checkmark/indicator */
+            .check .checkmark:after {
+              left: 6px;
+              top: 3px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+          .reg-btn-box{
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            .reg-btn{
+              button{
+                border: 1px solid #D04A02;
+                font-family: "PwC Helvetica Neue";
+                font-size: 12px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                letter-spacing: 0.6px;
+                text-align: center;
+                color: #D04A02;
+                background-color: transparent;
+                padding: 15px 40px;
+                cursor: pointer;
+              }
+            }
+            .reg-cancel{
+              justify-content: center;
+              display: flex;
+              width: 100%;
+              a{
+                font-family: $font-helvetica;
+                font-size: 12px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                letter-spacing: 0.6px;
+                color:$muted-text-color;
+                text-transform: uppercase;
+              }
+            }
+          }
+          .already-account{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.17;
+            letter-spacing: normal;
+            color: $muted-text-color;
+            padding-bottom: 28px;
+            padding-top: 15px;
+            display: none;
+            .lable-text {
+              a {
+                font-family: "PwC Helvetica Neue";
+                font-size: 12px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                letter-spacing: normal;
+                color: $muted-text-color;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

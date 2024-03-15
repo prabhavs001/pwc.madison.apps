@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    datasource.name="sqldatasource123"
+    default.autocommit="{Boolean}true"
+    jdbc.connection.uri="jdbc:sqlserver://127.0.0.1:1433;databaseName=pwc-vp"
+    jdbc.driver.class="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    jdbc.password="123456"
+    jdbc.username="TestLogin1"
+    pool.max.wait.msec="{Long}1000"
+    pool.size="{Long}10"/>

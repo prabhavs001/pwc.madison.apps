@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pwc-abstract PUBLIC "-//PWC//DTD DITA PWC Abstract//EN" "pwc-abstract.dtd">
+<pwc-abstract id="topic" xml:lang="en-US">
+<title></title>
+<pwc-abstract-body>
+  <bodydiv id="body_div">
+    <p></p>
+  </bodydiv>
+</pwc-abstract-body>
+<related-links>
+	<linklist type="inline-links">
+	<desc>Inline Links</desc>
+		<link>			
+			<linktext>Add Inline Links here</linktext>
+		</link> 
+	</linklist>
+	<linklist type="frequently-asked-questions">
+		<desc>FAQs</desc>
+		<link>
+			<linktext>Add FAQs here</linktext>
+		</link>
+	</linklist>
+	<linklist type="industry-insights">
+		<desc>Industry Insights</desc>
+		<link>
+			<linktext>Add Industry Insights here</linktext>
+		</link>
+	</linklist>
+	<linklist type="example-links">
+		<desc>Examples</desc>
+		<link>
+			<linktext>Add Examples here</linktext>
+		</link>
+	</linklist>
+	<linklist type="templates-links">
+		<desc>Effective Date</desc>
+         <link>
+            <linktext>Add Effective Date here</linktext>
+         </link>
+	</linklist>
+</related-links>
+</pwc-abstract>

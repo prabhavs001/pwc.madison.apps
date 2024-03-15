@@ -1,0 +1,182 @@
+<template data-sly-template.standardRendition="${ @ item,compName}">
+    <article class="is-radiusless" data-renditionStyle="${item.renditionStyle}">
+        <a href="${item.articlePagePath}" data-component-name="${compName}" data-link-title="${item.topicText}"
+           data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : ''}"
+           data-sly-attribute.data-access-type="${item.AccessType}"
+           data-sly-attribute.data-license-types="${item.licenseTypes}">
+	       <span class="date-block">     
+            <p class="module-heading hero-text">
+                <sly data-sly-test="${item.topicTitle}" />
+                ${item.topicTitle}
+            </p>
+				<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}" data-is-white="true">
+				</div>
+			</span>
+        
+           
+            <p class="brief hero-text" data-sly-test="${item.topicText}">
+                ${item.topicText}
+            </p>
+            <p>
+            
+        
+            <p>
+            <p class="us-podcast-text">
+                ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+            </p>
+            <span class="date-block">     
+	            <p class="date">
+                	<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+	                <sly data-sly-test=${item.revisedDate}>
+	                    <sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                        ${"Homepage_Hero_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+                    </sly>
+	            </p>
+                <span class="primary-orange text-space">
+                    ${item.ctaLabel} &#xbb;
+                  </span>
+			</span>
+          
+        </a>
+    </article>
+</template>
+
+<template data-sly-template.thumbnailRendition="${ @ item,compName}">
+    <article class="is-radiusless square_image_rendition" data-renditionStyle="${item.renditionStyle}">
+        <a href="${item.articlePagePath}" data-component-name="${compName}" data-link-title="${item.topicText}"
+           data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : ''}"
+           data-sly-attribute.data-access-type="${item.AccessType}"
+           data-sly-attribute.data-license-types="${item.licenseTypes}">
+	       <span class="date-block">   
+           
+				<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}" data-is-white="true">
+				</div>
+			</span>
+            <div class="is-flex" data-sly-test="${item.imagePath}">
+                <img class="hero_inside_image" src="${item.imagePath}">
+                <div>
+                    <p data-sly-test="${item.topicTitle}" class="module-heading hero-text">
+                        ${item.topicTitle}
+                    </p>
+                    <p data-sly-test="${item.topicText}" class="brief is-hidden-mobile hero-text">
+                        ${item.topicText}
+                    </p>
+                    <p data-sly-test="${item.country && item.contentFieldValue}" class="us-podcast-text is-hidden-mobile">
+                        ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+                    </p>
+                    <span class="date-block is-hidden-mobile">   
+                      
+                        <p class="date">
+                            <sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                            <sly data-sly-test=${item.revisedDate}>
+                                <sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                                ${"Homepage_Hero_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+                            </sly>
+                        </p>
+                        <p data-sly-test="${item.ctaLabel}" class="is-hidden-mobile learn_more text-space">
+                            <span class="primary-orange text-space">${item.ctaLabel} &#xbb </span>
+                        </p>
+                        <p data-sly-test="${item.ctaLabel}" class="is-hidden-desktop learn_more text-space">
+                            <span class="primary-orange text-space">${item.ctaLabel} &#xbb </span>
+                        </p>
+                    </span>
+                   
+                </div>
+            </div>
+           
+            <p data-sly-test="${item.topicText}" class="brief is-hidden-desktop hero-text">
+                ${item.topicText}
+            </p>
+            <p data-sly-test="${item.country && item.contentFieldValue}" class="us-podcast-text is-hidden-desktop">
+                ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+            </p>
+            <span class="date-block is-hidden-desktop">   
+              
+	            <p class="date">
+                	<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+	                <sly data-sly-test=${item.revisedDate}>
+	                    <sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                        ${"Homepage_Hero_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+                    </sly>
+	            </p>
+                <p data-sly-test="${item.ctaLabel}" class="is-hidden-mobile learn_more text-space">
+                    <span class="primary-orange text-space">${item.ctaLabel} &#xbb </span>
+                </p>
+                <p data-sly-test="${item.ctaLabel}" class="is-hidden-desktop learn_more text-space">
+                    <span class="primary-orange text-space">${item.ctaLabel} &#xbb </span>
+                </p>
+			</span>
+        </a>
+    </article>
+</template>
+
+<template data-sly-template.cardImageRendition="${ @ item,compName}">
+    <article class="is-block is-radiusless video_image_rendition">
+        <img class="hero_inside_video" src="${item.imagePath}">
+        <a href="${item.articlePagePath}" data-component-name="${compName}" data-link-title="${item.topicText}"
+           data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : ''}"
+           data-sly-attribute.data-access-type="${item.AccessType}"
+           data-sly-attribute.data-license-types="${item.licenseTypes}">
+      <span class="date-block">
+        <p data-sly-test="${item.topicTitle}" class="module-heading hero-text">
+            ${item.topicTitle @ context ='html'}
+        </p>
+      	<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}" data-is-white="true">
+		</div>
+      </span>
+           
+            <span class="us_learn_more text-space">
+        <span data-sly-test="${item.country && item.contentFieldValue}" class="us-podcast-text">${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}</span>
+        
+
+      </span>
+      <span class="date-block">
+        <p class="date">
+            <sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+	        <sly data-sly-test=${item.revisedDate}>
+	            <sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+            	${"Homepage_Hero_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+        	</sly>
+	    </p>
+        <span data-sly-test="${item.ctaLabel}" class="primary-orange text-space">${item.ctaLabel @ context ='html'} &#xbb</span>
+      </span>
+        </a>
+    </article>
+</template>
+
+<template data-sly-template.bgImageRendition="${ @ item,compName}">
+    <article class="is-radiusless background_image_rendition" bg-article="${item.imagePath}">
+        <a href="${item.articlePagePath}" data-component-name="${compName}" data-link-title="${item.topicText}"
+           data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : ''}"
+           data-sly-attribute.data-access-type="${item.AccessType}"
+           data-sly-attribute.data-license-types="${item.licenseTypes}">
+      <span class="date-block">
+        <p data-sly-test="${item.topicTitle}" class="module-heading hero-text">
+            ${item.topicTitle}
+        </p>
+        <div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}" data-is-white="true">
+		</div>
+      </span>
+           
+            <p data-sly-test="${item.topicText}" class="brief hero-text">
+                ${item.topicText}
+            </p>
+           
+            <p data-sly-test="${item.country && item.contentFieldValue}" class="us-podcast-text">
+                ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+            </p>
+            <span class="date-block">
+                <p class="date">
+                    <sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                    <sly data-sly-test=${item.revisedDate}>
+                        <sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                        ${"Homepage_Hero_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+                    </sly>
+                </p>
+                <p data-sly-test="${item.ctaLabel}" class="learn_more">
+                    <span class="primary-orange text-space">${item.ctaLabel} &#xbb </span>
+                </p>
+              </span>
+        </a>
+    </article>
+</template>

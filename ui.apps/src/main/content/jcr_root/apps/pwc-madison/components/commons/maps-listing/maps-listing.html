@@ -1,0 +1,12 @@
+<table is="coral-table" selectable style="height:200px" data-sly-use.refditamaps="com.pwc.madison.core.models.DitamapVersionDiffModel">
+    <thead is="coral-table-head" sticky>
+      <tr is="coral-table-row">
+        <th is="coral-table-headercell">Select the ditamap for version review</th>
+      </tr>
+    </thead>
+    <tbody is="coral-table-body" data-sly-list.item = "${refditamaps.referencedDitamapList}">
+      <tr is="coral-table-row" class="review-map-item">
+        <td is="coral-table-cell"><a href="">${item}</a></td>
+      </tr>
+    </tbody>
+  </table>

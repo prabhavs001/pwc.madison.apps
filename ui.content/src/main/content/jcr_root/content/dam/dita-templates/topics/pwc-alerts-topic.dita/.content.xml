@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="f5d0540e-fbe3-46b4-aefd-59a55414ab62">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="topic-templates/pwc-alerts-topic.dita"        
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        templateDescription="PwC Alerts Topic Template"
+        templateTitle="PwC Alerts">
+        <metadata
+            dam:sha1="f70ffc72a608f3085a710c8414f29207fc390ba1"
+            dam:size="{Long}1070"
+            dc:format="application/xml"
+            dc:title="PwC Alerts"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            dita_class="- topic/topic"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,25 @@
+<template data-sly-template.licenseContent="${@ locale}">
+	<div>
+		<a href="#animatedHybridModal" id="hybridModal"
+			style="visiblity: hidden"></a>
+		<div id="animatedHybridModal" style="display: none" v-bind:style="{ display: show}">
+			<div class="hybrid-modal-content">
+				<h2 class="hybrid-title has-text-centered">${'UserReg_License_Content_Heading' @ i18n, locale=locale}</h2>
+				<div>
+					<ul class="hybrid-content-list">
+						<li v-for="(available, license) in licenses">
+							<span v-if="available" class="available">${'UserReg_License_Content_Available' @ i18n, locale=locale}</span>
+							<span v-else class="unavailable" data-text="${'UserReg_License_Content_Unavailable_Message' @ i18n, locale=locale}">${'UserReg_License_Content_Unavailable' @ i18n, locale=locale}</span>
+							<span>{{license}}</span>
+						</li>
+					</ul>
+					<div class="hybrid-button">
+						<a @click="closeModal" href="javascript:;"
+							class="button is-outlined is-radiusless btn-default close-animatedHybridModal">${'UserReg_License_Content_Close_Button_label' @ i18n, locale=locale}</a>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

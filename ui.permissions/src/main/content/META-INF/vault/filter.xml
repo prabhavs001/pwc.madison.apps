@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+	<filter root="/home/users/system/pwc-madison" mode="merge"/>
+    <filter root="/home/users/system/pwc-madison/madison-readservice"/>
+    <filter root="/home/users/system/pwc-madison/madison-userreg-admin"/>
+    <filter root="/home/users/system/pwc-madison/madison-content-admin"/>
+    <filter root="/home/groups/pwc-madison" mode="merge"/>
+    <filter root="/home/groups/pwc-madison/pwc-external-users"/>
+    <filter root="/home/groups/pwc-madison/pwc-internal-users"/>
+    <filter root="/home/users/pwc-external-users" mode="merge"/>
+    <filter root="/home/users/pwc-internal-users" mode="merge"/>
+    <filter root="/content/pwc-madison/rep:policy"/>
+    <filter root="/content/dam/pwc-madison/rep:policy"/>
+    <filter root="/etc/notification/email/madison/rep:policy"/>
+    <filter root="/etc/packages/com.pwc.madison.ditacontent.activation/rep:policy"/>  
+    <filter root="/home/users/pwc-external-users/rep:policy"/>
+    <filter root="/home/users/pwc-internal-users/rep:policy"/>
+    <filter root="/conf/pwc-madison/settings/wcm/rep:policy"/>
+    <filter root="/conf/pwc-madison/settings/wcm/template-types/rep:policy"/>
+    <filter root="/conf/pwc-madison/settings/wcm/policies/rep:policy"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/rep:policy"/>
+    <filter root="/apps/fmdita/report/vitalstatsreport/rep:policy"/>
+    <filter root="/var/acs-commons/reports/fasb-report/rep:policy"/>
+    <filter root="/var/acs-commons/reports/ingestion-report/rep:policy"/>
+    <filter root="/var/audit/com.day.cq.wcm.core.page/rep:policy"/>
+    <filter root="/var/audit/com.day.cq.replication/rep:policy"/>
+    <filter root="/var/pwc-madison/syndication-autopublish-queue/rep:policy"/>
+</workspaceFilter>

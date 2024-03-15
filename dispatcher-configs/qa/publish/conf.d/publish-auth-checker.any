@@ -1,0 +1,170 @@
+/url "/bin/authorization/check"
+
+# only the requested pages matching the filter section below are checked,
+
+# all other pages get delivered unchecked
+
+/filter
+
+{
+
+  /0000
+
+  {
+
+  /glob "*"
+
+  /type "deny"
+
+  }
+
+  /0001
+
+  {
+
+  /glob "/content/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.html*"
+
+  /type "allow"
+
+  }
+
+  /0002
+
+  {
+
+  /glob "/content/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.html*"
+
+  /type "allow"
+
+  }
+/0003
+  {
+  /glob "*.globalnavigation*.html"
+  /type "deny"
+  }
+  /0004
+  {
+  /glob "*.footer*.html"
+  /type "deny"
+  }
+/0005
+  {
+  /glob "*.header*.html"
+  /type "deny"
+  }
+/0006
+  {
+  /glob "*.insights*.html"
+  /type "deny"
+  }
+/0007
+  {
+  /glob "*.featuredcontent*.html"
+  /type "deny"
+  }
+/0008
+  {
+  /glob "*.mostpopular*.html"
+  /type "deny"
+  }
+/0009
+  {
+  /glob "*.herotile*.html"
+  /type "deny"
+  }
+/0010
+  {
+  /glob "/content/dam/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.pdf"
+  /type "allow"
+  }
+/0011
+  {
+  /glob "/content/dam/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.doc*"
+  /type "allow"
+  }
+/0012
+  {
+  /glob "/content/dam/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.xls*"
+  /type "allow"
+  }
+/0015
+  {
+  /glob "/content/dam/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.mp*"
+  /type "allow"
+  }
+/0016
+  {
+  /glob "/content/dam/pwc-madison/ditaroot/[a-z][a-z]/[a-z][a-z]/*.mov"
+  /type "allow"
+  }   
+/0017
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.pdf"
+  /type "allow"
+  }
+/0018
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.doc*"
+  /type "allow"
+  }
+/0019
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.xls*"
+  /type "allow"
+  }
+/0020
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.jp*g"
+  /type "allow"
+  }
+/0021
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.png"
+  /type "allow"
+  }
+/0022
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.mp*"
+  /type "allow"
+  }
+/0023
+  {
+  /glob "/content/dam/pwc-madison/[a-z][a-z]/[a-z][a-z]/*.mov"
+  /type "allow"
+  }
+/0024
+  {
+  /glob "*.territorymapping*.html"
+  /type "deny"
+  }
+}
+
+# any header line returned from the auth_checker's HEAD request matching
+
+# the section below will be returned as well
+
+/headers
+
+{
+
+  /0000
+
+  {
+
+  /glob "*"
+
+  /type "deny"
+
+  }
+
+  /0001
+
+  {
+
+  /glob "Set-Cookie:*"
+
+  /type "allow"
+
+  }
+
+}

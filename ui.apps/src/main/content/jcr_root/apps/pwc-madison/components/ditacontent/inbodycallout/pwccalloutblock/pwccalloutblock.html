@@ -1,0 +1,58 @@
+<sly data-sly-use.pwcCalloutBlock="com.pwc.madison.core.models.BodyCalloutBlock">
+	<!-- slider Related Content -->
+	<div data-sly-test="${properties.type=='carousel'}" class="sub-topic-div related-slider ${'color-{0}' @ format = [properties.bgColor]}" data-bodycallout="${resource.path}">
+		<div class=" sub-topic-container ">
+			<h2>${'Body_Callout_Related_Content' @ i18n, locale=pageProperties.jcr:language}</h2>
+			<div class="sub-loader calloutloader"></div>
+			<div class="slider featured featured-single sub-topic-slider sub-topic-slick-slider sub-op" >
+			</div>
+			<div class="feature-show-more stack-show-more releated-content-toggle show-toggle  is-hidden-tablet-only  is-hidden-desktop is-hidden-fullhd" style="display:none">
+
+				<span> ${'Body_Callout_Show_More' @i18n, locale=pageProperties.jcr:language}</span>
+				<div class="arrow">
+					<i class="left"></i>
+					<i class="right"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- stack layout html -->
+	<div data-sly-test="${properties.type=='stacked'}" class="stacked-layout ${'color-{0}' @ format = [properties.bgColor]} sub-topic-div" data-bodycallout="${resource.path}">
+		<div class=" sub-topic-single-slide sub-topic-container ">
+			<h2>${'Body_Callout_Related_Content' @ i18n, locale=pageProperties.jcr:language}</h2>
+			<div class="featured">
+				<div class="single-column-slide featured-single">
+				</div>
+				<div class="releated-content-toggle show-toggle " style="display:none" >
+					<span> ${'Body_Callout_Show_More' @i18n, locale=pageProperties.jcr:language}</span>
+					<div class="arrow">
+						<i class="left"></i>
+						<i class="right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="sub-loader calloutloader"></div>
+		</div>
+	</div>
+
+	<!-- textblock layout html -->
+	<div data-sly-test="${properties.type=='text'}" class="text-layout sub-topic-div ${'color-{0}' @ format = [properties.bgColor]}" data-bodycallout="${resource.path}">
+		<div class=" sub-topic-single-slide sub-topic-container ">
+			<h2>${'Body_Callout_Related_Content' @ i18n, locale=pageProperties.jcr:language}</h2>
+			<div class="featured">
+				<div class="single-column-slide featured-single">
+				</div>
+				<div class="releated-content-toggle show-toggle " style="display:none" >
+					<span> ${'Body_Callout_Show_More' @i18n, locale=pageProperties.jcr:language}</span>
+					<div class="arrow">
+						<i class="left"></i>
+						<i class="right"></i>
+					</div>
+				</div>
+
+			</div>
+			<div class="sub-loader calloutloader"></div>
+		</div>
+	</div>
+</sly>

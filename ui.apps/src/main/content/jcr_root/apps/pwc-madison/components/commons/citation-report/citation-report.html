@@ -1,0 +1,56 @@
+<div class="citation-report-wrapper">
+	<form class="coral-Form coral-Form--vertical" data-sly-use.citation="com.pwc.madison.core.models.CitationRoutinesModel">
+        <section class="coral-Form-fieldset">
+            <div class="coral-Form-fieldwrapper">
+                <label class="coral-Form-fieldlabel" id="label-vertical-radiogroup-0">Select the Citation Routine to Run Autolinker</label>
+                <div data-sly-test.pubPointListEmpty="${citation.citationRoutines.size > 0}"
+                    class="coral-Form-field coral-RadioGroup coral-RadioGroup--vertical citation-routine-list-container"
+                    data-sly-list.citationMap="${citation.citationRoutines}">
+                    <coral-radio class="coral-Form-field" name="citation-routines" value="${citationMap}"
+                        data-published-page="${citation.citationRoutines[citationMap]}"
+                        labelledby="label-vertical-radiogroup-0">${citationMap}
+                    </coral-radio>
+                </div>
+            </div>
+        </section>
+    </form>
+
+    <div data-sly-test.disableAutolinkButton="${citation.disableAutolinkButton}" id="autolink-disabled">
+    	Autolink is disabled because it exceeds number of Dita topics on which autolink can be executed. Please try running on a smaller set.
+    </div>
+
+    <div class="citation-console-wait hidden">
+        <coral-wait size="M" centered>
+        </coral-wait>
+    </div>
+
+    <coral-dialog class="validation-modal" backdrop="static" closable="on" variant="warning">
+        <coral-dialog-header>Validation</coral-dialog-header>
+        <coral-dialog-content>Please select one routine</coral-dialog-header>
+	</coral-dialog>
+
+    <coral-dialog class="error-modal" backdrop="static" closable="on" variant="error">
+        <coral-dialog-header>Error</coral-dialog-header>
+        <coral-dialog-content>Something went wrong, please try again</coral-dialog-header>
+	</coral-dialog>
+
+    <coral-dialog class="output-modal" backdrop="static" closable="on" variant="success" fullscreen>
+        <coral-dialog-header>Report</coral-dialog-header>
+        <coral-dialog-content>
+            <table is="coral-table" id="result_table">
+              <thead is="coral-table-head" sticky>
+                <tr is="coral-table-row">
+                  <th is="coral-table-headercell">Pattern Name</th>
+                  <th is="coral-table-headercell">Source Dita Path</th>
+                  <th is="coral-table-headercell">Target Resolved Link</th>
+                  <th is="coral-table-headercell">Status</th>
+                  <th is="coral-table-headercell">Failure Reason</th>
+                </tr>
+              </thead>
+              <tbody is="coral-table-body">
+              </tbody>
+            </table>
+        </coral-dialog-content>
+    </coral-dialog>
+
+</div>

@@ -1,0 +1,4 @@
+#base=js
+workflow-button.js
+initiatefullcycleworkflow.js
+workflow-buttons-renderer.js

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    basePathProp="basePath"
+    indexPathProp="indexPath"
+    landingPageTemplate="/conf/pwc-madison/settings/wcm/templates/redirect-page"
+    pdfPathProp="pdfPath"
+    pdfTypeProp="pdfType"
+	shadowPageTemplate = "fmdita/templates/default/cqtemplates/shadowpage"
+    siteTitleProp="siteTitle"
+    sourcePathProp="sourcePath"
+    title="PwC Default Ditamap Template"
+    tocNode="jcr:content/toc"
+    tocPathProp="tocPath"
+    topicContentNode="jcr:content/root/maincontainer/readerrow/bodycontainer/docreader/contentbody/topicbody"
+    topicHeadNode="jcr:content/root/maincontainer/readerrow/bodycontainer/docreader/contentbody/headnode"
+    topicPageTemplate="/conf/pwc-madison/settings/wcm/templates/dita-content-page-template-vp"/>

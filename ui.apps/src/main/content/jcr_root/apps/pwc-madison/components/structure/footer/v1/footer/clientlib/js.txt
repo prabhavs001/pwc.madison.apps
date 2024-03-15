@@ -1,0 +1,5 @@
+#base=js
+
+appending.current.year.js
+validationscript.js
+viewpointCookie.js

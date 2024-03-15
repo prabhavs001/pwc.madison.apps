@@ -1,0 +1,2 @@
+#base=js
+show-hide-create-tag-button.js

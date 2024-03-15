@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    sling.additional.response.headers="[X-Content-Type-Options=nosniff]"
+    sling.max.calls="50000"
+    sling.max.inclusions="50"
+    sling.max.record.requests="20"
+    sling.serverinfo=""
+    sling.store.pattern.requests="[]"
+    sling.trace.allow="{Boolean}false"/>

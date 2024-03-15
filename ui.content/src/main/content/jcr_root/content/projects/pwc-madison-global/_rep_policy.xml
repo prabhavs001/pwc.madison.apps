@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <deny
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="projects-administrators"
+        rep:privileges="{Name}[jcr:all]"/>
+    <deny1
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="projects-users"
+        rep:privileges="{Name}[jcr:all]"/>
+    <allow2
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global"
+        rep:privileges="{Name}[jcr:read,jcr:readAccessControl]"/>
+    <allow3
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global-owner"
+        rep:privileges="{Name}[jcr:all]"/>
+    <allow4
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global-editor"
+        rep:privileges="{Name}[rep:write]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob="/*"/>
+    </allow4>
+    <allow5
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global-publishers"
+        rep:privileges="{Name}[jcr:all]"/>
+    <allow6
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global-reviewers"
+        rep:privileges="{Name}[jcr:read,jcr:readAccessControl]"/>
+    <allow7
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-pwc_madison_global-authors"
+        rep:privileges="{Name}[jcr:all]"/>
+</jcr:root>

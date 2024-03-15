@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Madison DITA PostGeneration"
+        sling:resourceType="cq/workflow/components/pages/model"
+        transient="true">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process_544956105
+                jcr:description="Purge Duplicate Pages Due to Special Characters "
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Purge Duplicate Pages Due to Special Characters "
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.PurgeDuplicatePagePaths"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_544956105>
+            <process_2076890889
+                jcr:description="Process to fix all broken peer links in syndicated content"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="PwC Madison Syndication Peer Link Fix Process"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.SyndicationPeerLinkFixProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_2076890889>
+            <process_1298740092
+                jcr:description="AEM Sites PGWF - Index Topics Published Path"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="AEM Sites PGWF - Index Topics Published Path"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.fmdita.custom.workflow.customsteps.AEMSiteXrefIndexStore"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1298740092>
+            <process
+                jcr:primaryType="nt:unstructured"
+                jcr:title="PwC Madison Post Processing"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.UpdateRelatedContent"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+			<process_2009303999
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Create Chapter level TOC JSON"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.CreateChapterTocJsonWorkflow"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_2009303999>
+            <process_734086778
+                jcr:primaryType="nt:unstructured"
+                jcr:title="PwC Madison Replicate Pages"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.ReplicatePublishingPoint"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_734086778>
+            <process_517539104
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Finalize Post Generation"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.fmdita.publishworkflow.FinalizePostPublish"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_517539104>
+        </flow>
+    </jcr:content>
+</jcr:root>

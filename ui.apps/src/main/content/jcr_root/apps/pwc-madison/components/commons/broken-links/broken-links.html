@@ -1,0 +1,75 @@
+<h2 class="report-heading">Details</h2>
+<div class="report-details">
+  <table class="report-details__table">
+    <thead class="broken-list-header" hidden>
+      <tr>
+        <td class="report-details__indicator">&nbsp;</td>
+        <td class="report-details__topic">TOPIC</td>
+        <td class="report-details__missing-elem">MISSING ELEMENTS</td>
+        <td class="report-details__toggle">&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody class="broken-link-container">
+      <p class="no-content-message">There is no content to be displayed. Use the sidebar to select a path and generate
+        the report.</p>
+    </tbody>
+  </table>
+</div>
+<coral-wait class="broken-links-wait broken-links-wait-hide" size="L">
+</coral-wait>
+<script id="broken-link-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <tr class="report-row">
+      <td class="indicator-red"><svg viewBox="0 0 36 36" focusable="false" aria-hidden="true" role="img" class="spectrum-Icon spectrum-Icon--sizeS"><circle cx="18" cy="18" r="16"></circle></svg></td>
+      <td>{{name}}</td>
+      
+      <td>
+          <i class="fa fa-link {{brokenClass}}" aria-hidden="true"></i>
+          <span class="{{brokenClass}}">{{brokenLinksCount}}</span>
+      </td>
+      <td>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </td>
+  </tr>
+  <tr class="report-panel-row">
+    <td colspan="4" class="accrodion">
+      <ul class="accrodion__tabs">
+          <li class="active"><a href="javascript:;">Broken Links</a></li>
+          <li><a href="javascript:;">Content References</a></li>
+          <li><a href="javascript:;">AEM page links</a></li>
+      </ul>
+      <hr>
+      <ul class="accrodion__tab-panel">
+          <li class="show">
+            {{#if brokenLinks}}
+            {{#brokenLinks}}
+            <a href="{{assetLink this.path}}" target="_blank" class="{{this.clz}}">{{this.path}}</a>
+            {{/brokenLinks}}
+            {{else}}
+            <span class="no-data">No broken content references</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if backwardRefs}}
+            {{#backwardRefs}}
+            <a href="{{assetLink this}}" target="_blank" class="text-blue">{{this}}</a>
+            {{/backwardRefs}}
+            {{else}}
+            <span class="no-data">No content references to this topic</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if aemPages}}
+            {{#aemPages}}
+            <a href="{{this.path}}.html" target="_blank" class="{{this.clz}}">{{this.path}}</a>
+            {{/aemPages}}
+            {{else}}
+            <span class="no-data">No broken content references</span>
+            {{/if}}
+          </li>
+        </ul>
+    </td>
+  </tr>
+  {{/each}}
+</script>

@@ -1,0 +1,15 @@
+<template data-sly-template.head="${ @ page }"
+          data-sly-use.headlibRenderer="headlibs.html"
+          data-sly-use.headResources="head.resources.html">
+	<sly data-sly-use.basePage="com.pwc.madison.core.models.BasePageModel"/>
+    <title><sly data-sly-test="${basePage.isJoinedPage}">${"Join_View_Button" @ i18n,
+                  locale=pageProperties.jcr:language}: &nbsp;</sly>${page.title}</title>
+    <sly data-sly-include="head.socialmedia.html"></sly>
+    <sly data-sly-include="customheaderlibs.html"></sly>
+    <sly data-sly-call="${headlibRenderer.headlibs @
+                                designPath            = page.designPath,
+                                staticDesignPath      = page.staticDesignPath,
+                                clientLibCategories   = page.clientLibCategories,
+                                hasCloudconfigSupport = page.hasCloudconfigSupport}"></sly>
+    <sly data-sly-test.appResourcesPath=${page.appResourcesPath} data-sly-call="${headResources.favicons @ path = appResourcesPath}"></sly>
+</template>

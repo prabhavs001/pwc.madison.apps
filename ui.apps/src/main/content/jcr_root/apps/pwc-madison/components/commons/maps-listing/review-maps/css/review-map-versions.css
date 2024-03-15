@@ -1,0 +1,25 @@
+.review-map-version-column{
+    width : 48% !important;
+}
+.version-diff-section{
+    padding-top: 1%;
+}
+.latest-version-xml,.selected-version-xml{
+    margin: 0px;
+    width: 730px;
+    height: 200px;
+}
+.older-versions-text{
+    height: 39px;
+    width: 110px;
+}
+.older-versions-container{
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 12.5rem;
+    outline: 0;
+    margin-top: 9px;
+}

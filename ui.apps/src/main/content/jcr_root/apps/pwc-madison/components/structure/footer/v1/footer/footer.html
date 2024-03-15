@@ -1,0 +1,7 @@
+<sly data-sly-use.caching="com.pwc.madison.core.models.StructureComponentCaching"
+	data-sly-test.iscached="${caching.isCachingEnabled}"> 
+	<!--#include virtual="${caching.footerResourcePath @ selectors='footer', extension='html'}" -->
+</sly>
+<sly data-sly-test="${!iscached}"
+	data-sly-resource="${[caching.footerResourcePath,'jcr:content'] @ join='/', selectors='footer'}" data-sly-unwrap>
+</sly>

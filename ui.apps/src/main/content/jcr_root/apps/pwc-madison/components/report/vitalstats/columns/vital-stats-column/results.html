@@ -1,0 +1,12 @@
+<td is="coral-table-cell"
+	data-sly-use.column="com.pwc.madison.core.reports.models.VitalStatsColumnModel">
+	<sly data-sly-test="${column.assetPath}"> <a target="_blank"
+		href="#" data-href="/assetdetails.html${column.assetPath}"
+		class="coral-Link"> 
+		${column.assetPath}		
+	</a>
+	</sly>
+	<sly data-sly-test="${column.columnValue}"> 
+		${column.columnValue} 
+	</sly>
+</td>

@@ -1,0 +1,21 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Overview Component" class="cq-placeholder"></p>
+<section class="is-paddingless overview-section template_info--initializing" style="height: 100px; opacity: 0;" data-sly-use.topic="com.pwc.madison.core.models.OverviewComponent">
+    <div class="container">
+        <div class="template_info">
+            <span>
+                <h1 data-sly-test.title="${topic.overviewTitle}">${title}</h1>
+            </span>
+            <div class="template-info-text">
+            	<div class="template-info-text-wrap">
+                	<p data-sly-test.description="${topic.overviewDescription}">${description}</p>
+                </div>
+                <a href="javascript:;" data-action="${'Overview_Read_More' @i18n, locale=pageProperties.jcr:language}" class="primary-orange read-more-action is-hidden">
+                   	<i data-readless-text="${'Overview_Read_Less' @i18n, locale=pageProperties.jcr:language}" data-readmore-text="${'Overview_Read_More' @i18n, locale=pageProperties.jcr:language}">${'Overview_Read_More' @i18n, locale=pageProperties.jcr:language}</i>
+                   	<span class="icon is-small">
+				    	<span class="icon-caret-down"></span>
+					</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,110 @@
+## This file is used to apply rewrite rules as an include.
+## Consider the base file here as a global for re-use
+
+#========================Madison To UMS site================================
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{REQUEST_URI} ^/content/madison-ums/
+RewriteRule ^(.*)$ https://ums-%{HTTP_HOST}$1 [L,R=301]
+
+#========================Madison External site rules============================
+#If the GEO location can find a matching Madison territory, direct user to homepage of the matching territory in default language.
+#Every time a new territory will be onboarded , territory specific redirect rule to be added
+#HTTP:X-country-code header is expected from Imperva, WAF
+
+#Redirect Root page request to UK home page
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{HTTP:X-country-code} (uk|gb) [NC]
+RewriteRule ^/ https://%{HTTP_HOST}/uk/en.html [R=301]
+
+#Redirect Root page request to US home page
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{HTTP:X-country-code} (us) [NC]
+RewriteRule ^/ https://%{HTTP_HOST}/us/en.html [R=301]
+
+#If the GEO location does not have a mapped territory, direct user to International site in English language
+#Redirect Root page request to GX home page
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^/ https://%{HTTP_HOST}/gx/en.html [R=301]
+
+#Redirect rule to redirect Long ditaroot html URLs to short URL dt
+RewriteCond %{REQUEST_URI} ^(.*)(\.html)$ [NC]
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/pwc-madison/ditaroot/)(.*) "https://%{HTTP_HOST}/dt/$2" [L,R=301]
+
+#Redirect rule to redirect Long html URLs to short URL
+RewriteCond %{REQUEST_URI} ^(.*)(\.html)$ [NC]
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/pwc-madison/)(.*) "https://%{HTTP_HOST}/$2" [L,R=301]
+
+#Redirect ditaroot Long DAM URLs to short URLs
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/dam/pwc-madison/ditaroot/)(.*) "https://%{HTTP_HOST}/dt/$2" [L,R=301]
+
+#Redirect Long DAM URLs to short URLs
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/dam/pwc-madison/)(.*) "https://%{HTTP_HOST}/$2" [L,R=301]
+
+
+# Rewrite dt path to long ditaroot paths. Long paths will the be processed by the dispatcher module
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{REQUEST_URI} ^/dt/(.*)(\.html)$
+RewriteRule ^/dt/(.*)$ /content/pwc-madison/ditaroot/$1 [PT,L]
+
+#Rewrite the path to long html paths. Long paths will then be processed by the dispatcher module.
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{REQUEST_URI} ^/(.*)(\.(html|xml|gif|ico|jpeg|jpg|bmp|png|svg))$
+RewriteRule ^(/.*)$ /content/pwc-madison$1 [PT,L]
+
+#Rewrite the Madison DAM short path to long paths. Long paths will then be processed by the dispatcher module
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{REQUEST_URI} !^/crx
+RewriteCond %{REQUEST_URI} (.*)\.[a-zA-Z0-9-]+$
+RewriteCond %{REQUEST_URI} !.*\.(json|jsp|css|js)
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^/dt/(.*)$ /content/dam/pwc-madison/ditaroot/$1 [PT,L]
+
+#Rewrite the Madison DAM short path to long paths. Long paths will then be processed by the dispatcher module
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{REQUEST_URI} !^/crx
+RewriteCond %{REQUEST_URI} (.*)\.[a-zA-Z0-9-]+$
+RewriteCond %{REQUEST_URI} !.*\.(json|jsp|css|js)
+RewriteCond %{HTTP_HOST} ^(madison|viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/.*)$ /content/dam/pwc-madison$1 [PT,L]
+
+#Add Cookie In case SAML saml_request_path cokie is not present
+<LocationMatch "/bin/userreg/internal/saml_login">
+    SetEnvIf Cookie "saml_request_path=([^;]+)" SAML_PATH=$1
+    SetEnvIf SAML_PATH ^$ SET_COOKIE_PATH
+    RequestHeader append Cookie "; saml_request_path=/bin/userreg/internal/authenticate" env=SET_COOKIE_PATH
+</LocationMatch>
+
+Header edit Set-Cookie ^(.*)$ "$1;SameSite=Strict"

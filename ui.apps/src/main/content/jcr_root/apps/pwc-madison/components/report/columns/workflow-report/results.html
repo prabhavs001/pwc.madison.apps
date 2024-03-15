@@ -1,0 +1,8 @@
+<td is="coral-table-cell" data-sly-use.report="com.pwc.madison.core.reports.models.WorkflowReportModel">
+	<sly data-sly-test.pathField="${properties.value == 'path'}">
+		<a target="_blank" href="#" data-href="/assets.html${report.rowValue}" class="coral-Link">${report.rowValue}</a>
+	</sly>
+	<sly data-sly-test="${!pathField}">
+		${report.rowValue}
+	</sly>
+</td>

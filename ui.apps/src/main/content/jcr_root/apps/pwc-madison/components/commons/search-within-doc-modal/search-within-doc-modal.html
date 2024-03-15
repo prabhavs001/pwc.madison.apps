@@ -1,0 +1,23 @@
+<div data-sly-use.docSearch="com.pwc.madison.core.models.SearchWithinDocModel" class="searchdoc-v2 searchdoc-v2--mobile is-hidden">
+  <div class="searchdoc-header">
+    <div class="searchdoc-header-text">
+      <article>
+        <h2>${'Search_Within_Doc_Title' @i18n}</h2>
+        <p>${'Search_Within_Doc_Description' @i18n} 
+          <a class="searchdoc-all">${docSearch.title}</a>
+        </p>
+      </article>
+      <button class="icon-close-popup"></button>
+    </div>
+    <form id="searchdocv2-form" action="${docSearch.searchURL @ extension='html'}">
+      <input name="q" type="text" placeholder="${'Search_Within_Doc_Enter_The_Keyword' @i18n}" />
+      <input type="hidden" name="pwcDocContext" value="" />
+      <input type="hidden" name="docSearchTitle" value="" />
+      <input type="hidden" name="SubSection" value="" />
+      <input type="hidden" name="docLevel" value="" />
+      <button type="submit" class="searchsubmit" value="Submit">Submit</button>
+    </form>
+  </div>
+  <div class="searchdoc-body">
+  </div>
+</div>

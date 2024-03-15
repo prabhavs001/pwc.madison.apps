@@ -1,0 +1,11 @@
+## Add values for any publish instances you'll pull content from.
+## It's recommended to use paired sets of dispatchers to publishers
+## Example Dispatcher1 only grabs from Publisher1 but you don't have to and can list mulitple sources here
+/0 {
+  # Hostname or IP of the render
+  /hostname "10.186.176.197"
+  # Port of the render
+  /port "4503"
+  # Connect timeout in milliseconds, 0 to wait indefinitely
+  /timeout "30000"
+}

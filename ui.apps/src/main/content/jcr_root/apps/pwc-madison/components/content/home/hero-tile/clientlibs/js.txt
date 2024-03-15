@@ -1,0 +1,4 @@
+#base=js
+
+hero-tile-listener.js
+hideshow.js

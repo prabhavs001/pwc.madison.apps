@@ -1,0 +1,39 @@
+<template data-sly-template.mobileAccordion="${@ landingPageModule}">
+    <sly data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}"></sly>
+    <div class="row visible-xs visible-sm">
+        <div class="col-sm-12 mobile-topic-module">
+            <sly data-sly-test.overviewComponentResource="${landingPageModule.overviewComponentResource}"
+                 data-sly-resource="${@path=overviewComponentResource.path, addSelectors='accordion'}"></sly>
+            <div class="accordion-wrap position-static">
+                <div class="panel-group content-toolbar" id="toolbarPanel${timeInNano}" role="tablist"
+                     aria-multiselectable="false"
+                     data-sly-test.resourcePropertiesMapForAccordionItem="${landingPageModule.resourcePropertiesMapForAccordionItem}"
+                     data-sly-list.resourcePropertiesMapEntry="${resourcePropertiesMapForAccordionItem}">
+                    <div class="panel">
+                        <div class="panel-heading" role="tab"
+                             id="heading${resourcePropertiesMapEntryList.index}">
+                            <h4 class="panel-title">
+                                <button type="button" data-toggle="collapse"
+                                        data-target="#collapsetoolbarPanel${resourcePropertiesMapEntryList.index}"
+                                        data-parent="#toolbarPanel${timeInNano}"
+                                        aria-expanded="false"
+                                        aria-controls="#collapsetoolbarPanel${resourcePropertiesMapEntryList.index}"
+                                        class="collapsed">
+                                    ${resourcePropertiesMapForAccordionItem[resourcePropertiesMapEntry].title}
+                                </button>
+                            </h4>
+                        </div>
+                        <div id="collapsetoolbarPanel${resourcePropertiesMapEntryList.index}"
+                             class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingtoolbarPanel${resourcePropertiesMapEntryList.index}"
+                             aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body ">
+                                <sly data-sly-resource="${@path=resourcePropertiesMapEntry, addSelectors='accordion'}"></sly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

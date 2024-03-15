@@ -1,0 +1,23 @@
+.publish-point-wrapper .coral-Modal coral-wait{
+    margin-left: 200px;
+    margin-right: auto;
+}
+.publish-point-wrapper .coral-Modal{
+    background: lightgray;
+}
+.publish-point-wrapper .topic-error-msg{
+    color: red;
+}
+.publish-point-wrapper .success-button{
+    margin-right: 4em !important;
+}
+.publish-point-wrapper,.regenerate-topics-button,.generate-output-button{
+    margin-left: 1%;
+}
+.publish-point-wrapper .coral-Form-fieldlabel{
+    font-size: medium;
+}
+.publish-point-wrapper .coral-Form-fieldwrapper{
+    margin-left: -0.5% !important;
+    margin-top: 1% !important;
+}

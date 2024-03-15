@@ -1,0 +1,17 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Territory Language Mapper Component" class="cq-placeholder"></p>
+<div class="navbar-item language-menu" data-sly-use.territoryMapper="com.pwc.madison.core.models.TerritoryLanguageMapper">
+    <div class="redirect-guide-target"></div>
+    <h5>
+        <p data-sly-test.currentTerritoryLanguage="${territoryMapper.currentTerritoryLanguageCode}">${currentTerritoryLanguage}</p>
+        <span class="icon-caret-down"></span>
+        <div class="language_sub_nav">
+            <ul data-sly-list.territoryLanguage="${territoryMapper.territoryLanguageToHomePageMap}">
+                <li>
+                    <a data-component-name="${territoryMapper.componentName}"
+                       data-link-title="${territoryLanguage @ i18n, locale=pageProperties.jcr:language}"
+                       href="${territoryMapper.territoryLanguageToHomePageMap[territoryLanguage]}">${territoryLanguage @ i18n, locale=pageProperties.jcr:language}</a>
+                </li>
+            </ul>
+        </div>
+    </h5>
+</div>

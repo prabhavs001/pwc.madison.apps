@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	jcr:primaryType="sling:OsgiConfig"
+	org.apache.sling.commons.log.file="logs/project-pwc-madison-syndication.log"
+	org.apache.sling.commons.log.level="debug"
+	org.apache.sling.commons.log.names="[com.pwc.madison.core.services.impl.SyndicationServiceImpl,com.pwc.madison.core.servlets.SyndicationServlet,com.pwc.madison.core.workflows.SyndicationContentUpdateProcess,com.pwc.madison.core.util.SyndicationUtil,com.pwc.madison.core.servlets.SyndicationFailureReportServlet,com.pwc.madison.core.services.impl.SyndicationFailureReportServiceImpl, com.pwc.madison.core.workflows.AutoPublishProcess, com.pwc.madison.core.services.impl.PublishDitamapServiceImpl, com.pwc.madison.core.workflows.AutoPublishSourceProcess]"
+	org.apache.sling.commons.log.pattern="\{0,date,yyyy-MM-dd HH:mm:ss.SSS} {4} [{3}] {5}" />

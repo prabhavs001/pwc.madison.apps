@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:template="/conf/pwc-madison/settings/wcm/templates/dita-content-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="pwc-madison/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/structure/header"
+                searchURL="/content/pwc-madison/us/en/search.html/search-results"/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/structure/container">
+                <maincontainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            width="12"/>
+                    </cq:responsive>
+                    <readerrow
+                        cq:styleIds="[1535533172028]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="12"/>
+                        </cq:responsive>
+                        <docreader
+                            cq:styleIds="[1535533209240]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    width="8"/>
+                                <tablet
+                                    jcr:primaryType="nt:unstructured"
+                                    width="12"/>
+                                <phone
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
+                            </cq:responsive>
+                            <ditadocumentheader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pwc-madison/components/ditacontent/ditadocumentheader">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <phone
+                                        jcr:primaryType="nt:unstructured"
+                                        width="12"/>
+                                </cq:responsive>
+                            </ditadocumentheader>
+                            <toc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pwc-madison/components/ditacontent/toc">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <phone
+                                        jcr:primaryType="nt:unstructured"
+                                        width="12"/>
+                                </cq:responsive>
+                            </toc>
+                            <topicnode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                   <phone
+                                       jcr:primaryType="nt:unstructured"
+                                       width="12"/>
+                               </cq:responsive>
+                                <previous_link
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="pwc-madison/components/ditacontent/previous-link"/>
+                                <topicbody
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/responsivegrid"
+                                    editable="{Boolean}true">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+	                                   <phone
+	                                       jcr:primaryType="nt:unstructured"
+	                                       width="12"/>
+	                               </cq:responsive>
+                                </topicbody>    
+                                <next_link
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="pwc-madison/components/ditacontent/next-link"/>
+                            </topicnode>
+                        </docreader>
+                        <rail
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid"
+                            editable="{Boolean}true">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="4"/>
+                                <tablet
+                                    jcr:primaryType="nt:unstructured"
+                                    behavior="hide"/>
+                                <phone
+                                    jcr:primaryType="nt:unstructured"
+                                    behavior="hide"/>
+                            </cq:responsive>
+                        </rail>
+                    </readerrow>
+                </maincontainer>
+            </container>
+            <image_modal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/ditacontent/image-modal"/>
+            <table_modal
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/ditacontent/table-modal"/>
+            <sitemap
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/structure/sitemap"/>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/structure/footer"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

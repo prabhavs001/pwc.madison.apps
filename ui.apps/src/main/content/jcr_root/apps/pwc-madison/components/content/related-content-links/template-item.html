@@ -1,0 +1,7 @@
+<template data-sly-template.templates="${@ item, index}">
+	<div class="content-ing">
+		<div class="panel-title">${item.ditaTitleVal}</div>
+		<div data-sly-test="${!item.hidePublicationDate}" class="date">${item.ditaPublicationDate}</div>
+	</div>
+	<div class="content-body" data-lazy-load="${item.ditaBody}.pwcBody.html"></div>
+</template>

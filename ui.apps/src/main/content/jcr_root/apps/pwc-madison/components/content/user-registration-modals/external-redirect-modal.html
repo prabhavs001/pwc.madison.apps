@@ -1,0 +1,13 @@
+<template data-sly-template.external="${@ locale}">
+
+<div id="extDom" class="ne-modal-container redirect-modal" style="opacity: 0;" data-sly-use.extService="com.pwc.madison.core.services.ExternalRedirectDomainConfigurationService" data-informDomain="${extService.informDomain}" data-territories="${extService.territories}" data-i18n-message="${'Inform_Redirect_To_Madison_Confirm_Territory_Message' @ i18n, locale=locale}">
+	<span class="close-neModal" aria-label="close modal">&#10005;</span>
+	<div class="ne-modal-body">
+    	<div class="ne-modal-content"> 
+            <p>${"Inform_Redirect_To_Madison_Pop_Up_Message" @ i18n, locale=locale}</p>
+        </div>
+        <button class="close-neModal" aria-label="continue">${"Inform_Redirect_To_Madison_Continue_Button" @ i18n, locale=locale}</button>
+    </div>
+</div>
+
+</template>

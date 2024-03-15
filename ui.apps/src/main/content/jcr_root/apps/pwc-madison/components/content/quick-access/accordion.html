@@ -1,0 +1,7 @@
+<sly data-sly-use.quickAccess="com.pwc.madison.core.models.QuickAccess"/>
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Quick Access Component" class="cq-placeholder"></p>
+<ul class="light-list list-unstyled" data-sly-test="${quickAccess.content}" data-sly-list.items="${quickAccess.content}">
+    <li><a href="${items.contentUrl}" data-sly-attribute.target="${items.newWindow}">${items.subsectionText}</a></li>
+</ul>
+
+

@@ -1,0 +1,57 @@
+<div id="review-maptopics" class="coral-Form-fieldwrapper">
+    <label class="coral-Form-fieldlabel">Child Maps (Select the maps with structural changes)</label>
+    <div class="coral-Collapsible" data-init="collapsible" aria-disabled="false">
+        <h3 class="coral-Collapsible-header" role="button" aria-expanded="false" tabindex="0" data-loaded="true"><i
+                class="coral-Icon coral-Icon--sizeXS coral-Icon--chevronDown"></i>
+            <span class="coral-Collapsible-title">
+                <span class="selected-ref-maps-count">0</span>
+                <span> ditamaps will be sent.</span>
+            </span>
+        </h3>
+        <div class="coral-Collapsible-content" id="collapsible-1556878079519-panel"
+            aria-labelledby="collapsible-1556878079519-heading" aria-expanded="true" aria-hidden="false"
+            style="display: block;">
+            <table class="coral-Table">
+                <thead>
+                    <tr class="coral-Table-row">
+                        <th class="coral-Table-headerCell">
+                            <div class="coral-Table-headerCell">
+                                <label class="coral-Checkbox">
+                                    <input class="coral-Checkbox-input" type="checkbox" id="ref-ditamaps-checkAll">
+                                    <span class="coral-Checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="coral-Table-headerCell">
+                                <h6 class="coral-Heading coral-Heading--6">Name</h6>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-loaded="true" class="referenced-maps-container">
+                    <script id="referenced-maps-template" type="text/x-handlebars-template">
+                        {{#each this}}
+                        <tr class="coral-Table-row">
+                        <td class="coral-Table-cell">
+                            <div class="coral-Table-cell inner-table-cell">
+                                <label class="coral-Checkbox">
+                                    <input class="coral-Checkbox-input" type="checkbox" name="referenced-ditamaps"
+                                        value="{{ditaMapPath}}">
+                                    <span class="coral-Checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="coral-Table-cell inner-table-cell file-icon">
+                                <i class="coral-Icon coral-Icon--file coral-Icon--sizeS"></i>
+                            </div>
+                            <div class="coral-Table-cell inner-table-cell">
+                                <a class="topic-title coral-Link" target="_blank"
+                                    href="/libs/fmdita/ditamapeditor/core/editor.html?path={{ditaMapPath}}">{{ditaMapName}}</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

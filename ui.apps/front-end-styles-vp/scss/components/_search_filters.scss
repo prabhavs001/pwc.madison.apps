@@ -1,0 +1,196 @@
+.search-filters,
+.mobile-search-filters,
+.account-nav,
+.profile_page {
+  .menu-item {
+    background-color: $background-color-light;
+    border-bottom: 1px solid $light-border;
+    padding: 0 12px;
+    cursor: pointer;
+    .submenu {
+      max-height: 600px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-top: 1px solid $light-border;
+      display: none;
+      padding-right: 15px;
+      li {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        height: 36px;
+        border: 1px solid $light-border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 12px;
+        font-family: 'PwC Helvetica Neue';
+        font-size: 16px;
+        line-height: 1.19;
+        letter-spacing: -0.1px;
+        color: $color-dark;
+      }
+      .active {
+        background-color: $color-primary;
+        color: white;
+      }
+    }
+    .show {
+      display: block;
+    }
+    .is-flex {
+      min-height: 86px;
+      justify-content: space-between;
+      align-items: center;
+      img.hide {
+        display: none;
+      }
+    }
+    .text {
+      font-family:"PwC Helvetica Neue";
+      font-size: 21px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 28px;
+      width: 100%;
+      letter-spacing: normal;
+      text-align: left;
+      color: $color-dark;
+    }
+    .icon-caret-down{
+      font-size: 12px;
+      color: $color-primary;
+    }
+  }
+}
+.search-filters,
+.mobile-search-filters{
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    li {
+      min-height: 36px;
+      height: auto !important;
+      padding: 7px 12px !important;
+      span:first-child{
+        word-break: break-word;
+        width: 80%;
+      }
+    }
+  }
+}
+.suggestion-link {
+  font-size: 16px;
+  a {
+    color: #d04b1d;
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
+.desktop-filter-apply-bar{
+  font-family: "PwC Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding: 12px 0;
+  width:100%;
+  >span {
+    display: inline-block;
+    @media (min-width: 1088px) and (max-width: 1471px) {
+      margin-top: 10px;
+    }
+  }
+  a{
+    border: 1px solid white;
+    color: #D04A02;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    &.apply-filters{
+      border-color: #D04A02;
+      font-weight: 700;
+      margin-right: 8px;
+      &.disabled { 
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+      }
+    }
+    &.default-filters{
+      display: none;
+      //border-right-color: #D04A02;
+    }
+    &.clear-all-filters {
+      margin-left: 20px;
+    }
+  }
+}
+.search-filters{
+  .menu-item {
+    background-color: $background-color-light-1;
+  }
+}  
+
+.search-page, .search {
+  .search-filters {
+    @media screen and (min-width: 769px) {
+      width: 21%;
+    }
+  }
+
+  .search-filters, .mobile-search-filters {
+    .js-all-filters {
+      .menu-item .is-flex {
+        min-height: 65px;
+
+        .text {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1088px) and (max-width: 1279px){
+	.desktop-filter-apply-bar{
+		a{
+			font-size: 10px;
+      padding: 8px 6px;
+      margin-right: 2px !important;
+		}
+	} 
+}
+
+@media (min-width: 1280px) and (max-width: 1471px){
+	.desktop-filter-apply-bar{
+		a{
+			font-size: 12px;
+      padding: 8px 6px;
+      margin-right: 2px !important;
+    }
+    span{
+      margin-top: 0px;
+      //float: right;     
+    }
+	} 
+}
+html[lang="fr-CA"] {
+  @media (min-width: 1088px) {
+  .search-page {
+    .search-filters {
+      width: 25%;
+    }
+  }
+}
+
+  @media (min-width: 1280px) and (max-width: 1471px) {
+    .desktop-filter-apply-bar {
+      a {
+        &.clear-all-filters {
+          margin-left: 15px;
+        }
+      }
+    }
+
+  }
+}
+

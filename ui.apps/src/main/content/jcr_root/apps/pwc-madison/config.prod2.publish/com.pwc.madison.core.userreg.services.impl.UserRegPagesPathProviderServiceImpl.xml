@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+	madison.userreg.tnc.page.path="/user/terms-and-conditions"
+	madison.userreg.pages.base.path="/content/pwc-madison/user"
+	madison.userreg.gated.content.page.path="/user/gated-content"/>

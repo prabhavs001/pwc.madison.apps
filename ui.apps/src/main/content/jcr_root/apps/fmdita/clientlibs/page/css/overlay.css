@@ -1,0 +1,22 @@
+.update-href-dialog.spectrum-Dialog, .cross-reference-dialog.spectrum-Dialog {
+    width: 75rem
+}
+
+.update-href-dialog .spectrum-Table-cell, .cross-reference-dialog .spectrum-Table-cell {
+    padding-right: 0;
+    padding-left: 10px
+}
+
+.update-href-dialog .spectrum-Table-headCell, .cross-reference-dialog .spectrum-Table-headCell {
+    padding-right: 0;
+    padding-left: 10px
+}
+
+.update-href-dialog .reusable-ids .spectrum-Table-cell .id-wrapper, .cross-reference-dialog .reusable-ids .spectrum-Table-cell .id-wrapper {
+    word-break: break-all;
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2
+}

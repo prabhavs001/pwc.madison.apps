@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    excludedMaps="[Codification/Assets/Investments|2,Codification/Expenses/Compensation|2,Codification/Industry/Contractors|2,Codification/Industry/Entertainment|2,Codification/Industry/Extractive_Activities|2,Codification/Industry/Financial_Services|2,Codification/Industry/Plan_Accounting|2,Codification/Industry/Real_Estate|2,Codification/Assets/32X_Investments|2,Codification/Expenses/71X_Compensation|2,Codification/Industry/91X_Contractors|2,Codification/Industry/92X_Entertainment|2,Codification/Industry/93X_Extractive_Activities|2,Codification/Industry/9XX_Financial_Services|2,Codification/Industry/96X_Plan_Accounting|2,Codification/Industry/97X_Real_Estate|2"/>

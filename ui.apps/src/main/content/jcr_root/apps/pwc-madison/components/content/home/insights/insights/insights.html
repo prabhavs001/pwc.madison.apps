@@ -1,0 +1,103 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Insights From Pwc Component" class="cq-placeholder"></p>
+<sly data-sly-use.model="com.pwc.madison.core.models.InsightsHomePage">
+	<div data-sly-test="${properties.bgType == 'color'}" class="black-section ${properties.bgColor ? properties.bgColor : 'orange_bg'}">
+		<div class="container insights-outer-wrapper">
+			<h5>${properties.line1} ${properties.line2}</h5>
+		</div>
+		<div class="container ">
+			<div class="line-background-image" data-sly-list="${model.filteredList}">
+				<div class="line-center-div">
+					<div class="power-utility-section-wrapper insights-wrapper">
+						<div class="power-utility-section-image">
+							<sly data-sly-test="${item.imagePath}">
+								<img class="insights-img" src="${item.imagePath}">
+							</sly>
+						</div>
+						<div class="power-utility-section">
+							<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.linkUrl @ extension='html'}">
+							</div>
+
+							<p class="black-section-heading">${item.topicText}</p>
+							<p class="${item.abstractDescription ? 'black-section-brief' : 'black-section-brief no-abstract-desc'}">
+								${item.abstractDescription}
+							</p>
+							<div class="insights-extra-info">
+							<a href="javascript:void(0);" class="insight_topicTitle" tabindex="0">${item.country} ${item.isGhostTemplateItem == true ? item.topicTitle : item.topicTitle @ i18n, locale=pageProperties.jcr:language}</a>
+							<span>
+								<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+								<sly data-sly-test=${item.revisedDate}>
+									<span data-sly-test=${hidePublicationDate}>|</span> ${"Homepage_Insights_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+								</sly>
+							</span>
+							<sly data-sly-test="${item.isUrlInternal == false}">
+								<a href="${item.linkUrl @ context='uri'}"
+								data-component-name="${model.componentName}"
+								data-link-title="${item.topicText}"
+								target="_blank" class="button is-outlined is-dark is-radiusless btn-default" tabindex="0">${item.linkLabel}</a>
+							</sly>
+							<sly data-sly-test="${item.isUrlInternal != false}">
+								<a href="${item.linkUrl @ extension='html'}"
+								data-component-name="${model.componentName}"
+								data-link-title="${item.topicText}"
+								class="button is-outlined is-dark is-radiusless btn-default" tabindex="0"
+								data-sly-attribute.data-access-type="${item.AccessType}"
+									data-sly-attribute.data-license-types="${item.licenseTypes}">${"Homepage_Insights_Link_Label" @ i18n, locale=pageProperties.jcr:language}</a>
+							</sly>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-sly-test="${properties.bgType == 'image'}" class="black-section" style="background:url('${properties.bgImagePath @ context='styleString'}');">
+		<div class="container insights-outer-wrapper">
+			<h5>${properties.line1} ${properties.line2}</h5>
+		</div>
+		<div class="container ">
+			<div class="line-background-image" data-sly-list="${model.filteredList}">
+				<div class="line-center-div">
+					<div class="power-utility-section-wrapper insights-wrapper">
+						<div class="power-utility-section-image">
+							<sly data-sly-test="${item.imagePath}">
+								<img class="insights-img" src="${item.imagePath}">
+							</sly>
+						</div>
+						<div class="power-utility-section">
+							<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.linkUrl @ extension='html'}">
+							</div>
+
+							<p class="black-section-heading">${item.topicText}</p>
+							<p class="${item.abstractDescription ? 'black-section-brief' : 'black-section-brief no-abstract-desc'}">
+								${item.abstractDescription}
+							</p>
+							<div class="insights-extra-info">
+							<a href="javascript:void(0);" class="insight_topicTitle" tabindex="0">${item.country} ${item.isGhostTemplateItem == true ? item.topicTitle : item.topicTitle @ i18n, locale=pageProperties.jcr:language}</a>
+							<span>
+								<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+								<sly data-sly-test=${item.revisedDate}>
+									<span data-sly-test=${hidePublicationDate}>|</span> ${"Homepage_Insights_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate}
+								</sly>
+							</span>
+							<sly data-sly-test="${item.isUrlInternal == false}">
+								<a href="${item.linkUrl @ context='uri'}"
+								data-component-name="${model.componentName}"
+								data-link-title="${item.topicText}"
+								target="_blank" class="button is-outlined is-dark is-radiusless btn-default" tabindex="0">${item.linkLabel}</a>
+							</sly>
+							<sly data-sly-test="${item.isUrlInternal != false}">
+								<a href="${item.linkUrl @ extension='html'}"
+								data-component-name="${model.componentName}"
+								data-link-title="${item.topicText}"
+								class="button is-outlined is-dark is-radiusless btn-default" tabindex="0"
+								data-sly-attribute.data-access-type="${item.AccessType}"
+									data-sly-attribute.data-license-types="${item.licenseTypes}">${"Homepage_Insights_Link_Label" @ i18n, locale=pageProperties.jcr:language}</a>
+							</sly>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</sly>

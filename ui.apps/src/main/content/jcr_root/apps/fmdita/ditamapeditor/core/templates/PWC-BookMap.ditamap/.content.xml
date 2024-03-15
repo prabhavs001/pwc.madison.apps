@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Template for PwC Bookmap"
+    jcr:primaryType="cq:Template"
+    jcr:title="PwC Bookmap"
+    allowedPaths="[/content/dam/pwc-madison(/.*)?]"
+    ranking="{Long}200">
+    <jcr:content
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2016-03-23T10:34:02.968+05:30"
+            dam:sha1="3831260d4ddeaabffaa7641728b05c7e756e08e2"
+            dam:size="{Long}3577"
+            dc:format="application/xml"
+            dc:title="PwC BookMap"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

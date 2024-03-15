@@ -1,0 +1,6 @@
+<sly data-sly-use.caching="com.pwc.madison.core.models.GlobalNavigationCaching"
+	data-sly-test.isinternal="${caching.isInternalUser}"> 
+	<!--#include virtual="${currentPage.path}/jcr:content.globalnavigation.internal.html" -->
+</sly>
+<sly data-sly-test="${!isinternal}"> <!--#include virtual="${currentPage.path}/jcr:content.globalnavigation.external.html" -->
+</sly>

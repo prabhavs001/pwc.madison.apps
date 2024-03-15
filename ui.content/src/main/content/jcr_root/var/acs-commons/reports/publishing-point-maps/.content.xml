@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:description="A report to search published page path for all publishing points in a folder"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Publishing Point Maps"
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <queryconfig
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/configs/queryconfig"
+                pageSize="50"
+                query="SELECT parent.* FROM [dam:Asset] AS parent INNER JOIN [nt:unstructured] AS child ON ISDESCENDANTNODE(child,parent) WHERE ISDESCENDANTNODE(parent, [{{path}}]) AND parent.[jcr:content/metadata/pwc:isPublishingPoint] = 'yes' and name(child) = 'aemsite'"
+                queryLanguage="JCR-SQL2"
+                reportExecutor="com.adobe.acs.commons.reports.models.QueryReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Folder Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison/ditaroot"
+                validation="root-path-validator"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <assetpath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/assetpath"
+                exporter="com.adobe.acs.commons.reports.models.PathReportCellCSVExporter"
+                heading="Publishing Point"
+                link="true"/>
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Published Content Path"
+                property="jcr:content/metadata/namedoutputs/aemsite/fmdita-lastPublishedPath"/>
+            <date
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/date"
+                exporter="com.adobe.acs.commons.reports.models.DateReportCellCSVExporter"
+                format="MMM dd, yyyy hh:mm:ss"
+                heading="Publish Date"
+                property="jcr:content/metadata/namedoutputs/aemsite/fmdita-lastPublished"/>
+            <unpublishdate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/date"
+                exporter="com.adobe.acs.commons.reports.models.DateReportCellCSVExporter"
+                format="MMM dd, yyyy hh:mm:ss"
+                heading="Unpublish Date"
+                property="jcr:content/metadata/pwc-lastUnpublished"/>
+            <output_pages
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/output-pages"
+                exporter="com.pwc.madison.core.reports.columns.OutputPagesCSVExporter"
+                heading="Number of Pages"
+                value="page"/>
+            <output_pages_1002338353
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/output-pages"
+                exporter="com.pwc.madison.core.reports.columns.OutputPagesCSVExporter"
+                heading="Number of Topics"
+                value="topic"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

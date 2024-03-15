@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	jcr:primaryType="sling:OsgiConfig"
+		  auditlog.rule.contentpath="/content"
+		  auditlog.rule.minimumage="{Long}30"
+		auditlog.rule.name="Pwc\ Content\ Replication\ Audit\ Log\ Purge"
+		auditlog.rule.types="[Activate,Deactivate,Delete,Test,Reverse,Internal\ Poll]"/>

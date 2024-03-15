@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="bb9a916e-2e72-450b-816c-b4ea6a2ce206">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="pwc-madison/ditaroot/pwc.ditaval"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="pwc"
+        fmdita-dita-template="{Boolean}false"
+        fmdita-newfile="{Boolean}true"
+        status="Error[No Encoding]"
+        templateDescription="Template for ditaval"
+        templateTitle="Ditaval">
+        <metadata
+            dam:extracted="{Date}2022-01-20T13:19:02.321+05:30"
+            dam:sha1="3b29010b2a7b11bcaa87c0cdaf888284f36aac58"
+            dam:size="{Long}101"
+            dc:format="application/xml"
+            dc:modified="{Date}2016-03-16T10:58:25.090+05:30"
+            dc:title="PwC Ditaval"
+            jcr:description="Ditaval file containing the attributes for customised output."
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

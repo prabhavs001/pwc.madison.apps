@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Topic FAQ Tile"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <faq-tile-title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="FAQ Tile Title"
+                                        name="./title"
+                                        required="{Boolean}true"/>
+                                    <faqs
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            minitemsallowed = "3"
+                                            maxitemsallowed = "10"/>
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            name="./faqs">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <faq
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <faq-path
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            required="{Boolean}true"
+                                                            fieldLabel="FAQ"
+                                                            fieldDescription="Select FAQ object path"
+                                                            rootPath="/content/pwc-madison"
+                                                            name="./faqPath" />
+                                                        <guidance-links
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                            composite="{Boolean}true">
+                                                            <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="./guidanceLinks">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <guidance-link
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <guidance-link-text
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                required="{Boolean}true"
+                                                                                fieldLabel="Guidance Link Text"
+                                                                                name="./linkLabel" />
+                                                                            <guidance-link-url
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                rootPath="/content/pwc-madison"
+                                                                                required="{Boolean}true"
+                                                                                fieldLabel="Guidance Link URL"
+                                                                                name="./linkUrl" />
+                                                                            <open-new-window
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                name="./newWindow"
+                                                                                text="Open in new window"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </guidance-link>
+                                                                </items>
+                                                            </field>
+                                                        </guidance-links>
+                                                    </items>
+                                                </faq>
+                                            </items>
+                                        </field>
+                                    </faqs>
+                                </items>
+                            </tab>
+                        </items>
+                    </fields>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

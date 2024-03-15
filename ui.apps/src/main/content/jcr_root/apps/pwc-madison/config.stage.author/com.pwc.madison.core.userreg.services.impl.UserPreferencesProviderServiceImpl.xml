@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+	madison.gaas.preferences.base.path="/content/pwc-madison/global/user-preferences/gaas"
+	madison.gaap.preferences.base.path="/content/pwc-madison/global/user-preferences/gaap"
+	madison.industry.preferences.base.path="/content/pwc-madison/global/user-preferences/industry"
+	madison.internal.title.preferences.base.path="/content/pwc-madison/global/user-preferences/title-internal"
+	madison.external.title.preferences.base.path="/content/pwc-madison/global/user-preferences/title-external"
+	madison.topic.preferences.base.path="/content/pwc-madison/global/user-preferences/topic"/>

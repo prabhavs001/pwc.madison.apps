@@ -1,0 +1,3 @@
+#base=js
+
+featured-component-listener.js

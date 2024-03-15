@@ -1,0 +1,36 @@
+.dm-thumbnail {
+	display: block;
+    width: 100%;
+}
+
+.dm-overlay {
+	display: inline-block;
+	position: relative;
+    width: 100%;
+}
+
+.dm-overlay.dm-overlay-inline-links {
+    max-width: 100%;
+    width: auto;
+}
+
+.dm-button {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px;
+	border-radius: 5px;
+	width: 80px;
+	height: 80px;
+	background-position: 0px 0px;
+	background-image: url(../resources/IconEffect_video_sprite.png);
+	background-size: 80px;
+}
+
+.dm-inline-link-button {
+	width: 50px;
+	height: 50px;
+	background-size: 50px;
+}

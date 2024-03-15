@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2018-10-01T18:43:26.884+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/pwc-madison/settings/wcm/template-types/html5page"
+        jcr:description="PwC Redirect Page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="redirect-page"
+        status="enabled"/>
+</jcr:root>

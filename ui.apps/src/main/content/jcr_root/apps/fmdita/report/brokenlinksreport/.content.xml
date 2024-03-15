@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Report"
+        sling:resourceType="granite/ui/components/shell/propertiespage"
+        backHref=""
+        coral2="{Boolean}true">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[apps.pwc.report.brokenlinks]"/>
+        </head>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dam/gui/coral/components/commons/ui/shell/title"
+            path="${requestPathInfo.suffix}"
+            title="Broken Links Report"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            class="hide-overflow"
+            maximized="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <report
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/apps/pwc-madison/components/commons/broken-links"/>
+            </items>
+        </content>
+        <rails
+            jcr:primaryType="nt:unstructured"
+            alwaysActive="{Boolean}true">
+            <filter
+                granite:class="cq-rail-filter"
+                granite:id="aem-assets-rail-filter"
+                jcr:primaryType="nt:unstructured"
+                jcr:title=""
+                sling:resourceType="granite/ui/components/coral/foundation/panel/railpanel"
+                active="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <type
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Input type"
+                        name="brokenLinksInputType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <folder
+                                jcr:primaryType="nt:unstructured"
+                                text="Folder"
+                                value="folder"/>
+                            <topics
+                                jcr:primaryType="nt:unstructured"
+                                text="Topics"
+                                value="topics"/>
+                        </items>
+                    </type>
+                    <folderpath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldLabel="Folder path"
+                        name="folderPath"
+                        rootPath="/content/dam"/>
+                    <topicpaths
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Topic paths">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                            name="topicLinks"
+                            rootPath="/content/dam"/>
+                    </topicpaths>
+                    <generate
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/components/iconbutton"
+                        class="dam-admin-reports-generate coral-Button"
+                        icon="coral-Icon--report"
+                        text="Generate Report"/>
+                    <download
+                       jcr:primaryType="nt:unstructured"
+                       sling:resourceType="fmdita/components/downloadbutton"
+                       text="Download Report CSV"/>
+                    <generateJSON
+                       jcr:primaryType="nt:unstructured"
+                       sling:resourceType="fmdita/components/downloadjsonbutton"
+                       text="Download Report JSON"/>
+                </items>
+            </filter>
+        </rails>
+    </jcr:content>
+</jcr:root>

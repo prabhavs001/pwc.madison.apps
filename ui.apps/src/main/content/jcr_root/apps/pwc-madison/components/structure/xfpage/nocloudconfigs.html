@@ -1,0 +1,9 @@
+<!DOCTYPE HTML>
+<html>
+<body data-sly-use.model="com.pwc.madison.core.models.XfModel"
+      data-sly-test="${model.childrenResourcePath.size > 0}"
+      data-sly-list="${model.childrenResourcePath}"
+      class="xf-web-container">
+<sly data-sly-resource="${item}"></sly>
+</body>
+</html>

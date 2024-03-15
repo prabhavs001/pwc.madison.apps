@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pwc-topic PUBLIC "-//PWC//DTD DITA PWC Topic//EN" "pwc-topic.dtd">
+<pwc-topic id="pwc_topic">
+   <title></title>
+   <shortdesc>Add the news text that needs to be displayed on the UI</shortdesc>
+   <pwc-body>
+      <p>
+         <pwc-xref>
+            <xref-info>The url link for the source goes here</xref-info>
+         </pwc-xref>
+      </p>
+   </pwc-body>
+   <related-links>
+      <linklist type="inline-links">
+         <desc>Inline Links</desc>
+         <link>
+            <linktext>Add Inline Links here</linktext>
+         </link>
+      </linklist>
+      <linklist type="frequently-asked-questions">
+         <desc>FAQs</desc>
+         <link>
+            <linktext>Add FAQs here</linktext>
+         </link>
+      </linklist>
+      <linklist type="industry-insights">
+         <desc>Industry Insights</desc>
+         <link>
+            <linktext>Add Industry Insights here</linktext>
+         </link>
+      </linklist>
+      <linklist type="example-links">
+         <desc>Examples</desc>
+         <link>
+            <linktext>Add Examples here</linktext>
+         </link>
+      </linklist>
+      <linklist type="templates-links">
+         <desc>Effective Date</desc>
+         <link>
+            <linktext>Add Effective Date here</linktext>
+         </link>
+      </linklist>
+   </related-links>
+</pwc-topic>

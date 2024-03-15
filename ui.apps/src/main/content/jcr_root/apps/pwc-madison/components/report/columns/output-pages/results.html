@@ -1,0 +1,10 @@
+<td is="coral-table-cell" data-sly-use.outputPagesModel="com.pwc.madison.core.reports.models.OutputPagesModel">
+<sly data-sly-test="${properties.value=='page'}">
+    ${outputPagesModel.numberOfPages}
+</sly>
+<sly data-sly-test="${properties.value=='topic'}">  
+    ${outputPagesModel.topicsCount}
+</sly>
+</td>
+
+

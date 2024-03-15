@@ -1,0 +1,35 @@
+<div class="panel-content">
+    <sly data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}" />
+    <div class="content-body" data-sly-use.topicFaqTile="com.pwc.madison.core.models.TopicFaqTile">
+        <div class="pwc-carousel">
+            <ul class="list-inline panel-paginate pwc-carousel">
+                <li><a class="arrow left-arrow carousel-control" data-slide="prev" data-carousel="${timeInNano}">&lt;</a></li>
+                <li><span class="current">0</span> ${'carousel_of' @i18n, locale=pageProperties.jcr:language} <span class="total">0</span></li>
+                <li><a class="arrow right-arrow carousel-control" data-slide="next" data-carousel="${timeInNano}">&gt;</a></li>
+            </ul>
+        </div>
+        <div id="${timeInNano}" class="carousel slide myCarousel pwc-carousel" data-ride="carousel" data-interval="false">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" data-sly-list.topicFaqTileContent="${topicFaqTile.topicFaqTileContentList}">
+                <div class="item ${topicFaqTileContentList.index == 0 ? 'active' : ''}">
+                    <div class="module-faq">
+                        <p class="topic-faq-tile-question" data-sly-test.questionPath="${topicFaqTileContent.questionPath}" data-sly-resource="${@path=questionPath}"></p>
+                        <a href="javascript:void(0);" class="faq-answer-state" data-see-text="${'Topic_FAQ_See_Answer' @i18n, locale=pageProperties.jcr:language}" data-hide-text="${'Topic_FAQ_Hide_Answer' @i18n, locale=pageProperties.jcr:language}">
+                            ${'Topic_FAQ_See_Answer' @i18n, locale=pageProperties.jcr:language}
+                        </a>
+                        <div id="mobile-faq-answer faq-answer">
+                            <sly data-sly-test.answerPath="${topicFaqTileContent.answerPath}" data-sly-resource="${@path=answerPath}"></sly>
+                            <sly data-sly-test.relatedLinksPath="${topicFaqTileContent.relatedLinksPath}" data-sly-resource="${@path=relatedLinksPath}"></sly>
+                            <p data-sly-list.guidanceLink="${topicFaqTileContent.guidanceLinkList}">
+                                <sly data-sly-test="${guidanceLinkList.index != 0}">
+                                    ,
+                                </sly>
+                                <a href="${guidanceLink.linkUrl}" data-sly-attribute.target="${guidanceLink.newWindow}">${guidanceLink.linkLabel}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

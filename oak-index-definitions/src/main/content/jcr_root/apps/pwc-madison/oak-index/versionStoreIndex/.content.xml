@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="oak:Unstructured"
+    async="[async,sync]"
+    compatVersion="{Long}2"
+    evaluatePathRestrictions="{Boolean}true"
+    includedPaths="[/jcr:system/jcr:versionStorage]"
+    reindex="{Boolean}false"
+    reindexCount="{Long}5"
+    type="lucene">
+    <indexRules jcr:primaryType="nt:unstructured">
+        <nt:version jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <content_parentPath
+                    jcr:primaryType="nt:unstructured"
+                    name="jcr:frozenNode/jcr:content/cq:parentPath"
+                    notNullCheckEnabled="{Boolean}true"
+                    propertyIndex="{Boolean}true"
+                    type="String"/>
+                <parentPath
+                    jcr:primaryType="nt:unstructured"
+                    name="jcr:frozenNode/cq:parentPath"
+                    notNullCheckEnabled="{Boolean}true"
+                    propertyIndex="{Boolean}true"
+                    type="String"/>
+            </properties>
+        </nt:version>
+        <nt:frozenNode jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <name
+                    jcr:primaryType="nt:unstructured"
+                    name="cq:name"
+                    propertyIndex="{Boolean}true"
+                    type="String"/>
+                <parentPath
+                    jcr:primaryType="nt:unstructured"
+                    name="cq:parentPath"
+                    propertyIndex="{Boolean}true"
+                    type="String"/>
+                <frozenMixinTypes
+                    jcr:primaryType="nt:unstructured"
+                    name="jcr:frozenMixinTypes"
+                    propertyIndex="{Boolean}true"
+                    type="Name"/>
+            </properties>
+        </nt:frozenNode>
+        <nt:base jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <frozenMixinTypes
+                    jcr:primaryType="nt:unstructured"
+                    name="jcr:frozenMixinTypes"
+                    propertyIndex="{Boolean}true"
+                    type="Name"/>
+            </properties>
+        </nt:base>
+    </indexRules>
+</jcr:root>

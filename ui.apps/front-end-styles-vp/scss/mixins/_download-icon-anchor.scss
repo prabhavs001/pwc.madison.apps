@@ -1,0 +1,30 @@
+@mixin download-icon-anchor {
+  a.download {
+    font-family: $font-helvetica;
+    font-weight: 600 !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: $color-dark !important;
+    padding-left: 0px;
+    padding-bottom: 0px !important;
+    display: inline;
+    &:before {
+      content: "";
+      background-image: url("../resources/images/download_off.svg");
+      width: 21px;
+      height: 21px;
+      background-repeat: no-repeat;
+      background-size: 21px 21px;
+      margin-right: 10px;
+      display: inline-block;
+    }
+    &:hover { 
+      color: $color-primary !important;
+      &:before {
+        background-image: url("../resources/images/download_on.svg");
+      }
+    }
+  }
+}

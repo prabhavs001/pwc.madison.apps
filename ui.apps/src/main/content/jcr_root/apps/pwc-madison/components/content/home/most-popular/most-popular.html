@@ -1,0 +1,6 @@
+<sly data-sly-test="${wcmmode.disabled}">
+   <!--#include virtual="${currentNode.path}.mostpopular.nocache.html" -->
+   </sly>
+   
+   <sly data-sly-test="${!wcmmode.disabled}" data-sly-include="./mostpopular/mostpopular.html">
+   </sly>

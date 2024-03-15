@@ -1,0 +1,30 @@
+<a href="javascript:void(0);" id="show-mega-menu"> 
+	<span class="icon-hamburger"></span>
+</a>
+<div class="mega-menu-nav" data-sly-use.globalNavigationItems="com.pwc.madison.core.models.GlobalNavigation">
+	<div class="background is-hidden-mobile"></div>
+	<span class="close-mega-menu"> <b><span class="icon-remove"></span></b>
+	</span>
+	<div class="container mega-menu-nav">
+		<div class="mega-menu-backdrop"></div>
+		<ul class="side-ul-menu" data-sly-list.group="${globalNavigationItems.globalNavigationItems}">
+			<sly data-sly-test.hasSubGroups="${group.multiFieldGlobalNavigationLinksBeanList}"/>				
+			<li class="${hasSubGroups ? 'submenu-link' : ''} ${groupList.index == 0 ? 'active' : ''}"> 
+				<a href="${hasSubGroups ? 'javascript:void(0);' : group.groupPath @context='unsafe'}" target="${group.openGroupNewWindow}">
+					${group.groupText} </a>
+				<div data-sly-test="${hasSubGroups}" class="mega-menu-sub">
+					<span class="close-sub-menu"> <img class="search"
+						src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/arrow.svg" alt="${'Arrow_Img_Alt_Text' @ i18n, locale=pageProperties.jcr:language}"><i>${group.groupText}</i>
+					</span>
+					<ul	data-sly-list.subGroupLink="${group.multiFieldGlobalNavigationLinksBeanList}">
+						<li><a href="${subGroupLink.navigationURL}" target="${subGroupLink.openLinkNewWindow}">
+								${subGroupLink.navigationText} </a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<div class="mega-menu-sub mega-menu-sub-box">
+	 		<ul></ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="Progress Indicator"></div>
+</sly>
+
+<div id="progress-indicator" data-sly-use.model="com.pwc.madison.core.models.ProgressIndicator" data-sly-test="${model.elements.size}">
+    <button class="icon-container"><span class="dots"></span></button> 
+    <div class="progress-indicator-wrapper" id="${model.progressIndicatorTitle}">
+        <ul class="progress-indicator-list-items" data-sly-list="${model.elements}">
+            <li class="progress-indicator-list-item">
+                <a href="#${item}" class="progress-indicator-link">
+                    <span class="progress-indicator-title">${model.elements[item]}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<style>
+    .alert-message {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    align-content: center;
+    padding: 27px;
+    }
+</style>
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Alert Component" class="cq-placeholder"></p>
+<sly data-sly-use.model="com.pwc.madison.core.models.AlertsModel">
+    <div class="dialog-messages" hidden data-size="${model.alertsList.size}"
+        data-iscontentavailable="${model.isContentAvailable @ context='html'}"></div>
+    <nav style="display: none;" class="alertbox navbar dark-subnav is-hidden-mobile is-hidden-tablet-only dark-subnav--hidden">
+        <div class="container">
+            <div class='navbar-menu'>
+                <div class="navbar-start">
+                    <div>
+                        <img class="logo"
+                            src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/Info-Icon.svg"
+                            alt="Info">
+                    </div>
+                    <div class="navbar-item text-head-content">
+                        <div class="dark-subnav-slick-slider" data-sly-list.item="${model.alertsList}">
+                            <div class='item'>
+                                <div>
+                                    <a data-sly-test="${item.ctaLink}" class='ctaLink'
+                                        href="${item.ctaLink}" data-pagePath="${item.articlePagePath}"
+                                        data-sly-attribute.target="${item.isInternalUrl == false ? '_blank' : ''}">
+                                        <p><b class="cta-alert-title">${item.linkText}</b></p>
+                                        <p class="alert_title">
+                                            ${item.topicText}
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="steps-section">
+                        <div class="navbar-item">
+                            <a class='dark-subnav-slick-prev'> <span class="icon-caret-left"></span>
+                            </a>
+                        </div>
+                        <div class="navbar-item steps-text">
+                            <span class="current"></span>&nbsp;
+                            ${"Homepage_Alert_Tile_Of_Label" @ i18n,
+                            locale=pageProperties.jcr:language} &nbsp; <span class="total"></span>
+                        </div>
+                        <div class="navbar-item">
+                            <a class='dark-subnav-slick-next'> <span class="icon-caret-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="alert-close-btn" data-title="${'close_all_alerts_tool_tip' @i18n}"><span class="close-btn-tooltip"></span></button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="register-top-mobile is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd">
+        <div class="container">
+            <div class="register-nav-sizecontrol register-nav-sizecontrol--initializing">
+                <div class="register-mobile-nav is-mobile" data-sly-list.item="${model.alertsList}">
+                    <div class="register-sliding-box">
+                        <div class="sliding-content">
+                            <span class="steps-text"><span
+                                class="current m-current-count">${itemList.count}</span>&nbsp;${"Homepage_Alert_Tile_Of_Label" @ i18n,
+                            locale=pageProperties.jcr:language}&nbsp;<span
+                                class="total m-total-count">${model.alertsList.size}:</span></span>
+                            <a href="${item.ctaLink}" class="clamp-text ctaLink-mobile"
+                                data-sly-attribute.target="${item.isInternalUrl == false ? '_blank' : ''}"
+                                data-pagePath="${item.articlePagePath}"> ${item.linkText}</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="alert-close-btn"><span class="close-btn-tooltip"></span></button>
+            </div>
+        </div>
+    </div>
+</sly>

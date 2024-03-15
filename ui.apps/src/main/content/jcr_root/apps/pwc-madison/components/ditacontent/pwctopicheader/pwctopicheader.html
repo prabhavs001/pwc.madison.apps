@@ -1,0 +1,9 @@
+<!-- Header component for leaner documents lile PWC example, FAQ & AT glance -->
+<sly data-sly-use.pwcTopicHeader="com.pwc.madison.core.models.PWCTopicHeader" data-sly-test="${pwcTopicHeader.topicType=='pwc-faq'}">
+    <sly data-sly-list="${pwcTopicHeader.faqQuestionResourceList}">
+		<sly data-sly-resource="${item}"></sly>
+	</sly>
+</sly>
+<div class="qa-lead" data-sly-test="${pwcTopicHeader.topicType=='pwc-example'}">
+	<h3 data-sly-test="${pwcTopicHeader.topicHeader}">${pwcTopicHeader.topicHeader}</h3>
+</div>

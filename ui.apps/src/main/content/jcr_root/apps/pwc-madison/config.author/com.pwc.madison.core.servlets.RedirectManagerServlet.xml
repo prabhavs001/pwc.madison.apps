@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	jcr:primaryType="sling:OsgiConfig"
+	etc.map.root.path="etc/map/http/localhost.4503"
+	old.url.pattern="^[0-9a-zA-Z_ \\-/.$]*$"
+	new.url.pattern="^[0-9a-zA-Z_ \\-/.:]*$"/>

@@ -1,0 +1,140 @@
+html {
+    background-color: #f2f2f2;
+}
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+#redirect-manager{
+    max-width: 980px;
+    min-width: 300px;
+    margin-right: auto;
+    background: #fff;
+    font-size: small;
+    position: relative;
+    padding: 10px 10px 15px 10px;
+    margin-left: auto;
+}
+
+#redirect-manager select,
+#redirect-manager input{
+    height: 28px;
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+#redirect-manager select{width:234px!important;}
+#redirect-manager input[type=text]{ width:424px!important;}
+
+#redirect-manager button{
+    background-color: #DC6900;
+    border-radius: 3px;
+    border:0px;
+    color: #fff;
+}
+#redirect-manager button:hover{
+    color: #000;
+}
+#redirect-manager .form-group{
+    margin-bottom:10px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#redirect-manager .control-label{
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+    line-height: 140%;
+}
+
+#redirect-manager .form-horizontal .control-label{
+    text-align:left;
+}
+#redirect-manager .control-label small
+{
+    font-weight: normal;
+    font-size: 85%;
+}
+#redirect-manager .btnredirect{
+    margin-right: 20px;
+    width:160px;
+    height:30px;
+    font-size:14px;
+}
+
+#redirect-manager #actionPanel{
+    background-color:#eee;
+    display:block;
+    padding: 10px 15px 0;
+    height:100%
+}
+#redirect-manager #actionPanel .btnredirect{
+    width:80px;
+}
+#redirect-manager button.btnredirect .fa{
+    padding-right:5px;
+}
+#redirect-manager .btnedit{
+    float:right;
+}
+#redirect-manager select:disabled,
+#redirect-manager input:disabled,
+#redirect-manager button:disabled{
+    opacity:.65;
+}
+
+#redirect-manager .title-text{
+    font-size:16px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+#redirect-manager label.error{
+    color: red;
+    font-size: 12px;
+    font-weight: normal!important;
+    padding-top: 5px;
+display:block;
+}
+
+#redirect-manager .red {
+    color: red;
+}
+
+#redirect-manager #searchresult{
+    display:none;
+}
+#redirect-manager #searchresult .row{
+    margin:2px 0;
+    background-color:#eee;
+    font-size:small;
+    padding:2px;
+    display:block !important;
+}
+#redirect-manager #searchresult .row div {
+    border-bottom: dotted 1px #fff;
+}
+
+
+#redirect-manager #actionPanel {
+    display:none;
+}
+#redirect-manager .row {
+display:flex;
+    margin-bottom:20px;
+}
+.btnredirect .svg-inline--fa {
+    margin-right:5px
+}
+.col-md-6,.col-md-5 {
+    width:50%;
+}

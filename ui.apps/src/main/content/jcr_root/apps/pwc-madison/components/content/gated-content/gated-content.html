@@ -1,0 +1,45 @@
+<sly data-sly-use.userRegRestService="com.pwc.madison.core.userreg.services.UserRegRestService"/>
+<div class="modal gateway-body" id="gatedModal" data-sly-use.gatedContent="com.pwc.madison.core.models.UserRegistrationModel">
+    <input id="gated-content-redirect-url" type="hidden" value="${gatedContent.homePagePath}">
+    <input id="gated-content-referrer-url" type="hidden" value="${gatedContent.referrer}">    
+    <input id="gated-content-referer-header-url" type="hidden" value="${gatedContent.refererHeader}">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- start modal content -->
+    <div class="gateway-modal-decor">
+	  <div class="gateway-header">
+		  <sly data-sly-test.licensed="${gatedContent.getAccessType == 'licensed'}">
+			 ${'UserReg_Gated_Content_Heading_Licensed' @ i18n, locale = gatedContent.locale}
+		  </sly>
+		  <sly data-sly-test.premium="${gatedContent.getAccessType == 'premium'}"></sly>
+		  <sly data-sly-test.external="${!licensed && !premium}"></sly>
+		  <sly data-sly-test="${gatedContent.isInternalOnly}">
+			  ${'UserReg_Gated_Content_Internal_Only_Heading' @ i18n, locale = gatedContent.locale}
+		  </sly>
+		  <sly data-sly-test="${!gatedContent.isInternalOnly && external || premium}">
+			 ${'UserReg_Gated_Content_Heading' @ i18n, locale = gatedContent.locale}
+		  </sly>
+	  </div>
+	  <div class="gateway-message">
+		  <sly data-sly-test="${premium}">
+	    	${'UserReg_Gated_Content_Message_Premium' @ i18n, locale = gatedContent.locale, context='html'}
+	    </sly>
+	    <sly data-sly-test="${licensed}">
+	    	${'UserReg_Gated_Content_Message_Licensed' @ i18n, locale = gatedContent.locale, context='html'}
+	    </sly>
+		  <sly data-sly-test="${!gatedContent.isInternalOnly && external}">
+			  ${'UserReg_Gated_Content_Message' @ i18n, locale = gatedContent.locale, context='html'}
+		  </sly>
+	  </div>
+	  <div class="gateway-buttons">
+	      <button data-sly-test.loginLink="${userRegRestService.userLoginLink}" class="action-btn login text-uppercase" data-href="${loginLink}" ref="samlAuthLoginButton">${'UserReg_Gated_Content_Sign_In' @ i18n, locale = gatedContent.locale}</button>
+		<sly data-sly-test="${!licensed && !gatedContent.isInternalOnly}">
+	      <button data-sly-test.registerLink="${userRegRestService.userRegisterLink}" class="action-btn register text-uppercase" data-register-link="${registerLink}" >${'UserReg_Gated_Content_Register' @ i18n, locale = gatedContent.locale}</button>
+		</sly>
+	  </div>
+    </div>
+    <!-- end modal content -->
+  </div>
+  <button class="modal-close is-large" aria-label="${'UserReg_Login_Close'
+							@ i18n, locale=gatedContent.locale}"></button>
+</div>

@@ -1,0 +1,319 @@
+.technical-slider.featured:not(.slick-initialized) {
+  display: flex;
+	&>div:not(.slick-list) {
+    display: none;
+		&:nth-child(1),&:nth-child(2),&:nth-child(3) {
+			display: block;
+		}
+    .column{
+      height: 100%;
+      display: flex;
+      width: 448px;
+      padding-top: 0;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+	}
+ 
+}
+section {
+  .container {
+    .featured {
+      margin-top: 15px;
+    }
+  }
+  // this is the mobile structure
+  > .featured {
+    padding-top: 1rem;
+  }
+}
+
+.featured {
+  .column {
+    .madison-card-block {
+      .madison-card:hover {
+        background-color: white;
+    }
+      .madison-card {
+        .feature-tile-hover {
+          display: none;
+        }
+        &.disableHover {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+.technical-box {
+  &.slider-loading {
+    height: 480px;
+    transition: height .25s ease-in-out;
+    .technical-slider-container { 
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  &.slider-showing {
+    height: 480px;
+    .technical-slider-container { 
+      opacity: 0;
+    }
+  }
+
+  .technical-slider-loader {
+    min-height: 320px;
+    height: 320px;
+    display: flex;
+    width: 100%;
+
+    img {
+      margin: auto;
+      max-width: 64px;
+      align-self: center;
+      animation: rotate 1.5s linear infinite;
+    }
+  }
+  .technical-slider-container {
+    position: relative; 
+    opacity: 1;
+    // transition: opacity 1s ease-in-out;
+  }
+  &.featured {
+    .slick-arrow {
+      @media(max-width: 1088px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.technical-slider {
+  .slick-slide {
+    & > div {
+      height: 100%;
+      display: flex;
+      width:100%;
+      padding-top: 0px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      & > div {
+        display: flex;
+        width:100%;
+        height: 100%;
+        .column {
+          height: 100%;
+        }
+      }
+    }
+
+    .card__face {
+      article > img {
+        height: 104px;
+        max-height: 104px;
+        object-fit: cover;
+      }
+    }
+
+    .madison-card-exta-info {
+      @media(min-width: 769px) {
+        padding-right: 27px;
+      }
+    }
+  }
+}
+
+
+.highlights-slider {
+  .slide-item {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .slick-slide {
+    & > div {
+      height: 100%;
+      display: flex;
+      width:100%;
+      & > div {
+        display: flex !important;
+        width:100% !important;
+        height: 100%;
+        .column {
+          height: 100%;
+        }
+      }
+    }
+
+    .card__face {
+      article > img {
+        height: 100px;
+        max-height: 100px;
+        object-fit: cover;
+      }
+    }
+
+    .madison-card-exta-info {
+      padding-right: 27px;
+    }
+  }
+}
+
+.featured-mobile {
+  .flip_cover {
+    .card__face {
+      article > img {
+        height: 104px;
+        max-height: 104px;
+        object-fit: cover;
+      }
+    }
+
+    .madison-card-exta-info {
+      padding-right: 27px;
+    }
+  }
+
+  .madison-card p.date {
+    font-family: "PwC Helvetica Neue";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: -0.19px;
+    text-align: left;
+    color: #464646;
+    margin-bottom: 30px;
+  }
+  .madison-card p.reference {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+  .madison-card p.module-heading {
+    font-size: 20px !important;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .madison-card-block .madison-card {
+    cursor: pointer;
+    padding: 12px;
+    min-height: auto !important;
+  }
+  .madison-card-block .madison-card p.author {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+  }
+  .column {
+    padding:0;
+     }
+  > .column{
+    padding: 0 0 17px;
+    display: none;
+    &:nth-child(-n+3){
+      display: block;
+    }
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) { 
+    .featured {
+      .featured-mobile {
+      display: block;
+      padding: 0 0.75rem;
+      margin:0px;
+      .madison-card-block{
+        min-height: auto;
+        .madison-card{
+          &.feature-toggle{
+            .feature-tile-hover{
+              display: block !important;
+            }
+          }
+          p.module-heading{
+            font-size: 20px !important;
+            margin-bottom: 10px;
+          }
+          p.date{
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+          .feature-tile-hover{
+            display: block;
+            transform: none;
+            background: transparent;
+            padding: 10px 0;
+            position: relative;
+            ul{
+              font-size: 14px;
+              color: #898989;
+            }
+          }
+          .feature-tile-button{
+            width: 100%;
+            font-size: 14px;
+            padding: 8px;
+            border: 1.5px solid;
+            border-top: 1px solid;
+          }
+        }
+      }
+      .flip_icon{
+        display: none;
+      }
+     .card__face{
+      position: relative;
+    }
+    .feature-tile-content{
+      font-size: 14px;
+    }
+      } 
+  }
+  .home .featured-content{
+    padding-top: 30px;
+    padding-bottom: 45px;
+  }
+  section .container h2, .section .container h2{
+    font-size: 24px !important;
+    margin: 0 0 20px !important;
+  }
+  .more-less-button{
+    color: $color-primary-checkbox;
+    font-size: 14px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    .icon-caret-down,.icon-caret-up{
+      -webkit-text-stroke: 1px  $color-primary-checkbox;
+      font-size: 6px;
+      padding: 0 4px;
+    }
+  }
+}
+.feature-tile-content, .popular-tile-abstract {
+  font-family: $font-helvetica;
+  font-size: 16px;
+    line-height: 1.22;
+  font-weight: normal;
+  text-align: left;
+  color: $new-grey-color;
+  margin-bottom: 21px;
+  @media (min-width: 0px) and (max-width: 768px) { 
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

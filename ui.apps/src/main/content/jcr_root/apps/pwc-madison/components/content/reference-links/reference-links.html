@@ -1,0 +1,48 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Reference Links Component" class="cq-placeholder"></p>
+<sly data-sly-use.referenceLink="com.pwc.madison.core.models.ReferenceLink"/>
+<section class="is-paddingless industry-landing helpful-links" data-sly-test.isHelpfulLink="${referenceLink.referenceLinkType == 'helpfulLink'}">
+    <div class="container">
+        <div class="helpful_links carousel">
+            <h2>${'Helpful_links' @i18n, locale=pageProperties.jcr:language}</h2>
+            <div class="helpful-link-items" data-sly-list.helpfulLink="${referenceLink.referenceLinkList}">
+                <div>
+                    <h5 class="helpful-link-data">
+                        <a href="${helpfulLink.linkUrl}" data-sly-test.helpfulLinkLabel="${helpfulLink.linkLabel}" data-sly-attribute.target="${helpfulLink.newWindow}"
+                        	data-sly-attribute.data-access-type="${helpfulLink.AccessType}"
+           					data-sly-attribute.data-license-types="${helpfulLink.licenseTypes}">${helpfulLinkLabel}</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="show-more-link is-hidden-tablet-only is-hidden-desktop is-hidden-fullhd is-hidden-widescreen">
+                <a href="javascript:;" data-action="show-more" class="primary-orange show-more-action" data-readless-text="${'Reference_Link_Show_Less' @i18n, locale=pageProperties.jcr:language}" data-readmore-text="${'Reference_Link_Show_More' @i18n, locale=pageProperties.jcr:language}">
+                    <span class="text">${'Reference_Link_Show_More' @i18n, locale=pageProperties.jcr:language}</span>
+                    <span class="icon is-small">
+					<span class="icon-caret-down"></span>
+				</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<sly data-sly-test.isSuggestedContent="${referenceLink.referenceLinkType == 'suggestedContent'}">
+    <h2 class="suggested-content">${'Suggested_Content' @i18n, locale=pageProperties.jcr:language}</h2>
+    <div class="menu-items scrollbar-outer scrollable-container">
+        <div class="scrollable" data-sly-list.suggestedContent="${referenceLink.suggestedTermList}">
+            <div class="menu-item" data-sly-test.suggestedTerm="${suggestedContent.suggestedTerm}">
+                <div class="is-flex">
+                    <div class="text">
+                        <a href="${referenceLink.searchUrl}?q=${suggestedTerm}">${suggestedTerm}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-show-more-items is-hidden">
+        <a href="javascript:;" class="primary-orange read-more is-hidden-desktop is-hidden-tablet" data-action="${'Reference_Link_Show_More' @i18n, locale=pageProperties.jcr:language}">
+            <i data-readless-text="${'Reference_Link_Show_Less' @i18n, locale=pageProperties.jcr:language}" data-readmore-text="${'Reference_Link_Show_More' @i18n, locale=pageProperties.jcr:language}">${'Reference_Link_Show_More' @i18n, locale=pageProperties.jcr:language}</i>
+            <span class="icon is-small">
+	    <span class="icon-caret-down"></span>
+	  </span>
+        </a>
+    </div>
+</sly>

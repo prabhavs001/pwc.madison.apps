@@ -1,0 +1,15 @@
+<sly data-sly-test="${wcmmode.edit}">
+	<dl>
+		<dt>Message Heading</dt>
+    	<dd>${properties.messageHeading}</dd>
+    	<dt>Message</dt>
+		<dd>${properties.message @ context='html'}</dd>
+    </dl>
+</sly>
+<sly data-sly-test="${!wcmmode.edit}">
+    <div class="coral-Alert coral-Alert--help coral-Alert--large">
+        <i class="coral-Alert-typeIcon coral-Icon coral-Icon--sizeS coral-Icon--infoCircle"></i>
+		<strong class="coral-Alert-title">${properties.messageHeading}</strong>
+        <div class="coral-Alert-message">${properties.message @ context='html'}</div>
+    </div>
+</sly>

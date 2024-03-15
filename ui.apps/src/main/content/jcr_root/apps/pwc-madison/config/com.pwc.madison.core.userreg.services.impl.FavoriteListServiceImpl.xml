@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	jcr:primaryType="sling:OsgiConfig" 
+	favorite.list.enable="{Boolean}true"
+	favorite.list.limit="25" 
+	favorite.list.panel.limit="10"
+	favorite.list.page.limit="10"
+	favorite.list.cache.time="10"
+	favorite.list.page.url="/content/pwc-madison/&lt;territory>/&lt;language>/favorite-list.html"/>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="fr"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <copyright
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="&amp;copy; {0} PWC Madison Site. All rights reserved."
+        sling:message="&amp;copy; {0} PWC Madison Site. Tous droits réservés."/>
+    <seemore
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="See More"
+        sling:message="Voir plus"/>
+    <seemorelong
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="Still haven’t found what you’re looking for? Please consider refining your search through additional filters
+        or keywords."
+        sling:message="Vous n'avez toujours pas trouvé ce que vous cherchiez? S'il vous plaît envisager d'affiner votre recherche par le biais de filtres supplémentaires
+        ou des mots clés."/>
+    <sourceText
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="Source"
+        sling:message="La source"/>
+    <referenceText
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="Reference"
+        sling:message="Référence"/>
+    <titleText
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="Title"
+        sling:message="Titre"/>
+    <resultsText
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="Results"
+        sling:message="Résultats"/>
+</jcr:root>

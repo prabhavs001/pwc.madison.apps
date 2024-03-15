@@ -1,0 +1,9 @@
+.notification {
+  font-family: $font-helvetica;
+  &.is-warning {
+    background-color: $color-warning;
+  }
+  p{
+    color: $color-dark !important;
+  }
+}

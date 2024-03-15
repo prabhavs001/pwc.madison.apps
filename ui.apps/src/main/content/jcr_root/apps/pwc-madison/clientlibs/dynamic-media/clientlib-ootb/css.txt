@@ -1,0 +1,2 @@
+#base=/libs/dam/components/scene7/dynamicmedia/clientlibs/dynamicmedia/css
+responsive.css

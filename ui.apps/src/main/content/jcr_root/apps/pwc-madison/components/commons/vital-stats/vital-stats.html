@@ -1,0 +1,78 @@
+<h2 class="report-heading">Details</h2>
+<div class="report-details">
+  <table class="report-details__table">
+    <tbody class="vital-stats-container">
+      <p class="no-content-message">There is no content to be displayed. Use the sidebar to select a path and generate
+        the report.</p>
+    </tbody>
+  </table>
+</div>
+
+<script id="vital-stats-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <tr class="report-row">
+      <td>{{assetPath}}</td>
+      <td>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </td>
+  </tr>
+  <tr class="report-panel-row">
+    <td colspan="4" class="accrodion">
+      <ul class="accrodion__tabs">
+          <li class="active"><a href="javascript:;">Words</a></li>
+          <li><a href="javascript:;">Paragraphs</a></li>
+          <li><a href="javascript:;">Tables</a></li>
+      	  <li><a href="javascript:;">Links</a></li>
+      	  <li><a href="javascript:;">Anchors</a></li>
+      	  <li><a href="javascript:;">DAM SHA1</a></li>
+      </ul>
+      <hr>
+      <ul class="accrodion__tab-panel">
+          <li class="show">
+            {{#if words}}
+            {{words}}
+            {{else}}
+            <span class="no-data">No words found</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if paragraphs}}
+            {{paragraphs}}
+            {{else}}
+            <span class="no-data">No paragraphs found.</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if tables}}
+            {{tables}}
+            {{else}}
+            <span class="no-data">No tables found.</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if links}}
+            {{links}}
+            {{else}}
+            <span class="no-data">No links found.</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if anchors}}
+            {{anchors}}
+            {{else}}
+            <span class="no-data">No anchors found.</span>
+            {{/if}}
+          </li>
+          <li>
+            {{#if damSha1}}
+            {{damSha1}}
+            {{else}}
+            <span class="no-data">No DAM SHA1 found.</span>
+            {{/if}}
+          </li>
+        </ul>
+    </td>
+  </tr>
+  {{/each}}
+</script>

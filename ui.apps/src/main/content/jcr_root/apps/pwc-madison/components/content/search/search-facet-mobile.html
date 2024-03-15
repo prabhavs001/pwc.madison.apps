@@ -1,0 +1,79 @@
+<div :style=" (sideBySide.isSideBySideOpen||isSpecialSearch) ? 'display: none !important;' : '' " class="mobile-filters sort is-hidden-desktop">
+    <div>
+        <a class="primary-orange" id="filter" @click="onClickToggle()">${'Search_Facet_Filter' @i18n}</a>
+    </div>
+    <div class="spacer"></div>
+    <div>
+        <a class="primary-orange" id="relevancy_filter" @click="openSortModal()">{{sortFilter.selectedSortOption | uppercase}}</a>
+    </div>
+</div>
+<div id="animatedFilterModal" :class="{'slideOutLeft' : facetFilter.slideOut  , 'slideInLeft' : !facetFilter.slideOut  }"
+     class="mobile-search-filters is-hidden-desktop animated animatedFilterModal-on"
+     style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(36, 36, 36); overflow-y: auto; z-index: 9999; opacity: 1; animation-duration: 0.6s;">
+    <div class="close-animatedFilterModal">
+        <a class="close-mobile-filter" @click="onClickToggle()">
+        <img class="search" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/close-popup.svg" alt="Close popup"></a>
+    </div>
+    <div class="mobile-search-filtersmodal-content">
+        <h2 class="">${'Search_Facet_Filter' @i18n}</h2>
+        <div class="is-flex applied_filters is-hidden-desktop" v-if="facetFilter.appliedFilterCount > 0">
+            <div class="is-flex">
+                <div class="filters expanded">
+                    <div class="title">{{facetFilter.appliedFilterCount}}
+                        ${'Search_Header_Filters_Count_Text' @i18n} ${'Search_Header_Filters_Applied_Text' @i18n}:</div>
+                    <span>&nbsp;</span>
+                    <div class="filters-list">
+                      <template v-for="facetAppliedValue in facetFilter.totalAppliedFacetsList">
+                        <span>{{facetAppliedValue}}</span>
+                      </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-items">
+            <div class="js-all-filters">
+                <div class="menu-item" :style="{ 'pointer-events': resultFacets.length < 1 ? 'none' : 'auto' }" v-for="(resultFacets,facetKey,facetIndex) in facetFilter.facetsResults" v-if="facetFilter.facetsLabelsList[facetKey]">
+                    <div class="is-flex" @click="facetFilter.facetSelectedParamsObj[facetKey].toggled = !facetFilter.facetSelectedParamsObj[facetKey].toggled">
+                        <div class="text">
+                            <p>{{facetFilter.facetsLabelsList[facetKey].title}}<span v-if="facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.length">[{{facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.length}}]</span></p>
+                        </div>
+                        <div class="icon" v-if="resultFacets.length > 0">
+                          <img :src="facetFilter.facetSelectedParamsObj[facetKey].toggled ? '/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/caret-down.svg' : '/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/caret-up.svg'" />
+                        </div>
+                    </div>
+                    <div class="submenu" :class="{'show': !facetFilter.facetSelectedParamsObj[facetKey].toggled }">
+                        <ul>
+                            <li v-for="(facetValue,valueIndex) in resultFacets" v-if="isEvenFacetIndex(valueIndex)"
+                                :class="{'active': facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.includes(facetValue)}" :key="facetValue"
+                                @click="setFacetFilter(facetKey,facetValue)">
+                                <span>{{facetKey === "pwcCountry_s" ? displayFacetCountryLabels(facetValue) : facetValue }}</span>
+                                <span>[[{{resultFacets[valueIndex + 1]}}]]</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+<!--
+            <div class="js-applied-filters applied-filter-list is-hidden-desktop">
+                <ul class="submenu">
+               <span class="hidden">
+                     <li>
+                        <span>facetValues.value</span>
+                        <span>[1]</span>
+                     </li>
+               </span>
+                </ul>
+            </div>
+-->
+        </div>
+    </div>
+    <div class="mobile-filter-apply-bar is-hidden-desktop">
+        <a class="apply-filters" :class="{'disabled' : facetFilter.filterCount>0?false:true}" @click="applyFilter()">${'Search_Facet_Apply_Text' @i18n} <span>&nbsp;</span> <span>&nbsp;</span>
+          <span v-if="facetFilter.filterCount>0">{{facetFilter.filterCount}}</span>${'Search_Header_Filters_Count_Text' @i18n}</a>
+        <a class="update-filters" style="display: none;" @click="applyFilter()">${'Search_Facet_Update_Filter' @i18n}</a>
+        <a class="default-filters">${'Search_Facet_Default_Filter' @i18n}</a>
+        <a class="clear-all-filters" @click="clearAllFilters()">${'Search_Facet_Clear_All_Filter' @i18n}</a>
+    </div>
+</div>

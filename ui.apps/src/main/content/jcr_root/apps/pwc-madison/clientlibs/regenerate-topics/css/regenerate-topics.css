@@ -1,0 +1,10 @@
+.coral-Modal coral-wait{
+    margin-left: 200px;
+    margin-right: auto;
+}
+.coral-Modal{
+    background: lightgray;
+}
+.topic-error-msg{
+    color: red;
+}

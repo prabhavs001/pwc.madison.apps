@@ -1,0 +1,144 @@
+<sly data-sly-use.model="com.pwc.madison.core.models.FeaturedContentModel">
+	<!-- FEATURED DESKTOP COMPONENT: START -->
+    <div class="column column-type-layout is-hidden-mobile standard-setter featured-desktop-rendition">
+        <div class="highlights highlights-container container">
+            <div class="highlights-box">
+                <h2>${properties.heading}</h2>
+                <div class="slider highlights-slider featured " data-sly-list="${model.filteredList}">
+                    <div class="column">
+                        <div class="flip_cover">
+                            <div class="is-block madison-card-block">
+                                <a href="${item.articlePagePath}"
+                                   data-component-name="${model.componentName}"
+                                   data-link-title="${item.topicTitle}"
+                                   data-sly-attribute.data-access-type="${item.AccessType}"
+                                   data-sly-attribute.data-license-types="${item.licenseTypes}">
+                                    <div class="feature-front card__face">
+                                        <div class="madison-card  ">
+                                            <article class="is-radiusless">
+                                                <sly data-sly-test="${item.renditionStyle == 'topImage'}">
+                                                	<img class="first-tile" src="${item.imagePath}"/>
+                                            	</sly>
+                                                <p class="date">
+                                            		<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                                            		<sly data-sly-test="${item.revisedDate}">
+                                                		<sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                                                    	<span> ${"Homepage_Featured_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate @ context='text'} </span>
+                                                	</sly>
+                                            	</p>
+                                                <p class="module-heading"> ${item.topicTitle}
+                                                </p>
+                                            </article>
+                                            <p class="${item.abstractDesc ? 'feature-tile-content' : 'feature-tile-content no-abstract'}">
+                                        		${item.abstractDesc}
+                                        	</p>
+                                            <div class="madison-card-exta-info">
+                                                <p class="brief is-pulled-left"> ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-tile-hover card__face" data-sly-test=${item.summaryText.size}>
+                                        <h3>${"Homepage_Featured_Tile_Summary_Heading" @ i18n, locale=pageProperties.jcr:language}</h3>
+                                        <ul data-sly-list.summary=${item.summaryText}>
+                                            <li>${summary}</li>
+                                        </ul>
+                                        <button class="feature-tile-button"
+                                                data-component-name="${model.componentName}"
+                                                data-link-title="${item.topicTitle}"
+                                                href="${item.articlePagePath}">${item.linkText != '' ? item.linkText : "Homepage_Featured_Read_More" @ i18n, locale=pageProperties.jcr:language}</button>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="flip_icon is-pulled-right">
+                                <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/flip_off.svg" alt="Info">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FEATURED DESKTOP COMPONENT: END -->
+    
+    <!-- FEATURED MOBILE COMPONENT: START -->
+    <div class="featured is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd">
+        <div class="container">
+            <h2>${properties.heading}</h2>
+        </div>
+        <div class="featured-mobile-slider columns is-mobile featured-mobile">
+            <sly data-sly-list.item="${model.filteredList}">
+                <div class="column">
+                    <div class="column">
+                        <div class="flip_cover">
+                            <div class='is-block madison-card-block'>
+                                <a href="${item.articlePagePath}"
+                                   data-component-name="${model.componentName}"
+                                   data-link-title="${item.topicTitle}"
+                                   data-sly-attribute.data-access-type="${item.AccessType}"
+                                   data-sly-attribute.data-license-types="${item.licenseTypes}">
+                                    <div class="feature-front card__face">
+                                        <div class="madison-card  ">
+                                            <article class="is-radiusless">
+                                                <sly data-sly-test="${item.renditionStyle == 'topImage'}">
+                                                    <img class="first-tile" src="${item.imagePath}"/>
+                                                </sly>
+                                                <p class="date">
+                                            		<sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                                            		<sly data-sly-test="${item.revisedDate}">
+                                                		<sly data-sly-test=${hidePublicationDate}><span>|</span></sly>
+                                                    	<span> ${"Homepage_Featured_Tile_Updated_Label" @ i18n, locale=pageProperties.jcr:language} ${item.revisedDate @ context='text'} </span>
+                                                	</sly>
+                                            	</p>
+	                                            <div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}">
+												</div>
+                                                <p class="module-heading">
+                                                    ${item.topicTitle}
+                                                </p>
+                                            </article>
+                                            <p class="${item.abstractDesc ? 'feature-tile-content' : 'feature-tile-content no-abstract'}">
+                                                ${item.abstractDesc}
+                                            </p>
+                                            <div class="${item.summaryText ? 'feature-tile-hover card__face is-hidden-mobile' : 'feature-tile-hover card__face is-hidden-mobile summary-unavailable'}">
+                                                <h3>${"Homepage_Featured_Tile_Summary_Heading" @ i18n, locale=pageProperties.jcr:language}</h3>
+                                                <ul data-sly-list.summary=${item.summaryText}>
+                                                    <li>${summary}</li>
+                                                </ul>
+                                                <button class="feature-tile-button"
+                                                        data-component-name="${model.componentName}"
+                                                        data-link-title="${item.topicTitle}"
+                                                        href="${item.articlePagePath}">${item.linkText != '' ? item.linkText : "Homepage_Featured_Read_More" @ i18n, locale=pageProperties.jcr:language}</button>
+                                            </div>
+                                            <div class="feature-item-toggle more-less-button is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd">
+                                                <b class="click-for-more">${"Homepage_Featured_Expand" @ i18n, locale=pageProperties.jcr:language}</b>
+                                                <b class="click-for-less">${"Homepage_Featured_Collapse" @ i18n, locale=pageProperties.jcr:language}</b>
+                                                <span class="icon-caret-down"></span>
+                                            </div>
+                                            <div class="madison-card-exta-info">
+                                                <p class="brief is-pulled-left">
+                                                    ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+            <div class="feature-show-more show-toggle">
+                <span class="show-more">${"Homepage_Featured_Show_More" @ i18n, locale=pageProperties.jcr:language}</span>
+                <span class="show-less">${"Homepage_Featured_Show_Less" @ i18n, locale=pageProperties.jcr:language}</span>
+                <div class="arrow">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-sly-test="${favoriteListService.isFavoriteListEnabled}">
+    	window.dispatchEvent(new CustomEvent("initFavoriteListComponent"));
+    </script>
+    <!-- FEATURED MOBILE COMPONENT: END -->    
+</sly>

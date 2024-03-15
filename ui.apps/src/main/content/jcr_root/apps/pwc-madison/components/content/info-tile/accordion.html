@@ -1,0 +1,22 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Info tile Component" class="cq-placeholder"></p>
+<sly data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}" />
+<div class="pwc-carousel" data-sly-use.infoTile="com.pwc.madison.core.models.InfoTile">
+    <ul class="list-inline panel-paginate pwc-carousel">
+        <li><a class="arrow left-arrow  carousel-control"  data-slide="prev" data-carousel="${timeInNano}">&lt;</a></li>
+        <li><span class="current">0</span> ${'carousel_of' @i18n, locale=pageProperties.jcr:language} <span class="total">0</span></li>
+        <li><a class="arrow right-arrow carousel-control "  data-slide="next" data-carousel="${timeInNano}">&gt;</a></li>
+    </ul>
+    </h3>
+</div>
+<div id="${timeInNano}" class="carousel slide myCarousel pwc-carousel" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" data-sly-list.infoTileContent="${infoTile.infoTileContents}" data>
+        <div class="item ${infoTileContentList.index == 0 ? 'active' : ''} carousel-anchor">
+            <div class="module-tile plain-inner">
+                <a href="javascript:void(0)" data-sly-test.content="${infoTileContent}" data-slide="next" data-carousel="${timeInNano}">
+                    <span>${content}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

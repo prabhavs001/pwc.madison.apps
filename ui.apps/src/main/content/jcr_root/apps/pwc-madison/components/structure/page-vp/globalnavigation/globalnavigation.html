@@ -1,0 +1,56 @@
+<a href="javascript:void(0);" id="show-mega-menu">
+	<span class="icon-hamburger"></span><small style="display: none;">${'Header_Menu' @ i18n,
+		locale=pageProperties.jcr:language}</small>
+</a>
+<div class="mega-menu-nav" data-sly-use.globalNavigationItems="com.pwc.madison.core.models.GlobalNavigation">
+	<div class="background is-hidden-mobile"></div>
+	<span class="close-mega-menu"> <b><span class="icon-remove"></span></b>
+	</span>
+	<div class="container mega-menu-nav">
+		<ul class="side-ul-menu" data-sly-list.group="${globalNavigationItems.globalNavigationItems}">
+			<sly data-sly-test.hasSubGroups="${group.multiFieldGlobalNavigationLinksBeanList}" />
+			<li class="${hasSubGroups ? 'submenu-link' : ''}">
+				<a  data-component-name="${hasSubGroups ? '' : globalNavigationItems.componentName}"
+                    data-link-title="${hasSubGroups ? '' : group.groupText}"
+				    href="${hasSubGroups ? 'javascript:void(0);' : group.groupPath @context='unsafe'}"
+					target="${group.openGroupNewWindow}">
+					${group.groupText} </a>
+				<div data-sly-test="${hasSubGroups}" class="mega-menu-sub">
+					<span class="close-sub-menu"> <img class="search"
+							src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/arrow.svg"
+							alt="${'Arrow_Img_Alt_Text' @ i18n, locale=pageProperties.jcr:language}"><i>${group.groupText}</i>
+					</span>
+					<ul data-sly-list.subGroupLink="${group.multiFieldGlobalNavigationLinksBeanList}">
+						<sly
+							data-sly-test.hasChildSubGroups="${subGroupLink.multiFieldGlobalNavigationLinksBeanList}" />
+						<li class="${hasChildSubGroups ? 'submenu-link' : ''}">
+							<a  data-component-name="${hasChildSubGroups ? '' : globalNavigationItems.componentName}"
+                                data-link-title="${hasChildSubGroups ? '' : subGroupLink.navigationText}"
+							    href="${hasChildSubGroups ? 'javascript:void(0);' : subGroupLink.navigationURL @context='unsafe'}"
+								target="${subGroupLink.openLinkNewWindow}">
+								${subGroupLink.navigationText} </a>
+							<div data-sly-test="${hasChildSubGroups}" class="mega-sub-sub">
+								<ul
+									data-sly-list.childSubGroupLink="${subGroupLink.multiFieldGlobalNavigationLinksBeanList}">
+									<li>
+										<a  data-component-name="${globalNavigationItems.componentName}"
+                                            data-link-title="${childSubGroupLink.navigationText}"
+										    href="${childSubGroupLink.navigationURL}"
+											target="${childSubGroupLink.openLinkNewWindow}">
+											${childSubGroupLink.navigationText} </a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		<div class="mega-menu-sub mega-menu-sub-box">
+			<div class="scroll-menu-div mega-menu-sub">
+				<ul></ul>
+			</div>
+		</div>
+	</div>
+</div>

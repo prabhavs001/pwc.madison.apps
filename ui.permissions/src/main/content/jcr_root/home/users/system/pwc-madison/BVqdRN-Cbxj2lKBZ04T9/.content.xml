@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:User"
+    jcr:uuid="a161b958-5c74-3c7a-b954-af52a5aa0f5a"
+    rep:authorizableId="auto-publish-user"
+    rep:password="\{SHA-256}19d5b2f1e65011e8-1000-2ab0323eee62996102e066ac9f05cb62e41faba630fe3e76a79d51ecf76aeea7"
+    rep:principalName="auto-publish-user">
+</jcr:root>

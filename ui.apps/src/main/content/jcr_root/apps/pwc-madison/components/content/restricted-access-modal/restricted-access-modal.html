@@ -1,0 +1,38 @@
+<sly data-sly-use.userRegRestService="com.pwc.madison.core.userreg.services.UserRegRestService"/>
+<div class="modal gateway-body" id="access-restricted" data-sly-use.popmodel="com.pwc.madison.core.models.UserRegistrationModel">
+	<input id="access-restricted-content-redirect-url" type="hidden" value="${popmodel.homePagePath}">
+	<input id="gated-content-referrer-url" type="hidden" value="${popmodel.referrer}">
+	<input id="gated-content-referer-header-url" type="hidden" value="${popmodel.refererHeader}">
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<!-- start modal content -->
+		<div class="gateway-modal-decor">
+			<div data-contentType="internalOnly">
+				<div class="gateway-header">
+					${'Internal_Only_Error_Popup_Title' @ i18n, locale = popmodel.locale}
+				</div>
+				<div class="gateway-message">
+					${'Internal_Only_Error_Popup_Message' @ i18n, locale = popmodel.locale, context='html', format=[userRegRestService.userLoginLink]}
+				</div>
+			</div>
+			<div data-userType="perseat">
+				<div class="gateway-header">
+					${'User_Perseat_Access_Restricted_Popup_Title' @ i18n, locale = popmodel.locale}
+				</div>
+				<div class="gateway-message">
+					${'User_Perseat_Access_Restricted_Message_Licensed' @ i18n, locale = popmodel.locale, context='html'}
+				</div>
+			</div>
+			<div data-userType="concurrent">
+				<div class="gateway-header">
+					${'User_Concurrent_Access_Restricted_Popup_Title' @ i18n, locale = popmodel.locale}
+				</div>
+				<div class="gateway-message">
+					${'User_Concurrent_Access_Restricted_Message_Licensed' @ i18n, locale = popmodel.locale, context='html'}
+				</div>
+			</div>
+		</div>
+		<!-- end modal content -->
+	</div>
+	<button class="modal-close is-large" aria-label="${'UserReg_Login_Close' @ i18n, locale=popmodel.locale}"></button>
+</div>

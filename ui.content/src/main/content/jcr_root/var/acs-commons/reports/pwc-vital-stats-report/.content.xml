@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="PwC Vital Stats Report"
+        jcr:description="PwC vital Stats for Assets under a given folder path."
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pwc_vitalstats_repor
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/vitalstats-report-config"
+                pageSize="50"
+                reportExecutor="com.pwc.madison.core.reports.PWCVitalStatsReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Assets Folder Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison/ditaroot"
+                validation="root-path-validator"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pwc_vital_stat
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/apps/pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Asset Path"
+                value="assetPath"/>
+            <pwc_vital_stat_1909291452
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/apps/pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Words"
+                value="words"/>
+            <vital_stats_column_1844044804
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Paragraphs"
+                value="paragraphs"/>
+            <vital_stats_column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Tables"
+                value="tables"/>
+            <vital_stats_column_569908768
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Links"
+                value="links"/>
+            <vital_stats_column_1596652277
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="Anchors"
+                value="anchors"/>
+            <vital_stats_column_398900226
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/vitalstats/columns/vital-stats-column"
+                exporter="com.pwc.madison.core.reports.columns.PWCVitalStatsCSVExporter"
+                heading="DAM SHA1"
+                value="damsha1"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

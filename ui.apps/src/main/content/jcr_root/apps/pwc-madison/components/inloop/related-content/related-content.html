@@ -1,0 +1,33 @@
+<sly data-sly-use.model="com.pwc.madison.core.models.RelatedContentModel">
+    <img data-sly-test="${wcmmode.edit && !model.filteredList}"
+         src="/apps/pwc-madison/components/inloop/related-content/thumbnail.png" class="cq-thumbnail-placeholder"
+         alt=""/>
+    <div id="${properties.id}" class="related-content-section">
+        <div class="related-content_heading-wrapper is-flex">
+            <h2 data-sly-test="${model.heading}" class="related-content_heading">${model.heading}</h2>
+            <div class="related-content_arrows">
+                <span class="related-content_prev icon-caret-left slick-arrow slick-disabled"
+                      aria-disabled="true"></span>
+                      <span class="slidersCount"></span>
+                <span class="related-content_next icon-caret-right slick-arrow" aria-disabled="false"></span>
+            </div>
+        </div>
+        <div class="related-content_wrapper" data-sly-list="${model.filteredList}">
+            <a 
+               href="${item.articlePagePath}"
+               title="" data-oldlink="true" data-scope="peer" target="_self">
+            <div class="related-content_slider">
+                <div class="related-content_card-img-wpr">
+                    <img class="related-content_card-img" src="${item.imagePath}"/>
+                </div>
+                <h3 class="related-content_card-heading">
+                    ${item.topicTitle}
+                </h3>
+                <p class="related-content_card-abstract">
+                    ${item.abstractDesc}
+                </p>
+            </div>
+            </a>
+        </div>
+    </div>
+</sly>

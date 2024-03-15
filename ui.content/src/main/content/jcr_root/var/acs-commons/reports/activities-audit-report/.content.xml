@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Audit Report"
+        jcr:description="A report that displays AEM Asset Activities"
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <activities_audit_rep
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/activities-audit-report"
+                pageSize="50"
+                reportExecutor="com.pwc.madison.core.reports.ActivitiesAuditReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Select Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison"
+                validation="root-path-validator"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <activities_audit_rep_346077046
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/activities-audit-report"
+                exporter="com.pwc.madison.core.reports.columns.ActivitiesAuditReportCSVExporter"
+                heading="Title"
+                value="title"/>
+            <activities_audit_rep_1006904765
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/activities-audit-report"
+                exporter="com.pwc.madison.core.reports.columns.ActivitiesAuditReportCSVExporter"
+                heading="Path of the Asset"
+                value="path"/>
+            <activities_audit_rep
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/activities-audit-report"
+                exporter="com.pwc.madison.core.reports.columns.ActivitiesAuditReportCSVExporter"
+                heading="User Login"
+                value="users"/>
+            <activities_audit_rep_530877312
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/activities-audit-report"
+                exporter="com.pwc.madison.core.reports.columns.ActivitiesAuditReportCSVExporter"
+                heading="Changed Date/Time"
+                value="inputDate"/>
+            <activities_audit_rep_1105981294
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/activities-audit-report"
+                exporter="com.pwc.madison.core.reports.columns.ActivitiesAuditReportCSVExporter"
+                heading="Activity"
+                value="activity"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    pass.word="\{eebf1101e122ef043bcc5baab6864dd0cae0425132b8ee19d517d2dc1b31ff17}"
+    publishing.username="auto-publish-user"/>

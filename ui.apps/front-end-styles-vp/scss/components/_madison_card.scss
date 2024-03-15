@@ -1,0 +1,686 @@
+.home-page-module {
+  background-color: $color-white;
+}
+.featured-content .featured 
+{
+  h2{
+    font-family: $font-helvetica !important;
+  }
+}
+.technical-box {
+  .slick-arrow{
+    color:$pure-black;
+  }
+}
+.featured 
+{
+  padding-top: 0;
+  h2{
+    font-size: 22px !important;
+    font-weight: bold;
+    color: $color-dark;
+    margin: 0 10px 13px !important;
+    opacity: 0.8;
+  }
+  .slick-slide{
+    outline: none;
+  }
+  /* for flip */
+.madison-card-block {
+  position: relative;
+  perspective: 2000px;
+  > a{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    outline: none !important;
+  }
+}
+.feature-tile-hover{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color:$muted-bg-color;
+  transform: rotateY(180deg);
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  font-family: $font-helvetica;
+  color: $color-dark;
+  padding: 16px;
+  line-height: 0.83;
+  letter-spacing: -0.37px;
+  font-size: 24px;
+  h3{
+    font-size: 18px;
+  font-weight: bold;
+  color: $color-dark;
+  line-height: 0.83;
+  letter-spacing: -0.37px;
+  margin-bottom: 10px;
+  }
+  ul{
+    font-size: 18px;
+    list-style: disc;
+    padding-left: 15px;
+li{
+  padding-bottom: 10px;
+  line-height: 1.11;
+}
+  }
+  .feature-tile-button {
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    height: auto;
+    font-size: 16px;
+    white-space: normal;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: inherit;
+    text-align: center !important;
+    font-family: $font-helvetica;
+    font-weight: bold;
+    align-self: center;
+  }
+}
+
+
+.card__face {
+  width: 100%;
+  height: 100%;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  &.feature-front {
+    z-index: 2;
+  }
+  
+  &.feature-tile-hover {
+    z-index: 1;
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);  
+    transform: rotateY(-180deg);  
+  }
+}
+
+.card__face {
+  &.feature-tile-hover {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.feature_flip {
+  .card__face {
+    &.feature-tile-hover {
+      z-index: 2;
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    &.feature-front {
+      z-index: 1;   
+      -webkit-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.anim {
+  width: 100%;
+  height: 100%;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.slick-track {
+  display: flex;
+  flex-flow: row nowrap;  
+  .slick-slide {
+    display: flex;
+    height: auto !important;
+    flex-shrink: 0;
+    flex-grow: 2;
+  }
+}
+
+.card__face {
+  flex-grow: 2;
+  flex-shrink: 0;
+
+  .date {
+    max-height: 1.4em;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  img {
+    flex-shrink: 0;
+  }
+  .module-heading {
+    max-height: initial;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .feature-tile-content {
+    max-height: 4.88em;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .brief {
+    max-height: 1.43em;
+    overflow: hidden;
+  }
+}
+
+.no_fsummary {
+  .card__face {
+    .feature-tile-content {
+      max-height: 7.32em;
+    }
+    .brief {
+      padding-right: 0;
+    }
+  }
+}
+
+.flip_icon{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.flip_cover {
+  height: 100%;
+  position: relative;
+  .madison-card-block {
+    height: 100%;
+    min-height: 344px;
+    width: 100%;
+    max-width: 100%;
+  }
+  &.no_fsummary {
+    .flip_icon {
+      display: none;
+    }
+  }
+}
+.slick-arrow{
+  color:$pure-black;
+}
+}
+.madison-card-block {
+position: relative;
+  a{
+    div.is-inline-block {
+      right: 0;
+      position: absolute;
+      bottom: 0;
+    }
+    .highlighted {
+      padding: 4px;
+      padding-right: 16px;
+      padding-left: 16px;
+      font-size: 12px;
+      font-family: "PwC Helvetica Neue";
+      &.yellow {
+        background-color: #FFA929;
+        color: $color-dark;
+      }
+      &.pink {
+        background-color: #F1BAC3;
+        color: $color-dark;
+      }
+    }
+    .madison-card {
+      cursor: pointer;
+      padding: 10px;
+      flex-direction: column;
+      align-items: stretch;
+      background-color:$color-white;
+      display: flex;
+      border-radius: 8px;
+    //  min-height: 307px;
+      height: 100%;
+      justify-content: space-between;
+      .date-block {
+        position: relative;
+        padding-right: 18px;
+        .favorites-toggle-small {
+          top: 0;
+          right: 0;
+        }
+      }
+      &:hover{
+        background-color: $background-color-tiles;
+        @media (min-width: 1024px) {
+          .module-heading {
+            color: #e0301e;
+            text-decoration: underline;
+          }
+        }
+      }
+      &.is-full-width {
+        min-height: 170px;
+        p.date {
+          margin-bottom: 0px !important;
+        }
+      }
+      &.is-light-background {
+        background-color: $background-color-light;
+        .madison-card & {
+          min-height: 220px !important;
+        }
+        article {
+        //  min-height: 150px;
+        }
+        p.date {
+        //  margin-bottom: 36px;
+        }
+        p.description {
+          margin-top: 12px;
+          font-family: "PwC Helvetica Neue";
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          line-height: 1.36;
+          font-size: 14px;
+          max-height: 40px;
+          color: $color-dark;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+      }
+      article {
+        display: flex;
+        flex-direction: column;
+        .first-tile {
+          //background-image: url("../../resources/images/suggest-01.png");
+          // height: 100px;
+          margin-bottom: 19px;
+          background-position: center;
+          margin: -5px -5px 15px;
+          border-radius: 5px;
+          width: calc(100% + 10px);
+          max-width: 200%;
+          @media (max-width: 768px) {
+            // height: 90px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+        .second-tile {
+          //background-image: url("../../resources/images/suggest-02.png");
+          // height: 100px;
+          margin-bottom: 19px;
+          background-position: center;
+          margin: -10px -10px 19px;
+          width: calc(100% + 20px);
+          max-width: 200%;
+          @media (max-width: 768px) {
+            // height: 90px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+        // .third-tile {
+        //   background-image: url("../../resources/images/suggest-03.png");
+        //   height: 200px;
+        //   margin-bottom: 19px;
+        //   @media (max-width: 768px) {
+        //     height: 160px;
+        //     background-size: cover;
+        //     background-repeat: no-repeat;
+        //     background-position: center;        
+        //   }
+        // }
+        // &.no_title {
+        //   .module-heading {
+        //     display: none !important;
+        //   }
+        // }
+      }
+      .madison-card-exta-info{
+        @media(min-width: 769px) {
+          padding-right: 27px;
+        }
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        p.brief {
+          font-size: 12px;
+          color: $new-grey-color3;
+          margin-top: 0px;
+          font-weight: 700;
+        }
+      }
+      p.date {
+        font-family: "PwC Helvetica Neue";
+        font-size: 12px;
+        // margin-bottom: 10px;
+        color: $new-grey-color2;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.13;
+        max-height: 1.13em;
+        overflow: hidden;
+        text-align: left;
+      }
+      p.brief, p.author {
+        font-family: "PwC Helvetica Neue";
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        max-height: 1.43em;
+        letter-spacing: -0.2px;
+        text-align: left;
+        color: $muted-text-color;
+      }
+      // p.brief {
+      //   margin-top: 36px;
+      // }
+      p.reference {
+        font-family: $font-helvetica;
+        font-size: 18px;
+        color: $new-grey-color;
+        font-weight: bold;
+        word-break: break-all;
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+      p.module-heading {
+        font-family:$font-itc-charter;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: left;
+        color: $color-dark;
+        margin-bottom: 15px;
+        width: 90%;
+        @media (min-width: 0px) and (max-width: 768px) { 
+          font-size: 20px;
+        }
+        a{
+          color: $color-dark;
+        }
+        span {
+          font-size: 14px;
+          font-family:"PwC Helvetica Neue";
+          color: $color-dark;
+        }
+      }
+    }
+    .previous_read{
+      p.date::before{
+        font-family: 'web-font' !important;
+        content: '\e90a';
+        font-size: 11px;
+        padding-right: 5px;
+      }
+      p.reference{
+        color:$color-light !important;
+      }
+      p.description{
+        color:$color-light !important;
+      }
+      p.date {
+        color:$color-light !important;
+      }
+      p.brief, p.author {
+        color: $color-light !important;
+      }
+      p.module-heading {
+        color:$color-light !important;
+        a{
+          color: $color-light !important;
+        }
+        span {
+          color: $color-light !important;
+        }
+      }
+    }
+  }
+}
+.popular-section {
+  padding-right: 10px;
+  .column {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+  h2{
+    font-size: 22px !important;
+    font-weight: bold;
+    color: $muted-text-color;
+    opacity: 0.8;
+    margin: 0 5px 10px;
+  }
+  section {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    .spacer-border {
+      border-top:1px solid #dedede !important;
+    }
+  }
+  .columns:not(:last-child) {
+    margin-bottom: 0 !important;
+  }
+  .madison-card-block {
+    height: 100%;
+    min-height: 315px;
+    .madison-card {
+      &:hover{
+        background-color: $content-background-color;
+       
+      } 
+
+      .popular-card-img {
+        height: 104px;
+        max-height: 104px;
+        object-fit: cover;
+        margin: -5px -5px 15px;
+        @media (max-width: 768px) {
+          margin: -5px 0 15px;
+        }
+        border-radius: 5px;
+        width: calc(100% + 10px);
+        max-width: 200%;
+      }
+    }
+  }
+  .is-flex {
+    .column {
+      @media all and (-ms-high-contrast: none) and (max-width: 768px), (-ms-high-contrast: active) and (max-width: 768px) {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+.home {
+  .featured-content {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    background-color: #f2f2f2;
+   > section{
+      padding: 0;
+    }
+  }
+  .recently-viewed{
+    background-color: #f2f2f2;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page-module {
+  .column.is-4.news {
+    padding-left: 0px;
+}
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .home-page-module {
+    .popular-section {
+      margin-top: 18px;
+      border-bottom: 1px solid #DFDFDF;
+      .is-flex {
+        > .column {
+          padding-bottom: 10px !important;
+        }
+      }
+    }
+  }
+    .madison-card-block {
+      a{
+        .highlighted {
+         // display: none;
+        }
+        .madison-card {
+          word-break: break-word;
+          .date {
+            font-size: 12px;
+            margin-bottom: 15px;
+          }
+          p {
+            &.module-heading {
+              font-size: 14px !important;
+            }
+            &.reference {
+              font-family: $font-helvetica;
+              font-size: 20px;
+              line-height: 1;
+              letter-spacing: normal;
+              font-weight: normal;
+              word-break: break-word;
+            }
+          }
+          .module-heading, .reference {
+            font-size: 20px;
+          }
+          .madison-card-exta-info {
+            p.author, p.brief {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+   .highlights {
+    .madison-card-block {
+      a{
+        .highlighted {
+          //display: none;
+        }
+        .madison-card {
+          min-height: 225px !important;
+          .date {
+            font-size: 12px;
+            margin-bottom: 15px;
+          }
+          p {
+            &.module-heading {
+              font-size: 18px !important;
+            }
+            &.reference {
+              font-family: $font-helvetica;
+              font-size: 20px;
+              line-height: 1;
+              letter-spacing: normal;
+            }
+          }
+          .module-heading, .reference {
+            font-size: 20px;
+          }
+          .madison-card-exta-info {
+            p.author, p.brief {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .popular-section{
+    section{
+      display: none;
+    }
+    .is-flex{
+      flex-direction: column;
+      margin: 0;
+      &:last-child > .column:last-child{
+        padding: 0;
+        border: none;
+      }
+    & > .column { 
+        padding: 0;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #CFCFCF;
+        margin-bottom: 20px;
+      }
+    }
+    .madison-card-block {
+      min-height: auto;
+      a .madison-card {
+        min-height: auto !important;
+        padding: 0;
+        p.date{
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+        .madison-card-exta-info{
+          font-size: 12px;
+        }
+        p.reference{
+        font-size: 16px;
+        line-height: 1;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      p.module-heading{
+        font-size: 20px !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+      .popular-tile-abstract{
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      }
+    }
+  }
+}
+
+.landing_page_template .madison-card-block .madison-card{
+  background-color: #f7f7f7 !important;
+}

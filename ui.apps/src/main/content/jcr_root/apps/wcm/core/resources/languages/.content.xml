@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <en
+            jcr:primaryType="nt:unstructured"
+            country="English"
+            language="English (Global)  "/>
+    <en_au
+        jcr:primaryType="nt:unstructured"
+        country="Australia"
+        language="English (Australia)"/>
+    <en_ca
+        jcr:primaryType="nt:unstructured"
+        country="Canada"
+        language="English (Canada)"/>
+    <en_gb
+            jcr:primaryType="nt:unstructured"
+            country="United Kingdom"
+            language="English (UK)"/>
+    <en_ie
+            jcr:primaryType="nt:unstructured"
+            country="Ireland"
+            language="English (Ireland)"/>
+    <en_us
+            jcr:primaryType="nt:unstructured"
+            country="United States"
+            language="English (US)"/>
+    <fr_ca
+        jcr:primaryType="nt:unstructured"
+        country="Canada"
+        language="French (Canada)"/>
+    <ja_jp
+            jcr:primaryType="nt:unstructured"
+            country="Japan"
+            language="Japanese (Japan)"/>
+    <nl_nl
+            jcr:primaryType="nt:unstructured"
+            country="Netherlands"
+            language="Dutch (Netherlands)"/>
+    <zh_cn
+            jcr:primaryType="nt:unstructured"
+            country="China/Hong Kong"
+            language="Chinese (China)"/>
+</jcr:root>

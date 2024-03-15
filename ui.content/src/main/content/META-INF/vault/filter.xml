@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/pwc"/>
+    <filter root="/conf/global/settings/dam/adminui-extension/foldermetadataschema/pwc"/>
+    <filter root="/conf/pwc-madison/settings/wcm/policies"/>
+    <filter root="/conf/pwc-madison/settings/wcm/template-types"/>
+    <filter root="/content/pwc-madison/us/en/search" mode="merge"/>
+    <filter root="/content/pwc-madison/us/en/error"/>
+    <filter root="/content/projects/pwc-madison-global" mode="merge"/>
+    <filter root="/content/projects/.content.xml"/>
+    <filter root="/content/projects/pwc-madison-content-collaboration" mode="merge"/>
+    <filter root="/content/pwc-madison/user"/>
+    <filter root="/content/pwc-madison/error"/>
+    <filter root="/content/pwc-madison/in-body-callout"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-simplified-wf"/>
+    <filter root="/var/workflow/models/pwc-simplified-wf"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-fullcyle-workflow"/>
+    <filter root="/var/workflow/models/pwc-fullcyle-workflow"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-collaboration-workflow"/>
+    <filter root="/var/workflow/models/pwc-collaboration-workflow"/>
+    <filter root="/conf/global/settings/workflow/models/w2d-post-processing"/>
+    <filter root="/var/workflow/models/w2d-post-processing"/>
+    <filter root="/content/dam/pwc-madison/ditaroot/pwc.ditaval"/>
+    <filter root="/var/pwc-madison/syndication-autopublish-queue"/>
+
+	<!-- Dita topic Templates -->
+    <filter root="/content/dam/dita-templates/topics/faq.dita"/>
+    <filter root="/content/dam/dita-templates/topics/pwc-example.dita"/>
+    <filter root="/content/dam/dita-templates/topics/pwc-topic.dita"/>
+    <filter root="/content/dam/dita-templates/topics/pwc-abstract.dita"/>
+    <filter root="/content/dam/dita-templates/topics/pwc-alerts-topic.dita"/>
+    <filter root="/content/dam/dita-templates/topics/pwc-news-topic.dita"/>
+	<filter root="/content/dam/dita-templates/topics" mode="merge"/>
+
+	<!-- Dita topic Templates -->
+	<filter root="/content/dam/dita-templates/maps/PWC-BookMap.ditamap"/>
+    <filter root="/content/dam/dita-templates/maps/PWC-map.ditamap"/>
+	<filter root="/content/dam/dita-templates/maps" mode="merge"/>
+
+	<filter root="/var/dxml/folderprofiles/global-profile"/>
+    <filter root="/var/dxml/folderprofiles/11be5067-5bb1-9265-006a-afc8c302b0ef"/>
+    <filter root="/var/dxml/folderprofiles/2c31e0e5-56e3-5c3a-fc43-bfe8e509fb2e"/>
+    <filter root="/var/dxml/folderprofiles/3ef2061d-9187-9d6f-f697-535e7dce7bd8"/>
+    <filter root="/var/dxml/folderprofiles/4a3ff00f-d4d1-1f30-827c-7870182e77d2"/>
+    <filter root="/var/dxml/folderprofiles/5b6d8f0d-5a7c-ada2-5f9a-f1b4e8c48c68"/>
+    <filter root="/var/dxml/folderprofiles/5efb1126-96d7-8ea8-d7c4-34c9b5f9c4e5"/>
+    <filter root="/var/dxml/folderprofiles/7b9cfcff-d97e-f389-e2a8-5acd81c8bced"/>
+    <filter root="/var/dxml/folderprofiles/71cb04b9-2d8d-cd68-11da-8b94025997dc"/>
+    <filter root="/var/dxml/folderprofiles/1900c95b-2f0b-c615-ba1b-d2bcafc3bc3f"/>
+    <filter root="/var/dxml/folderprofiles/a8270e5b-6c70-8075-fed4-39c325988f77"/>
+    <filter root="/var/dxml/folderprofiles/ac0b10e1-d231-ea5f-9e5b-dff3d85b8d57"/>
+    <filter root="/var/dxml/folderprofiles/d8cc1845-5e52-b814-09de-bcff93ddce87"/>
+    <filter root="/var/dxml/folderprofiles/d42b8d83-c50c-6382-09c0-72a3a810d50d"/>
+    <filter root="/var/dxml/folderprofiles/e0f0fe68-43c1-a6d7-92ef-ef2f832c2762"/>
+    <filter root="/var/dxml/folderprofiles/eceada12-0aab-fa75-249b-c5365b45461c"/>
+    <filter root="/conf/pwc-madison/fasb"/>
+    <filter root="/conf/pwc-madison/settings/content-package-replication-status" mode="merge"/>
+    <filter root="/conf/pwc-madison/settings/syndication" mode="merge"/>
+    <filter root="/conf/pwc-madison/settings/citation" mode="merge"/>
+    <filter root="/conf/global/settings/workflow/models/request_for_activation"/>
+    <filter root="/conf/global/settings/workflow/models/request_for_deactivation"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-asset-publish-workflow"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-asset-unpublish-workflow"/>
+    <filter root="/conf/global/settings/workflow/models/replicate-referenced-assets"/>
+    <filter root="/var/workflow/models/request_for_activation"/>
+    <filter root="/var/workflow/models/request_for_deactivation"/>
+    <filter root="/var/workflow/models/pwc-asset-publish-workflow"/>
+    <filter root="/var/workflow/models/pwc-asset-unpublish-workflow"/>
+    <filter root="/var/workflow/models/replicate-referenced-assets"/>
+    <filter root="/conf/global/settings/workflow/models/madison-dita-postgeneration"/>
+    <filter root="/conf/global/settings/workflow/models/madison-dita-preview-postgeneration"/>
+    <filter root="/var/workflow/models/madison-dita-postgeneration"/>
+    <filter root="/var/workflow/models/madison-dita-preview-postgeneration"/>
+    <filter root="/conf/global/settings/workflow/models/pwc-content-translation"/>
+    <filter root="/var/workflow/models/pwc-content-translation"/>
+    <filter root="/var/acs-commons/reports/fasb-report"/>
+    <filter root="/var/acs-commons/reports/ingestion-report"/>
+	<filter root="/var/acs-commons/reports/unused-assets-report"/>
+    <filter root="/var/acs-commons/reports/syndication-report"/>
+	<filter root="/var/acs-commons/reports/publishing-point-maps"/>
+    <filter root="/var/acs-commons/reports/metadata-report-by-topic"/>
+    <filter root="/var/acs-commons/reports/pwc-vital-stats-report"/>
+    <filter root="/var/acs-commons/reports/general-status-report"/>
+    <filter root="/var/acs-commons/reports/file-management-report"/>
+    <filter root="/var/acs-commons/reports/activities-audit-report"/>
+    <filter root="/var/acs-commons/reports/workflow-report"/>
+    <filter root="/var/acs-commons/reports/unpublished-assets-report"/>
+    <filter root="/var/acs-commons/reports/see-also-broken-link-report"/>
+
+    <!--DM Scene7 Sync Workflow-->
+    <filter root="/conf/global/settings/workflow/models/dam/dynamic-media-encode-video"/>
+    <filter root="/conf/global/settings/workflow/models/dam/update_asset"/>
+    <filter root="/var/workflow/models/dam/dynamic-media-encode-video"/>
+    <filter root="/var/workflow/models/dam/update_asset"/>
+
+    <!--Workflow's ecma scripts-->
+    <filter root="/conf/pwc-madison/settings/workflow/scripts"/>
+
+    <!--Templates-->
+    <filter root="/conf/pwc-madison/settings/wcm/templates/landing-page-template"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/home-page"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/generic-template"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/dita-content-page-template-vp"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/search-page"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/article-page-template"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates/article-structured-template" mode="replace"/>
+    <filter root="/conf/pwc-madison/settings/wcm/templates" mode="merge"/>
+
+    <!-- For Tags supported languages -->
+    <filter root="/content/cq:tags" mode="update"/>
+
+    <!--Content Fragments-->
+    <filter root="/conf/pwc-madison/settings/dam/cfm/models/sec-form"/>
+
+    <filter root="/conf/global/settings/dam/search/facets/assets"/>
+
+    <!--  Redirect Manager  -->
+    <filter root="/content/pwc-madison/global/admin/redirect-manager"/>
+
+     <!--  Launcher  -->
+    <filter root="/conf/global/settings/workflow/launcher/config/dam_xmp_writeback"/>
+
+</workspaceFilter>

@@ -1,0 +1,35 @@
+<h2 class="">${'Search_Facet_Filter' @i18n}</h2>
+<div class="desktop-filter-apply-bar is-hidden-mobile is-hidden-tablet-only">
+    <a class="apply-filters" :class="{'disabled' : facetFilter.filterCount>0?false:true}" @click="applyFilter()">${'Search_Facet_Apply_Text' @i18n}
+      <span v-if="facetFilter.filterCount>0">{{facetFilter.filterCount}}</span><span>&nbsp;</span>${'Search_Header_Filters_Count_Text' @i18n}</a>
+      <span><a class="default-filters">${'Search_Facet_Default_Filter' @i18n}</a>
+      <a class="clear-all-filters" @click="clearAllFilters()">${'Search_Facet_Clear_All_Filter' @i18n}</a></span>
+</div>
+<div class="menu-items">
+    <div class="js-all-filters">
+        <div class="menu-item" :style="{ 'pointer-events': resultFacets.length < 1 ? 'none' : 'auto' }" v-for="(resultFacets,facetKey,facetIndex) in facetFilter.facetsResults" v-if="facetFilter.facetsLabelsList[facetKey]">
+            <div class="is-flex" @click="facetFilter.facetSelectedParamsObj[facetKey].toggled = !facetFilter.facetSelectedParamsObj[facetKey].toggled">
+                <div class="text">
+                    <p>{{facetFilter.facetsLabelsList[facetKey].title}}<span v-if="facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.length">[{{facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.length}}]</span></p>
+                </div>
+                <div class="icon" v-if="resultFacets.length > 0">
+                    <img :src="facetFilter.facetSelectedParamsObj[facetKey].toggled ? '/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/caret-down.svg' : '/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/caret-up.svg'" />
+                </div>
+            </div>
+
+
+            <div class="submenu" :class="{'show': !facetFilter.facetSelectedParamsObj[facetKey].toggled }">
+                <ul>
+                    <li v-for="(facetValue,valueIndex) in resultFacets" v-if="isEvenFacetIndex(valueIndex) && isCountryFacetAndAllowed(facetKey, facetValue)"
+                        :class="{'active': facetFilter.facetSelectedParamsObj[facetKey].selectedFacets.includes(facetValue)}" :key="facetValue"
+                        @click="setFacetFilter(facetKey,facetValue)">
+                        <span>{{facetKey === "pwcCountry_s" ? displayFacetCountryLabels(facetValue) : facetValue }}</span>
+                        <span>[{{resultFacets[valueIndex + 1]}}]</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>

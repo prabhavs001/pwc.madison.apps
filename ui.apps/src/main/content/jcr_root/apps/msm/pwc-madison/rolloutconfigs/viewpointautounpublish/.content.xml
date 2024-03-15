@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:trigger="deactivate"
+    jcr:description="Viewpoint custom rollout config to auto unpublish"
+    jcr:primaryType="cq:RolloutConfig"
+    jcr:title="Viewpoint Auto Unpublish">
+    <targetDeactivate 
+	jcr:primaryType="cq:LiveSyncAction"/>
+    <SendLiveCopyNotification 
+	jcr:primaryType="cq:LiveSyncAction"
+	type="unpublish-auto"
+	title="Source topic unpublished"
+	message="The &lt;Topic Name> at source: &lt;Source Folder Path> has been unpublished and also unpublished from destination:&lt;Destination Folder Path>, due to live copy."/>
+</jcr:root>

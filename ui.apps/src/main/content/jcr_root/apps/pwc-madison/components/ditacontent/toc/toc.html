@@ -1,0 +1,87 @@
+<sly data-sly-use.toc="com.pwc.madison.core.models.TocModel">
+   <sly data-sly-test.chapterToc="${toc.isChapterToc ? 'true' : 'false'}"></sly>
+   <input
+      type="hidden" id="is-chapter-toc" name="is-chapter-toc"
+      value="${chapterToc}" />
+    <input
+        type="hidden" id="toc-title" name="toc-title"
+        value="${'Common_Document_Header_Toc_Text' @i18n}" />
+   <sly data-sly-test="${!chapterToc}">
+      <div class="toc-content is-hidden-mobile is-hidden-tablet-only" style="display: none;"
+         data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+         <div class="loadedToc  is-hidden-mobile is-hidden-tablet-only" >
+          <span class="toc-rail-toggle showtocFlag toc-button" >
+            <span class="toc-open-tooltip" data-title="${'toc_click_to_close' @i18n}">
+               <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/plus_sign.svg" alt="Expand" class="toc-plus-image icon-ToC toc-cross-sign">
+            </span>
+           <div class="divider_line"></div>
+           <div class="resizebutton" data-title="${'resize_toc_helptext' @i18n}">
+             <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/resize.svg" alt="Resize"   class="toc-resize">
+           </div>
+         </span>
+         </div>
+         <div class="loader"></div>
+         <div class="loader-text">${'Preparing_Toc' @i18n}</div>
+      </div>
+      <sly
+         data-sly-call="${template.placeholder @ isEmpty=tocList.links.size == 0, classAppend='cmp-list'}"></sly>
+   </sly>
+</sly>
+
+<sly data-sly-test="${chapterToc}">
+   <div class="toc-content container is-hidden-mobile is-hidden-tablet-only" style='display: none;'>
+      <div class="loadedToc  is-hidden-mobile is-hidden-tablet-only" >
+          <span class="toc-rail-toggle showtocFlag toc-button" >
+            <span class="toc-open-tooltip" data-title="${'toc_click_to_close' @i18n}">
+               <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/plus_sign.svg" alt="Expand" class="toc-plus-image icon-ToC toc-cross-sign">
+            </span>
+           <div class="divider_line"></div>
+           <div class="resizebutton" data-title="${'resize_toc_helptext' @i18n}">
+             <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/resize.svg" alt="Resize"   class="toc-resize">
+           </div>
+         </span>
+      </div>
+      <div class="toc-container">
+         <noindex>
+            <div class="toc-title">${'Common_Document_Header_Toc_Text' @i18n}</div>
+            <div class="loader"></div>
+            <div class="loader-text">${'Preparing_Toc' @i18n}</div>
+         </noindex>
+      </div>
+   </div>
+</sly>
+
+<sly data-sly-test="${!chapterToc}">
+   <script id="toc-item-list-template" type="text/x-handlebars-template">
+      {{#each childLinks}}
+      {{#if toc}}
+      <div class="toc-item">
+      
+      {{#if childLinks}}
+      <button>
+      <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/expand.svg" alt="Expand">
+      </button>
+      <a role="button" data-toggle="collapse" data-pwcdoccontext="{{pathHash}}" data-title="{{title}}" data-target="#{{absPath pageName}}" aria-expanded="false" aria-controls="{{absPath pageName}}" href="{{absPath nodeLink}}" class="expand-link collapsed">
+      {{title}}
+      </a>
+      {{> list}}
+      {{else}}
+      <div class="spacer"></div> 
+        <a role="button" data-toggle="collapse" data-pwcdoccontext="{{pathHash}}" data-title="{{title}}" data-target="#{{absPath pageName}}" aria-expanded="false" aria-controls="{{absPath pageName}}" class="expand-link collapsed" href="{{absPath nodeLink}}">
+         {{title}}
+        </a>
+        {{/if}}
+      </div>
+      {{/if}}
+      {{/each}}
+      
+   </script>
+   <script id="toc-content-template" type="text/x-handlebars-template">
+      <div class="toc-container">
+         <noindex>
+             <div class="toc-title"></div>
+             {{> list}}
+      </noindex>
+      </div>
+   </script>
+</sly>

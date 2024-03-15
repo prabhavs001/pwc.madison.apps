@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="7668d58e-a752-4ff5-9f71-bc0d31137390">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="topic-templates/faq.dita"
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        fmErrors="Unable to parse due to: Unable to fetch profile for path /content/dam/topic-templates/faq.dita Please check whether a Profile has been assigned"
+        templateDescription="PwC-faq template"
+        templateTitle="PwC-FAQ">
+        <metadata
+            dam:extracted="{Date}2018-12-20T15:49:36.930Z"
+            dam:sha1="d00231e2766094bbc456e272ea202f6766432666"
+            dam:size="{Long}294"
+            dc:format="application/xml"
+            dc:modified="{Date}2016-03-16T10:58:25.090+05:30"
+            dc:title="FAQ"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,124 @@
+#sidebysideview{
+  .div {
+    div:nth-child(1),div:nth-child(2),div:nth-child(3){
+      &.anchor-id{
+        padding-bottom: 0px;
+      }
+      };
+  }
+} 
+
+.content_page {
+  .breadcrumbWrapper {
+    @media(max-width: 1087px) {
+      display: none;
+    }
+
+    .cq-placeholder {
+      height: 0;
+    }
+  } 
+}
+
+.main-body-content {
+  .doc-body-head{
+    padding-top: 2% !important;
+
+    .column.is-4 {
+      padding: 0 !important;
+    }
+
+    @media(max-width: 1087px) {
+      // padding-top: 32px !important;
+      margin-top: 0;
+    }
+    .title{
+        //font-size: 42px;
+        //font-weight: normal;
+        //line-height: 56px;
+        font-size: 16px;
+        color: $color-dark;
+        font-family: $font-itc-charter;
+        padding-bottom: 0px !important;
+        padding-top: 0;
+        h1 {
+          font-size: 42px !important;
+          font-weight: normal;
+          font-family: inherit;
+          line-height: 50px;
+          color: inherit;
+          margin: 0;
+          padding: 0;
+        }
+        .bold{
+          font-weight: 600;
+          font-family: $font-helvetica;
+          font-size: 42px;
+          line-height: 56px;
+        }
+        .publication{
+          font-family: $font-helvetica;
+          font-size: 17px;
+          font-weight: normal;
+          line-height: 1.13;
+          color: $light-content-text;
+          padding-top: 0.5rem;
+          padding-bottom: 1px;
+        }
+        .in-depth{
+          font-family: $font-helvetica;
+          font-size: 15px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.21;
+          letter-spacing: normal;
+          text-align: left;
+          color: $color-direction;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        .internal-use{
+          font-family: $font-helvetica;
+          font-size: 15px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.21;
+          letter-spacing: normal;
+          text-align: left;
+          color: $color-primary;
+          //margin-bottom: 45px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .main-body-content {
+    .doc-body-head{
+      .title{
+        //font-size: 38px;
+        //line-height: 46px;
+        //padding-top: 15px;
+        h1{
+          line-height: 46px;
+          font-size: 38px !important;
+        }
+        .publication{
+          //padding-bottom: 18px;
+          font-size: 16px;
+        }
+        .internal-use, .in-depth{
+          line-height: 1.11 !important;
+          font-size: 14px !important;
+        }
+      }
+      .is-4{
+        padding-bottom: 0rem;
+      } 
+    }
+  }
+}

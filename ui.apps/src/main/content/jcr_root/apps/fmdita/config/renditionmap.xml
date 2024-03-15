@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renditionmap>
+	<mapelement>
+        <mimetype>image/png</mimetype>
+        <rendition output="AEMSITE">cq5dam.web.1280.1280.png</rendition>
+        <rendition output="PDF">original</rendition>
+        <rendition output="HTML5">cq5dam.web.1280.1280.png</rendition>
+        <rendition output="EPUB">cq5dam.web.1280.1280.png</rendition>
+        <rendition output="CUSTOM">cq5dam.web.1280.1280.png</rendition>
+    </mapelement>
+	<mapelement>
+		<mimetype>image/gif</mimetype>
+		<rendition output="AEMSITE">cq5dam.web.1280.1280.gif</rendition>
+		<rendition output="PDF">original</rendition>
+		<rendition output="HTML5">cq5dam.web.1280.1280.jpeg</rendition>
+		<rendition output="EPUB">cq5dam.web.1280.1280.jpeg</rendition>
+		<rendition output="CUSTOM">cq5dam.web.1280.1280.jpeg</rendition>
+	</mapelement>
+</renditionmap>

@@ -1,0 +1,20 @@
+<config>
+  <!-- Important to declare attribute sets before rule sets -->
+    <attributeset id="all-attrs">
+    </attributeset>
+
+<!--<attributeset id="sample-attrs">
+        <attribute>platform</attribute>
+        <attribute>product</attribute>
+    </attributeset> -->
+    
+	<ruleset filetypes="xml dita">
+
+    <!-- Element rules -->
+    <rule xpath="//autolink" text="yes" attributeset="all-attrs" />
+
+	</ruleset>
+
+	<ruleset filetypes="ditamap">
+	</ruleset>
+</config>

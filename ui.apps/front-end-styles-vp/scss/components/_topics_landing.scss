@@ -1,0 +1,496 @@
+body.landing_page_template {
+  .template_type_list {
+    min-width: 305px;
+
+    @media(max-width: 768px) {
+      padding-top: 28px;
+    }
+
+    .menu-items {
+      @media(max-width: 1087px) and (min-width: 769px) {
+        max-width: 284px; 
+      }
+    }
+  }
+
+  .helpful_links {
+    .show-more-link {
+      @media(max-width: 768px) {
+        padding-bottom: 26px;
+      }
+    }
+
+    h2 {
+      @media(max-width: 768px) {
+        padding: 0;
+      }
+    }
+  } 
+
+  .column.topics-landing {
+    @media(max-width: 1087px) and (min-width: 980px) {
+      margin: 0 auto 0 49px;
+      max-width: 58%;
+    }
+    @media(max-width: 979px) and (min-width: 769px) {
+      margin: 0 auto 0 auto;
+      max-width: 68%;
+    }
+  }
+
+  .topics-helpful-links {
+    padding-top: 13px;
+
+    @media(max-width: 768px) {
+      padding-top: 22px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      .container {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.landing_page_template {
+  section {
+    & > .featured {
+      @media(max-width: 768px) {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+  
+        & > .container {
+          padding-left: 0;
+  
+          h2 {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+.topics-landing {
+  .container {
+    margin-top: 2.94rem;
+    margin-bottom: 2rem;
+    &.faqs-container {
+      margin-bottom: 0;
+    }
+    h2.suggested-content{
+      line-height: 1;
+
+      @media(max-width: 768px) {
+        padding-left: 0;
+      }
+    }
+  }
+  &.intro-copy .container {
+    margin-top: 0;
+
+    @media(max-width: 768px) {
+      margin-top: 24px;
+    }
+  }
+  .news-card {
+    background-color: transparent;
+  }
+  .menu-item {
+    background-color: #fbfbfb;
+  }
+  .template_type_list{
+    .menu-items{
+      max-height: 340px;
+    }  
+  }
+  .menu-show-more-items{
+    text-align: center;
+    padding-top: 25px;
+    a{
+      i{
+        font-style: normal;
+      }
+    }
+    .icon-caret-down{
+      font-size: 9px;
+      padding-left: 5px;
+    }
+    .icon-caret-up{
+      font-size: 9px;
+      padding-left: 5px;
+    }
+  }
+  .topic-faq-tile {
+    @media(max-width: 1200px) and (min-width: 1088px) {
+      max-width: 73%;
+      margin: 0 auto 0 46px;
+    }
+
+    @media(max-width: 1087px) and (min-width: 900px) {
+      max-width: 77%;
+      margin: 0 auto 0 60px;
+    }
+
+    @media(max-width: 899px) and (min-width: 769px) {
+      max-width: 67%;
+      margin: 0 auto 0 60px;
+    }
+  }
+
+  .faqs{
+    @media(max-width: 768px) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .faqs-topics-slider {
+      .slick-slide {
+        // width: 100% !important;
+      }
+
+      .index-card{
+        background-color: $background-color-light;
+        margin-top: 38px;
+        min-height: 358px;
+        padding: 13px;
+
+        @media(max-width: 1200px) and (min-width: 769px) {
+          max-width: 100%;
+          margin: auto;
+        }
+  
+        @media(max-width: 768px) {
+          margin-top: 0;
+        }
+  
+        .read-more{
+          .icon-caret-down{
+            font-size: 9px;
+            padding-left: 5px;
+          }
+        }
+        .read-less{
+          .icon-caret-up{
+            font-size: 9px;
+            padding-left: 5px;
+          }
+        }
+        h3{
+          font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 1;
+          &.answer{
+            margin-top: 28px;
+            @media(max-width: 1087px) {
+              font-size: 22px;
+            }
+          }
+          @media(max-width: 1087px) {
+            font-size: 22px;
+          }
+        }
+        p {
+          font-family: 'ITCCharterCom-Regular';
+          font-size: 30px;
+          line-height: 1;
+  
+          @media(max-width: 1087px) {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+  .columns {
+    margin-bottom: 0;
+  }
+  .left-layout-padding {
+    padding: 2.5rem 2.5rem 2.5rem 0rem;
+  }
+  .section-banner{
+    background-image: url(../resources/images/topics-landing-bg.jpg);
+    background-position: right;
+    background-size: cover;
+  }
+  .banner-right-block {
+    border: 0px solid;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    background-color: #fff;
+    article {
+      padding: 15px 20px;
+    }
+    p.date {
+      font-family: $font-helvetica;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.3px;
+      text-align: left;
+      color: $muted-text-color;
+    }
+    p.module-heading {
+      color: $color-dark;
+      font-family: $font-itc-charter;
+      font-size: 42px;
+      line-height: 1;
+      padding: 35px 0 30px;
+      text-align: left;
+    }
+    p.brief {
+      color: $color-dark;
+      font-size: 18px;
+      line-height: normal;
+      min-height: 70px;
+      font-family: $font-helvetica;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+    }
+  }
+  .template_info{
+    padding-top: 1.5rem;
+  }
+  &.author-carousel{
+    .container{
+      margin-top: 12px;
+      margin-bottom: 44px;
+    }
+    h2{
+      padding-top: 12px;
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.topics-helpful-links .container {
+  margin-bottom: 12px;
+}
+
+.faqs-topics-slider{
+  .slick-dots {
+		display: none !important;
+  }
+  .slick-arrow{
+    bottom: 0;
+    color:$color-primary;
+    cursor: pointer;
+    font-size: 30px;
+    height: 30px;
+    margin: auto;
+    top: 0;
+    position: absolute;
+    &:hover {
+      color: $color-primary;
+    }
+    &.slick-disabled {
+      color: $color-athens-grey;
+    }
+    &.icon-caret-right {
+      right: -50px;
+    }
+    &.icon-caret-left {
+      left: -50px;
+    }
+  }
+}
+
+
+@media (min-width: 240px) and (max-width: 768px) {
+  .topics-landing {
+    .banner-right-block {
+      p.module-heading {
+        font-size: 24px;
+      }
+    }
+    .faqs{
+      border-top: 1px solid $color-dark;
+      padding-top: 22px;
+      .index-card{
+        p{
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .faqs-topics-slider{
+    .slick-list{
+      .slick-track{
+        .item{
+          width: 328px !important;
+          margin-right: 5px;
+        }
+      }
+    }
+    .slick-arrow{
+      &.icon-caret-left{
+			display: none !important; 
+      }
+      &.icon-caret-right{
+			display: none !important; 
+      }  	
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .topics-landing {
+    .banner-right-block {
+      p.module-heading {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 240px) and (max-width: 767px) {
+  .spacer-border{
+    width: 92%;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  body.topics_landing {
+    .spacer-border {
+      margin: 0 2% !important;
+    }
+  }
+  .topics-landing{
+    .is-right-aligned {
+      text-align: right;
+    }
+    &.intro-copy {
+      .template_info a {
+        width: 100%;
+      }
+    }
+    .container{
+      &.no-top-margin,
+      &.faqs-container{
+        margin-top: 0;
+      }
+    }
+    .container.faqs-container .template_type_list .menu-items{
+      .menu-item {
+        background: none;
+        height: auto;
+        overflow: hidden;
+        padding: 0;
+        width: 100%; 
+        .text{
+          padding-left: 0;
+          a {
+            display: inline-block;
+            font-family: "PwC Helvetica Neue";
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 2.21;
+            padding-bottom: 16px;
+            padding-top: 12px;
+            text-align: left;
+          }
+        } 
+      }
+    }
+    .faqs{
+      .header{
+        h2{
+          margin-bottom: 20px !important;
+
+          @media(max-width: 768px) {
+            padding-left: 0;
+          }
+        }
+      }
+      .index-card{
+        background-color: #e3e3e3;
+        height: auto;
+        min-height: unset;
+        padding-bottom: 18px; 
+        h2{
+          border-bottom: 1px solid #2d2d2d;
+          margin-bottom: 18px;
+          padding-bottom: 18px;
+        }
+        h3{
+          font-size: 14px;
+          font-weight: normal;
+          margin-bottom: 15px;
+        }
+      }
+      .read-more,
+      .read-less{
+        display: block;
+        margin-top: 18px;
+        text-align: center;
+        i {
+          font-style: normal;
+        }
+      }
+      .read-more-hidden {
+        display: none;
+      }
+      
+    }
+    .section .container, section .container {
+      padding: 0;
+      margin: 0;
+    }
+    .section, section {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+    .section-banner .container {
+      margin-top: 0;
+    }
+    .template_info h1 {
+      font-size: 38px;
+      margin-top: 23px;
+    }
+    .us-podcast-text > a {
+      color: #7d7d7d;
+      font-size: 14px;
+    }
+    .us-podcast-text > span {
+      color: #7d7d7d;
+      margin: 0 10px;
+    }
+    .featured-mobile {
+      .madison-card-block .madison-card {
+        padding: 6px;
+        background-color: white;
+      }
+    }
+    .template_info{
+      padding: 0;
+      margin-right: 0;
+    }
+    section .container {
+      h2 {
+        margin-top: 0px !important;
+        padding: 0 2px;
+        &.suggested-content {
+          line-height: 1;
+        }
+      }
+    } 
+    .featured-mobile{
+      padding-bottom: 47px;
+    }
+    .left-layout-padding {
+      padding: 20px 13px;
+      padding-top: 196px;
+    }
+    .template_type_list{
+      .menu-items{
+        max-height: 100% !important;
+      }  
+    }
+    .featured {
+      margin: 0 !important;
+    }
+  }
+}
+

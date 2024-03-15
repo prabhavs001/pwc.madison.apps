@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="f2b2afd0-1419-4910-9b1e-eb4c794760f9">
+    <jcr:content
+        dam:assetState="processed"
+        dam:parentAssetID="6d238e78-31c5-4b2c-8326-3515ccc0303c"
+        dam:relativePath="topic-templates/pwc-news-topic.dita"        
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        templateDescription="PwC News Topic template"
+        templateTitle="PwC News">
+        <metadata            
+            dam:sha1="f70ffc72a608f3085a710c8414f29207fc390ba1"
+            dam:size="{Long}1070"
+            dc:format="application/xml"
+            dc:title="PwC News"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

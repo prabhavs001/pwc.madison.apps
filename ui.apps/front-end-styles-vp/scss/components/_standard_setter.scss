@@ -1,0 +1,595 @@
+.landing_page_template {
+  .featured .featured-mobile-slider {
+    @media(max-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .container {
+    h2.suggested-content{
+      line-height: 1;
+    }
+    .standard-border{
+      .container{
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        padding-left: 15px;
+        .spacer-border{
+          margin-top: 21px;
+          margin-bottom: 32px;
+          width: 100% !important;
+        }
+      }
+    }
+
+    .highlights {
+      @media(min-width: 769px) {
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+
+    .featured {
+      order: 2;
+    }
+  }
+  .news-card {
+    background-color: transparent;
+  }
+  .menu-item {
+    background-color: #fbfbfb;
+  }
+  .template_type_list{
+    order: 1;
+    z-index: 1;
+    .menu-items{
+      max-height: 560px !important;
+      width: 100%;
+      overflow: hidden !important;
+
+      &.menu-items--podcast {
+        max-height: none !important;
+
+        @media(min-width: 768px) {
+          max-height: 754px !important;
+        }
+
+        .scrollable {
+          @media(max-width: 767px) {
+            max-height: none;
+          }
+
+          @media(min-width: 768px) {
+            max-height: 754px !important;          
+          }
+
+          @media(min-width:1200px) {
+            max-width: 318px !important;
+          }
+  
+          @media(min-width: 1088px) and (max-width: 1199px) {
+            max-width: 284px !important;
+          }
+  
+          @media(min-width: 992px) and (max-width: 1087px) {
+            max-width: 254px !important;
+          }
+  
+          @media(max-width: 991px) and (min-width: 768px) {
+            max-width: 244px !important;
+          }
+        }
+      }
+      
+      @media(max-width: 1087px) and (min-width: 769px) {
+        width: 100% !important;
+      }
+    }  
+
+    @media(max-width: 1087px) and (min-width: 979px) {
+      max-width: 296px !important;
+      width: 100% !important;
+    }
+
+    @media(max-width: 978px) and (min-width: 769px) {
+      max-width: 300px !important;
+      width: 100% !important;
+    }
+  }
+  .faqs{
+    @media(min-width: 1200px) {
+      padding-left: 26px; 
+    }
+
+    h2 {
+      padding-left: 0;
+    }
+
+    .index-card{
+      background-color: $background-color-light;
+      margin-top: 38px;
+      min-height: 358px;
+      padding: 13px;
+      h3{
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+        &.answer{
+          margin-top: 28px;
+        }
+      }
+      p {
+        font-family: 'ITCCharterCom-Regular';
+        font-size: 32px;
+        line-height: 1;
+      }
+    }
+  }
+  .columns {
+    margin-bottom: 0;
+  }
+  .left-layout-padding {
+    padding: 2.5rem 2.5rem 2.5rem 0rem;
+  }
+  .helpful_links{
+    margin-bottom: 10px;
+    h2{
+      padding-top: 10px;
+    }
+  }
+
+  .intro-copy, .industry-template-header, .overview {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .container {
+      @media(min-width: 769px) {
+        margin-bottom: 24px;
+        margin-top: 24px;
+      }
+      h1 {
+        margin-top: 0 !important;
+      }
+      .template_info {
+        padding-top: 0 !important;
+
+        div a {
+          margin-right: auto;
+        }
+      }
+
+      @media(max-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .template_info {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+    h1{
+      color: $color-dark;
+    }
+  }
+  .topics-landing {
+    order: 3;
+
+    &.is-8 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .news h2 {
+      margin-bottom: 20px !important;
+
+      @media(min-width: 769px) {
+        margin-bottom: 42px !important;
+      }
+    }
+    .column{
+      padding-bottom: 24px;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        flex-basis: auto;
+      }
+
+      &.spacer-line {
+        background-color: transparent !important;
+        z-index: 1;
+        pointer-events: none !important;
+
+        @media(max-width: 1087px) and (min-width: 769px) {
+          padding: 0;
+          width: 1px;
+          margin-left: -17px;
+          display: block !important;
+          background-color: $color-light !important;
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            margin-left: -12px;
+          }
+        }
+      }
+
+      &.standard-setter {     
+        max-width: 90%;
+        @media(min-width: 1200px) {
+          max-width: 100%;
+        }
+        @media(min-width: 769px) and (max-width: 1087px) {
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        @media(min-width: 860px) and (max-width: 978px) {
+          margin: 0 auto 0 48px;
+          max-width: 80%;
+        }
+        @media(min-width: 769px) and (max-width: 859px) {
+          margin: 0 0 0 50px;
+          max-width: 68%;
+        }
+      }
+    }
+    .madison-card{
+      background-color: #f7f7f7;
+    }
+  } 
+  &.author-carousel{
+    .container{
+      margin-top: 12px;
+    }
+    h2{
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  } 
+  .highlights-box{
+    width: 100%;
+    height: 100%;
+    .highlights-slider{
+      .slick-list {
+        .flip_cover {
+          width: 100%;
+          max-width: 100%;
+        }
+        .slick-track {
+          height: 100%;
+        }
+      }
+      .slick-slide {
+        height: 100%;
+
+        & > div > div .column {
+          height: auto;
+
+          @media(min-width: 980px) {
+            max-width: 50%;
+          }
+
+          @media all and (-ms-high-contrast: none) and (max-width: 979px), (-ms-high-contrast: active) and (max-width: 979px) {
+            height: auto;
+          }
+
+          @media all and (-ms-high-contrast: none) and (min-width: 980px), (-ms-high-contrast: active) and (min-width: 980px) {
+            height: auto;
+            width: 100%;
+          }
+        }
+        .columns {
+          height: 100%;
+          align-items: stretch;
+          @media(max-width: 979px) and (min-width: 769px) {
+            display: flex !important;
+            flex-flow: row wrap !important;
+            height: auto;
+            flex-shrink: 0;
+            flex-grow: 0;
+          }
+        }
+
+        @media(max-width: 979px) and (min-width: 769px) {
+          .column { 
+            display: flex;
+            height: auto;
+            flex-flow: column nowrap;
+            flex-shrink: 0;
+            flex-grow: 0;
+            width: 100%;
+            flex-basis: auto;
+            .flip_cover {
+              display: flex;
+              height: auto;
+              flex-flow: column nowrap;
+              .madison-card-block {
+                display: flex !important;
+                height: auto;
+                flex-flow: column nowrap;
+                a {
+                  display: flex;
+                  height: 100%;
+                  flex-flow: column nowrap;
+                }
+              }
+            }
+          }
+        }
+
+        .card__face {
+          display: flex;
+          flex-flow: column nowrap;
+          height: 100% !important;
+
+          @media(max-width: 988px) {
+            min-height: 0;
+          }
+          & > .madison-card {
+            height: 100%;
+            min-height: 100%;
+
+            @media(max-width: 988px) {
+              height: 100% !important;
+              min-height: 0;
+            }
+          }
+        }
+      }
+      .slick-dots {
+        display: none !important;
+      }
+      .slick-arrow{
+        bottom: 0;
+        color:$color-primary;
+        cursor: pointer;
+        font-size: 30px;
+        height: 30px;
+        margin: auto;
+        top: 0;
+        position: absolute;
+        &:hover {
+          color: $color-primary;
+        }
+        &.slick-disabled {
+          color: $color-athens-grey;
+        }
+        &.icon-caret-right {
+          right: -42px;
+        }
+        &.icon-caret-left {
+          left: -50px;
+        }
+      }
+
+      .column.standard-setter {
+        @media(min-width: 769px) and (max-width: 1087px) {
+          max-width: 58%;
+          margin: 0 auto;
+        }
+      }
+
+      article {
+        img {
+          max-height: 160px;
+          height: 160px;
+
+          @media(max-width: 767px) {
+            max-height: 140px;
+            height: 140px;
+          }
+        }
+      }
+    }
+  }
+  .spacer-line{
+    order: 2;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  .landing_page_template {
+    .highlights-slider{
+    //  width: calc(100vw + 0.75rem);
+    width:100%;
+    }
+    .highlights-container .column {
+      padding: 0;
+      margin: 0;
+    }
+    .columns{
+      margin-bottom: 20px;
+     // margin-right: 10px;
+      .column{
+        .madison-card-block{
+          margin: 16px 0;
+        }
+      }
+    } 
+    .helpful_links{
+      h2{
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .highlights-container {
+    .featured {
+      .column {
+        margin: 0 !important;
+      }
+      .featured-mobile {
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  body.landing_page_template {
+    .spacer-border {
+      margin: 0 4%;
+    }
+  }
+  .landing_page_template{
+    .mobile-layout-flex{
+      display: block;
+      @media(max-width: 768px) {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      & > .standard-border {
+        display: none;
+      }
+    }
+    .is-right-aligned {
+      text-align: right;
+    }
+    .container{
+      &.no-top-margin,
+      &.highlights-container{
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+    }
+    .container.highlights-container .template_type_list .menu-items{
+      .menu-item {
+        background: none;
+        height: auto;
+        overflow: hidden;
+        padding: 0;
+        width: 100%; 
+        .text{
+          padding-left: 0;
+          a {
+            display: inline-block;
+            font-family: "PwC Helvetica Neue";
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 2.21;
+            padding-bottom: 16px;
+            padding-top: 12px;
+            text-align: left;
+          }
+        } 
+      } 
+    }
+    .faqs{
+      .index-card{
+        background-color: white;
+        height: auto;
+        min-height: unset;
+        padding-bottom: 18px; 
+        h2{
+          border-bottom: 1px solid #2d2d2d;
+          margin-bottom: 18px;
+          padding-bottom: 18px;
+        }
+        h3{
+          font-size: 14px;
+          font-weight: normal;
+          margin-bottom: 8px;
+        }
+      }
+      .read-more,
+      .read-less{
+        display: block;
+        margin-top: 18px;
+        text-align: center;
+        i {
+          font-style: normal;
+        }
+      }
+      .read-more-hidden {
+        display: none;
+      }
+    }
+    .section .container, section .container {
+    }
+    .section, section {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+    .section-banner .container {
+      margin-top: 0;
+    }
+    .template_info h1 {
+      font-size: 38px;
+      margin-top: 0 !important;
+    }
+    .featured-mobile {
+      .column{
+        padding: 0;
+      }
+      .madison-card-block .madison-card {
+        padding: 12px;
+        background-color: #f7f7f7;
+      }
+    }
+    .template_info{
+      padding: 0px;
+      margin-right: 0rem;
+      div{
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    .spacer-border{
+      width: 92%;
+    }
+    section .highlights .featured .container {
+      h2 {
+        margin-top: 0px !important;
+        padding: 0 2px;
+        margin-bottom: 0 !important;
+
+        @media(max-width: 768px) {
+          margin-bottom: 30px !important;
+        }
+        &.suggested-content {
+          line-height: 1;
+        }
+      }
+    } 
+    .featured-mobile{
+      padding-bottom: 47px;
+    }
+    .left-layout-padding {
+      padding: 20px 13px;
+      padding-top: 196px;
+    }
+  }
+}
+
+.reference-links {
+  .menu-items.scrollbar-outer {
+    .scroll-element.scroll-y {
+      right: -4px;
+      &.scroll-scrollx_visible {
+        .scroll-element_size, .scroll-element_track {
+          top: 0;
+        }
+      } 
+      .scroll-element_outer {
+        left: 0;
+        width: 6px !important;
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          width: 8px !important;
+        }
+        .scroll-bar {
+          height: 200px !important;
+          // background-color: #DEDEDE !important;
+        }
+      }
+    } 
+  }
+} 

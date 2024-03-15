@@ -1,0 +1,9 @@
+<template data-sly-template.authTemplate="${@ modal}">
+    <sly data-sly-test.authorizationInformation="${modal.authorizationInformation}">
+        <!--/* Render the video if User is authorized */-->
+        <sly data-sly-test.isAuthorized="${authorizationInformation.authorized}">
+            <sly data-sly-use.videoTemplate="video-template.html"
+                 data-sly-call="${videoTemplate.videoTemplate @ modal=modal}"/>
+        </sly>
+    </sly>
+</template>

@@ -1,0 +1,30 @@
+<td is="coral-table-cell" data-sly-use.fileReport="com.pwc.madison.core.reports.models.FileManagementReport">
+	<sly data-sly-test="${properties.value == 'aempages'}">
+		<sly data-sly-test.assetList="${fileReport.eachRow.assetPath}">
+			<sly data-sly-list="${assetList}">
+					<sly data-sly-test="${itemList.count>1 && itemlist.count!=itemList.size}">;</sly>
+					${item}
+			</sly>
+		</sly>
+	</sly>
+	
+	<sly data-sly-test="${properties.value == 'anchors'}">
+			<sly data-sly-test.referenceUrls="${fileReport.eachRow.referenceUrls}">
+				<sly data-sly-list="${referenceUrls}">
+						<sly data-sly-test="${itemList.count>1 && itemlist.count!=itemList.size}">;</sly>
+						<a target="_blank" href="#" data-href="${item}" class="coral-Link">${item}</a>
+				</sly>
+			</sly>
+	</sly>
+	
+	<sly data-sly-test="${properties.value == 'status'}">
+		<sly data-sly-test.pageStatus="${fileReport.eachRow.pageStatus}">
+					<sly data-sly-list="${pageStatus}">
+							<sly data-sly-test="${itemList.count>1 && itemlist.count!=itemList.size}">;</sly>
+							${item}
+					</sly>
+		</sly>
+		
+	</sly>
+
+</td>

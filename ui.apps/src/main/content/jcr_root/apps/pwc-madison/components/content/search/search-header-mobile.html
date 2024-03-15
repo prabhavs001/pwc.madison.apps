@@ -1,0 +1,28 @@
+<sly data-sly-include="search-facet-mobile.html"/>
+<div id="animatedRelevancyModal" class="mobile-search-filters is-hidden-desktop
+    animated animatedRelevancyModal-on" :class="{'slideOutLeft' : !sortFilter.isSortModalOpen  , 'slideInLeft' : sortFilter.isSortModalOpen  }" style="position: fixed;
+    width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(36,36, 36); overflow-y: auto; z-index: 9999;
+    opacity: 1; animation-duration: 0.6s;">
+    <div class="close-animatedRelevancyModal">
+        <a class="close-mobile-filter" @click="closeSortModal()"><img class="search" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/close-popup.svg" alt="Close popup"></a>
+    </div>
+    <div class="mobile-search-filtersmodal-content">
+        <h2 class="">${'Search_Sort_Text' @i18n}</h2>
+        <div class="menu-items">
+            <div class="menu-item search-menu" v-for="sort in sortFilter.sortList" :class="{'active' : sort.value === sortFilter.selectedSortValueInMobile}" @click="selectSortOption(sort)">
+                <div class="is-flex">
+                    <div class="text">
+                        <p>{{sort.translatedTitles[pageLocale] || sort.title}}</p>
+                    </div>
+                    <div class="icon">
+                        <span class="icon-caret-right"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-filter-apply-bar is-hidden-desktop">
+            <a class="update" @click="sortResults(true)">${'Search_Update' @i18n}</a>
+            <a @click="closeSortModal()">${'Search_Cancel' @i18n}</a>
+        </div>
+    </div>
+</div>

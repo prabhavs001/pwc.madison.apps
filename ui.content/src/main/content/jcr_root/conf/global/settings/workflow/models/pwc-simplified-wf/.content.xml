@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="PwC Simplified WF"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process_863380403
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Approve"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.SetDocumentStateProcess"
+                    PROCESS_ARGS="Approved"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_863380403>
+            <dynamic_participant
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Publish Content"
+                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="com.pwc.madison.core.workflows.ReviewerParticipantStep"
+                    PROCESS_ARGS="PwC Madison Document ready for publishing"/>
+            </dynamic_participant>
+            <process_651060717_646451263
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Publish Content"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.SetDocumentStateProcess"
+                    PROCESS_ARGS="Published"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_651060717_646451263>
+            <process_454261126
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Set auto revision/version for DITA/DITAMAP"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.SetDITARevisionProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_454261126>
+            <process
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Send completion email to author"
+            sling:resourceType="cq/workflow/components/model/process">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.pwc.madison.core.workflows.SendEmailToAuthorProcess"
+                PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <process_717596811
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Content translation notification"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.NotifySubscribersTask"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_717596811>
+            <process_117083632
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Syndication Content Update"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.SyndicationContentUpdateProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_117083632>
+            <process_1356487743
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Local Content Update Notification"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.LocalContentUpdateNotificationProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1356487743>
+            <process_1791009448
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Auto-Publish for Destination Territories"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.AutoPublishProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1791009448>
+            <process_712605537
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Delete dynamic groups"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.DeleteGroupsProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_712605537>
+            <process_937053503
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Workflow Completion Notification"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.WorkflowCompletionNotification"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_937053503>
+        </flow>
+    </jcr:content>
+</jcr:root>

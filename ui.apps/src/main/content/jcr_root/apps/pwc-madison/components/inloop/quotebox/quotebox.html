@@ -1,0 +1,13 @@
+<div id="${properties.id}" class="aem-blockqoute">
+    <div class="aem-blockqoute_wrapper">
+        <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+             data-sly-use.quoteModel="com.pwc.madison.core.models.QuoteModel">
+            <sly data-sly-call="${templates.placeholder @ isEmpty=!quoteModel.quoteText,emptyTextAppend='Madison'}"></sly>
+            <img data-sly-test="${wcmmode.edit && !quoteModel.quoteText}" src="/apps/pwc-madison/components/inloop/quotebox/thumbnail.png" class="cq-thumbnail-placeholder" />
+            <div data-sly-test="${quoteModel.quoteText}" class="quote-card">
+                <p class="h3 aem-blockqoute_text" data-sly-test="${quoteModel.quoteText}">${quoteModel.quoteText}</p>
+                <footer data-sly-test="${quoteModel.isFooterEnabled}" class="aem-blockqoute_written-bold">${quoteModel.quoteAuthor}<cite class="aem-blockqoute_written">${quoteModel.quoteSource}</cite></footer>
+            </div>
+        </sly>
+    </div>
+</div>

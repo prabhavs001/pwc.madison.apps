@@ -1,0 +1,65 @@
+<template data-sly-template.templates="${@ expiryModel, item }">
+    <sly  data-sly-test="${item.size > 0}" data-sly-list.expiryContent="${item}">
+        <tr class="report-row ${expiryContent.active ? 'active' : ''}">
+            <td>${expiryContent.title}</td>
+            <td>${expiryContent.author}</td>
+            <td>${expiryContent.expirationDate}</td>
+            <td>${expiryContent.expired ? 'yes' : 'no'}</td>
+            <td data-sly-test="${expiryModel.currentUserRole == 'approvers'}" >
+                <div  class="actions">
+                    <i class="fa fa-times btn-reject" aria-hidden="true" title="Reject"></i> |
+                    <i class="fa fa-check btn-approve" aria-hidden="true"  title="Approve"></i>
+                </div>
+                <div class="confirm-approve">
+                    <span>Confirm Approve? -</span>
+                    <a href="#" class="btn-approve-yes">Yes</a> |
+                    <a href="#" class="btn-confirm-no">No</a>
+                </div>
+                <div class="confirm-reject">
+                    <span>Confirm Reject? -</span>
+                    <a href="#" class="btn-reject-yes">Yes</a> |
+                    <a href="#" class="btn-confirm-no">No</a>
+                </div>
+                <div class="confirm-ack"> Success !</div>
+            </td>
+            <td data-sly-test="${expiryModel.currentUserRole == 'publishers'}">
+                ${expiryContent.confirmationState}
+            </td>
+            <td><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-down" aria-hidden="true"></i></td>
+        </tr>
+        <tr class="report-panel-row">
+            <td colspan="6" class="report-data">
+                <table class="report-data-table">
+                    <thead>
+                    <tr>
+                        <td>PUBLICATION DATE</td>
+                        <td>EFFECTIVE DATE</td>
+                        <td>LASTMODIFIED DATE</td>
+                        <td>ISSUING BODY</td>
+                        <td>CONTENT TYPE</td>
+                        <td>PATH</td>
+                        <td>DITAMAP PATH</td>
+                        <td>TERRITORY</td>
+                        <td>LANGUAGE</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>${expiryContent.publicationDate}</td>
+                        <td>${expiryContent.effectiveDate}</td>
+                        <td>${expiryContent.lastModifiedDate}</td>
+                        <td>${expiryContent.issuingBody @ i18n}</td>
+                        <td>${expiryContent.contentType @ i18n}</td>
+                        <td><a class="ditapath" href="${expiryContent.ditaAssetDetailsPath}" target="_blank">${expiryContent.path}</a></td>
+                        <td class="ditamappath">
+                            loading...
+                        </td>
+                        <td>${expiryContent.country}</td>
+                        <td>${expiryContent.language}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </sly>
+</template>

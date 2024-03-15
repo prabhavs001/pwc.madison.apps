@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:description="A Report which gives General status report of the Topics under given folder"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="General Status Report"
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <queryconfig
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/configs/queryconfig"
+                pageSize="50"
+                query="SELECT * FROM [dam:Asset] AS s WHERE ISDESCENDANTNODE([{{path}}]) AND NAME() LIKE '%.dita' order by lower(s.[jcr:content/metadata/dc:title])"
+                queryLanguage="JCR-SQL2"
+                reportExecutor="com.adobe.acs.commons.reports.models.QueryReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Asset Folder Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison/ditaroot"
+                validation="root-path-validator"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Title"
+                property="jcr:content/metadata/dc:title"/>
+            <assetpath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/assetpath"
+                exporter="com.adobe.acs.commons.reports.models.PathReportCellCSVExporter"
+                heading="Asset Path"
+                link="true"/>
+            <documentstate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Document State"
+                property="jcr:content/metadata/docstate"/>
+            <currentVersionNumber
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/published-version-number"
+                exporter="com.pwc.madison.core.reports.columns.AssetVersionNumberCSVExporter"
+                heading="Current Version Number"/>
+            <pwcContentStatus
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Content State"
+                property="jcr:content/metadata/pwc-content-status"/>
+            <pwclastpublished
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Last Published Date"
+                property="jcr:content/metadata/pwc-last-published"/>
+            <checkedoutby
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/text"
+                exporter="com.adobe.acs.commons.reports.models.StringReportCellCSVExporter"
+                heading="Checked Out By"
+                property="jcr:content/cq:drivelock"/>
+            <lastModifiedDate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/columns/date"
+                exporter="com.adobe.acs.commons.reports.models.DateReportCellCSVExporter"
+                format="yyyy-MM-dd HH:mm Z"
+                heading="Last Modified"
+                property="jcr:content/jcr:lastModified"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

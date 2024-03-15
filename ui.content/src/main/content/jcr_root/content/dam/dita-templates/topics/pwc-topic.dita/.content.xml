@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="6d238e78-31c5-4b2c-8326-3515ccc0303c">
+    <jcr:content
+        dam:assetState="processed"
+        dam:copiedAt="{Date}2019-01-17T14:56:26.834+05:30"
+        dam:parentAssetID="e83c8fab-a856-49ec-b14d-708db9c060ab"
+        dam:relativePath="topic-templates/pwc-topic.dita"
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        templateDescription="PwC Topic template"
+        templateTitle="PwC Topic&#xa;">
+        <metadata
+            dam:extracted="{Date}2019-01-17T15:01:13.671+05:30"
+            dam:sha1="7e85560bda83426158f54ad40559082603d71295"
+            dam:size="{Long}201"
+            dc:format="application/xml"
+            dc:title="PwC Topic"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

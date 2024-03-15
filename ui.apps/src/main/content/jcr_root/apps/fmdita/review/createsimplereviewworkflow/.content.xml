@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Create simplified workflow"
+        sling:resourceType="granite/ui/components/coral/foundation/page">
+        <head jcr:primaryType="nt:unstructured">
+            <viewport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/admin/page/viewport"/>
+            <favicon
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/page/favicon"/>
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[granite.ui.foundation,cq.gui.damadmin.reviewtask,apps.dita-publish.pwccreatereview.simple,apps.pwc.report.reviewchildmaps,apps.fmdita.rh-js,cq.projects.admin]"/>
+        </head>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/page/body">
+            <items jcr:primaryType="nt:unstructured">
+                <form
+                    granite:class="hide-steps coral-Form--vertical foundation-form mode-default"
+                    granite:rel="apps-dita-publish-createreview"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                    foundationForm="{Boolean}false"
+                    foundationFormAjax="{Boolean}false"
+                    maximized="{Boolean}true"
+                    novalidate="{Boolean}true"
+                    style="vertical">
+                    <items jcr:primaryType="nt:unstructured">
+                        <wizard
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Create simplified workflow"
+                            sling:resourceType="granite/ui/components/coral/foundation/wizard"
+                            cancelHref="${empty header.Referer ? granite:concat(&quot;/assets.html&quot;, granite:encodeURIPath(requestPathInfo.suffix)) : header.Referer}">
+                            <items jcr:primaryType="nt:unstructured">
+                                <step1
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Create simplified workflow"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <properties
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+                                            active="{Boolean}true"
+                                            class="project-collectionsettings"
+                                            rel="project-taskmanagement-addtaskwizard"
+                                            title="Create simplified workflow">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <titleField
+                                                    granite:rel="review-title"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="dam/gui/components/admin/reviewtask/payloadTitleField"
+                                                    disabled="false"
+                                                    fieldLabel="Title*"
+                                                    name="title"
+                                                    value=""/>
+                                                <includetopics
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                    checked="{Boolean}true"
+                                                    class="ditmap-excludetopics"
+                                                    name="excludetopics"
+                                                    text="Send the DITA Map without Topics"/>
+                                                <comment
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldLabel="Comment*"
+                                                    name="comment"
+                                                    rows="6"/>
+                                                <redirect
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name=":redirect"
+                                                    value="${empty header['referer'] ? &quot;/assets.html/content/dam&quot; : header['referer']}"/>
+                                                <operation
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name=":operation"
+                                                    value="review-ditamap"/>
+                                                <charset
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="_charset_"
+                                                    value="UTF-8"/>
+                                                <subtype
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="taskTypeName"
+                                                    value="dam:review"/>
+                                                <contentPath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                    name="contentPath"
+                                                    value="${param.payload}"/>
+                                                <maptopics
+                                                    granite:hidden="{Boolean}true"
+                                                    granite:id="review-maptopics"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="fmdita/components/createreview/maptopics"
+                                                    fieldLabel="Content"/>
+                                                <childmaps
+                                                    granite:hidden="{Boolean}false"
+                                                    granite:id="review-childmaps"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/components/commons/review-child-maps"
+                                                    fieldLabel="Content - Ditamaps"/>
+                                            </items>
+                                        </properties>
+                                    </items>
+                                    <parentConfig jcr:primaryType="nt:unstructured">
+                                        <next
+                                            granite:class="foundation-wizard-control"
+                                            granite:rel="create-review-button"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            disabled="{Boolean}true"
+                                            text="Create"
+                                            type="submit"
+                                            variant="primary">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-wizard-control-action="next"/>
+                                        </next>
+                                    </parentConfig>
+                                </step1>
+                            </items>
+                        </wizard>
+                    </items>
+                </form>
+            </items>
+        </body>
+    </jcr:content>
+</jcr:root>

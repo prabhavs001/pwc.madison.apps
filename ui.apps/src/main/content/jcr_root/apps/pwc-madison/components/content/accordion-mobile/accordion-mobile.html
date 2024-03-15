@@ -1,0 +1,49 @@
+<sly data-sly-use.accordionMobile="com.pwc.madison.core.models.AccordionMobile">
+    <div class="quick-links">
+		<div data-sly-use.favorite="com.pwc.madison.core.models.FavoriteModel" class="favorites-toggle favorite-list-component"
+			data-page-path="${currentPage.path}" data-page-href="${favorite.currentPageURL}" data-is-content-page="true">
+			<div>
+				<span>
+					<div class="favorite-toggle-tooltip">${'UserReg_Favorite_List_Content_AddTo_Favorites' @i18n}</div>
+				</span>
+			</div>
+		</div>
+    	<a href="javascript:void(0);" onclick="joinbtnclick();" data-title="Open Join View in a new tab" class="icon-Join"></a>
+    	<sly data-sly-test.subject="${'emailShare' @ i18n}" />
+        <sly data-sly-use.sme="${'com.pwc.madison.core.models.Sme' @ subjectText=subject}" data-sly-test="${sme.smeList.smeListItems.size != 0}" data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.smeTemplate="/apps/pwc-madison/components/content/sme-list/sme-list.html" data-sly-call="${smeTemplate.smeList @ list = sme.smeList, subject = sme.encodedSubjectText}">
+        </sly>
+		<sly data-sly-use.header="com.pwc.madison.core.models.DitaDocumentHeader">
+		<a  data-sly-test="${!header.hideSearchWithInDocument}" href="#autocompleteSearch"  data-title="${'Search_Within_Document' @i18n}" class="search-link search-doc-link is-initializing">
+    	<span class="icon-magnifier-document"></span>
+    	<div class="searchdoc-loader"></div>
+    </a>
+		<a href="javascript:void(0);" onclick="copyToClipboard()" data-title="${'Copy_Link' @i18n}" class="link-icon link-tooltip-popout"></a>
+			<sly data-sly-test="${!header.disablePDFDownload}">
+				<a href="javascript:void(0);" onclick="printPDF(this);" data-title="${'Download_And_Print_Full_Document' @i18n}" class="icon-download download-icon-trigger"></a>
+			</sly>
+		<span class="v-line"></span>
+		<sly data-sly-test="${header.isShareViaEmailOnly}">
+			<sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+				<sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+	        </sly>
+	        <sly data-sly-use.linkedInTemplate="pwc-madison/components/commons/linkedin/LinkedinTemplate.html">
+	        	<sly data-sly-use.linkedInShare="com.pwc.madison.core.models.LinkedInModel" data-sly-call="${linkedInTemplate.linkedIn @ summary = '', unwrapli='true', 
+	        		isLinkedInShareEnabled=linkedInShare.isLinkedInShareEnabled, pageUrl=linkedInShare.pageUrl, title=linkedInShare.title}" />
+	        </sly>
+	        <sly data-sly-use.twitterTemplate="pwc-madison/components/commons/twitter/TwitterTemplate.html">
+	        	<sly data-sly-use.twitterShare="com.pwc.madison.core.models.TwitterModel" data-sly-call="${twitterTemplate.tweet @ unwrapli='true',
+	        		isTwitterShareEnabled=twitterShare.isTwitterShareEnabled, pageUrl=twitterShare.pageUrl, title=twitterShare.title}" />
+	        </sly> 
+        </sly>
+        <sly data-sly-test="${!header.isShareViaEmailOnly}" data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+			<sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+        </sly>
+		</sly>
+    </div>
+    <sly data-sly-test="${accordionMobile.accordionContentPath}">
+      <!-- Including the accordion component from content -->
+        <div class="accordion-container">
+          <sly data-sly-resource="${accordionMobile.accordionContentPath @ resourceType='pwc-madison/components/content/accordion/accordion-container'}"></sly>
+		</div>
+    </sly>
+</sly>

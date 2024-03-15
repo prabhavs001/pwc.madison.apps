@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+      jcr:primaryType="sling:OsgiConfig"
+      scheduler.expression="0 0 7 1/1 * ? *"
+      email.template.path="/etc/notification/email/acs-commons/health-check-status-email.txt"
+      email.subject="AEM Health Check report"
+      email.send-only-on-failure="{Boolean}false"
+      recipients.email-addresses="[]"
+      hc.tags="[system]"
+      hc.timeout.override="{Long}-1"
+      hc.tags.options.or="{Boolean}true"
+      quiet.minutes="{Long}180"
+      hostname.fallback="Unknown AEM Instance"/>

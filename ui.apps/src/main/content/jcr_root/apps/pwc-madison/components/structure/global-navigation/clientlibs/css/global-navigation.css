@@ -1,0 +1,18 @@
+.global-navigation-group > .coral3-Multifield-item {
+	border: 3px solid #cacaca;
+	padding-left: 10px;
+}
+
+.global-navigation-link > .coral3-Multifield-item {
+	border: 3px solid #b1b1b5;
+	padding-left: 10px;
+}
+
+.global-navigation-group > .coral3-Multifield-item .coral-Collapsible-header {
+	display: flex;
+}
+.global-navigation-group > .coral3-Multifield-item .coral-Collapsible-title {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

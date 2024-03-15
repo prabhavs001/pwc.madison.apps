@@ -1,0 +1,42 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="News List Component" class="cq-placeholder"></p>
+<sly data-sly-use.model="com.pwc.madison.core.models.NewsListModel">
+    <aside>
+        <h2>${properties.sectionLabel}</h2>
+        <div class="scrollbar-outer">
+            <div class="tile is-parent news-card" data-sly-list="${model.newsItems}">
+                <div class="tile is-parent item">
+                    <h4>
+                        <a href="${item.newsPagePath}"
+                           data-component-name="${model.componentName}"
+                           data-link-title="${item.newsTitle}"
+                           class="limitNewsDesc">${item.newsTitle}</a>
+                    </h4>
+                    <div class="news-card-exta-info">
+                        <p>
+                            <a data-sly-test="${item.newsSource}"
+                            data-component-name="${model.componentName}"
+                            data-link-title="${item.newsTitle}"
+                            data-sly-attribute.href="${item.sourceLink}"
+                            style="${item.sourceLink == null ? 'cursor:default' : '' @ context='html'}"
+                            data-sly-attribute.target="${item.isInternalUrl == false ? '_blank' : ''}">${item.newsSource}
+                                <span class="icon-up-arrow"></span>
+                            </a>
+                        </p>
+                        <span>
+                            <sly data-sly-test="${!item.hidePublicationDate}"> ${item.date} </sly>
+                        </span>
+                    </div>
+                    <div class="space-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div data-sly-test="${model.newsItems.size > 2}" class="news-show-more" data-less-label='${"Homepage_Newslist_ShowLess_Button_Title" @ i18n, locale=pageProperties.jcr:language}'
+             data-more-label='${"Homepage_Newslist_ShowMore_Button_Title" @ i18n, locale=pageProperties.jcr:language}'>
+            <a> ${"Homepage_Newslist_ShowMore_Button_Title" @ i18n, locale=pageProperties.jcr:language}</a>
+            <div class="arrow">
+                <i class="left"></i>
+                <i class="right"></i>
+            </div>
+        </div>
+    </aside>
+</sly>

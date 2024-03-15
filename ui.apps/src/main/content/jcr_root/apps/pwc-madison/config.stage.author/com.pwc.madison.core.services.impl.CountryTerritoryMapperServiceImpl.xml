@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    madison.default.locale="en_gx"
+    madison.territory.base.path="/content/pwc-madison/global/reference-data/territories"
+    madison.default.territory="gx"/>

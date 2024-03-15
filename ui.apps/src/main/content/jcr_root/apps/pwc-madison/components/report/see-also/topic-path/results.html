@@ -1,0 +1,12 @@
+<td is="coral-table-cell" data-sly-use.seeAlsoTopicPathValue="com.pwc.madison.core.reports.SeeAlsoTopicPathValue" value="${seeAlsoTopicPathValue.path}">
+    <sly data-sly-test.isLink="${properties.link}">
+        <a target="_blank" href="/libs/fmdita/clientlibs/xmleditor/page.html?src=${seeAlsoTopicPathValue.path}&rightPanel=properties_panel" data-href="/libs/fmdita/clientlibs/xmleditor/page.html?src=${seeAlsoTopicPathValue.path}&rightPanel=properties_panel" class="coral-Link">
+            ${seeAlsoTopicPathValue.path}
+        </a>
+    </sly>
+    <sly data-sly-test="${!isLink}">
+        ${seeAlsoTopicPathValue.path}
+    </sly>
+</td>
+
+

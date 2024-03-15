@@ -1,0 +1,61 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="User Reg Modals" class="cq-placeholder"></p>
+<sly data-sly-use.userReg="com.pwc.madison.core.models.UserRegistrationModel" data-sly-test.locale="${userReg.locale}"></sly>
+<noindex>
+
+<!-- include edit profile modal -->
+<sly data-sly-include="edit_profile_modal.html"/>
+
+<!-- include gated content modal screen -->
+<sly data-sly-include="gated-content-modal.html"/>
+
+<!-- include external redirect modal screen -->
+<sly data-sly-use.externalRedirectModal="external-redirect-modal.html" data-sly-call="${externalRedirectModal.external @ locale=locale}" data-sly-unwrap>
+</sly>
+
+<!-- include favorite List modals -->
+<sly data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" data-sly-include="favorite-list-modals.html"/>
+
+<!-- include page directive error modal screen -->
+<sly data-sly-include="page-directive-error-modal.html"/>
+
+<!-- include license content modal screen -->
+<sly data-sly-use.licenseContentModal="license-content.html" data-sly-call="${licenseContentModal.licenseContent @ locale=locale}" data-sly-unwrap>
+</sly>
+
+<!-- include extend session timeout modal screen -->
+<sly data-sly-use.extendSessionTimeoutModal="extend-session-timeout.html" data-sly-call="${extendSessionTimeoutModal.extendSessionTimeout @ locale=locale}" data-sly-unwrap>
+</sly>
+
+<!-- include remove login session modal screen -->
+<sly data-sly-use.removeLoginSessionModal="remove_login_session_modal.html" data-sly-call="${removeLoginSessionModal.removeLoginSession @ locale=locale}" data-sly-unwrap>
+</sly>
+
+</noindex>
+<!-- include Country Territory Language List -->
+<script data-sly-use.countryTerritoryMapperService="com.pwc.madison.core.services.CountryTerritoryMapperService">
+    
+    function getCountryTerritoryList(){
+        var countryTerritoryList = JSON.parse('${countryTerritoryMapperService.countryToTerritoryMapJson  @ context="scriptString"}');
+        return countryTerritoryList;
+    }
+    		
+	var userRegistrationErrorMessages = {
+	    invalidName: '${"UserReg_Invalid" @ context="scriptString", i18n,  locale=locale}',
+        required: '${"UserReg_Required" @ context="scriptString", i18n,  locale=locale}',
+        invalidEmail: '${"UserReg_Invalid_Email" @ context="scriptString", i18n,  locale=locale}',
+        internalError: '${"UserReg_InternalServer_Error" @ context="scriptString", i18n,  locale=locale}',
+        genericError: '${"UserReg_GenericError" @ context="scriptString", i18n,  locale=locale}',
+        duplicateEmail: '${"UserReg_Duplicate_Email" @ context="scriptString", i18n,  locale=locale}',
+        blacklistedDomain: '${"UserReg_Blacklisted_Domain" @ context="scriptString", i18n,  locale=locale}',
+        invalidLanguageList: '${"UserReg_Preferences_OneLanguagePerCountry" @ context="scriptString", i18n,  locale=locale}',
+        noPrimaryTerritorySelected: '${"UserReg_Preferences_NoPrimaryTerritory_Selected" @ context="scriptString", i18n,  locale=locale}',
+        noPrimaryLangaugeSelected: '${"UserReg_Preferences_NoPrimaryLangauge_Selected" @ context="scriptString", i18n,  locale=locale}',
+        imageUploadFails: '${"UserReg_Image_Upload_Error_Message" @ context="scriptString", i18n, locale=locale}',
+        acceptTncError: '${"UserReg_Tnc_Error_Message" @ context="scriptString", i18n, locale=locale}',
+    }
+	
+    function getUserRegErrorMessage(code) {
+        return userRegistrationErrorMessages[code];
+    }
+	
+</script>

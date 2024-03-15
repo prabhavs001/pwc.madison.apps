@@ -1,0 +1,5 @@
+<template data-sly-template.tweet="${@ unwrapli, isTwitterShareEnabled, pageUrl, title}">
+	<li data-sly-test="${isTwitterShareEnabled && pageUrl}" data-sly-unwrap="${unwrapli}" >
+		<a title="${'Share_Via_Twitter' @i18n}" target="_blank" href="https://twitter.com/intent/tweet?text=${title}&url=${pageUrl}"><span class="icon-twitter"></span></a>
+    </li>
+</template>

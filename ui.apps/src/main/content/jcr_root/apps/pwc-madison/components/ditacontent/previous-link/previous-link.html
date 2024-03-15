@@ -1,0 +1,22 @@
+<noindex>
+    <div class="content-page-nav mobile-fade" data-sly-use.prev="com.pwc.madison.core.models.PreviousAndNextLinkModel" style="display:none" data-sly-test.prevNavLink = ${prev.prevPage} >
+        <div data-sly-test="${prevNavLink.path}" style="display:none" class="cp-nav-item cp-nav-item--prev">
+            <a class="icon-caret-left" href="${prevNavLink.path}">
+                <div class="cp-nav-tooltip">
+                    <p>${prevNavLink.title}</p>
+                </div>
+                <span>${'ContentPage_Prev' @i18n}</span>
+                <p>${prevNavLink.title}</p>
+            </a>
+        </div>
+        <div data-sly-test.nextNav="${prev.nextPage}" data-sly-test="${nextNav.path}" style="display:none" class="cp-nav-item cp-nav-item--next">
+            <a  class="icon-caret-right" href="${nextNav.path}">
+                <div class="cp-nav-tooltip">
+                    <p>${nextNav.title}</p>
+                </div>
+                <span>${'ContentPage_Next' @i18n}</span>   
+                <p>${nextNav.title}</p>
+            </a>
+        </div>
+    </div>
+</noindex>

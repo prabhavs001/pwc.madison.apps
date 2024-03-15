@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          aces="[type=allow;privileges=jcr:read;path=/home,type=allow;privileges=jcr:read;path=/conf/pwc-madison,type=allow;privileges=jcr:read\,rep:write\,jcr:versionManagement\,jcr:lockManagement;path=/conf/pwc-madison/settings/syndication,type=allow;privileges=jcr:read\;path=/content/pwc-madison,type=allow;privileges=jcr:versionManagement\,jcr:modifyAccessControl\,jcr:read\,jcr:readAccessControl\,rep:write\,jcr:lockManagement\;path=/content/dam/pwc-madison]"
+          ensure-immediately="{Boolean}true"
+          principalName="pwc-madison/syndication-serviceuser"
+          type="add"/>

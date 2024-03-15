@@ -1,0 +1,16 @@
+<template data-sly-template.smeList="${@ list, subject}">
+	<sly data-sly-test="${pageProperties['pwc-smes']}">
+		<span class="subject-expert-span">
+		    <a href="javascript:;" data-title="${'Subject matter experts' @i18n}" class="icon-sme subject-matter-icon"></a>  
+		    <div id="collapsetoolbarPanelNew" class="subject-matter-div subject-matter-hide">
+		      <div class="full-border is-hidden-desktop"></div>
+		      <div class="subject-matter-head">
+		        ${'Subject matter experts' @i18n}
+		      </div>
+		      <div class="panel-body sme subject-matter-body" data-sly-list.item="${list.smeListItems}" data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.itemTemplate="/apps/pwc-madison/components/content/sme-list/sme-item.html" data-sly-test.itemType="${list.itemType ? list.itemType : 'sme-item'}">
+		        <sly data-sly-call="${itemTemplate[itemType] @ list = list, item = item, subject= subject}"></sly>
+		      </div>
+		    </div>
+		</span>
+	</sly>
+</template>

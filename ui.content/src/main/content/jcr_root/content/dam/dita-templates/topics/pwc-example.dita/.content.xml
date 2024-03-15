@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="e83c8fab-a856-49ec-b14d-708db9c060ab">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="topic-templates/pwc-example.dita"
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        templateDescription="PwC-example template"
+        templateTitle="PwC-Example">
+        <metadata
+            dam:extracted="{Date}2018-12-20T16:01:59.048Z"
+            dam:sha1="1a746beacb731c30b6ca0c9650147a3914682933"
+            dam:size="{Long}333"
+            dc:format="application/xml"
+            dc:modified="{Date}2016-03-16T10:58:25.090+05:30"
+            dc:title="Example"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

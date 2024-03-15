@@ -1,0 +1,327 @@
+<script id="edit-preference-list" type="text/x-template">
+    <div class="column is-4" :id="divId">
+        <p class="check-head" for="">{{title}}</p>
+        <div v-for="index in _.range(0,getCutOff(columnList.length))" :key="index" class="remember-me">
+            <label class="check">
+                <input type="checkbox" :value=columnList[index][localelistPropertyName][langtitlePropertyValue] v-model="selectedItems"
+                       @change="updateValue">
+                <span class="checkmark"></span>
+                <span>{{columnList[index][propertyName]}}
+                    <span class="langTitle" :value=columnList[index][localelistPropertyName][langtitlePropertyValue]>
+                        ({{columnList[index][localelistPropertyName][langtitlePropertyName]}})
+                    </span>
+                                    <a v-if="columnList[index].setAsPrimary"
+                                       :id=columnList[index][localelistPropertyName][langtitlePropertyValue] class="custom-primary-color" href="javascript:void(0);"
+                                       v-on:click="setAsPrimary">${'UserReg_Preferences_Set_As_Primary' @ context="text", i18n,
+                                locale=pageProperties.jcr:language}</a>
+                                    <span
+                                            v-if="columnList[index].primary" class="custom-primary-color">${'UserReg_Preferences_Primary' @ context="text", i18n,
+                            locale=pageProperties.jcr:language}</span>
+                                </span>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <p class="listing-bottom-option" v-if="showErrorBlock">{{errorMessage}}</p>
+    </div>
+    <div v-for="index in _.range(getCutOff(columnList.length),columnList.length)" :key="index">
+        <label class="custom-check  ">
+            <input type="checkbox" :value=columnList[index][propertyValue] v-model="selectedItems"
+                                           @change="updateValue"> <span class="check-label">{{columnList[index][propertyName]}}
+            <a v-if="columnList[index].setAsPrimary"
+               :id=columnList[index][propertyValue] class="custom-primary-color" href="javascript:void(0);"
+               v-on:click="setAsPrimary">${'UserReg_Preferences_Set_As_Primary' @ context="text", i18n,
+                        locale=pageProperties.jcr:language}</a> <span
+                v-if="columnList[index].primary" class="custom-primary-color">${'UserReg_Preferences_Primary' @ context="text", i18n,
+                        locale=pageProperties.jcr:language}</span>
+    </span><span class="checkmark"></span></label>
+    </div>
+</script>
+<div class="modal edit-profile-modal">
+    <sly data-sly-use.userReg="com.pwc.madison.core.models.UserRegistrationModel"/>
+    <div class="modal-background"></div>
+    <div class="modal-content has-background-white">
+        <!--  Edit Profile Modal desktop -->
+        <!-- Edit Profile -->
+
+        <form id="editProfile" class="has-background-white wizard clearfix" role="application">
+            <div class="steps clearfix">
+                <ul role="tablist">
+                    <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+                        <a id="editProfile-t-0" href="#editProfile-h-0" aria-controls="editProfile-p-0">
+                            <span class="current-info audible">current step: </span>
+                            <span class="number">1.</span> Warning 2</a>
+                    </li>
+                    <li role="tab" class="disabled" aria-disabled="true">
+                        <a id="editProfile-t-1" href="#editProfile-h-1" aria-controls="editProfile-p-1"><span class="number">2.</span> Warning 2</a>
+                    </li>
+                    <li role="tab" class="disabled last" aria-disabled="true">
+                        <a id="editProfile-t-2" href="#editProfile-h-2" aria-controls="editProfile-p-2"><span class="number">3.</span> Warning 2</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content clearfix">
+                <h3 class="will-be-hidden title current" id="editProfile-h-0" tabindex="-1">Warning 2</h3>
+                <fieldset class="content is-marginless jquery-step1 body current show-account-menu"
+                          v-bind:class="{'cp-analytics': isCompleteProfile}"
+                          id="editProfileModalOne" role="tabpanel" aria-labelledby="editProfile-h-0" aria-hidden="false">
+                    <div class="columns">
+                        <div class="column">
+                            <h2 class="title is-1">{{isCompleteProfile ? "${'UserReg_CompleteYourProfile' @ i18n, locale=userReg.locale}" : "${'UserReg_EditProfile' @ i18n, locale=pageProperties.jcr:language}"}}</h2>
+                            <p class="title-description">{{editProfile.email}}</p>
+                        </div>
+                    </div>
+                    <div class="columns field-top-margin">
+                        <div class="column is-6 is-mobile">
+                            <div class="field-body">
+                                <div class="field">
+                                    <label class="label" for="edit-first-name">${'UserReg_EditProfile_First_Name'
+                                        @ i18n, locale=pageProperties.jcr:language}*</label>
+                                    <div class="control">
+                                        <input class="input is-shadowless is-radiusless" type="text" disabled
+                                               v-model="editProfile.firstName" type="text"
+                                               @blur="validateRequired('firstName')" id="edit-first-name" placeholder="${'UserReg_Register_First_Placeholder' @ i18n, locale=pageProperties.jcr:language}">
+                                    </div>
+                                    <span class="mandatory-field" v-bind:class="{'is-hidden': !validation.firstName.hasError}"> {{validation.firstName.errorMessage}}</span>
+                                </div>
+                                <div class="field">
+                                    <label class="label" for="edit-last-name">${'UserReg_EditProfile_Last_Name'
+                                        @ i18n, locale=pageProperties.jcr:language}*</label>
+                                    <div class="control">
+                                        <input class="input is-shadowless is-radiusless" type="text" disabled
+                                               v-model="editProfile.lastName" id="edit-last-name"
+                                               @blur="validateRequired('lastName')"
+                                               placeholder="${'UserReg_Register_Last_Placeholder' @ i18n, locale=pageProperties.jcr:language}">
+                                    </div>
+                                    <span class="mandatory-field" v-bind:class="{'is-hidden': !validation.lastName.hasError}"> {{validation.lastName.errorMessage}} </span>
+                                </div>
+                            </div>
+                            <!-- Country Dropdown-->
+                            <div class="field-body">
+                                <div class="field">
+                                    <label class="label">${'UserReg_Register_Country_Label' @ i18n,
+                                        locale=pageProperties.jcr:language}*</label>
+                                    <div class="select is-fullwidth ">
+                                        <select class="is-radiusless" ref="country" disabled v-model="editProfile.country"
+                                                @change="validateRequired('country')">
+                                            <option value="">${'UserReg_Register_Country_Placeholder'
+                                                @ i18n, locale=pageProperties.jcr:language}</option>
+                                            ${'UserReg_Country_List' @ context='unsafe', i18n,
+                                            locale=pageProperties.jcr:language}
+                                        </select>
+                                    </div>
+                                    <span class="mandatory-field" v-bind:class="{'is-hidden': !validation.country.hasError}"> ${'UserReg_Required' @ i18n,
+											locale=pageProperties.jcr:language} </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">${'UserReg_Register_Title_Label' @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <div class="select is-fullwidth">
+                                    <select class="is-radiusless" v-model="editProfile.title"
+                                            ref="title"
+                                            :disabled="editProfile.isInternalUser">
+                                        <option value="">${'UserReg_Register_Title_Placeholder'
+                                            @ i18n, locale=pageProperties.jcr:language}</option>
+                                        <option v-for="title in titleList" :value=title.id>{{title.translatedTitles[locale] || title.title}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- completeProfile's Industry Dropdown-->
+                            <div class="field-body">
+                                <div class="field">
+                                    <label class="label">${'UserReg_Register_Industry_Label' @ i18n, locale=userReg.locale}</label>
+                                    <div class="select is-fullwidth">
+                                        <select class="is-radiusless" v-model="editProfile.industry"
+                                                @change="validateIndustry" ref="industry">
+                                            <option value="">${'UserReg_Register_Industry_Placeholder' @ i18n, locale=userReg.locale}</option>
+                                            <option v-for="industry in industryList" :value=industry.id>{{industry.translatedTitles[editProfile.locale] || industry.title}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6 is-mobile">
+                            <div class="field-body">
+                                <div class="field">
+                                    <label class="label" for="company">${'UserReg_Register_Company_Label'
+                                        @ i18n, locale=pageProperties.jcr:language}*</label>
+                                    <div class="control">
+                                        <input class="input is-shadowless is-radiusless" type="text" disabled
+                                               v-model="editProfile.company" id="edit-profile-company"
+                                               @blur="validateCompany"
+                                               placeholder="${'UserReg_Register_Company_Placeholder' @ i18n, locale=pageProperties.jcr:language}">
+                                    </div>
+                                    <span class="mandatory-field" v-bind:class="{'is-hidden': !validation.company.hasError}"> ${'UserReg_Invalid_Company_Name' @ i18n,
+											locale=pageProperties.jcr:language} </span>
+                                </div>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                    <span class="field-body-title">${'UserReg_EditProfile_Newsletter' @ i18n,locale=pageProperties.jcr:language}</span>
+                                        <div class="remember-me">
+                                            <label class="check">
+											    <span class="profile-terms">${'UserReg_Register_Subscribe'
+												@ i18n, locale=pageProperties.jcr:language}
+											    </span>
+                                                <input type="checkbox" v-model="editProfile.subscribeToWeeklyNewsLetter">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="isCompleteProfile" class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <span class="field-body-title">${'UserReg_Terms_Of_Compliance'
+                                            @ i18n, locale=pageProperties.jcr:language}*</span>
+                                        <div class="remember-me">
+                                            <label class="check">
+                                                <span class="profile-terms"> ${userReg.i18nKeyForAcknowledgeText @ i18n, locale=userReg.locale, context='html'}</span>
+                                                <input type="checkbox" v-model="editProfile.tncAccepted"
+                                                       @change="validateTnC">
+                                                 <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <span class="mandatory-field" v-bind:class="{'is-hidden': editProfile.tncAccepted || !config.tncAccepted.attempt}"> ${'UserReg_Required' @ i18n, locale=pageProperties.jcr:language} </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="remember-me">
+                                            <label class="check">
+                                                <img src='/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/orange_info_icon.svg' class='i-icon'>
+                                                <span class="profile-terms">${'UserReg_Non_Editable_Fields_Note' @ i18n, locale=userReg.locale, context='html'}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns pagenumber">
+                        <div class="column is-full">
+                            <p class="page-numbers is-hidden-mobile is-marginless">
+                            <span>${'UserReg_1_Of_2'
+							@ i18n, locale=pageProperties.jcr:language}</span></p>
+                        </div>
+                    </div>
+                    <div class="columns footer-buttons is-marginless">
+                        <div class="column is-grouped is-paddingless">
+                            <div class="field-body">
+                                <div class="control">
+                                    <button class="button is-outlined is-radiusless is-uppercase save-exit" type="button" @click="saveEditProfile(true)" :disabled="buttonDisabled" aria-label="${'UserReg_Save_Exit' @
+								i18n, locale=pageProperties.jcr:language}">
+                                    <span class="is-small">${'UserReg_Save_Exit'
+								@ i18n, locale=pageProperties.jcr:language}</span>
+                                    </button>
+                                    <!-- This is else for Handling of Continue Button Click-->
+                                    <button id="pageOneContinue" class="button next is-outlined is-radiusless is-uppercase slick-arrow" type="button" aria-disabled="false" style="" :disabled="buttonDisabled"
+                                            @click="saveEditProfile(false)" aria-label="${'UserReg_Continue' @
+								i18n, locale=pageProperties.jcr:language}">${'UserReg_Continue'
+                                        @ i18n, locale=pageProperties.jcr:language}</button>
+
+                                    <span class="cancel-button-mobile">
+          <button class="button cancel-button is-radiusless is-shadowless is-uppercase no-border" type="button" @click="cancelModal"
+                  aria-label="${'UserReg_Cancel' @
+								i18n, locale=pageProperties.jcr:language}">${'UserReg_Cancel' @ i18n,
+								locale=pageProperties.jcr:language}</button>
+        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+                <fieldset class="content is-marginless jquery-step2 body show-account-menu current"  id="editPreferencesTerritoryLanguage" role="tabpanel" aria-labelledby="editProfile-h-1" aria-hidden="false" style="left: 0px;">
+	            	<script
+	                        data-sly-use.countryTerritoryMapperService="com.pwc.madison.core.services.CountryTerritoryMapperService">
+	                    function getTerritoryMap() {
+	                        var madisonTerritoryMap = JSON
+	                            .parse('${countryTerritoryMapperService.territoryCodeToTerritoryMapJson @context="scriptString"}');
+	                        return madisonTerritoryMap;
+	                    };
+	                    function getCountryToTerritoryMap() {
+	                        var madisonTerritoryMap = JSON
+	                            .parse('${countryTerritoryMapperService.countryToTerritoryMapJson @context="scriptString"}');
+	                        return madisonTerritoryMap;
+	                    }
+	                    function getDefaultTerritoryCode() {
+	                        return '${countryTerritoryMapperService.defaultTerritoryCode @context="scriptString"}';
+	                    }
+	                    function getDefaultLocale() {
+	                        return '${countryTerritoryMapperService.defaultLocale @context="scriptString"}';
+	                    }
+	                    function getLocale() {
+	                        return $('input[name="pageLocale"]').val() !== '' ? $('input[name="pageLocale"]').val() : getDefaultLocale();
+	                    }
+	                </script>
+                    <div class="columns profile-header-block">
+                        <div class="column is-full">
+                            <h2 class="title is-1">${"UserReg_Preferences_Heading" @ i18n,
+                                locale=pageProperties.jcr:language}</h2>
+                            <p class="title-description">${"UserReg_Preferences_SubHeading" @ i18n,
+                                locale=pageProperties.jcr:language}</p>
+                        </div>
+                    </div>
+                    <div class="columns field-top-margin mobile-bottom-border">
+                        <madison-columns v-on:change-selected="validateCountries"
+                                         v-on:set-primary="setPrimary"
+                                         v-bind:title="'${'UserReg_Preferences_Country_Label' @ i18n,
+                                                locale=pageProperties.jcr:language}'"
+                                         v-bind:column-list="territoryList"
+                                         v-bind:language-list="languageList"
+                                         v-bind:property-name="'territoryName'" v-bind:column-width="'8'"
+                                         v-bind:property-value="'territoryCode'"
+                                         v-bind:localelist-property-name="'localeToLanguageMap'"
+                                         v-bind:langtitle-property-name="'displayLanguage'"
+                                         v-bind:langtitle-property-value="'locale'"
+                                         v-bind:selected-items="selectedCountries"
+                                         v-bind:show-error-block="hasEditPreferencesTerritoryError"
+                                         v-bind:error-message="editEditPreferencesTerritoryErrorMessage"
+                                         v-bind:div-id="'preference-country-list'"
+                                         v-bind:is-changed="isChanged">
+                        </madison-columns>
+                    </div>
+                    <div class="columns pagenumber">
+                        <div class="column is-full">
+                            <p class="page-numbers is-hidden-mobile is-marginless">
+                                <span>${'UserReg_2_Of_2'
+						@ i18n, locale=pageProperties.jcr:language}</span></p>
+                        </div>
+                    </div>
+                    <div class="columns footer-buttons is-marginless">
+                        <div class="column is-grouped is-paddingless">
+                            <div class="field-body">
+                                <div class="control">
+                                    <button class="button is-outlined is-radiusless is-uppercase save-exit" type="button" @click="saveEditPreferencesPageOne(true)"
+                                            :disabled="buttonDisabled"
+                                            aria-label="${'UserReg_Save_Exit' @
+                                    i18n, locale=pageProperties.jcr:language}">
+                                        <span class="is-small">${'UserReg_Save_Exit' @
+                                i18n, locale=pageProperties.jcr:language}</span>
+                                    </button>
+
+                                    <button class="button previous is-radiusless is-shadowless is-uppercase no-border" type="button"
+                                            :disabled="buttonDisabled"
+                                            @click="previous" aria-label="${'UserReg_Previous' @
+                                    i18n, locale=pageProperties.jcr:language}">${'UserReg_Previous' @ i18n,
+                                        locale=pageProperties.jcr:language}</button>
+                                    <a class="cancel-button-mobile">
+                                        <button class="button cancel-button is-radiusless is-shadowless is-uppercase no-border userreg-modal-close" type="button">${'UserReg_Cancel'
+                                            @ i18n, locale=pageProperties.jcr:language}</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+     <button class="modal-close is-large edit-modal-close" aria-label="${'UserReg_Login_Close' @ i18n, locale=pageProperties.jcr:language}"></button>
+</div>

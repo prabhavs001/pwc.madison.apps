@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 36 24">
+  <g id="Menu_Group" data-name="Menu Group" transform="translate(0 0)">
+    <g id="Burger_menu_-_Group" data-name="Burger menu - Group">
+      <path id="Path" d="M0,2H36V0H0Z" fill="#2d2d2d"/>
+      <path id="Path-2" data-name="Path" d="M0,2H36V0H0Z" transform="translate(0 11)" fill="#2d2d2d"/>
+      <path id="Path-3" data-name="Path" d="M0,2H36V0H0Z" transform="translate(0 22)" fill="#2d2d2d"/>
+    </g>
+  </g>
+</svg>

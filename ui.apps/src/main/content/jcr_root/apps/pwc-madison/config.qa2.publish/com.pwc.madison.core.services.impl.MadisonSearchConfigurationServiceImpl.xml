@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+	searchAndPromoteId="[en_au:sp1004f9d9,en_ca:sp10056c2e,fr_ca:sp10056c2c,zh_cn:sp10056c2b,en_eu:sp10056c26,en_gx:sp10056c27,en_ie:sp10056c28,ja_jp:sp1004f9da,en_nl:sp1004f9db,en_us:sp10051001,en_gb:sp10056c2a]"/>

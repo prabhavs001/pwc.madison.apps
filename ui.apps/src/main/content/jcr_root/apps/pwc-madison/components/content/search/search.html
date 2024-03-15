@@ -1,0 +1,391 @@
+<sly data-sly-use.header="com.pwc.madison.core.models.Header"/>
+<sly data-sly-use.searchConfig="com.pwc.madison.core.fusionSearch.services.MadisonSearchFilterProviderService"/>
+<sly data-sly-use.countryTerritoryMapperService="com.pwc.madison.core.services.CountryTerritoryMapperService"/>
+<sly data-sly-list.territory="${countryTerritoryMapperService.territoryCodeToTerritoryMap}"/>
+<div :class="{'sideBySide-open-parent':sideBySide.isSideBySideOpen}" id="search-results-vue" class="search-results-page"
+	data-pageLocale="${header.pageLocale}"
+	data-sly-test.pageLocale="${header.pageLocale}"
+	data-audience="${header.audience}" data-cc="${header.cc}"
+	data-allFilters="${'Search_Facet_All_Filters' @i18n}"
+	data-appliedFilters="${'Search_Facet_Applied_Filter' @i18n}"
+    data-headerFilterText="${'Search_Header_Filter_Text' @i18n}"
+	data-headerUpdateFilterText="${'Search_Header_Update_Text' @i18n}" 
+	data-sly-test.pwcSourceValue = "${header.pwcSourceValue @i18n}"
+	data-defaultDateFormat="${header.localeDateFormat}"
+	data-signalStayTimeframe="${searchConfig.searchSignalStayTimeframe}">
+	<section>
+		<div class="container" style="display:none"  :style="{display : show}">
+			<section class="news">
+				<div :class="{'sideBySide-open':sideBySide.isSideBySideOpen}" class="columns">
+					<div :style=" (sideBySide.isSideBySideOpen || !isFilterOpen) ? 'display: none;' : '' " class="column is-3 search-filters is-hidden-mobile
+          			  is-hidden-tablet-only">
+						<!--include facets filter modal-->
+						<sly data-sly-include="search-results-facets.html"/>
+						<!--facet filter ends-->
+					</div>
+					<div :style=" (sideBySide.isSideBySideOpen||isSpecialSearch) ? 'display: none;' : '' " class="column is-1 spacer-line is-hidden-mobile
+          			  is-hidden-tablet-only">
+					  <div class="search-filter">
+						<span :style="count === 0 ? 'top: 100px' : ''" class="search-filter-toggle search-filter-tooltip" :data-title="(isFilterOpen) ? `${'click_to_close_filter' @i18n}` : `${'click_to_open_filter' @i18n}` "@click="toggleFilter()">
+							<img v-if="!isFilterOpen" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/filter-icon.svg" alt="Expand" class="filter-icon">
+							<img v-if="isFilterOpen" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/plus_sign.svg" alt="Expand" class="filter-plus-image icon-filter filter-cross-sign">
+							
+						  </span>
+					  </div>
+					</div>
+					<div class="column is-12 is-8-desktop" :style="{width : sideBySide.width}">
+						<div class="bckToBtnWrp" v-if="sideBySide.isSideBySideOpen">
+							<button class="bckToBtn" @click="backToOriginal()"> <span class="icon-submit-arrow"></span> ${'Search_Side_By_Side_Back_To_Search' @i18n}</button>
+							</div>
+					<div :class="{'Search-result-wrapper':sideBySide.isSideBySideOpen}">
+					  <div class="search-results">
+						<div  v-if = "isDocSearch" class="search-within-header header">
+						  <div class="backSearchWithin"><a :href="getReferrer()" ><span class="icon-submit-arrow"></span>${'Search_Back_To_Document' @i18n}</a></div>
+							<div class="searchwithin-title">
+							  <span>${'Search_Results_Doc_Search' @i18n}:</span>
+							  <h2>{{text}}</h2>
+							</div>
+							<div v-if="searchWithInDoc.subSection" class="searchwithin-parent">
+							  <span>{{searchWithInDoc.subSection}}</span>
+							</div>
+							<div class="searchwithin-level">
+							  <b>${'Search_Selected_Level' @i18n}:</b>
+							  <span>{{searchWithInDoc.docSearchTitle}}</span>
+							</div>
+						</div>
+						<div v-if="!isDocSearch"   class="header is-flex-mobile" :style="{margin : sideBySide.margin}"> 
+							<div :style=" sideBySide.isSideBySideOpen || isSpecialSearch ? 'display: none;' : '' " class="total-count">{{count}} ${'Search_Items_Found_For' @i18n}</div>
+						  <h2>{{text}}</h2>
+						</div>
+						<div :style=" (sideBySide.isSideBySideOpen||!isSpecialSearch) ? 'display: none;' : '' " class="horizontal-line"></div>
+						<div class="search-controls">
+						  <div>
+							<!--mobile header-->
+							  <sly data-sly-include="search-header-mobile.html"/>
+							<!--mobile header ends--->
+						  </div>
+							<!--search header-->
+							<sly data-sly-include="search-header.html"/>
+							<!--search header ends--->
+					    </div>
+						<div>
+						  <div v-if="noResultFlag" class="notification is-warning is-radiusless">
+							<p>${'Search_No_Result' @i18n}</p>
+						  </div>
+						</div>
+
+						<!-- Suggested_Guidance mobile view -->
+						<div v-if="showGuidance && !isDocSearch"
+							:style=" (sideBySide.isSideBySideOpen||isSpecialSearch) ? 'display: none;' : '' "
+							class="suggested-guidance is-hidden-desktop is-hidden-tablet-only">
+							<div class="sg-header">
+								<h2>${'Suggested_Guidance' @i18n}</h2>
+							</div>
+							<div class="results search-guidance">
+								<ul>
+									<li v-for="(guidance,index) in guidance.suggestedGuidanceResults" :key="guidance" class="thin-row">
+										<a :href="guidance.url">
+											<span class="sg-title">
+												{{guidance.guidanceTitle}}
+											</span>
+											<span class="brief">
+												{{guidance.pwcCountry | uppercase}} {{guidance.pwcContentId?guidance.pwcContentId:guidance.pwcContentType}}
+											</span>
+										</a>
+									</li>
+								</ul>
+								<div v-if="this.guidance.suggestedGuidanceResults.length>3" class="sg-show-more show-toggle">
+									<span class="show-more">SHOW MORE</span>
+									<span class="show-less" style="display: none;">SHOW LESS</span>
+									<div class="arrow">
+										<i class="left"></i>
+										<i class="right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Suggested_Guidance Desktop view Slick slider -->
+						<div class="container is-hidden-mobile technical-box featured featured-desktop-rendition suggested-guidance"
+							v-if="showGuidance && !isDocSearch"
+							:style=" (sideBySide.isSideBySideOpen||isSpecialSearch || guidance.hideSuggestedGuidence) ? 'display: none;' : '' ">
+							<div class="sg-header">
+								<h2>${'Suggested_Guidance' @i18n}</h2>
+							</div>
+							<div class="results search-guidance">
+								<span class="prev icon-caret-left slick-arrow slick-disabled"  aria-disabled="true"></span>
+								<ul class="suggested-guidance-slider">
+
+									<li v-for="(guidance,index) in guidance.suggestedGuidanceResults" :key="guidance" class="thin-row">
+										<a :href="guidance.url">
+											<span class="sg-title" :data-sg-title="guidance.guidanceTitle">
+												{{guidance.guidanceTitle}}
+											</span>
+											<span class="brief" :data-brief-title="guidance.pwcCountry.toUpperCase() + ' ' + (guidance.pwcContentId ? guidance.pwcContentId : guidance.pwcContentType)">
+												{{guidance.pwcCountry | uppercase}} {{guidance.pwcContentId?guidance.pwcContentId:guidance.pwcContentType}}
+											</span>
+										</a>
+									</li>
+
+								</ul>
+								<span class="next icon-caret-right slick-arrow"  aria-disabled="false"></span>
+							</div>
+						</div>
+
+						<!--List View--->
+						<div v-if="count > 0 && !noResultFlag && maxPerPage == 20 " class="condensed-cards">
+							<!-- Header List View Start -->
+						  <div :style=" (sideBySide.isSideBySideOpen||!isSpecialSearch) ? 'display: none;' : '' " class="columns header-list">
+							<div class="column is-paddingless">
+							  <div class="is-block">
+								<div class="header-condensed condensed is-flex">
+									<div @click="sortListByColumn('pagTitle')" class="module-heading">
+										<div class="title-heading"> ${'Search_Sort_Title' @i18n}  
+											<div class="sort-arrow">
+												<i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'title_s asc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow arrow-up"></i>
+												<i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'title_s desc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow"></i> 
+											</div> 
+										</div>	
+									</div>
+									<div class="secondary-content is-flex-mobile">
+										<div @click="sortListByColumn('pubDate')" class="date pub-date"> ${'Search_Publication_Date' @i18n} <div class="sort-arrow"><i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'pwcsortdate_dt desc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow arrow-up"></i> <i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'pwcsortdate_dt asc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow "></i></div> </div>
+										<div data-sly-test.contentTypeSortingEnabled="${countryTerritoryMapperService.territoryCodeToTerritoryMap[header.pageTerritoryCode].contentTypeSortingEnabled}" @click="sortListByColumn('conType')" class="pwc-col content-type"> ${'Search_Content_Type' @i18n} <div class="sort-arrow"><i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'sortorder_i desc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow"></i> <i :style=" sortFilter.selectedSortValue.toLowerCase().trim() === 'sortorder_i asc' ? 'opacity: 50%;' : 'opacity: 100%;' " class="arrow arrow-up"></i></div> </div>
+										<div data-sly-test ="${!contentTypeSortingEnabled}" class="pwc-col content-type"> ${'Search_Content_Type' @i18n}</div>
+									</div>
+								   </div>
+							  </div>
+							</div>
+						  </div>
+						  <!-- Header List View End -->
+						  <div class="columns" v-for="(item, index) in resultPages">
+							<div class="column is-paddingless">
+							  <div   @mouseover="mouseOver($event)" @mouseout="mouseOut()" class="is-block">
+								<div v-if="(!sideBySide.isSideBySideOpen && sideBySide.isSideBySideShow && item.url == sideBySide.currentTaget)" id="Search-Side-By-Side">
+									<div class="side-by-side-content-hover">
+										<a :href="item.url" @click="setKeyword(item.url, index + 1,'Pop-Up')" target="_blank" class="direct-link "><span><img
+													src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-new-tab.svg"
+													class="side-by-side-content-hover-icon"></span>${'Hover_Go_To_Content' @i18n}</a>
+										<a @click="sideBySideClick(item,'Pop-Up',index+1)" href="#" class="linkcallout " style="margin-left: 10px;"><span><img
+													src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/side-by-side.svg"
+													class="side-by-side-content-hover-icon"></span>${'Search_Side_By_Side_Preview' @i18n}</a>
+									</div>
+								</div>
+								<a :href="item.url" :data-license-types="item.pwcLicense" :data-access-type="item.pwcAccessLevel ? item.pwcAccessLevel[0] : ''" @click="setKeyword(item.url, index + 1,'anchor');sideBySideClick(item,'anchor')" target="_blank" :data-analytics-searchPosition="setSearchPosition(index)" class="an-search-result">
+								   <div class="is-inline-block is-hidden-mobile">
+								     <div v-if="item.recentlyViewed && item.recentlyViewedDate && item.recentlyViewedDate != '' " class="highlighted pink">
+										 <p>${'Search_Last_Viewed' @i18n}: ${pageLocale == "ja_jp" ? '{{item.recentlyViewedDate | formatDate}}' : '{{item.recentlyViewedDate}}'}</p>
+									 </div>
+								   </div>
+								   <div class="condensed is-flex">
+									
+								     <div  v-if="item.title" class="module-heading" :class="{'active' : (sideBySide.isSideBySideOpen && item.url == sideBySide.currentActiveUrl)}">
+									   {{item.title}}
+								     </div>
+								     <div class="secondary-content is-flex-mobile" :class="{'side-by-side' : sideBySide.isSideBySideOpen}">
+									   <div class="date">
+                                         <span v-if="item.pwcHidePublicationDate != 'yes' && item.pwcSortDate_s && item.pwcSortDate_s != '' ">
+                                           ${pageLocale == "ja_jp" ? '{{item.pwcSortDate_s | formatDate}}' : '{{item.pwcSortDate_s}}'}
+                                         </span>
+                                         <span v-if="item.pwcHidePublicationDate != 'yes' && !item.pwcSortDate_s">
+                                           ${pageLocale == "ja_jp" ? '{{item.pwcReleaseDate | formatDate}}' : '{{item.pwcReleaseDate}}'}
+                                         </span>
+									   </div>
+									   <div v-if="item.pwcContentId && item.pwcContentId != '' " class="pwc-col">
+										   {{item.pwcContentId}}
+									   </div>
+									   <template v-if="(item.pwcContentId && item.pwcContentId == '') || item.pwcContentId == undefined">
+									      <div class="pwc-col" v-if="((item.source && (item.source == '' || item.source == '${pwcSourceValue}')) || item.source == undefined)
+									          && item.pwcContentType && item.pwcContentType != '' ">
+										     {{item.pwcContentType}}
+									      </div>
+									      <div class="pwc-col" v-if="item.source && item.source != '' && item.source != '${pwcSourceValue}'">
+										     {{item.source}}
+									      </div>
+									   </template>
+								     </div>
+								   </div>
+								</a>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<!--List View Ends-->
+
+						
+						<!--Card View-->
+						<div v-if="count > 0 && !noResultFlag && maxPerPage == 10 " class="extended-cards">
+						  <div class="columns" v-for="(item, index) in resultPages" :key="item.url">  					<div class="column">
+							  <div @mouseover="mouseOver($event)" @mouseout="mouseOut()" class="is-block madison-card-block">
+									<div  v-if="(!sideBySide.isSideBySideOpen && sideBySide.isSideBySideShow && item.url == sideBySide.currentTaget)" id="Search-Side-By-Side"> 
+									<div class="side-by-side-content-hover">
+										<a  :href="item.url" @click="setKeyword(item.url, index + 1,'Pop-Up')" target="_blank" class="direct-link "><span><img
+													src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-new-tab.svg"
+													class="side-by-side-content-hover-icon"></span>${'Hover_Go_To_Content' @i18n}</a>
+										<a  @click="sideBySideClick(item,'Pop-Up', index+1)" href="#" class="linkcallout " style="margin-left: 10px;"><span><img
+													src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/side-by-side.svg"
+													class="side-by-side-content-hover-icon"></span>${'Search_Side_By_Side_Preview' @i18n}</a>
+									</div>
+								</div>
+								<a :href="item.url" :data-license-types="item.pwcLicense" :data-access-type="item.pwcAccessLevel ? item.pwcAccessLevel[0] : ''" @click="setKeyword(item.url, index + 1,'anchor');sideBySideClick(item,'anchor')" target="_blank" :data-analytics-searchPosition="setSearchPosition(index)" class="an-search-result">
+								   <div v-if="item.recentlyViewed && item.recentlyViewedDate && item.recentlyViewedDate != '' " class="is-inline-block">
+									 <div class="highlighted pink">
+										 <p>${'Search_Last_Viewed' @i18n}: ${pageLocale == "ja_jp" ? '{{item.recentlyViewedDate | formatDate}}' : '{{item.recentlyViewedDate}}'}</p>
+									 </div>
+								   </div>
+								   <div class="madison-card is-light-background is-full-width">
+									<article class="is-radiusless">
+                                      <span class="date-block">
+										<p :class="{'active' : (sideBySide.isSideBySideOpen && item.url == sideBySide.currentActiveUrl)}" v-if="item.title" class="module-heading">
+											{{item.title}}
+										  </p>
+										
+                                        <div class="dynamic favorites-toggle-small favorite-list-component"
+							                :data-page-path="getContentPath(item.url)"
+							                :data-page-href="item.url">
+                                        </div>
+                                      </span>
+									  <p class="reference"></p>
+									 
+									  <p v-if="item.description" class="description">
+										 {{item.description}}
+									  </p>
+									  <p></p>
+									</article>
+									<div class="madison-card-exta-info">
+									  <p v-if="item.pwcContentId && item.pwcContentId != '' && item.pwcCountry && item.pwcCountry != '' " class="brief">
+										  {{item.pwcCountry | uppercase}} {{item.pwcContentId}}
+									  </p>
+									  <template v-if="(item.pwcContentId && item.pwcContentId == '') || item.pwcContentId == undefined">
+									    <p v-if="((item.source && (item.source == '' || item.source == '${pwcSourceValue}')) || item.source == undefined )
+									       && item.pwcContentType && item.pwcContentType !='' && item.pwcCountry && item.pwcCountry != '' " class="brief">
+										  {{item.pwcCountry | uppercase}} {{item.pwcContentType}}
+									    </p>
+									    <p v-if=" item.source && item.source != '' && item.source != '${pwcSourceValue}' && item.pwcCountry && item.pwcCountry != '' " class="brief">
+										  {{item.pwcCountry | uppercase}} {{item.source}}
+									    </p>
+									  </template>
+									  <span class="date-block">
+                                        <div v-if="item.pwcHidePublicationDate != 'yes' && item.pwcReleaseDate && item.pwcReleaseDate != '' " class="date">
+                                          ${pageLocale == "ja_jp" ? '{{item.pwcReleaseDate | formatDate}}' : '{{item.pwcReleaseDate}}'}
+                                        </div>
+                                      </span>
+									</div>
+								</div>
+							    </a>
+								<div v-if="sideBySide.isSideBySideOpen" class="goToContent">
+									<a :href="item.url" target="_blank" title="${'Side_By_Side_Go_To_Content' @i18n}" class="open-link" @click="setKeyword(item.url, index + 1,'Pop-Up');">
+										<img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-new-tab.svg"></a>
+								</div>
+						      </div>
+						    </div>
+						  </div>
+					    </div>
+						<!--Card View Ends-->
+					  </div>
+					  
+					  <div class="madison-pagination" v-if="count > 0">
+						  <div class="columns is-flex">
+							<div class="column is-3">
+							  <a @click="backToTop()" class="primary-orange back-to-top">
+								<span>${'Search_Back_to_Top' @i18n}</span>
+								<span class="icon is-small">
+                                  <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/up-arrow.svg">
+                                </span>
+							  </a>
+							</div>
+							<div class="column is-9">
+							  <div class="search-pagination is-right-aligned" v-if="pagination.paginationPages && pagination.paginationPages.length">
+                                <span class="counts">
+                                  <span v-if="currentPage > 1" class="previous"
+										@keyup.enter="changePage(currentPage-1)" @click.prevent="changePage(currentPage-1)">
+                                    <span class="icon-caret-left"></span>
+                                       ${'Search_Previous' @i18n}
+								  </span>
+                                  <span v-show="pagination.paginationFirst" :class="{'active' : currentPage === 1}" @click.prevent="changePage(1)">1</span>
+									<span v-show="pagination.paginationFirst" class="pagination-seperator"></span>
+									<span v-show="pagination.paginationFirst" @click.prevent="changePage(pagination.paginationPrevDots)">...</span>
+									<template v-for="page in pagination.paginationPages" :key="page">
+								     <span v-if="page !== 1" class="pagination-seperator"></span>
+								     <span :class="{'active' : page === currentPage}"
+									   @click.prevent="{page !== currentPage ? changePage(page) : null}">{{page}}</span>
+								  </template>
+								  <span v-show="pagination.paginationLast" class="pagination-seperator"></span>
+								  <span v-show="pagination.paginationLast" @click.prevent="changePage(pagination.paginationNextDots)">...</span>
+								  <span v-show="pagination.paginationLast" class="pagination-seperator"></span>
+								  <span v-show="pagination.paginationLast" @click.prevent="changePage(paginationSize)">{{paginationSize}}</span>
+								  <span v-show="currentPage < paginationSize"
+										@click.prevent="changePage(currentPage + 1)"
+										@keyup.enter="changePage(currentPage + 1)" class="next">
+                                     ${'Search_Next' @i18n}
+									 <span class="icon-caret-right"></span>
+                                  </span>
+                                </span>
+							  </div>
+						    </div>
+						  </div>
+						</div>
+						</div>
+					</div>
+					<div v-if="(!isMobile() && sideBySide.isSideBySideOpen)" class="resizable">
+						<span class="sbs-resize">
+							<div @mousedown="adjustWidth($event)" class="sbsresizebutton" data-title="Drag to resize">
+								<img class="sbs-resize-icon"
+									src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/resize.svg" alt="Resize">
+							</div>
+						</span>
+					</div>
+					<div v-if="sideBySide.isSideBySideOpen" class="side-by-side-right">
+						
+						<div class="non-editable-message">
+							<span class="goto-content">${'Search_Side_By_Side_This_View_Is_Read_Only' @i18n, context='html'} </span>
+							<div @click="backToOriginal()">
+							<img class="search" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/close-popup.svg">
+							</div>
+							</div>
+							<div class="scrollRight">
+				<div class="toc-action-navbar toc-wrapper toc-page-nav">
+					<div class="toc_icon">
+					</div>
+					<div>
+						<ul class="share_icons">
+					<li>
+						<a :href="sideBySide.currentActiveUrl" target="_blank" id="detailBtn" title="${'Side_By_Side_Go_To_Content' @i18n}" class="open-link" @click="setKeyword(sideBySide.currentActiveUrl, sideBySide.currentActiveIndex,'Pop-Up');">
+							<img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-new-tab.svg"></a>
+					</li>
+							<li><a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" @click="searchCopyToClipboard(sideBySide.currentActiveUrl);"
+									class="icon-link link-tooltip-popout"></a></li>
+							<li><a :href="'mailto:?subject=%20Sharing%20content%20from%20PwC%20Viewpoint%20-%20'+sideBySide.currentActiveTitle+'&amp;body=%20I%20thought%20you%20would%20find%20this%20content%20from%20PwC%20Viewpoint%20informative.%20%0D%0A%0D%0A'+sideBySide.currentActiveTitle+'%20-%20%20'+sideBySide.currentActiveUrl"
+									title="${'Share_Via_Email' @i18n}" aria-label="Mail" target="_blank"><span class="icon-mail"></span></a></li>
+						</ul>
+					</div>
+				</div>
+						<div :class="{'gatedContent':sideBySide.isGatedContent}" class="main-body-content readOnlyPage" v-html="resultHTML">
+
+						</div>
+							</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+</div>
+
+<script>
+	function getFusionSearchFilterSortList() {
+		var madisonSearchFilterSortList = JSON
+				.parse('${header.fusionSearchFilterSortListJson @context="scriptString"}');
+		return madisonSearchFilterSortList.filter(obj => obj.navigationListViewSpecific === false);
+	};
+
+	function getSortListForNavigationSearch(){
+		var madisonSearchFilterSortList = JSON
+				.parse('${header.fusionSearchFilterSortListJson @context="scriptString"}');
+		return madisonSearchFilterSortList;
+	};
+
+	function getFusionSearchFilterFacetsList() {
+		var madisonSearchFilterFacetsList = JSON
+				.parse('${header.fusionSearchFilterFacetsListJson @context="scriptString"}');
+		return madisonSearchFilterFacetsList;
+	};
+</script>

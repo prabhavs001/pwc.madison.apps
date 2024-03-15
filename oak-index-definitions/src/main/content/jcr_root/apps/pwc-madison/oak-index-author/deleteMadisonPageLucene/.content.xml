@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+      jcr:primaryType="oak:Unstructured"
+      async="[async,nrt]"
+      codec="Lucene46"
+      compatVersion="{Long}2"
+      evaluatePathRestrictions="{Boolean}true"
+      queryPaths="[/var/audit/com.day.cq.wcm.core.page/content/pwc-madison,/var/audit/com.day.cq.replication/content/pwc-madison]"
+      reindex="{Boolean}false"
+      includedPaths="[/var/audit/com.day.cq.wcm.core.page/content/pwc-madison,/var/audit/com.day.cq.replication/content/pwc-madison]"
+      type="lucene">
+      <indexRules jcr:primaryType="nt:unstructured">
+          <cq:AuditEvent jcr:primaryType="nt:unstructured">
+              <properties jcr:primaryType="nt:unstructured">
+                  <cqTime
+                      jcr:primaryType="nt:unstructured"
+                      name="cq:time"
+                      propertyIndex="{Boolean}true"
+                      type="Date"
+                      ordered="{Boolean}true"/>
+                  <cqType
+                      jcr:primaryType="nt:unstructured"
+                      name="cq:type"
+                      propertyIndex="{Boolean}true"
+                      type="String"/>
+              </properties>
+          </cq:AuditEvent>
+      </indexRules>
+</jcr:root>

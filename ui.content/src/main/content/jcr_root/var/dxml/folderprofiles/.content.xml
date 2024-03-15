@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OrderedFolder"
+    globalDefaultConfigs="\[{&quot;type&quot;:&quot;XML_EDITOR_UI_CONFIG&quot;,&quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_CSS_CONFIG&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_Snippets&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_LABELS_CONFIG&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_ROOT_MAP&quot;,&quot;rootMap&quot;:&quot;&quot;}]"
+    profileConfigs="\[{&quot;type&quot;:&quot;XML_EDITOR_UI_CONFIG&quot;,&quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_CSS_CONFIG&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_Snippets&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_LABELS_CONFIG&quot;, &quot;path&quot;:&quot;&quot;},{&quot;type&quot;:&quot;XML_EDITOR_ROOT_MAP&quot;,&quot;rootMap&quot;:&quot;&quot;}]">
+    <global-profile/>
+    <_x0031_1be5067-5bb1-9265-006a-afc8c302b0ef/>
+    <_x0032_c31e0e5-56e3-5c3a-fc43-bfe8e509fb2e/>
+    <_x0033_ef2061d-9187-9d6f-f697-535e7dce7bd8/>
+    <_x0034_a3ff00f-d4d1-1f30-827c-7870182e77d2/>
+    <_x0035_b6d8f0d-5a7c-ada2-5f9a-f1b4e8c48c68/>
+    <_x0037_b9cfcff-d97e-f389-e2a8-5acd81c8bced/>
+    <_x0037_1cb04b9-2d8d-cd68-11da-8b94025997dc/>
+    <_x0031_900c95b-2f0b-c615-ba1b-d2bcafc3bc3f/>
+    <a8270e5b-6c70-8075-fed4-39c325988f77/>
+    <ac0b10e1-d231-ea5f-9e5b-dff3d85b8d57/>
+    <d8cc1845-5e52-b814-09de-bcff93ddce87/>
+    <d42b8d83-c50c-6382-09c0-72a3a810d50d/>
+    <e0f0fe68-43c1-a6d7-92ef-ef2f832c2762/>
+    <eceada12-0aab-fa75-249b-c5365b45461c/>
+    
+</jcr:root>

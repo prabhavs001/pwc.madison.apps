@@ -1,0 +1,56 @@
+<div data-sly-use.mediaInfo="com.pwc.madison.core.models.DynamicMediaAudioVideo">
+    <div data-sly-test.isAudio="${mediaInfo.isAudioFile}">
+        <div>
+            <img data-sly-test.thumbnailPath="${mediaInfo.thumbnailPath}" src="${thumbnailPath}" class="dm-audio-thumbnail">
+            <div class="dm-audio">
+                <audio data-sly-test.s7PublishUrl="${mediaInfo.s7PublishUrl}" preload="auto" controls="controls" controlsList="nodownload">
+                    <source src="${s7PublishUrl}" type="audio/mpeg">
+                    <p>${'Multimedia_Audio_Not_Supported_Text' @ i18n, locale=pageProperties.jcr:language}</p>
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div data-sly-test="${!isAudio}">
+
+        <!--/* Dynamic media component */-->
+        <div data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}" data-sly-use.dmInfo="dynamicmedia_sly.js"
+             data-sly-test="${dmInfo.isDMEnabled || dmInfo.isS7Enabled || dmInfo.isWCMDisabled}"
+             data-sly-unwrap>
+            <!-- /* Viewer container when there is an asset */ -->
+            <div data-sly-test="${dmInfo.asset.path}" class="${dmInfo.placeholder.dropCSS}">
+                <!--/* Appended current time in id to create different ID for same dynamic media component node */-->
+                <div id="${dmInfo.componentId}${timeInNano}"
+                     data-current-page="${currentPage.path}"
+                     data-page-locale="${dmInfo.pageLocale}"
+                     data-asset-path="${dmInfo.asset.path}"
+                     data-asset-name="${dmInfo.asset.name}"
+                     data-asset-type="${dmInfo.asset.s7damType}"
+                     data-viewer-type="${dmInfo.asset.viewerType}"
+                     data-viewer-path="${dmInfo.asset.viewerPath}"
+                     data-imageserver="${dmInfo.asset.imageserver}"
+                     data-videoserver="${dmInfo.asset.videoserver}"
+                     data-contenturl="${dmInfo.asset.contenturl}"
+                     data-config="${dmInfo.asset.config}"
+                     data-imagepreset="${dmInfo.asset.imagePreset}"
+                     data-wcmdisabled="${dmInfo.isWCMDisabled}"
+                     data-dms7="${dmInfo.isS7Enabled}"
+                     data-stagesize="${dmInfo.asset.stageSize}"
+                     data-mode="${dmInfo.asset.mode}"
+                     data-breakpoints="${dmInfo.asset.breakpoints}"
+                     data-urlmodifiers="${dmInfo.asset.urlModifiers}"
+                     data-viewermodifiers="${dmInfo.asset.viewerModifiers}"
+                     data-linkurl="${dmInfo.asset.linkURL}"
+                     data-linktarget="${dmInfo.asset.linkTarget}"
+                     data-alt="${dmInfo.asset.alt}"
+                     class="s7dm-dynamic-media">
+                </div>
+            </div>
+            <!-- /* Placeholder when there is no content */ -->
+            <div data-sly-test="${!dmInfo.asset.path}"
+                 class="${dmInfo.placeholder.css}"
+                 data-emptytext="${dmInfo.placeholder.text}"></div>
+        </div>
+        <!--/* Dynamic media component */-->
+
+    </div>
+</div>

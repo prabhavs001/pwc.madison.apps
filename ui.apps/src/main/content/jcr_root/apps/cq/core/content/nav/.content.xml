@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    id="root">
+    <assets
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Assets"
+        icon="asset"
+        id="cq-assets"
+        order="{Long}1200">
+        <mapcollection
+            jcr:description="XML Documentation Add-on Map Collections"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Map Collections"
+            href="/libs/fmdita/mapcollections/mapcollections.html/content/fmdita/mapcollections"
+            icon="multiple"
+            id="cq-assets-mapcollections"/>
+    </assets>
+    <tools
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Tools"
+        id="cq-tools"
+        order="{Long}200">
+        <pwc-viewpoint
+            jcr:primaryType="nt:unstructured"
+            jcr:title="PwC - Viewpoint"
+            id="pwc-fmdita-tools-xmladdon">
+            <brokenlinks
+                jcr:description="Broken links report to show the broken links, content references and aem page links"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Broken links report"
+                href="/apps/fmdita/report/brokenlinksreport.html"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse"/>
+            <vitalstatsreport
+                    jcr:description="Vital stats report to show the conversion status report for AICPA documents"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="AICPA Vital stats report"
+                    href="/apps/fmdita/report/vitalstatsreport.html"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers]"/>
+            </vitalstatsreport>
+            <fasbvitalstatsreport
+                    jcr:description="Vital stats report to show the conversion status report for FASB documents"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="FASB Vital stats report"
+                    href="/var/acs-commons/reports/fasb-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers]"/>
+            </fasbvitalstatsreport>
+            <ingestionreport
+                    jcr:description="Ingestion Report which provides Content Upload Report"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Ingestion report"
+                    href="/var/acs-commons/reports/ingestion-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers]"/>
+            </ingestionreport>
+            <expirationreport
+                    jcr:description="Expiration Report to view all expiring/expired contents"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Expiration report"
+                    href="/apps/fmdita/report/expiration-report.html"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse"/>
+            <unusedpublishedassetsreport
+                    jcr:description="Unused Assets Report which provides assets which do not have references, not published and not being referred."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Unused published DITA Assets report"
+                    href="/var/acs-commons/reports/unpublished-assets-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse"/>
+            <unusedassetsreport
+                    jcr:description="Unused Assets Report which provides assets which do not have references and not being referred."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Unused Assets report"
+                    href="/var/acs-commons/reports/unused-assets-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse"/>
+            <syndicationreport
+                    jcr:description="Syndication report which provides information about syndicateion status to various destination teritories"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Syndication report"
+                    href="/var/acs-commons/reports/syndication-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers,authors]"/>
+            </syndicationreport>
+            <syndicationfailurereport
+                    jcr:description="Syndication report which provides information about syndicated content(i.e source, destination, etc)"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Syndication failure report"
+                    href="/apps/pwc-madison/components/report/syndication-failure-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers,authors]"/>
+            </syndicationfailurereport>
+            <syndicationpublishdetailsreport
+                    jcr:description="Syndication report which provides information about publish date of publishing point at source and destination"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Syndication publish details report"
+                    href="/apps/pwc-madison/components/report/syndication-publish-details-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers,authors]"/>
+            </syndicationpublishdetailsreport>
+            <publishedditamap
+                jcr:description="A report to search published page path for all publishing points in a folder"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Published Ditamap report"
+                href="/var/acs-commons/reports/publishing-point-maps.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse"/>
+            <metadatareportbytopic
+                jcr:description="Metadata report for the topics under a given folder path."
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Metadata Report by Topic"
+                href="/var/acs-commons/reports/metadata-report-by-topic.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse"/>
+             <pwcvitalstats
+                jcr:description="PwC vital Stats for Assets under a given folder path."
+                jcr:primaryType="nt:unstructured"
+                jcr:title="PwC Vital Stat Report"
+                href="/var/acs-commons/reports/pwc-vital-stats-report.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">       
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers]"/>
+             </pwcvitalstats>
+             <generalstatusreport
+                jcr:description="A Report which gives General status report for the Topics under given folder."
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General Status Report"
+                href="/var/acs-commons/reports/general-status-report.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[authors,approvers,publishers]"/>
+             </generalstatusreport>
+             <auditReport
+                jcr:description="A report that displays AEM Asset Activities"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Audit Report"
+                href="/var/acs-commons/reports/activities-audit-report.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">
+               <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[publishers]"/>
+              </auditReport>                                   
+             <workflowReport
+                jcr:description="A report to see the duration and the amount of time it took for a workflow step to complete"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Workflow Report"
+                href="/var/acs-commons/reports/workflow-report.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[authors,publishers]"/>
+             </workflowReport>
+             <fileManagementReport
+                jcr:description="A report to view the page references of an Asset."
+                jcr:primaryType="nt:unstructured"
+                jcr:title="File Management Report"
+                href="/var/acs-commons/reports/file-management-report.html?wcmmode=disabled"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse"/>
+             <assetsReport
+                jcr:description="A console to create and execute all Assets reports like Upload, Download, Expiration, Modification etc."
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Assets Report (OOTB)"
+                href="/mnt/overlay/dam/gui/content/reports/reportlist.html"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">
+               <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[us-ops-publishers]"/>
+             </assetsReport>
+            <brokenSeeAlsoReport
+                    jcr:description="This report provides see also broken links against a topic"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Broken See Also Links report"
+                    href="/var/acs-commons/reports/see-also-broken-link-report.html?wcmmode=disabled"
+                    icon="report"
+                    id="fmdita-tools-xmladdon-contentreuse">
+                <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/groupmember"
+                        groupID="[authors]"/>
+            </brokenSeeAlsoReport>
+        </pwc-viewpoint>
+      <pwc-ops
+              jcr:primaryType="nt:unstructured"
+              jcr:title="PwC OPS"
+              id="pwc-ops-fmdita-tools-xmladdon">
+        <fusion-indexing-utility
+                jcr:description="Utility to run Fusion Indexing"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Fusion Indexing"
+                href="/apps/fmdita/report/fusion-indexing.html"
+                icon="report"
+                id="fmdita-tools-xmladdon-contentreuse">
+          <granite:rendercondition
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="fmdita/rendercondition/groupmember"
+                  groupID="[pwc-ops-team]"/>
+        </fusion-indexing-utility>
+      </pwc-ops>
+    </tools>
+</jcr:root>

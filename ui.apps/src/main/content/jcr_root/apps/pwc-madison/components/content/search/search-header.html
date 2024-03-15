@@ -1,0 +1,83 @@
+<div :style=" (sideBySide.isSideBySideOpen||isSpecialSearch) ? 'display: none !important;' : '' " class="meta is-flex">
+    <div v-if="suggestion.hasSuggestion" class="search-pagination">
+        <div class="suggestion-link">
+            <p>
+                ${'Did_You_Mean' @i18n} <a href="#" @click="updatePage()">{{suggestion.suggestionText}}?</a>
+            </p>
+        </div>
+    </div>
+    <div v-if="initialResult" class="view-counts">
+        <span>${'Search_View' @i18n}: </span>
+        <span class="counts">
+            <span :class="{'active' : maxPerPage == 10}" @click="setView(10)">10</span>
+            <span class="seperator"></span>
+            <span :class="{'active' : maxPerPage == 20}" @click="setView(20)">20</span>
+            <span class="seperator-preview"></span>
+            <span @click="sideBySideClick(null,'header')">${'Search_Priview_Search_Results' @i18n}</span>
+        </span>
+    </div>
+    <div v-if="count > 0" class="sort is-hidden-mobile is-hidden-tablet-only">
+        <div class="sorting-heading">${'Search_Sort_By' @i18n}:</div>
+        <div class="dropdown is-right" :class="{'is-active' : sortFilter.showDropDown}" @click="toggleDropDown()">
+            <div class="dropdown-trigger">
+                <a href="javascript:void(0)" class="primary-orange
+                    dropdown-tigger-click" aria-haspopup="true"
+                   aria-controls="sort-dropdown-menu">
+                    {{sortFilter.selectedSortOption | uppercase}}
+                    <span class="icon is-small">
+                        <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/caret-down.svg"
+                          alt="Caret down">
+                    </span>
+                </a>
+            </div>
+            <div class="dropdown-menu" id="sort-dropdown-menu"
+                 role="menu">
+                <div class="dropdown-content is-radiusless">
+                    <div v-for="sort in sortFilter.sortList"
+                         @click="sortResults(false,sort)" class="dropdown-item">
+                        <a  :class="{'is-active' : sort.value === sortFilter.selectedSortValue}">
+                            {{sort.translatedTitles[pageLocale] || sort.title}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+							<!-- header pagination -->
+<div class="madison-pagination head-pagination" v-if="count > 0">
+								<div class="columns is-flex ">
+								  <div class="column is-12 search-page">
+									<div class="search-pagination is-right-aligned" v-if="pagination.paginationPages && pagination.paginationPages.length">
+									  <span class="counts">
+										<span v-if="currentPage > 1" class="previous"
+											  @keyup.enter="changePage(currentPage-1)" @click.prevent="changePage(currentPage-1)">
+										  <span class="icon-caret-left"></span>
+											 ${'Search_Previous' @i18n}
+										</span>
+										<span v-show="pagination.paginationFirst" :class="{'active' : currentPage === 1}" @click.prevent="changePage(1)">1</span>
+										  <span v-show="pagination.paginationFirst" class="pagination-seperator"></span>
+										  <span v-show="pagination.paginationFirst" @click.prevent="changePage(pagination.paginationPrevDots)">...</span>
+										  <template v-for="page in pagination.paginationPages" :key="page">
+										   <span v-if="page !== 1" class="pagination-seperator"></span>
+										   <span :class="{'active' : page === currentPage}"
+											 @click.prevent="{page !== currentPage ? changePage(page) : null}">{{page}}</span>
+										</template>
+										<span v-show="pagination.paginationLast" class="pagination-seperator"></span>
+										<span v-show="pagination.paginationLast" @click.prevent="changePage(pagination.paginationNextDots)">...</span>
+										<span v-show="pagination.paginationLast" class="pagination-seperator"></span>
+										<span v-show="pagination.paginationLast" @click.prevent="changePage(paginationSize)">{{paginationSize}}</span>
+										<span v-show="currentPage < paginationSize"
+											  @click.prevent="changePage(currentPage + 1)"
+											  @keyup.enter="changePage(currentPage + 1)" class="next">
+										   ${'Search_Next' @i18n}
+										   <span class="icon-caret-right"></span>
+										</span>
+									  </span>
+									</div>
+								  </div>
+								</div>
+</div>
+
+
+<sly data-sly-include="search-filter-header.html"/>

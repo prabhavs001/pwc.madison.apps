@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+xmlns:jcr="http://www.jcp.org/jcr/1.0"
+jcr:primaryType="sling:OsgiConfig"
+madison.sort.search.filter.base.path = "/content/pwc-madison/global/reference-data/fusion-search/filter-sort"
+madison.facets.search.filter.base.path = "/content/pwc-madison/global/reference-data/fusion-search/filter-facets"
+madison.search.signal.stay.timeframe = "30000"
+/>

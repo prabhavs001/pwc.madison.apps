@@ -1,0 +1,8 @@
+<sly data-sly-use.caching="com.pwc.madison.core.models.StructureComponentCaching"
+     data-sly-test.iscached="${caching.isCachingEnabled}">
+    <!--#include virtual="${caching.territoryMapperResourcePath @ selectors=['territorymapping', 'nocache'], extension='html'}" -->
+    <!--#config errmsg="<script>window.hasPageDirectiveError = true;</script>" -->
+</sly>
+<sly data-sly-test="${!iscached}"
+     data-sly-resource="${[caching.territoryMapperResourcePath,'jcr:content'] @ join='/', selectors='territorymapping'}" data-sly-unwrap>
+</sly>

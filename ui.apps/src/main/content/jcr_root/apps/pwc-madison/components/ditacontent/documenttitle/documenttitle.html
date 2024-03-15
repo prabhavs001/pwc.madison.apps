@@ -1,0 +1,54 @@
+<sly data-sly-use.documentTitle="com.pwc.madison.core.models.DocumentTitle"></sly>
+<sly data-sly-test="${documentTitle.isJoinedTopic}">
+	<sly data-sly-include="/apps/pwc-madison/components/ditacontent/wrapper/wrapper.jsp"></sly>
+</sly>
+<sly data-sly-test="${!documentTitle.isJoinedTopic}">
+	<section id="madison-title-print" class="is-paddingless print-hidden">
+        <div class="print-body-header">
+            <!-- Top Header for print css Component START -->
+            <nav class="navbar-madison primary" role="navigation" aria-label="main navigation">
+                <div class="container is-flex">
+                    <div class="navbar-brand">
+                        <div class="navbar-item">
+                            <a href="/">
+                                <img class="logo" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/pwc_logo@2x.png" alt="PwC logo@2x">
+                            </a>
+                            <span class="border"></span>
+                                <h5>${'Content_Project_Madison' @i18n}</h5>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Top Header for print css Component END -->
+            <div data-sly-use.documentTitle="com.pwc.madison.core.models.DocumentTitle" class="doc-body-head columns">
+                <div data-sly-test="${documentTitle.imgPath}" class="column is-4">
+                  <img alt="Madison illustration" src="${documentTitle.imgPath}">
+                </div>
+                <div class="column title">
+                    <div class="badge-favorited-container">
+                        <p class="badge-favorited active">${'ContentPage_Favorited_Content' @i18n}</p>
+                    </div>
+                    <h1>${documentTitle.subTitle}</h1>
+                    <div class="publication" data-sly-test="${(!documentTitle.hidePublicationDate && documentTitle.pubhlishedDate)  || documentTitle.revisedDate}"><sly data-sly-test="${!documentTitle.hidePublicationDate && documentTitle.pubhlishedDate}">${'Content_Publication_Date' @i18n}: ${documentTitle.pubhlishedDate}&nbsp;&nbsp;&nbsp;</sly><sly data-sly-test="${documentTitle.revisedDate}">(${'Updated_Text' @i18n} ${documentTitle.revisedDate})</sly></div>
+                    <div class="in-depth" data-sly-test.pwcContent="${documentTitle.source == documentTitle.pwcSourceValue || documentTitle.source == ''}"><span class="is-uppercase">${documentTitle.pwcCountry}</span>  ${ documentTitle.sectionTitle != ''  ? documentTitle.sectionTitle : documentTitle.contentType @i18n} </div>
+                    <div class="in-depth" data-sly-test="${!pwcContent}"> <span class="is-uppercase">${documentTitle.pwcCountry}</span> ${ documentTitle.sectionTitle != ''  ? documentTitle.sectionTitle : documentTitle.source @i18n} </div>
+                    <sly data-sly-test.privateUser="${documentTitle.isPrivateUser}">
+                        <sly data-sly-test.privateGroup="${documentTitle.privateGroupList}">
+                            <span class="internal-use">${'For' @i18n}</span>
+                            <sly  data-sly-list="${documentTitle.privateGroupList}">
+                                <span class="internal-use">${item @i18n}</span>
+                                <span data-sly-test="${!itemList.last}">&#44;</span>
+                            </sly>
+                            <span class="internal-use">${'Only' @i18n}</span>
+                        </sly>
+                        <sly data-sly-test="${!privateGroup}">
+                            <span class="internal-use">${'Private_User_Text' @i18n}</span>
+                        </sly>
+                    </sly>
+                    <span data-sly-test="${!privateUser && !documentTitle.isInternalUser}"  class="internal-use">${'Internal_User_Text' @i18n}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>
+

@@ -1,0 +1,17 @@
+<template data-sly-template.pageEmail="${@ unwrapli, url, title}">
+    <sly data-sly-test.body="${'header_email_body' @ i18n}" />
+    <li data-sly-use.pageEmailShare="${'com.pwc.madison.core.models.EmailShare' @ bodyText=body}" data-sly-test="${pageEmailShare.pageUrl}" data-sly-unwrap="${unwrapli}">
+        <sly data-sly-use.emailShare="pwc-madison/components/commons/email-share/email-share.html">
+            <sly data-sly-test.emailsubj="${'header_email_subject' @ i18n}" />
+            <sly data-sly-test.currentURL="${url != ''}">
+                <sly data-sly-test.emailsubj="${[emailsubj, title] @ join=' - '}"/>
+                <sly data-sly-test.body="${'{0} {1} {2} {3} {4}' @ format=[pageEmailShare.encodedBodyText , '%0D%0A%0D%0A', title, ' - ', url]}"/>
+            </sly>
+            <sly data-sly-test="${!currentURL}">
+                <sly data-sly-test.emailsubj="${[emailsubj, pageEmailShare.title] @ join=' - '}"/>
+                <sly data-sly-test.body="${'{0} {1} {2} {3} {4}' @ format=[pageEmailShare.encodedBodyText , '%0D%0A%0D%0A', pageEmailShare.title, ' - ', pageEmailShare.pageUrl]}"/>
+            </sly>
+            <sly data-sly-call="${emailShare.icon @ toAddress = '', subject = emailsubj, body = body}" />
+        </sly>
+    </li>
+</template>

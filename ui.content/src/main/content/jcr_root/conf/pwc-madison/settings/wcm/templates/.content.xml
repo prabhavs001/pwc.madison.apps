@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <search-page/>
+    <sme-detail-page/>
+    <dita-content-template/>
+    <content-page/>
+    <redirect-page/>
+    <fasb-cross-reference-tool-page/>
+    <home-page/>
+</jcr:root>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="PwC File Management Column"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        required="{Boolean}true"/>
+                    <statvals
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldLabel="Column Value"
+                        name="./value"
+                        required="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <references
+                                jcr:primaryType="nt:unstructured"
+                                text="All Page References to that asset"
+                                value="aempages"/>
+                            <referenceUrls
+                                jcr:primaryType="nt:unstructured"
+                                text="URL to Published page using the asset"
+                                value="anchors"/>
+                            <status
+                                jcr:primaryType="nt:unstructured"
+                                text="Page Status of the referencing page"
+                                value="status"/>
+                        </items>
+                    </statvals>
+                    <exporter
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./exporter"
+                        value="com.pwc.madison.core.reports.columns.FileManagementReportCSVExporter"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

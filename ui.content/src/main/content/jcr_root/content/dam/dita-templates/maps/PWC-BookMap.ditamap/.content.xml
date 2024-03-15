@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="87375123-ccf5-4a8a-a528-397ea011c9d5">
+    <jcr:content
+        jcr:lastModified="{Date}2019-12-06T14:05:43.750Z"
+        jcr:lastModifiedBy="fmdita-serviceuser"
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        templateDescription="Template for PwC Bookmap"
+        templateTitle="PwC Bookmap">
+        <metadata
+            dam:extracted="{Date}2016-03-23T10:34:02.968+05:30"
+            dam:sha1="3831260d4ddeaabffaa7641728b05c7e756e08e2"
+            dam:size="{Long}3577"
+            dc:format="application/xml"
+            dc:title="PwC Bookmap"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

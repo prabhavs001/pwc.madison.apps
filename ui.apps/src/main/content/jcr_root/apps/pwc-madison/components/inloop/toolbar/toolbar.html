@@ -1,0 +1,203 @@
+<script>
+  var bodyClasses = document.querySelector('body').classList;
+    if(bodyClasses && bodyClasses.contains('page-vp-inloop')){
+      document.querySelector('html').classList.add('article-template');
+    }
+</script>
+<div class="toolbar-inloop">
+    <div id="overlay"></div>
+     <!-- Tool Bar Icons  -->
+    <div id="navbar-toc" class="navbar-toc aem-component-toolbar">
+        <div class="toc-action-navbar toc-wrapper toc-page-nav">
+            <div class="toc_icon">
+                <!-- <ul>
+                    <li class="stick-nav-title"
+                        style="display: none; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 1;">
+                        Heading of the page
+                    </li>
+                </ul> -->
+            </div>
+            <div>
+                <ul class="share_icons">
+                    <li>
+                        <div data-sly-use.favorite="com.pwc.madison.core.models.FavoriteModel"
+                             class="favorites-toggle favorite-list-component" data-page-path="${currentPage.path}"
+                             data-page-href="${favorite.currentPageURL}" data-is-content-page="true">
+                            <div><span>
+                                    <div class="favorite-toggle-tooltip">${'UserReg_Favorite_List_Content_AddTo_Favorites' @i18n}</div>
+                                    <div class="favorite-toggle-error">
+                                        <p>An error occurred, please try again.</p>
+                                    </div>
+                                </span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-title="${'Share' @i18n}" href="javascript:void(0);" class="icon-share share-tooltip-popout" data-tooltip-content="#toolbar_tip_home" data-tippy-placement="bottom"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="copyToClipboard();"
+                            class="icon-link link-tooltip-popout"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-title="${'Print_Current_Screen' @i18n}" onclick="print_info_modal()"
+                            class="icon-print"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Share Icon Options -->
+    <div id="share_tooltip" class="tooltip-popout">
+        <div class="share-tooltip-content" id="toolbar_tip_home">
+            <sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+                <sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+            </sly>
+            <sly data-sly-use.linkedInTemplate="pwc-madison/components/commons/linkedin/LinkedinTemplate.html">
+                <sly
+                    data-sly-use.linkedInShare="com.pwc.madison.core.models.LinkedInModel"
+                    data-sly-call="${linkedInTemplate.linkedIn @ summary = '', unwrapli='true', 
+       isLinkedInShareEnabled=linkedInShare.isLinkedInShareEnabled, pageUrl=linkedInShare.pageUrl, title=linkedInShare.title}"
+                />
+            </sly>
+            <sly data-sly-use.twitterTemplate="pwc-madison/components/commons/twitter/TwitterTemplate.html">
+                <sly
+                    data-sly-use.twitterShare="com.pwc.madison.core.models.TwitterModel"
+                    data-sly-call="${twitterTemplate.tweet @ unwrapli='true',
+        isTwitterShareEnabled=twitterShare.isTwitterShareEnabled, pageUrl=twitterShare.pageUrl, title=twitterShare.title}"
+                />
+            </sly>
+        </div>
+    </div>
+    <!-- Copy Link Tooltip -->
+    <div id="link_tooltip" class="tooltip-popout">
+        <div class="">
+            <div class="link-tooltip-content">
+                <div class="inner-lins">${'Link_Copied' @i18n}</div>
+            </div>
+        </div>
+    </div>
+    <!-- Print Pop-Up  -->
+    <div class="modal print-instruction-body">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- start modal content -->
+          <div class="print-modal-decor">
+            <div class="instruction-content">
+              ${'Common_Document_PrintModal_PleaseEnsure' @i18n}<br> 
+              ${'Common_Document_PrintModal_SelectText' @i18n}<br> 
+              <span>${'Common_Document_PrintModal_PrintBGMsg' @i18n}</span>
+              ${'Common_Document_PrintModal_WhenPrint' @i18n}
+            </div>
+            <div class="print-action">
+              <a onclick="printElementByClick()" class="continue-print" href="javascript:;">${'Common_Document_PrintModal_ContinueBtnText' @i18n}</a>
+              <div class="show-message">
+                <label class="check"> <span>${'Common_Document_PrintModal_ChkBoxMsg' @i18n}</span>
+                  <input type="checkbox" id="remember_print_event">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>    
+          <!-- end modal content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+</div>
+<!-- Print Header Inclusion -->
+<div class="content_page">
+    <section id="madison-title-print" class="is-paddingless print-hidden">
+        <div class="container">
+            <div class="main-body-content">
+                <div class="print-body-header">
+                    <!-- Top Header for print css Component START -->
+                    <nav class="navbar-madison primary" role="navigation" aria-label="main navigation">
+                        <div class="container is-flex">
+                            <div class="navbar-brand">
+                                <div class="navbar-item">
+                                    <a href="/">
+                                        <img class="logo"
+                                            src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/pwc_logo@2x.png"
+                                            alt="PwC logo@2x">
+                                    </a>
+                                    <span class="border"></span>
+                                    <h5>${'Content_Project_Madison' @i18n}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Side By Side Wrapper -->
+<div id="sidebysideview" class="modal">
+
+  <!-- Modal content -->
+  <section id="sub-topic-details-page" class="sub-topic-details-page">
+    <!-- <div class="container"> -->
+
+    <div class="back-sub-topic-details">
+      <div class="backSearchWithin">
+        <span class="backtodoc"><span class="icon-submit-arrow"></span>${'Body_Callout_Back_To_Original_Document' @i18n, locale=pageProperties.jcr:language}</span>
+
+		<span class="non-clickable-text-desktop">${'Side_By_Side_This_View_Is_Read_Only' @i18n, locale=pageProperties.jcr:language, context='html'}</span>
+      </div>
+    </div>
+
+    <div class="sub-topic-details-box">
+
+      <!-- -----------Left Section----------- -->
+      <div class="sub-topic-details-left">
+
+        <div class="left-title-bar title-bar">
+            <span class="title-bar-left-side">
+            </span>
+          <span class="title-bar-right-side">
+              <ul class="share_icons">
+              <li><a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="copyToClipboard();" class="icon-link link-tooltip-popout"></a></li>
+              <li><sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+                    <sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+                </sly>
+              </li>
+              </ul>
+            </span>
+        </div>
+
+        <div id="left-clone-content" class="left-clone-content">
+          <!-- Left Section Content -->
+            <div class="sub-loader calloutloader" ></div>
+        </div>
+
+      </div>
+      <!-- -----------Middle Line----------- -->
+      <div class="sub-topic-details-middle">
+        <div class="spacer-line is-hidden-mobile is-hidden-tablet-only">
+          <div></div>
+        </div>
+      </div>
+      <!-- -----------Right Section----------- -->
+      <div class="sub-topic-details-right">
+
+        <div class="right-title-bar title-bar">
+            <span class="title-bar-left-side">
+            </span>
+          <span class="title-bar-right-side">
+              <ul class="share_icons">
+              <li><a href="#" id="detailBtn" title="${'Side_By_Side_Go_To_Content' @i18n}" class="open-link"><img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-another-tab-white.svg"></a></li>
+              <li><a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="sideBySideCopyToClipboard(this);" class="icon-link link-tooltip-popout"></a></li>
+              </ul>
+            </span>
+        </div>
+
+        <div id="right-clone-content" class="right-clone-content">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- </div> -->
+  </section>
+
+</div>

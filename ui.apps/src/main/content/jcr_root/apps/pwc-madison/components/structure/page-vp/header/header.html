@@ -1,0 +1,183 @@
+<noindex>
+<sly data-sly-use.header="com.pwc.madison.core.models.Header">
+<sly data-sly-use.userRegRestService="com.pwc.madison.core.userreg.services.UserRegRestService"/>
+<div data-sly-test="${header.notificationMessage}" class="navbar-message navbar-message--mobile">
+  <span class="hide-nav-message">&#10005;</span>
+  ${header.notificationMessage @context = 'html'}
+</div>
+<div class="fix-menu-onscroll">
+    <nav class="navbar-madison global-navbar subnav primary" role="navigation" aria-label="main navigation">
+        <div class="container is-flex">
+            <div class='navbar-brand'>
+				<div class="navbar-hamburger is-flex is-flex-mobile" data-sly-resource="${'global_navigation' @resourceType='pwc-madison/components/structure/global-navigation'}"></div>
+                <div class="navbar-item">
+                    <a  data-component-name="${header.componentName}"
+                    	data-link-title="${header.siteName}"
+                    	href="${header.logoURL @ extension='html'}">
+                        <img src='/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/pwc_logo@2x.png' alt="Pwc logo@2x" class='logo'>
+                    </a>
+                    <span class="border"></span>
+                    <a  data-component-name="${header.componentName}"
+                    	data-link-title="${header.siteName}"
+                    	href="${header.logoURL @ extension='html'}">
+                        <h5>${header.siteName}</h5>
+                    </a>
+                </div>
+            </div>
+            <div class='navbar-search is-flex'>
+                <div class="navbar-item">
+                    <div class="global-search" id='autocompleteSearch'>
+                        <div class="global-content">
+                            <form class="navbar-form navbar-left hidden-xs" id="searchform" method="get"
+                                      action="${header.searchURL @ extension='html'}">
+                            <div class="input auto-suggestion">
+								<div class="info-icon" data-title="${'search_info_tooltip' @i18n}">
+								<img src='/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/info.svg' class='icon_info'>
+							</div>
+                                <input type="text" name="q" autocomplete="off" placeholder="${'search_type_your_search' @i18n}...">
+                                <!-- <span class="clear-input icon-close-popup">  </span> -->
+                                <span class="close-global-search icon-close-popup">  </span>
+                               
+                            </div>
+                            </form>
+                            <div class="recent-search-results">
+                                <h5>${'Your_Recent_Searches' @ i18n, locale=pageProperties.jcr:language}</h5>
+                                <ul></ul>
+                            </div>
+                            <div class="search-results">
+                                <div class="sugested-wrapper">
+                                <div class="results suggestions">
+                                    <h5>${'Suggested_Terms' @ i18n, locale=pageProperties.jcr:language}</h5>
+                                    <ul></ul>
+                                </div>
+                                <div class="results guidance">
+                                    <h5>${'Suggested_Guidance' @ i18n, locale=pageProperties.jcr:language}</h5>
+                                    <ul></ul>
+                                </div>
+                            </div>
+                                <div class="submit-btm">
+                                    <button form="searchform" type="submit">
+                                        ${'search_btn_search' @i18n}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                    <a href="#autocompleteSearch" class='search' id='search-link'>
+                        <span class='search'></span>
+						<span class="search-text">${'search_search' @i18n}</span>
+                    </a>
+                </div>
+				<div class="navbar-end is-flex">
+					<div class="navbar-item profile-menu header-dropdown">
+						<h5>
+							<a data-sly-test.loginLink="${userRegRestService.userLoginLink}" data-href="${loginLink}" style="display: none;" v-show="!isUserLoggedIn" href="javascript:void(0);" class="signin-modal-trigger user-login" id="animatedTemplateModal" ref="samlAuthLoginButton">${'UserReg_SignIn' @ i18n, locale=pageProperties.jcr:language}</a>
+							<span style="display: none;" v-show="!isUserLoggedIn">\</span>
+							<a data-sly-test.registerLink="${userRegRestService.userRegisterLink}" data-register-link="${registerLink}" style="display: none;" href="javascript:void(0);" v-show="!isUserLoggedIn" class="register-modal-trigger user-register" id="registermobile" >${'UserReg_Register' @ i18n, locale=pageProperties.jcr:language}</a>
+						</h5>
+						<h5 @click="openProfileMenu" style="display: none;" v-show="isUserLoggedIn">
+						 <p  ref="helloMessage" data-hello-message="${'UserReg_Header_Hello' @ i18n, locale=pageProperties.jcr:language}">{{helloMessage}}</p>
+						 <span class="icon-caret-down"></span>
+						 <div class="account_sub_nav">
+						   <ul>
+							<li><a href="javascript:;" class="prevent-body-scroll edit-profile">${'UserReg_EditProfile' @ i18n, locale=pageProperties.jcr:language}</a></li>
+							<li @click="logout"><a href="javascript:void(0);">${'UserReg_Logout' @ i18n, locale=pageProperties.jcr:language}</a></li>
+						   </ul>
+						 </div>
+						</h5>
+					</div>
+					<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test.isFavoriteListEnabled="${favoriteListService.isFavoriteListEnabled}" class="navbar-item favorite-list-dropdown-spacer" style="display:none">
+					  <span class="spacer"></span>
+					</div>
+					<div data-sly-test="${isFavoriteListEnabled}" id="favorite-list-dropdown" class="navbar-item favorites-menu" style="display:none" v-show="isUserLoggedIn" @click="openFavoriteListDropdown">
+					  <span class="favorite-elipse" :class="{active : isDotActive}"></span>
+					  <h5>
+						<span class='star'></span>
+						<span class="icon-caret-down"></span>
+						<div class="favorites_sub_nav">
+						  <div class="favorites_nav_header">
+							<span class="subnav-star"></span>
+							<p>${'UserReg_Favorite_List_Dropdown_Heading' @ i18n, locale=pageProperties.jcr:language}</p>
+						  </div>
+						  <div class="no-favorites" :class="{show : hasNoFavorites}">
+							${'UserReg_Favorite_List_Dropdown_No_Favorites' @ i18n, locale=pageProperties.jcr:language, context='html'}
+						  </div>
+						  <ul class="navbar-favorite-list scrollbar-outer" :class="{hide : hasNoFavorites}">
+							<a v-for="favoriteList in defaultList" :href="favoriteList.pageHref"><li>{{favoriteList.title}}</li><li class="star-dropdown-orange">{{favoriteList.country}} {{favoriteList.content}}</li> </a>
+						  </ul>
+						  <div class="favorites-nav-footer" :class="{hide : hasNoFavorites}">
+							<a data-sly-use.favoriteListModel="com.pwc.madison.core.models.FavoriteListModel" href="${favoriteListModel.favoriteListPage}" class="view-favorites">${'UserReg_Favorite_List_Dropdown_View_All' @ i18n, locale=pageProperties.jcr:language}</a>
+						  </div>
+						</div>
+					  </h5>
+					</div>
+					<div class="navbar-item ">
+						<span class="spacer"></span>
+					</div>
+					<sly data-sly-resource="${'territory_language_mapper' @resourceType='pwc-madison/components/content/territory-language-mapper'}"/>
+				</div>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <input type="hidden" name="blacklisted-domains"  data-sly-use.blacklistedDomainsService="com.pwc.madison.core.userreg.services.UserRegRestService" value="${blacklistedDomainsService.blacklistedDomains @context='attribute'}"/>
+    <input type="hidden" name="pageLocale" value="${header.pageLocale}"/>
+    <input type="hidden" name="audience" value="${header.audience}"/>
+    <input type="hidden" name="cc" value="${header.cc}"/>
+    <input type="hidden" name="pageTerritoryCode" value="${header.pageTerritoryCode}"/>
+    <input type="hidden" name="blacklisted-domains" data-sly-use.blacklistedDomainsService="com.pwc.madison.core.userreg.services.UserRegRestService" value="${blacklistedDomainsService.blacklistedDomains @context='attribute'}"/>    
+	<input type="hidden" id="maxSuggestionCount" value="${header.searchMaxSuggestions}"/>
+	<input type="hidden" id="minCharSuggestionCount" value="${header.minCharSuggestions}"/>
+	<input type="hidden" id="maxSuggestedGuidance" value="${header.searchMaxSuggestedGuidance}"/>
+	<input type="hidden" id="maxSuggestedGuidanceSlides" value="${header.searchMaxSuggestedGuidanceSlides}"/>
+	<input type="hidden" id="suggestedGuidanceTimeout" value="${header.suggestedGuidanceTimeout}"/>
+	<input type="hidden" id="searchPlaceHolder" value="${'Search_Within_Document' @i18n}"/>
+	</sly>
+	<nav class='navbar subnav' style="display: none;"></nav>
+	<div data-sly-test="${header.notificationMessage}" class="navbar-message navbar-message--desktop">
+		<span class="hide-nav-message">✕</span>
+		  ${header.notificationMessage @context = 'html'}
+	  </div>
+</div>
+</noindex>
+
+<script>
+	function getInternalTitleList() {
+		var madisonTitleList = JSON
+				.parse('${header.internalTitleListJson @context="scriptString"}');
+		return madisonTitleList;
+	};
+	
+	function getExternalTitleList() {
+		var madisonTitleList = JSON
+				.parse('${header.externalTitleListJson @context="scriptString"}');
+		return madisonTitleList;
+	};
+	
+	function getLocale() {
+		return $('input[name="pageLocale"]').val() !== '' ? $('input[name="pageLocale"]').val() : getDefaultLocale();
+	}
+
+	(function(h,o,u,n,d) {
+     h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+     d=o.createElement(u);d.async=1;d.src=n
+     n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js','DD_RUM')
+  window.DD_RUM.onReady(function() {
+    window.DD_RUM.init({
+      clientToken: 'pub6425709b4c0ed4cfb61c952c3dfe735a',
+      applicationId: 'd49f20bf-105d-4139-baab-96887dc2aec9',
+      site: 'us3.datadoghq.com',
+      service: 'viewpoint-qa',
+      //  env: 'production',
+      //  version: '1.0.0',
+      sessionSampleRate: 100,
+      sessionReplaySampleRate: 100,
+      trackResources: true,
+      trackLongTasks: true,
+      trackUserInteractions: true,
+    });
+  });
+</script>

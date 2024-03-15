@@ -1,0 +1,50 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="SME Contact Component" class="cq-placeholder"></p>
+
+<section class='industry-landing' data-sly-use.smeContact="com.pwc.madison.core.models.SMEContact">
+    <div class="container">
+        <h2 data-sly-test.title="${smeContact.title}">${title}</h2>
+        
+        <div class="author-cards" data-sly-list.contact="${smeContact.contacts}">
+            <div class="author-module author-tooltip-popout sme-tippy   " data-sly-test="${contact.firstname}${contactList.count}" data-id="#tippyContent">
+                <div>
+                    <div class="avatar" data-sly-test.name="${[contact.firstname,contact.lastname] @join=' '}">
+                        <img src="${contact.photo ? contact.photo : '/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/default-profileii.png'} " alt="${name}">
+                    </div>
+                    <div class='details'>
+                        <p class='name' data-sly-test="${name}">${name}</p>
+                        <p class='position' data-sly-test.designation="${contact.stafflevel}">${designation}</p>
+                        <p class='department' data-sly-test.organization="${contact.organization}">${organization}</p>
+                    </div>
+                </div>
+                <div class='contact' data-sly-test.email="${contact.email}">
+                    <a href="mailto:${email}" target="_blank">
+                        <span>${'Sme_Contact_Email' @i18n, locale=pageProperties.jcr:language}</span>
+                    </a>
+                </div>
+            </div>
+            <div id="tippyContent" class="author_tooltip">
+                <div>
+                    <div class="author-tooltip-content">
+
+                        <h1 data-sly-test="${name}">${name}</h1>
+                        <h2 data-sly-test="${organization && designation}">
+                            ${designation}<br>
+                            ${organization}
+                        </h2>
+                        <p class="bio" data-sly-test.bio="${contact.biography}">
+                            ${bio}
+                        </p>
+                        <p class="email" data-sly-test="${email}">
+                            <a href="mailto:${email}" target="_blank">${email}</a>
+                        </p>
+                        <p class="contact">
+                            ${contact.phone}<br>
+                            <a data-sly-test.linkedin="${contact.linkedin}" href="${contact.linkedin}">${'Sme_Contact_Linkedin' @i18n, locale=pageProperties.jcr:language}</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

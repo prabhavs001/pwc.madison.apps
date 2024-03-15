@@ -1,0 +1,10 @@
+<template data-sly-template.extendSessionTimeout="${@ locale}">
+    <a href="#timeOutWarningPopup" id="timeOutPopup" style="visiblity: hidden"></a>
+    <div id="timeOutWarningPopup" class="" style="display: none" v-bind:style="{ display: show}">
+        <div @click="closeModal" class="timeoutSession-close close-timeOutWarningPopup"><span class="icon-close-popup"></span></div>
+        <div class="timeout-popup-content">
+            <h2 class="timeout-title">${'UserReg_Extend_Session_Timeout_Title' @ i18n, locale=locale}</h2>
+            <p class="timeout-text">${'UserReg_Extend_Session_Timeout_Text_1' @ i18n, locale=locale} <a @click="extendSessionTimeout" href="javascript:;"><u>${'UserReg_Extend_Session_Timeout_Text_2' @ i18n, locale=locale}</u></a> ${'UserReg_Extend_Session_Timeout_Text_3' @ i18n, locale=locale}</p>
+        </div>
+    </div>
+</template>

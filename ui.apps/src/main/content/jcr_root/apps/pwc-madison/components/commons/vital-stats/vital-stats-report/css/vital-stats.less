@@ -1,0 +1,159 @@
+/* TODO: Remove body class if needed*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #f5f5f5;
+    color: #323232;
+}
+
+.coral-Form-fieldwrapper > label {
+   display:block;
+   margin-top:20px;
+}
+
+
+.dam-admin-reports-generate {
+   margin-top:20px;
+}
+
+.dam-admin-reports-download {
+   margin-top:20px;
+}
+
+.coral-Form-fielderror{
+   line-height:2;
+   margin-left: 5px;
+}
+
+#shell-propertiespage-rail{
+   width: 20rem;
+}
+
+coral-panel-content{
+    padding-left: 20px;
+}
+.report-details{
+    .show{
+        display: block !important;
+    }
+    .hide{
+        display: none !important;
+    }
+    .text-red{
+        color: #f01710  !important;;
+    }
+    .text-blue{
+        color:#2196F3  !important;;
+    }
+    &__table{
+        font-size: 0.8rem;
+        width: 100%;
+        border: 1px solid #cbcbcb;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: #f0f0f0;
+        thead{
+           
+        }
+        tbody{
+            background: #fff;
+            
+        }
+       tr.report-row{
+           cursor: pointer;
+            .fa-chevron-down{
+                display: none;
+            }
+            .fa-chevron-inline{
+                display: none;
+            }
+            &.expanded{
+                .fa-chevron-right{
+                    display: none;
+                }
+                .fa-chevron-down{
+                    display: inline;
+                }
+                &+tr.report-panel-row{
+                    display: table-row;
+                }
+            }
+           
+       }
+       .report-panel-row{
+            display: none;
+        }
+        td{
+            height: 40px;
+            padding: 5px;
+            border-bottom: 1px solid #cbcbcb;
+            span{
+                margin: 0 5px;
+            }
+           
+        } 
+        .accrodion{
+            &__tabs{
+                list-style: none;  
+                display: flex;
+                
+                 & li{
+                     padding: 0 20px;
+                     a{
+                        color: #323232;
+                        text-decoration:none;
+                     }
+                     &.active a{
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: underline;  
+                    }
+                     
+                 }
+            }
+            &__tab-panel{
+                list-style: none;  
+               
+                & li{
+                    display: none;
+                    a{
+                        color: #323232;
+                        text-decoration:none;
+                        display: block;
+                        margin: 10px 0;
+                     }
+                    .no-data{
+                        font-style: italic;
+                        font-size: 0.6rem;
+                     }
+                }
+            }
+            &:hover{
+                background: #f0f0f0;
+            }
+            hr{
+                
+                border: none;
+                border-bottom: 2px solid #cbcbcb;
+                margin: 0 30px;
+            }
+        }
+    }
+    &__indicator{
+        width: 10%;
+        height: 18px;
+        width: 18px;
+    }
+    .indicator-red svg{
+        fill:red;
+    }
+}
+ 
+
+
+// &__indicator{} 
+//     &__topic{}
+//     &__author{}
+//     &__state{}
+//     &__edit{}
+//     &__toggle{} 

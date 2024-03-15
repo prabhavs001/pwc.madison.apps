@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:SystemUser"
+    jcr:uuid="6748050f-3474-30ef-af1a-2898ef196996"
+    rep:authorizableId="madison-readservice"
+    rep:principalName="madison-readservice"/>

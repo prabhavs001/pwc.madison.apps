@@ -1,0 +1,50 @@
+<sly data-sly-use.userRegRestService="com.pwc.madison.core.userreg.services.UserRegRestService"/>
+<div id="favorite-list-controller" data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" data-limit="${favoriteListService.localStorageCacheTimeInMinutes}">
+	<div class="modal modal-favorite-limit simple-modal">
+	  <div class="modal-background"></div>
+	  <div class="modal-content">
+	      <h2>${'UserReg_Favorite_List_Limit_Exceed_Header' @ i18n, locale=pageProperties.jcr:language, format=[favoriteListService.favoriteListLimit]}</h2>
+	      <p class="modal-subtitle">${'UserReg_Favorite_List_Limit_Subtitle' @ i18n, locale=pageProperties.jcr:language, context='html'}</p>
+	      <div class="modal-buttons">
+	        <a data-sly-use.favoriteListModel="com.pwc.madison.core.models.FavoriteListModel" href="${favoriteListModel.favoriteListPage}" class="button confirm-remove">${'UserReg_Favorite_List_Limit_Goto_Favorite_List' @ i18n, locale=pageProperties.jcr:language}</a>
+	        <button class="userreg-modal-close button close-modal">${'UserReg_Favorite_List_Limit_Close' @ i18n, locale=pageProperties.jcr:language}</button>
+	      </div>
+	  </div>
+	</div>
+	<div class="modal modal-confirm-remove simple-modal">
+	  <div class="modal-background"></div>
+	  <div class="modal-content">
+	      <h2>${'UserReg_Favorite_List_Page_Confirm_Remove_Heading' @ i18n, locale=pageProperties.jcr:language}</h2>
+	      <div class="modal-buttons">
+	        <a class="button confirm-remove" @click="confirmRemove">${'UserReg_Favorite_List_Page_Confirm_Remove_Yes' @ i18n, locale=pageProperties.jcr:language}</a>
+	        <button class="userreg-modal-close button close-modal">${'UserReg_Favorite_List_Page_Confirm_Remove_Cancel' @ i18n, locale=pageProperties.jcr:language}</button>
+	      </div>
+	  </div>
+	</div>
+	<div class="modal modal-favorite-login simple-modal">
+	  <div class="modal-background"></div>
+	  <div class="modal-content">
+	      <h2>${'UserReg_Favorite_List_Login_Heading' @ i18n, locale=pageProperties.jcr:language}</h2>
+	      <div class="modal-buttons">
+	        <a data-sly-test.loginLink="${userRegRestService.userLoginLink}" data-href="${loginLink}" ref="samlAuthLoginButton" class="button sign-in" >${'UserReg_Favorite_List_Login_Signin' @ i18n, locale=pageProperties.jcr:language}</a>
+	        <button class="userreg-modal-close button close-modal">${'UserReg_Favorite_List_Login_Cancel' @ i18n, locale=pageProperties.jcr:language}</button>
+	      </div>
+	  </div>
+	</div>
+</div>
+<script id="favorite-list-component-template" type="text/x-template">
+	<div v-if="isContentPage" class="favorites-toggle">
+    	<div :class="{active : isUserLoggedIn && isActive}" @click.prevent="handleClick">
+    		<span>
+        		<div class="favorite-toggle-tooltip" :class="{hidden : hasError && showError}">${'UserReg_Favorite_List_Content_AddTo_Favorites' @ context="text", i18n,
+                        locale=pageProperties.jcr:language}</div>
+				<div class="favorite-toggle-error" :class="{active : hasError && showError}"><p>${'UserReg_Favorite_List_Error' @ context="text", i18n,
+                        locale=pageProperties.jcr:language}</p></div>
+      		</span>
+    	</div>
+	</div>
+	<div v-else class="favorites-toggle-small" :class="[isUserLoggedIn && isActive ? 'active' : '', isWhite ? 'favorites-toggle-small--white' : '']" @click.prevent="handleClick">
+		<div class="favorite-toggle-error" :class="{active : hasError && showError}"><p>${'UserReg_Favorite_List_Error' @ context="text", i18n,
+        		locale=pageProperties.jcr:language}</p></div>
+	</div>
+</script>

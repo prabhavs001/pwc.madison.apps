@@ -1,0 +1,72 @@
+<div data-sly-test="${wcmmode.edit }" data-emptytext="${'Body_Callout_Side_By_Side_View_Modal' @i18n, locale=pageProperties.jcr:language}" class="cq-placeholder"></div>
+<!-- ---------- The Sub-topic Modal ---------- -->
+<div id="sidebysideview" class="modal">
+
+  <!-- Modal content -->
+  <section id="sub-topic-details-page" class="sub-topic-details-page">
+    <!-- <div class="container"> -->
+
+    <div class="back-sub-topic-details">
+      <div class="backSearchWithin">
+        <span class="backtodoc"><span class="icon-submit-arrow"></span>${'Body_Callout_Back_To_Original_Document' @i18n, locale=pageProperties.jcr:language}</span>
+
+		<span class="non-clickable-text-desktop">${'Side_By_Side_This_View_Is_Read_Only' @i18n, locale=pageProperties.jcr:language, context='html'}</span>
+      </div>
+    </div>
+
+    <div class="sub-topic-details-box">
+
+      <!-- -----------Left Section----------- -->
+      <div class="sub-topic-details-left">
+
+        <div class="left-title-bar title-bar">
+            <span class="title-bar-left-side">
+            </span>
+          <span class="title-bar-right-side">
+              <ul class="share_icons">
+              <li><a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="copyToClipboard();" class="icon-link link-tooltip-popout"></a></li>
+              <li><sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+                    <sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+                </sly>
+              </li>
+              </ul>
+            </span>
+        </div>
+
+        <div id="left-clone-content" class="left-clone-content">
+          <!-- Left Section Content -->
+            <div class="sub-loader calloutloader" ></div>
+        </div>
+
+      </div>
+      <!-- -----------Middle Line----------- -->
+      <div class="sub-topic-details-middle">
+        <div class="spacer-line is-hidden-mobile is-hidden-tablet-only">
+          <div></div>
+        </div>
+      </div>
+      <!-- -----------Right Section----------- -->
+      <div class="sub-topic-details-right">
+
+        <div class="right-title-bar title-bar">
+            <span class="title-bar-left-side">
+            </span>
+          <span class="title-bar-right-side">
+              <ul class="share_icons">
+              <li><a href="#" id="detailBtn" title="${'Side_By_Side_Go_To_Content' @i18n}" class="open-link"><img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/open-another-tab-white.svg"></a></li>
+              <li><a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="sideBySideCopyToClipboard(this);" class="icon-link link-tooltip-popout"></a></li>
+              </ul>
+            </span>
+        </div>
+
+        <div id="right-clone-content" class="right-clone-content">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- </div> -->
+  </section>
+
+</div>

@@ -1,0 +1,15 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Ghost Component" class="cq-placeholder"></p>
+<section>
+    <p><b>Topic Label:</b> ${properties.topicLabel}</p></br>
+    <p><b>Topic Text:</b> ${properties.topicText}</p></br>
+    <p><b>Feature Summaries:</b> ${properties.featureSummary}</p></br>
+    <p><b>Link Label:</b> ${properties.linkLabel}</p></br>
+	<p><b>Abstract Description:</b> ${properties.Abstract}</p></br>
+    <div data-sly-use.ghost="ghost.js">
+        <p><b>Link URL:</b> ${properties.linkUrl}</p></br>
+    </div>
+    <div data-sly-test="${properties.publicationDate}"
+        data-sly-use.formatter="${'dateFormatter.js' @ date=properties.publicationDate.time, mask='dd/MM/yyyy'}">
+        <p><b>Publication Date:</b> ${formatter.formattedDate} </p>
+    </div>
+</section>

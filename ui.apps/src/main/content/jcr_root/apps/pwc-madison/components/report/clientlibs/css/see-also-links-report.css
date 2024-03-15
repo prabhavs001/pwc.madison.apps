@@ -1,0 +1,13 @@
+.coral-Table-wrapper {
+	overflow: auto;
+	max-height: 500px;
+}
+	
+.report__result-container {
+	max-height: unset!important;
+	overflow: unset!important;
+}
+	
+.coral-Table-wrapper-container {
+	overflow: unset!important;
+}

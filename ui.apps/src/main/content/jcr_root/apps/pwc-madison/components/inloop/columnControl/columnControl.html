@@ -1,0 +1,13 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=true,emptyTextAppend='Column Control'}"></sly>
+<sly data-sly-use.column="com.pwc.madison.core.models.ColumnControlModel"></sly>
+<div id="${properties.id}" class="parsys_column ${column.ColumnClass} ${column.ColumnStackClass}">
+    <div data-sly-list="${column.numberOfColumns}" data-sly-unwrap>
+        <sly data-sly-test.par="${'{0}{1}' @format=['par_',item]}" />
+        <div class="parsys_column ${column.ColumnClass}-c${item}">
+            <div data-sly-resource="${@ path=par, resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></div>
+        </div>
+    </div>
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='pwc.colCtrl.modernized.editor'}"/>

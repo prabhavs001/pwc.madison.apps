@@ -1,0 +1,7 @@
+<sly data-sly-use.pwcCalloutBlock="com.pwc.madison.core.models.BodyCalloutBlock">
+<div data-sly-list.callout="${pwcCalloutBlock.callouts}">
+		<div>${callout.title @ context = 'html'}</div>
+		<div>${callout.description @ context = 'html'}</div>
+		<div>${callout.link @ context = 'html'}</div>
+</div>
+</sly>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="0b1aff97-ea0d-3c69-8e98-1e766e64c7d8"
+    rep:authorizableId="pwc-external-users"
+    rep:principalName="pwc-external-users"/>

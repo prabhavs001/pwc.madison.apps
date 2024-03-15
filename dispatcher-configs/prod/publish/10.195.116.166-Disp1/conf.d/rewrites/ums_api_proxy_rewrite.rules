@@ -1,0 +1,20 @@
+#========================Madison UMS API Proxy rules================================
+
+SSLProxyEngine on
+ProxyPassInterpolateEnv On
+
+# Setting ums env to true for UMS domain to set HTTP Only for ums id cookie
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule .* - [E=ums:true]
+
+Header edit Set-Cookie ^((.*)ums-id=(.*))$ "$1;HttpOnly" env=ums
+
+# Set Authentication Header by extracting ums-id cookie value
+<LocationMatch "/api/v1/auth">
+    SetEnvIf Cookie "ums-id=([^;]+)" UMS_ID=$1
+    RequestHeader set Authorization "Bearer %{UMS_ID}e"
+</LocationMatch>
+
+# Redirect to UMS API
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$
+RewriteRule ^/api/v1/auth/(.*)$  %{ENV:API_SERVER}/api/v1/auth/$1 [P,L]

@@ -1,0 +1,12 @@
+#base=/libs/clientlibs/granite/utils/source
+Sling.js
+Util.js
+HTTP.js
+I18n.js
+TouchIndicator.js
+OptOutUtil.js
+init.js
+
+
+#base=/libs/dam/components/scene7/dynamicmedia/clientlibs/dynamicmedia/js
+init.js

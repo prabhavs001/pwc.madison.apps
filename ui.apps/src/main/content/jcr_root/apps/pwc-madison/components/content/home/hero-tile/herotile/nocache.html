@@ -1,0 +1,6 @@
+<sly data-sly-use.info="com.pwc.madison.core.models.IsAnonymousModel" data-sly-test="${info.isAnonymousUser}">
+<!--#include virtual="${currentNode.path}.herotile.anonymous.html" -->
+</sly>
+<sly data-sly-use.info="com.pwc.madison.core.models.IsAnonymousModel" data-sly-test="${!info.isAnonymousUser}">
+<!--#include virtual="${currentNode.path}.herotile.loggedin.html" -->
+</sly>

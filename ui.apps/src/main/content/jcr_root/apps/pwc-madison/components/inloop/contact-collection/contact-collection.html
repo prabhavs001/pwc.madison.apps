@@ -1,0 +1,22 @@
+<sly data-sly-use.model="com.pwc.madison.core.models.ContactsCollectionModel">
+    <img data-sly-test="${wcmmode.edit && !model.contacts}" src="/apps/pwc-madison/components/inloop/contact-collection/thumbnail.png" class="cq-thumbnail-placeholder" />
+    <div id="${properties.id}" class="contact-local" data-sly-test="${model.contacts}">
+        <h2 class="contact-local_heading" data-sly-test="${model.heading}">
+            ${model.heading}
+        </h2>
+        <div class="contact-local_wrapper">
+            <sly data-sly-list="${model.contacts}">
+                <div class="contact-local_person" data-sly-test.fullname="${item.firstname} ${item.lastname}">
+                    <div class="contact-local_img">
+                        <img src="${item.photo @ context='uri'}" onerror="this.oneerror=null;this.src='/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/default-profileii.png';" alt="${fullname}">
+                    </div>
+                    <div class="contact-local_details">
+                        <h3 class="contact-local_name">${fullname}</h3>
+                        <p class="contact-local_partner">${item.stafflevel}</p>
+                        <a href="mailto:${item.email}" target="_blank" class="contact-local_mail">Email</a>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</sly>

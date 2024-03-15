@@ -1,0 +1,12 @@
+<div :style=" (sideBySide.isSideBySideOpen||isSpecialSearch) ? 'display: none !important;' : '' " class=" is-flex applied_filters is-hidden-mobile is-hidden-tablet-only" v-if="facetFilter.appliedFilterCount > 0">
+    <div class="is-flex">
+        <div class="filters expanded">
+            <div class="title"> {{facetFilter.appliedFilterCount}}  ${'Search_Header_Filters_Count_Text' @i18n} ${'Search_Header_Filters_Applied_Text' @i18n}:</div>
+            <div class="filters-list">
+             <template v-for="facetAppliedValue in facetFilter.totalAppliedFacetsList">
+                 <span>{{facetAppliedValue}}</span>
+             </template>
+            </div>
+        </div>
+    </div>
+</div>

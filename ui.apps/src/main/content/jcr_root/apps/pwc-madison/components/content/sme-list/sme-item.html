@@ -1,0 +1,39 @@
+<template data-sly-template.smes="${@ list, item, subject}">
+    <div class="sme-tooltip-left">
+      <div class="user pull-left tooltipstered" data-tooltip-content="#${item.tooltipName}-tip" data-tippy-placement="left">
+        <a class="info-tooltip-popout expansion-tooltip-toggle" href="javascript:;">
+          <img data-sly-test="${item.photo}" width="40" height="40" src="${item.photo}" alt="${item.firstname}"/>
+		  <div class="user-initial" data-sly-test="${!item.photo && item.firstCharacterName}">${item.firstCharacterName}</div>
+		  <p>${item.firstname} ${item.lastname}
+            	<span>${item.stafflevel}</span>
+            </p>
+        </a>
+      </div>
+      <div data-sly-test="${item.email}" class="title pull-right">
+          <sly data-sly-use.emailBodyTemplate="pwc-madison/components/commons/email-share/email-share.html">
+              <sly data-sly-call="${emailBodyTemplate.icon @ toAddress = item.email , subject = subject, body = '' }" />
+          </sly>
+      </div>
+    </div>
+    <div class="tooltip-mobile-expansion is-hidden-tablet" style="display:none">
+      <div class="">
+	      <div id="${item.tooltipName}-tip" class="sme-tooltip-content">
+            <h2>
+                ${item.stafflevel}<br>
+                ${item.organization}
+            </h2>
+            <p class="bio">
+                ${item.biography}
+            </p>
+            <p class="email">
+                <sly data-sly-use.emailBodyTemplate="pwc-madison/components/commons/email-share/email-share.html">
+                    <sly data-sly-call="${emailBodyTemplate.email @ toAddress = item.email , subject = subject, body = '' }" />
+                </sly>
+            </p>
+            <p class="contact">
+				${item.phone} <a data-sly-test="${item.linkedin}" href="${item.linkedin}" target="_blank">${'Common_Linkedin' @i18n}</a>
+            </p>
+	      </div>
+	    </div>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/pwc-madison/oak-index"/>
+    <filter root="/apps/pwc-madison/pages-index/oak-index"/>
+    <filter root="/apps/pwc-madison/audit-index/oak-index"/>
+    <filter root="/apps/pwc-madison/config/com.adobe.acs.commons.oak.impl.EnsureOakIndex-pwc-madison"/>
+    <filter root="/apps/pwc-madison/config.author/com.adobe.acs.commons.oak.impl.EnsureOakIndex-pwc-madison-pages"/>
+    <filter root="/apps/pwc-madison/config.author/com.adobe.acs.commons.oak.impl.EnsureOakIndex-pwc-madison-audit"/>
+	<filter root="/apps/pwc-madison/config.author/com.adobe.acs.commons.oak.impl.EnsureOakIndex-pwc-madison-author"/>
+	<filter root="/apps/pwc-madison/config.publish/com.adobe.acs.commons.oak.impl.EnsureOakIndex-pwc-madison-publish"/>
+	<filter root="/apps/pwc-madison/oak-index-author"/>
+    <filter root="/apps/pwc-madison/oak-index-publish"/>
+</workspaceFilter>

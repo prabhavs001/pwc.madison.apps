@@ -1,0 +1,64 @@
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
+
+
+<VirtualHost *:80>
+	ServerName pwc-inform-origin-extpub-qa2.pwc.com
+	RedirectMatch 301 (.*) https://madison-qa2.pwc.com
+</VirtualHost>
+
+
+<VirtualHost *:80>
+        DocumentRoot /var/www/html/
+	ServerName madison-qa2.pwc.com
+	ServerAlias ums-madison-qa2.pwc.com
+	#Redirect / https://madison-qa2.pwc.com
+
+        <Directory /var/www/html/>
+
+
+           <IfModule mod_deflate.c>
+
+           # Enable gzip compression
+           SetOutputFilter DEFLATE
+
+           # Don't compress binaries
+           SetEnvIfNoCase Request_URI .(?:exe|t?gz|zip|iso|tar|bz2|sit|rar) no-gzip dont-vary
+
+           # Don't compress images
+           SetEnvIfNoCase Request_URI .(?:gif|jpe?g|jpg|ico|png)  no-gzip dont-vary
+
+           # Don't compress PDFs
+           SetEnvIfNoCase Request_URI .pdf no-gzip dont-vary
+
+           # Don't compress flash files
+           SetEnvIfNoCase Request_URI .flv no-gzip dont-vary
+
+           # Netscape 4.X has some problems
+           BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+           # Netscape 4.06-4.08 have some more problems
+           BrowserMatch ^Mozilla/4.0[678] no-gzip
+
+           # MSIE masquerades as Netscape, but it is fine
+           BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+           # Make sure proxies don't deliver the wrong content
+           Header append Vary User-Agent env=!dont-vary
+
+           </IfModule>
+
+
+                <IfModule disp_apache2.c>
+                        SetHandler dispatcher-handler
+                        ModMimeUsePathInfo On
+
+                        DirectorySlash Off
+                </IfModule>
+
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+</VirtualHost>
+

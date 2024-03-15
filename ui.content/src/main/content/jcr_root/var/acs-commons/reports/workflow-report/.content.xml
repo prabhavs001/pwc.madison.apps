@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:description="A report to see the duration and the amount of time it took for a workflow step to complete"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Workflow Report"
+        sling:resourceType="acs-commons/components/utilities/report-builder/report-page">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <workflowreport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/workflowreport"
+                pageSize="50"
+                reportExecutor="com.pwc.madison.core.reports.WorkflowReportExecutor"/>
+        </config>
+        <parameters
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <pathfield_copy
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/pathfield"
+                fieldLabel="Folder Path"
+                name="path"
+                required="true"
+                resourceType="granite/ui/components/foundation/form/pathbrowser"
+                rootPath="/content/dam/pwc-madison/ditaroot"
+                validation="root-path-validator"/>
+            <basic
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/parameters/basic"
+                fieldLabel="From Date"
+                name="fromDate"
+                resourceType="granite/ui/components/coral/foundation/form/datepicker"/>
+            <basic_896440769
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/parameters/basic"
+                fieldLabel="To Date"
+                name="toDate"
+                resourceType="granite/ui/components/coral/foundation/form/datepicker"/>
+            <basic_750193310
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="acs-commons/components/utilities/report-builder/parameters/basic"
+                fieldLabel="Workflow Rows Per DitaMap"
+                name="rows"
+                resourceType="granite/ui/components/coral/foundation/form/numberfield"/>
+        </parameters>
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <workflow_report_1452379560
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Title"
+                value="title"/>
+            <workflow_report_1452
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Asset Path"
+                value="path"/>
+            <workflow_report_1452_2102075038
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Document State"
+                value="docState"/>
+            <workflow_report_1452_1009802704
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Content Status"
+                value="contentStatus"/>
+            <workflow_report
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Model Name"
+                value="wfModelName"/>
+            <workflow_report_copy
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Initiator"
+                value="initiator"/>
+            <workflow_report_85718351
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Colloborators"
+                value="collaborators"/>
+            <workflow_report_424998338
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Start Time"
+                value="wfStartTime"/>
+            <workflow_report_copy_1011210864
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="End Time"
+                value="wfEndTime"/>
+            <workflow_report_1388970345
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Last In Review Date"
+                value="lastReviewDate"/>
+            <workflow_report_225416680
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Last In Reviewed Date"
+                value="lastReviewedDate"/>
+            <workflow_report_1485495265
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Reviewers"
+                value="reviewers"/>
+            <workflow_report_1154522556
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Last Approved Date"
+                value="lastApprovedDate"/>
+            <workflow_report_432355512
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Approvers"
+                value="approvers"/>
+            <workflow_report_4039
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Published Date"
+                value="publishedDate"/>
+            <workflow_report_403987673
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/report/columns/workflow-report"
+                exporter="com.pwc.madison.core.reports.columns.WorkflowReportCSVExporter"
+                heading="Publishers"
+                value="publishers"/>
+        </columns>
+    </jcr:content>
+</jcr:root>

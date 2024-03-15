@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="The main container component to wrap page content"
+    jcr:primaryType="cq:Component"
+    jcr:title="Main Body Container Component"
+    componentGroup="PwC Madison Structure"
+    cq:isContainer="{Boolean}true"/>

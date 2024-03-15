@@ -1,0 +1,44 @@
+## This file is used to apply rewrite rules as an include.
+## Consider the base file here as a global for re-use
+#========================Madison UMS site rules================================
+#Redirect rule to redirect Long html URLs to short URL
+RewriteCond %{REQUEST_URI} ^(.*)(\.html)$ [NC]
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/madison-ums/)(.*) "https://%{HTTP_HOST}/$2" [L,R=301]
+
+#Redirect Long DAM URLs to short URLs
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/content/dam/madison-ums/)(.*) "https://%{HTTP_HOST}/$2" [L,R=301]
+
+#Redirect Root page request to dashboard page
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^/ https://%{HTTP_HOST}/en/dashboard.html [R=301]
+
+#Rewrite the HTML page short path to long paths. Long paths will the be processed by the dispatcher module
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteCond %{REQUEST_URI} ^/(.*)(\.html)$ 
+RewriteRule ^(/.*)$ /content/madison-ums$1 [PT,L]
+
+#Rewrite the UMS DAM short path to long paths. Long paths will then be processed by the dispatcher module
+RewriteCond %{REQUEST_URI} !^/apps
+RewriteCond %{REQUEST_URI} !^/content
+RewriteCond %{REQUEST_URI} !^/etc
+RewriteCond %{REQUEST_URI} !^/libs
+RewriteCond %{REQUEST_URI} !^/bin
+RewriteCond %{REQUEST_URI} !^/tmp
+RewriteCond %{REQUEST_URI} !^/var
+RewriteCond %{REQUEST_URI} !^/crx
+RewriteCond %{REQUEST_URI} (.*)\.[a-zA-Z0-9-]+$
+RewriteCond %{REQUEST_URI} !.*\.(json|jsp)
+RewriteCond %{HTTP_HOST} ^(ums-madison|ums-viewpoint)(.*)\.pwc\.com$ [NC]
+RewriteRule ^(/.*)$ /content/dam/madison-ums$1 [PT,L]
+

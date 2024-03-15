@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="sling:OrderedFolder"
+    sling:resourceType="cq/projects">
+    <rep:policy/>
+    <jcr:content/>
+    <masters/>
+    <we-retail/>
+    <pwc-madison-global
+        jcr:lastModified="{Date}2018-12-17T09:38:48.270+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:Project,mix:created,mix:lastModified,rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/gui/components/projects/admin/card/projectcard"
+        role_authors="projects-pwc_madison_global-authors"
+        role_editor="projects-pwc_madison_global-editor"
+        role_observer="projects-pwc_madison_global"
+        role_owner="projects-pwc_madison_global-owner"
+        role_publishers="projects-pwc_madison_global-publishers"
+        role_reviewers="projects-pwc_madison_global-reviewers">
+        <jcr:content
+            cq:template="/libs/fmdita/projects/templates/create-dita-project"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="PWC Madison Global"
+            sling:resourceType="cq/gui/components/projects/admin/card/projectcontent"
+            active="{Boolean}true"
+            coverUrl="/content/dam/projects/pwc-madison-global/cover"
+            damFolderPath="/content/dam/projects/pwc-madison-global"
+            detailsHref="/projects/details.html"
+            pathbrowser=""
+            project.startDate="{Date}2018-12-17T09:38:48.253+05:30"
+            taskid=""
+            templateorproject="/libs/fmdita/projects/templates/create-dita-project">
+            <links jcr:primaryType="nt:unstructured"/>
+            <dashboard jcr:primaryType="nt:unstructured">
+                <gadgets jcr:primaryType="nt:unstructured">
+                    <team
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Team"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/teampod"
+                        cardWeight="60"/>
+                    <tasks
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tasks"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/taskpod"
+                        cardWeight="70"/>
+                    <projectinfopod
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="/libs/cq/gui/components/projects/admin/pod/projectinfopod"
+                        cardWeight="100"/>
+                    <asset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assets"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/assetpod"
+                        cardWeight="90"/>
+                    <work
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Workflows"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/workpod"
+                        cardWeight="80"/>
+                </gadgets>
+            </dashboard>
+            <tasks
+                jcr:primaryType="nt:unstructured"
+                activeTasks="{Long}0"
+                overdueTasks="{Long}0"
+                totalTasks="{Long}3">
+                <_x0032_018-12-17/>
+            </tasks>
+        </jcr:content>
+        <rep:policy/>
+    </pwc-madison-global>
+    <pwc-madison-content-collaboration
+        jcr:mixinTypes="[cq:Project,mix:created,mix:lastModified,rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/gui/components/projects/admin/card/projectcard"
+        role_editor="projects-pwc_madison_content_collaboration-editor"
+        role_observer="projects-pwc_madison_content_collaboration"
+        role_owner="projects-pwc_madison_content_collaboration-owner">
+        <jcr:content
+            cq:template="/libs/cq/core/content/projects/templates/default"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="PwC madison content collaboration"
+            sling:resourceType="cq/gui/components/projects/admin/card/projectcontent"
+            active="{Boolean}true"
+            coverUrl="/content/dam/projects/pwc-madison-content-collaboration/cover"
+            damFolderPath="/content/dam/projects/pwc-madison-content-collaboration"
+            detailsHref="/projects/details.html"
+            project.startDate="{Date}2019-10-02T11:11:32.635+05:30"
+            taskid=""
+            templateorproject="/libs/cq/core/content/projects/templates/default"
+            username="">
+            <links jcr:primaryType="nt:unstructured"/>
+            <dashboard jcr:primaryType="nt:unstructured">
+                <gadgets jcr:primaryType="nt:unstructured">
+                    <team
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Team"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/teampod"
+                        cardWeight="60"/>
+                    <asset
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Assets"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/assetpod"
+                        cardWeight="90"/>
+                    <work
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Workflows"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/workpod"
+                        cardWeight="80"/>
+                    <experiences
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Experiences"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/channelpod"
+                        cardWeight="90"/>
+                    <projectinfo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Project Info"
+                        sling:resourceType="cq/gui/components/projects/admin/pod/projectinfopod"
+                        cardWeight="100"/>
+                </gadgets>
+            </dashboard>
+        </jcr:content>
+        <rep:policy/>
+    </pwc-madison-content-collaboration>
+</jcr:root>

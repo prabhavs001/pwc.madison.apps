@@ -1,0 +1,689 @@
+.label_radio {
+    margin: 0rem 0.5rem !important;
+}
+#report-tabview {
+    height: 100%;
+}
+#report-panelstack {
+    padding: 0px;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    border: 1px solid #e9e9e9;
+}
+.report-panel {
+    height: calc(100% - 31px);
+    margin: 15px;
+    padding: 0;
+    border: 0;
+}
+.report-panel coral-panel-content{
+    height: 100%
+}
+#report-tablist {
+    text-transform: uppercase;
+}
+#outputs_tab {
+    height: calc(100% - 32px);
+}
+#outputpresets_tab {
+    height: 100%;
+}
+.coral-Table-cell {
+    display: table-cell;
+    background-color: #fff;
+}
+.coral-Table-headerCell {
+    display: table-cell;
+}
+
+#fm_assetDetails {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-left: 1px solid #d7d7d7;
+    overflow: hidden;
+}
+
+#fm_assetDetails .coral-TabPanel-pane {
+    margin:15px;
+}
+
+#fm_assetDetails .coral-TabPanel-content {
+    padding:0px;
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+
+#dashTabsContainer {
+    height: 100%;
+    overflow: hidden;
+}
+
+.report-tab-panel {
+    height: 50px;
+    overflow: hidden;
+}
+
+.fm_fieldValue {
+    margin-bottom: 24px;
+}
+
+.fm_currentAssetThumbnail {
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    background: #fff;
+}
+
+.fm_currentAssetThumbnailCaption {
+    background: #ccc;
+    padding: 12px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.fm_topicTabSection {
+    margin-top: 20px;
+}
+
+.fm_topicTabSection + .fm_topicTabSection {
+    margin-top: 20px;
+}
+
+.fm_topicTabSection .fm_fieldValue {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.fm_missingSection {
+    float: left;
+    margin-right: 20px;
+    opacity: 0.7;
+}
+
+.fm_missingSection.fm_hasMissing {
+    color: #fa5555;
+}
+
+.coral-Table {
+    font-size: 14px;
+}
+
+.coral-Table-row {
+    cursor: pointer;
+}
+
+.coral-Table-headerCell .coral-Heading.coral-Heading--6 {
+    font-style: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.fm_topicDetailsTable {
+    border: 1px solid #cbcbcb;
+}
+
+.fm_tdtHealth {
+    text-align: center;
+    width: 5%;
+}
+
+
+.fm_tdtTopicName {
+    width: 25%;
+}
+
+.fm_tdtAuthorName {
+    width: 25%;
+}
+
+.fm_tdtChevron {
+    width: 5%;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.fm_topicDetailsTable .coral-Icon--sizeS {
+    font-size: 12px;
+}
+
+.fm_tdtDetailsRow {
+    background: #fafafa;
+    border: none;
+}
+
+.fm_tdtDetailsRow td {
+    padding: 10px 15px;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation {
+    zoom: 1;
+    position: relative;
+    z-index: 1;
+    height: 35px;
+    border-bottom: none;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation:before,
+.fm_tdtDetailsRow .coral-TabPanel-navigation:after {
+    content: "";
+    display: table;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation:after {
+    clear: both;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab {
+    float: left;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin: 0 .9375rem -.0625rem .9375rem;
+    padding: .625rem 0 .4375rem 0;
+    border-bottom: .1875rem solid transparent;
+    min-width: 3.125rem;
+    max-width: 18.75rem;
+    color: #969696;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-active,
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab:hover {
+    text-decoration: none;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab:hover {
+    border-color: rgba(65, 120, 205, 0.15);
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-disabled,
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-disabled:hover,
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-disabled:focus {
+    color: #c8c8c8;
+    text-decoration: none;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    cursor: default;
+    border-color: transparent;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-active {
+    color: #1e5fbe;
+    border: none;
+    border-bottom: 2px solid #4178cd;
+    background: none;
+    font-weight: 300;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab:focus {
+    color: #4178cd;
+    text-decoration: underline;
+    outline: none;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-invalid:not(.is-disabled) {
+    color: #fa7d73;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-invalid:not(.is-disabled):hover {
+    border-color: rgba(250, 125, 115, 0.15);
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab.is-invalid:not(.is-disabled).is-active {
+    border-color: #fa7d73;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-navigation > .coral-TabPanel-tab:first-child {
+    margin-left: 0;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-tab.coral-TabPanel-tab--icon {
+    min-width: 1.75rem;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-tab.coral-TabPanel-tab--icon.is-invalid {
+    color: #fa7d73;
+}
+
+.fm_tdtDetailsRow .coral-TabPanel-content {
+    -webkit-border-radius: .1875rem;
+        border-radius: .1875rem;
+        position: relative;
+        border: .0625rem solid #e9e9e9;
+        background-color: #f0f0f0;
+        padding: .9375rem;
+    }
+    
+    .fm_tdtDetailsRow .coral-TabPanel-pane:not(.is-active) {
+    display: none;
+}
+
+.fm_tdtDetailsToggle {
+    cursor: pointer;
+}
+
+.fm_tdtDetailsToggle.fm_tdtDetailsExpanded {
+    transform: rotate(90deg);
+}
+
+.fm_tdtDetailsRow.fm_tdtDetailsToggleOff {
+    display: none;
+}
+
+.fm_tdtHealth i.coral-Icon--sizeS{
+    font-size: 6px;
+    padding-bottom: 4px;
+}
+
+.fm_tdtHealthGood {
+    color: #8CC35F !important;
+}
+
+.fm_tdtHealthModerate {
+    color: #F5C346 !important;
+}
+
+.fm_tdtHealthBad {
+    color: #FA695F !important;
+}
+
+fm_tdtOpenInFrameMaker {
+    width: 24px;
+}
+
+.fm_openInFrameMaker {
+    border-radius: 3px;
+    margin-bottom: -5px;
+    opacity: 0;
+}
+
+tr:hover .fm_openInFrameMaker {
+    opacity: 1;
+}
+
+
+.hidden {
+    display: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+li:not(first) {
+    padding-top: 10px;
+}
+
+.coral-TabPanel--large .fm_tdtDetailsRow .coral-TabPanel-tab {
+    text-transform: none;
+    padding-top: 0.25rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.9375rem;
+}
+
+.coral-TabPanel--stacked .coral-TabPanel-tab {
+    text-transform: none;
+    padding-top: 0.25rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.9375rem;
+}
+
+.coral-TabPanel--stacked .coral-TabPanel-content {
+    border: none;
+    background-color: #fafafa;
+}
+.topic-report-content {
+    width: 100%;
+}
+.fm_reviewsTabSection, .fm_approvalsTabSection {
+    margin-bottom: 0.6rem;
+}
+
+.fm_reviewDetailsTable thead:hover, .fm_approvalDetailsTable thead:hover {
+    background-color: #f0f0f0 !important;
+    border: none !important;
+}
+
+.fm_reviewDetailsTable thead tr:hover, .fm_approvalDetailsTable thead tr:hover {
+    background-color: #f0f0f0 !important;
+    cursor: normal;
+}
+
+.fm_reviewDetailsTable thead tr th, .fm_approvalDetailsTable thead tr th {
+    background-color: #f0f0f0 !important;
+    border: none !important;
+}
+
+.fm_reviewDetailsTable thead tr th:hover, .fm_approvalDetailsTable thead tr  th:hover {
+    background-color: #f0f0f0 !important;
+    border: none !important;
+}
+
+/*.fm_reviewDetailsTable tbody .coral-Table-row:hover .coral-Table-headerCell {
+background-color: #f0f0f0 !important;
+border: none !important;
+}*/
+
+.fm_reviewDetailsTable thead .coral-Table-row:hover, .fm_approvalDetailsTable thead .coral-Table-row:hover {
+    cursor: auto;
+}
+
+.fm_reviewDetailsTable tbody .coral-Table-row, .fm_approvalDetailsTable tbody .coral-Table-row {
+    background-color: #fafafa !important;
+    cursor: auto;
+}
+
+.fm_reviewDetailsTable tbody .coral-Table-row:hover, .fm_approvalDetailsTable tbody .coral-Table-row:hover {
+    background-color: #fafafa !important;
+    cursor: auto;
+}
+
+.fm_reviewsLabel, .fm_approvalsLabel {
+    font-size: 12px;
+}
+
+.fm_noReviewsLabel, .fm_noApprovalsLabel {
+    font-size: 12px;
+    color: black;
+    margin-left: 0.6rem;
+}
+
+.fm_tdtReviewRow > td, .fm_tdtApprovalRow > td {
+    padding: 0 .625rem !important;
+    margin: 0 !important;
+}
+
+.fm_tdtReviewTitle, .fm_tdtApprovalTitle {
+    width: 20%;
+}
+
+.fm_tdtReviewTitle.coral-Table-cell, .fm_tdtApprovalTitle.coral-Table-cell {
+    color: #4178cd;
+    cursor: pointer;
+}
+
+.fm_tdtReviewStatus, .fm_tdtApprovalStatus {
+    width: 5%;
+}
+
+.fm_tdtReviewDeadline, .fm_tdtApprovalResolution {
+    width: 10%;
+}
+
+.fm_tdtReviewDeadline.Overdue div{
+    width: 4.5rem;
+    height: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+    justify-content: center;
+    background-color: #ea9c36;
+    border: 1px solid #cd8725;
+    color: #9e7127;
+}
+
+.fm_tdtReviewAssignee, .fm_tdtApprovalAssignee {
+    width: 65%;
+}
+
+.fm_tdtReviewAssignee > i, .fm_tdtApprovalAssignee > i{
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1px solid #bbb;
+    opacity: 0.5;
+    background-color: #bbb;
+    font-size: 14px !important;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.fm_outputsTabSection {
+    margin: 1rem auto;
+    max-width: 900px;
+}
+
+.fm_tdtOutputTitle {
+    width: 35%;
+}
+
+.fm_tdtOutputTitle span {
+    color: #4178cd;
+    cursor: pointer;
+}
+
+.fm_tdtOutputType {
+    width: 15%;
+}
+
+.fm_tdtGeneratedBy, .fm_tdtGeneratedIn {
+    width: 15%;
+}
+
+.fm_tdtGeneratedTime {
+    width: 20%;
+}
+
+.fm_tdtGeneratedBy > i{
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1px solid #bbb;
+    opacity: 0.5;
+    background-color: #bbb;
+    font-size: 14px !important;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.fm_noOutputsLabel, .fm_hintOutputsLabel {
+    text-align: center;
+    font-size: 12px;
+    display: block;
+}
+
+.fm_noOutputsLabel {
+    margin: 56px auto;
+    margin-bottom: 0;
+}
+
+.fm_outputDetailsTable tbody .coral-Table-row:hover {
+    cursor: auto;
+}
+
+.reports_generated_time, #refresh-reports {
+    float: left;
+    margin: 10px;
+}
+
+#refresh-reports {
+    cursor: pointer;
+}
+
+.ditamapreview .fm_toctopic {
+    cursor: auto !important;
+}
+
+.fm_tdtOutputTitle span.error {
+    color: red;
+    cursor: auto;
+}
+
+.fm_tdtGeneratedTime .generated_log {
+    color: #4178cd;
+    cursor: pointer;
+}
+
+.fm_hide {
+    display: none;
+}
+
+.fm_fieldValue{
+    margin-bottom: 0px;
+    
+}
+
+.fm_topicTabSection .fm_fieldValue{
+    font-size:18px;
+    line-height:1;
+}
+
+.coral-Table tbody .coral-Table-row {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.coral-Table--hover .coral-Table-body .coral-Table-row:hover .coral-Table-cell .coral-Table-cell, .coral-Table--hover tbody .coral-Table-row:hover .coral-Table-cell .coral-Table-cell {
+    background-color: rgba(50,110,200,0.00);
+}
+
+.coral-Table-cell{
+    border-top: .0625rem solid #f0f0f0;
+}
+.coral-Table{
+    border: 1px solid #e9e9e9;
+    
+    
+}
+.outputlist .coral-Table-cell{
+    
+    background-color : transparent;
+}
+
+.baselinelist .coral-Table-cell{
+    
+    background-color : transparent;
+}
+
+.conditionPresetlist .coral-Table-cell{
+    
+    background-color : transparent;
+}
+
+
+.fm_translation .fm_tdtHealth {
+    text-align: center;
+    width: 5%;
+}
+
+
+.fm_translation .fm_tdtTopicName {
+    width: 22%;
+}
+
+.fm_translation .fm_tdtAuthorName {
+    width: 10%;
+}
+
+
+.fm_translation .fm_tdtVersion {
+    width: 10%;
+}
+.fm_tdtVersionLabel {
+    display: inline-block;
+    margin: 4px 8px 4px 0px;
+    padding: 5px;
+    background-color: #d8d8d8;
+    border-radius: 5px;
+    white-space: nowrap;
+    min-width: 40px;
+    text-align: center;
+}
+
+.fm_tdtVersionLabels {
+    padding: 5px 0px 5px 0px;
+    width: 10%;
+}
+
+.fm_translation .fm_tdtStatus {
+    width: 20%;
+}
+.fm_translation .fm_tdtChevron {
+    width: 5%;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.fm_translation .fm_tdtCode{
+    width:15%;    
+}
+
+.fm_translation .fm_childRow td.fm_tdtTopicName.coral-Table-cell{
+    width: 20%;
+}
+
+.fm_tdtTopicType {
+    width: 10%;
+}
+.fm_childRow .fm_tdtTopicType{
+    width: 10.5%;
+}
+
+.missing-topic-name {
+  color: #FA695F;
+}
+
+.missing-topic-path {
+  color: #999;
+}
+
+.missing-topics {
+  cursor: default !important;
+}
+
+.fm_summary {
+  background: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #cbcbcb;
+  margin-right: 20px;
+  position: relative;
+}
+
+.fm_summary > .column {
+  min-width: 8rem;
+}
+
+.fm_summary > div {
+  padding: 10px 20px;
+  overflow-x: hidden;
+}
+
+.lazy-load-summary-header {
+  position: absolute;
+  top: -40px;
+  left: -15px;
+  display: block;
+  font-weight: bold;
+  color: #707070;
+}
+
+.lazy-load-wait-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.shallow-summary {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.missing-topics-toggle-off {
+  display: none;
+}

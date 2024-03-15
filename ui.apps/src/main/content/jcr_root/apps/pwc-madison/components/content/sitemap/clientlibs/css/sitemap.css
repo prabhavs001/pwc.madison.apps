@@ -1,0 +1,9 @@
+.sitemap-link > .coral3-Multifield-item{
+	border: 3px solid #b1b1b5;
+	padding-left: 10px;
+}
+
+.sitemap-group > .coral3-Multifield-item{
+	border: 3px solid #cacaca;
+	padding-left: 10px;
+}

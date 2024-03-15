@@ -1,0 +1,314 @@
+.modal{
+  &.modal-multimedia,
+  &.modal-multimedia-view{
+    .is-large.modal-close{
+      height: 64px;
+      max-height: 64px;
+      max-width: 64px;
+      min-height: 64px;
+      min-width: 64px;
+      width: 64px; 
+    }
+  }
+  .button {
+    margin: 2px;
+    &:focus{
+      outline: 1px solid #3273dc;
+      outline: 1px auto -webkit-focus-ring-color;
+    }
+  }
+  .form-group{    
+    input[type="radio"]{
+      display: inline-block !important;
+      position:absolute;
+      opacity: 0;
+      &:focus ~ label.custom-radio {
+        outline: 1px dotted #3273dc;
+        outline: 1px auto -webkit-focus-ring-color;
+      }
+    }
+  }
+  .remember-me {
+    input[type="checkbox"]:focus ~ .checkmark {
+      outline: 1px solid #3273dc;
+      outline: 1px auto -webkit-focus-ring-color;
+    }
+    &.panel-disabled{
+      input[type="checkbox"]:focus ~ .checkmark {
+        outline: none;
+      }
+    }
+  }
+}
+
+.modal.modal-multimedia{
+  color: white;
+  font-family: $font-helvetica, Helvetica, Arial, sans-serif;
+  .modal-content{
+    max-height: 450px;
+    max-width: calc(417px + 384px);
+    overflow: visible;
+    position: relative;
+    margin-top: 50px;
+    button{
+      cursor: pointer;
+      position: absolute;
+    }
+    button.previous,
+    button.next{
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      padding: 0;
+      color: white;
+      font-weight: normal;
+      height: 36px;
+      font-size: 36px;
+      background: none;
+      border: none;
+      &.disabled{
+        opacity: 0.25;
+      }
+    }
+    button.previous {
+      left: calc(-58px - 13px);
+    }
+    button.next {
+      right: -40px;
+    }
+  }
+  .modal-multimedia-columns{
+    width: 100%;
+  }
+  .details{
+    background-color: #ffa929;
+    max-width: 417px;
+    padding: 77px 70px 43px;
+    width: 100%;
+    h1{
+      display: none;
+    }
+    > img{
+      margin-bottom: 14px;
+      width: 100%;
+    }
+    .description{
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.21;
+      margin-bottom: 14px;
+    }
+    .date{
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
+    .note{
+      color: black;
+      font-size: 14px;
+    }
+    .go-to{
+      display: none;
+    }
+  }
+  .related{
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    max-width: 384px;
+    padding: 77px 43px 76px;
+    width: 100%;
+    h1{
+      border-bottom: 1px solid white;
+      font-size: 18px;
+      line-height: 1;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+    .related-scroll-area{
+      height: 306px;
+      overflow-y: auto;
+      padding-right: 48px;
+      ul li{
+        border-bottom: 1px solid #444;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        width: 245px;
+        a{
+          color: white;
+          font-size: 14px;
+          line-height: 1.4;
+          text-decoration: none;
+          span{
+            display: block;
+            font-size: 12px;
+            line-height: 1;
+            margin-top: 10px;
+          }
+        }
+      } 
+    }
+    .mobile-play-next{
+      display: none;
+    }
+  }
+  .switch-view-modal{
+    text-align: center;
+    z-index: 999;
+    padding-top: 50px;
+    a{
+      font-family: $font-helvetica;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: $color-white;
+    }
+  }
+  @media (max-width: 760px){
+    font-size: 14px;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+    &.is-active {
+      display: block;
+    }
+    .modal-content{
+      max-height: unset;
+      max-width: unset;
+      width: 100%;
+      modal.close{
+        top: -41px;
+      }
+      button.previous,
+      button.next{
+        display: none;
+      }
+    }
+    .columns,
+    .modal-content{
+      margin: 0;
+    }
+    .details{
+      margin-top: 70px;
+      max-width: unset;
+      min-height: 140px;
+      padding: 13px 13px 13px calc(13px + 130px + 10px);
+      position: relative;
+      width: 100%;
+      h1{
+        display: block;
+        font-family: "ITCCharterCom-Regular";
+        font-size: 24px;
+        left: 13px;
+        position: absolute;
+        top: -44px;
+      }
+      >img{
+        left: 13px;
+        position: absolute;
+        top: 13px;
+        width:130px;
+      }
+      .description{
+        font-size: 14px;
+      }
+      .date,
+      .note{
+        display: none;
+      }
+      .go-to{
+        color: white;
+        display: block;
+        span{
+          display: inline-block;
+          margin-left: 5px;
+          position: relative;
+          top: 3px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .related{
+      max-width: unset;
+      padding: 23px 0;
+      width: 100%;
+      h1{
+        font-weight: 700;
+        margin: 0 13px;
+        padding-bottom: 8px;
+      }
+      .related-scroll-area{
+        height: calc(100vh - 386px);
+        ul li{
+          border: none;
+          font-size: 13px;
+          font-weight: bold;
+          line-height: 1.2;
+          margin: 0;
+          padding: 18px 13px;
+          width: 100%;
+          a span{
+            color: #c8c8c8;
+            margin-top: 5px;
+            u{
+              margin-left: 20px;
+            }
+          }
+          &:nth-child(odd){
+            background-color: #2c2c2c;
+          }
+        }
+      }
+      .mobile-play-next{
+        background: #7d7d7d;
+        bottom: 0;
+        display: block;
+        height: 126px;
+        left: 0;
+        padding: 15px 55px;
+        position: fixed;
+        width: 100%;
+        button{
+          display: block;
+        }
+        button.previous{
+          left: 13px;
+        }
+        button.next{
+          right: 13px;
+        }
+        h1, p{
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.29;
+        }
+        h1{
+          border: none;
+          margin: 0 0 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  .mobile-accounting-view{
+    .modal-multimedia{
+      .modal-content{
+        .modal-close{
+          height: 50px;
+          max-height: 50px;
+          max-width: 50px;
+          min-height: 50px;
+          min-width: 50px;
+          width: 50px;
+          font-size: 20px;
+          right: 20px;
+          top: -50px;
+        }
+      }
+    }
+  }
+  
+}

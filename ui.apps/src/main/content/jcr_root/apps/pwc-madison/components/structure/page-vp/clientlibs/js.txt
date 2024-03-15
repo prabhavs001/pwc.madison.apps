@@ -1,0 +1,2 @@
+#base=js
+page-metadata.js

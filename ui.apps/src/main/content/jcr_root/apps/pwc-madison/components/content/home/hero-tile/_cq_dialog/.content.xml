@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Hero Tile"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[cq.authoring.dialog.hero]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                        <items jcr:primaryType="nt:unstructured">
+                            <leftCard
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Configure Background Type"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                          <bgType
+                                              granite:class="cq-dialog-dropdown-showhide-multi"
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                              fieldDescription="Background to be displayed on the left card"
+                                              fieldLabel="Background Type"
+                                              name="./bgType">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                  <image
+                                                      jcr:primaryType="nt:unstructured"
+                                                      text="Color"
+                                                      value="color"/>
+                                                  <video
+                                                      jcr:primaryType="nt:unstructured"
+                                                      text="Image"
+                                                      value="image"/>
+                                              </items>
+                                              <granite:data
+                                                  jcr:primaryType="nt:unstructured"
+                                                  cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                          </bgType>
+                                          <colorContainer
+                                              granite:class="list-option-listfrom-showhide-target"
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                <backgroundColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="pwc-madison/components/content/home/hero-tile/colorpicker"
+                                                        fieldLabel="Background Color"
+                                                        freestylePaletteType="{Boolean}true"
+                                                        name="./backgroundColor"
+                                                        value="rgba(0,0,0,1)"/>
+                                              </items>
+                                              <granite:data
+                                                  jcr:primaryType="nt:unstructured"
+                                                  showhidetargetvalue="color"/>
+                                          </colorContainer>
+                                          <imageContainer
+                                              granite:class="list-option-listfrom-showhide-target"
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                                              <items jcr:primaryType="nt:unstructured">
+                                                <bgImagePath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                    fieldDescription="Select an image from path browser"
+                                                    fieldLabel="Background Image"
+                                                    name="./bgImagePath"
+                                                    rootPath="/content/dam/pwc-madison">
+                                                </bgImagePath>
+                                              </items>
+                                              <granite:data
+                                                  jcr:primaryType="nt:unstructured"
+                                                  showhidetargetvalue="image"/>
+                                          </imageContainer>
+                                            <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Line 1 text"
+                                                    name="./text1"/>
+                                            <text2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Line 2 text"
+                                                    name="./text2"/>
+                                            <text3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Line 3 text"
+                                                    name="./text3"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </leftCard>
+                            <rightCard
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Configure Hero Tile List"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                        	<autoScroll
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                defaultValue="5"
+                                                fieldLabel="Slide Autoscroll (seconds)"
+                                                min="{Long}1"
+                                                name="./autoScroll"/>
+                                            <fixedList
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    eaem-show-on-collapse="EAEM.showProductName"
+                                                    fieldLabel="ArticlesPagePath">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./fixedList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <styleRendition
+                                                                        granite:class="cq-dialog-rendition-dropdown-showhide"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldDescription="Please select a rendition for the slide layout"
+                                                                        fieldLabel="Select Style Rendition"
+                                                                        name="./stylerendition">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <standard
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Standard Rendition"
+                                                                                value="standard"/>
+                                                                        <thumbnail
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Thumbnail Image Rendition"
+                                                                                value="thumbnail"/>
+                                                                        <card
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Card Image Rendition"
+                                                                                value="card"/>
+                                                                        <bgImage
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Background Image Rendition"
+                                                                                value="bgImage"/>
+                                                                    </items>
+                                                                    <granite:data
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cq-dialog-rendition-dropdown-showhide-target=".rendition-option-listfrom-showhide-target"/>
+                                                                </styleRendition>
+                                                                <imgPath
+                                                                        granite:class="rendition-option-listfrom-showhide-target"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                        fieldDescription="Select an image from path browser"
+                                                                        fieldLabel="Browse Image"
+                                                                        name="./imagePath"
+                                                                        rootPath="/content/dam/pwc-madison/">
+                                                                    <granite:data
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            showhidetargetvalue="standard"/>
+                                                                </imgPath>
+                                                                <path
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                        fieldDescription="Select Path"
+                                                                        fieldLabel="Path"
+                                                                        name="./articlePagePath"
+                                                                        rootPath="/content/pwc-madison"/>
+                                                                <cta
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldDescription="Please add label for click-to-action button"
+                                                                        fieldLabel="Cta Label"
+                                                                        name="./cta"/>
+                                                                <fallback
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                        fieldDescription="Please click on the checkbox if you want the item to be considered as a fallback item"
+                                                                        name="./fallbackForHeroTile"
+                                                                        text="Fallback?"
+                                                                        value="true"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </fixedList>
+                                            <disablePers
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    fieldDescription="click on the checkbox for diabling the personalisation"
+                                                    name="./isPersonalisationDisabled"
+                                                    text="Disable Personalisation"
+                                                    value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </rightCard>
+                        </items>
+                    </tabs>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,75 @@
+#seeAlso {
+	max-width: 850px;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+#seeAlso .coral3-Checkbox {
+	height: auto;
+	padding: 0;
+	margin-bottom: 0;
+	background: #fff;
+	padding-left: 10px;
+	border-left: 1px solid #d1d1d1;
+	border-top: 1px solid #d1d1d1
+}
+
+#seeAlso .coral3-Checkbox-description {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+#seeAlso .see-also-row,
+#seeAlso .see-also-header {
+	display: inline-flex;
+	width: calc(100% - 28px);
+	align-items: stretch;
+	box-sizing: border-box;
+	border-left: 1px solid #d3d3d3;
+}
+
+#seeAlso .see-also-header {
+	width: 100%;
+	padding-left: 39px;
+	border-top: 1px solid #d3d3d3;
+}
+
+#seeAlso .see-also-header .see-also-column:first-child {
+	position: relative;
+}
+
+#seeAlso .see-also-header .see-also-column:first-child:before {
+	content: 'Check Box';
+	background: #fff;
+	width: 38px;
+	height: 35px;
+	position: absolute;
+	left: -39px;
+	top: 0;
+	border-right: 1px solid #d3d3d3;
+	padding-top: 2px;
+}
+
+#seeAlso .see-also-row .see-also-column,
+#seeAlso .see-also-header .see-also-column {
+	width: 25%;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	border-right: 1px solid #d3d3d3;
+	background: #fff;
+}
+
+#autoSetReferences {
+	background-color: #ffa500;
+}
+
+#autoSetReferencesInfo {
+	color: #FF0000;
+}
+
+.seeAlsoDropdown {
+	max-width: 350px!important;
+}

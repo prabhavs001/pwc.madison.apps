@@ -1,0 +1,236 @@
+<sly data-sly-use.featuredContentTile="com.pwc.madison.core.models.FeaturedContentTile" />
+<sly data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}" />
+<div class="panel-content">
+   <div class="content-body">
+      <ul class="list-inline panel-paginate pwc-carousel">
+         <li><a class="arrow left-arrow carousel-control" data-slide="prev" data-carousel="${timeInNano}"
+            >&lt;</a></li>
+         <li><span class="current"></span> ${'carousel_of' @i18n, locale=pageProperties.jcr:language} <span class="total"></span></li>
+         <li><a class="arrow right-arrow carousel-control" data-slide="next" data-carousel="${timeInNano}"
+            >&gt;</a></li>
+      </ul>
+            <div id="${timeInNano}" class="carousel slide myCarousel featured-content-tile" data-ride="carousel" data-interval="false">
+         <!-- Wrapper for slides -->
+         <div class="carousel-inner" role="listbox">
+            <sly data-sly-list.tile="${featuredContentTile.tileContent}">
+               <sly data-sly-test="${tile.contentType == 'regular'}">
+                  <div class="item ${tileList.index == 0 ? 'active' : ''}">
+                     <div class="module-tile">
+                        <a href="${tile.contentURL}" target="${tile.openInNewWindow}">
+                          <span class="date mobileSwap">${tile.formattedDate}</span>
+                          <span class="source mobileSwap">${tile.territoryCode} ${tile.contentPageValueMap["pwc-contentType"]}</span>
+                          <span class="title">${tile.contentPageValueMap["jcr:title"]}</span>
+                        </a>
+                     </div>
+                  </div>
+               </sly>
+              <!--/* <sly data-sly-test="${tile.contentType == 'multimedia'}">
+                  <div class="item ${tileList.index == 0 ? 'active' : ''}">
+                     <div class="item accordion-wrap">
+                        <div class="panel-group content-toolbar">
+                           <div class="panel">
+                              <div class="panel-body content-video">
+                                 <div class="panel-header">
+                                    <span class="title">${tile.territoryCode} ${tile.contentPageValueMap["pwc-contentType"]}</span>
+                                    <a href="javascript:void(0);" class="go-to-link">Go to content</a>
+                                    <a href="javascript:void(0);" class="switch-icon">switch</a>
+                                 </div>
+                                 <div class="panel-content">
+                                    <div class="content-body">
+                                       <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#mediaModal">
+                                       <span class="watch-label">Watch video</span>
+                                       <img class="img-responsive" src="images/related-video.png" alt="Related video">
+                                       </a>
+                                       <div class="video-info">
+                                          <strong><strong>${tile.contentPageValueMap["pwc-referenceId"]}</strong> – ${tile.contentPageValueMap["jcr:content"]}</strong>
+                                          <span>${tile.formattedDate}<span class="time">HH:MM:SS</span></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </sly> */-->
+            </sly>
+         </div>
+        <!-- <div class="modal fade media-modal in" id="mediaModal" tabindex="-1" role="dialog" aria-labelledby="mediaModal" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+               <div class="modal-content">
+                  <div class="row desktop-media">
+                     <!-- desktop (md/lg) media content 
+                     <div class="col-sm-2 previous-video prev text-right">
+                        <a href="javascript:void(0);" class="navigate-icon prev inactive">previous</a>
+                        <p class="playlist-videos" id="prevVideo">
+                           <strong>Previous:</strong>
+                           <a href="bookmarks.html" target="_blank">US Videos</a>
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis!
+                        </p>
+                     </div>
+                     <div class="col-sm-8 video-content">
+                        <a href="javascript:void(0);" id="desktopMediaSwitch">Switch view</a>
+                        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <div class="video-info-container" id="desktopVideoContainer">
+                           <!-- class of "video-complete" shows end state with related content, etc -->
+                           <div class="post-video">
+                              <!-- post video content, displayed once video has finished being watched
+                              <div class="col-sm-6">
+                                 <h3>Thanks for watching!</h3>
+                                 <div class="videoWrapper">
+                                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed/XQu8TTBmGhA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                 </div>
+                                 <div class="post-video-info">
+                                    <ul class="list-inline list-unstyled pull-left">
+                                       <li class="category">US Videos</li>
+                                       <li>11 April 2018</li>
+                                       <li class="internal-use">For internal use only</li>
+                                    </ul>
+                                    <h3>
+                                       2018-04<br>
+                                       Leasing - Transition
+                                    </h3>
+                                 </div>
+                              </div>
+                              <div class="col-sm-6">
+                                 <h4>Related content</h4>
+                                 <ul class="content-feed">
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       201704 – Lease accounting implementation issues (revised September 12, 2017)
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       Episode 31: Leasing - remeasurement, modifications and  terminations including different approaches to keep you on track
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       201708  Leases
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="videoWrapper">
+                              <iframe width="100%" height="auto" src="https://www.youtube.com/embed/XQu8TTBmGhA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                           </div>
+                        </div>
+                        <div class="video-description">
+                           <div class="video-info">
+                              <ul class="list-inline list-unstyled pull-left">
+                                 <li class="category">US Videos</li>
+                                 <li>11 April 2018</li>
+                                 <li class="internal-use">For internal use only</li>
+                              </ul>
+                              <h3 class="title">201704 – Lease accounting implementation issues (revised September 12, 2017)</h3>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-2 next-video text-left">
+                        <a href="javascript:void(0);" class="navigate-icon next">next</a>
+                        <p class="playlist-videos" id="nextVideo">
+                           <strong>Up next:</strong>
+                           <a href="bookmarks.html" target="_blank">US Videos</a>
+                           Episode 35: FASB Standard setting update, Q1 2018
+                        </p>
+                     </div>
+                  </div>
+                  <div class="row visible-sm visible-xs mobile-media container-fluid">
+                     <!-- mobile (xs/sm) media content 
+                     <a href="javascript:void(0);" id="mobileMediaSwitch">Switch view</a>
+                     <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                     <div class="col-sm-12">
+                        <div class="video-info-container" id="mobileVideoContainer">
+                           <!-- class of "video-complete" shows end state with related content, etc 
+                           <div class="mobile-post-video row">
+                              <div class="col-sm-12 related-content">
+                                 <div class="row related-header">
+                                    <div class="col-xs-6">
+                                       <div class="videoWrapper">
+                                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/XQu8TTBmGhA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                       </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                       <h4>2017-04 – Lease accounting implementation issues (revised September 12, 2017)</h4>
+                                       <ul class="list-inline list-unstyled content-bookmark">
+                                          <li class="pull-left"><a href="bookmarks.html" target="_blank">Go to content</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <h4>Related content</h4>
+                                 <ul class="content-feed">
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       201704 – Lease accounting implementation issues (revised September 12, 2017)
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       Episode 31: Leasing - remeasurement, modifications and  terminations including different approaches to keep you on track
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0);">
+                                       201708  Leases
+                                       </a>
+                                       <span>06 Mar 2018 <em>US In transition</em></span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <h2>US Videos</h2>
+                           <div class="videoWrapper">
+                              <iframe width="100%" height="auto" src="https://www.youtube.com/embed/XQu8TTBmGhA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                           </div>
+                           <div class="row">
+                              <div class="col-xs-2 previous-video text-right">
+                                 <a href="javascript:void(0);" class="navigate-icon prev inactive">previous</a>
+                              </div>
+                              <div class="col-xs-8 mobile-video-info">
+                                 <div class="feed-info">
+                                    06 Mar 2018 <span>For internal use only</span>
+                                    <div class="pull-right">3:45</div>
+                                 </div>
+                                 <h3 class="title">
+                                    201704 – Lease accounting implementation issues (revised September 12, 2017)
+                                 </h3>
+                                 <div class="content-bookmark">
+                                    <ul class="list-inline list-unstyled pull-left">
+                                       <li><a href="bookmarks.html" target="_blank">Go to content</a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-xs-2 next-video text-left">
+                                 <a href="javascript:void(0);" class="navigate-icon next">next</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- <div class="mobile-post-related">
+               <div class="col-xs-2 previous-video text-right">
+                  <a href="javascript:void(0);" class="navigate-icon prev inactive">previous</a>
+               </div>
+               <div class="col-xs-8 mobile-video-info">
+                  <span>Play Next</span>
+                  <h3 class="title">
+                     201704 – Lease accounting implementation issues (revised September 12, 2017)
+                  </h3>
+               </div>
+               <div class="col-xs-2 next-video text-left">
+                  <a href="javascript:void(0);" class="navigate-icon next">next</a>
+               </div>
+            </div> 
+         </div>
+      </div>
+   </div> -->
+</div>

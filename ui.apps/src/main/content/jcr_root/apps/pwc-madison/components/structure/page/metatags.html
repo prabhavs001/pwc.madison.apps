@@ -1,0 +1,111 @@
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta charset="UTF-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<sly data-sly-use.basePage="com.pwc.madison.core.models.BasePageModel" data-sly-test="${basePage.pageTitle}">
+    <link rel="canonical" data-sly-test.canonicalUrl="${basePage.canonicalUrl}" href="${canonicalUrl}"/>
+    <meta property="og:title" content="${basePage.pageTitle}"/>
+    <meta property="og:description" content="${basePage.pageDesc}"/>
+    <meta property="og:url" data-sly-test.canonicalUrl="${basePage.canonicalUrl}" content="${canonicalUrl}"/>
+    <meta property="og:image" content="${basePage.pageImage}"/>
+    <meta data-sly-test=${basePage.pageTitle} name="Title" content="${basePage.pageTitle}"/>
+    <meta data-sly-test=${basePage.pageDesc} name="description" content="${basePage.pageDesc}"/>
+    <meta data-sly-test=${basePage.pageUrl} name="indexPath" content="${basePage.pageUrl}"/>
+    <meta data-sly-test=${basePage.keywords} name="keywords" content="${basePage.keywords @ context='unsafe'}"/>
+    <meta data-sly-test=${basePage.guidanceTerms} name="guidanceTerms" content="${basePage.guidanceTerms @ context='unsafe'}"/>
+    <meta data-sly-test=${basePage.suggestedGuidance} name="guidanceTitle" content="${basePage.suggestedGuidance @ context='unsafe'}"/>
+    <meta data-sly-test=${basePage.suggestedGuidanceOrder} name="guidanceOrder" content="${basePage.suggestedGuidanceOrder @ context='unsafe'}"/>
+    <meta data-sly-test=${basePage.contentType} name="pwcContentType" content="${basePage.contentType @ i18n}"/>
+    <meta data-sly-test=${basePage.country} name="pwcCountry" content="${basePage.country}"/>
+    <meta data-sly-test=${basePage.language} name="pwcLang" content="${basePage.language}"/>
+    <meta data-sly-test=${basePage.tags} name="pwcTag" content="${basePage.formattedTags}"/>
+    <meta data-sly-test=${basePage.publicationDate} name="pwcReleaseDate"
+          content="${'dd MMM yyyy' @  format=basePage.publicationDate}"/>
+    <meta data-sly-test=${basePage.revisedDate} name="Last-Modified" http-equiv="Last-Modified"
+          content="${'dd MMM yyyy' @  format=basePage.revisedDate}"/>
+    <meta data-sly-test=${basePage.expiryDate} name="pwcExpirationDate"
+          content="${'dd MMM yyyy' @  format=basePage.expiryDate}"/>
+    <meta data-sly-test=${basePage.contentID} name="pwcContentId" content="${basePage.contentID}"/>
+    <meta data-sly-test=${basePage.audience} name="pwcAudience" content="${basePage.audience}"/>
+    <meta data-sly-test=${basePage.privateGroup} name="pwcPrivateGroup" content="${basePage.privateGroup}"/>
+    <meta data-sly-test=${basePage.accessLevel} name="pwcAccessLevel" content="${basePage.accessLevel}"/>
+    <meta data-sly-test=${basePage.license} name="pwcLicense" content="${basePage.license}"/>
+    <meta data-sly-test=${basePage.standardSetter} name="source" content="${basePage.standardSetter}"/>
+    <meta name="pwcHideLevel" content="${basePage.hiddenFromSiteSearch ? '1' : '0'}"/>
+    <meta data-sly-test.metaRobots=${basePage.metaRobots} name="robots" content="${metaRobots}"/>
+	<meta data-sly-test.disableInlineLinks=${basePage.disableInlineLinks} name="pwcDisableInlineLinks" content="${disableInlineLinks}">
+	<meta data-sly-test.joinedPageUrl=${basePage.joinedPagePath} name="pwcJoinedPagePath" content="${joinedPageUrl}">
+	<meta data-sly-test.pageId=${basePage.pageId} name="pwcPageId" content="${pageId}">
+	<meta data-sly-test.joinedLevel=${basePage.joinedLevel} name="pwcJoinedLevel" content="${joinedLevel}">
+	<meta data-sly-test.sortOrder=${basePage.sortOrder} name="sortOrder" content="${sortOrder}">
+
+    <script>
+
+      window.digitalData = window.digitalData || {};
+      window.digitalData.page = window.digitalData.page || {};
+
+      window.digitalData.page.pageInfo = {
+        "pageName": "${currentPage.getName @context='unsafe'}",
+        "pageType": "",
+        "siteError": ""
+      };
+
+      window.digitalData.page.content = {
+        "contentCategory": "${currentPage.depth @context='unsafe'}",
+        "contentFullPath": "${currentPage.path @context='unsafe'}",
+        "bookMap": "${basePage.dataLayerBookMap @context='unsafe'}",
+        "map": "${basePage.dataLayerMap @context='unsafe'}",
+        "topic": "${basePage.dataLayerTopic @context='unsafe'}",
+        "articleFindingMethod":"",
+        "contentTitle": "${basePage.pageTitle @context='unsafe'}",
+        "publishDate": "${basePage.publicationDateString @context='unsafe'}",
+        "contentType": "${basePage.contentType @context='unsafe'}"
+      };
+      
+      window.digitalData.page.meta = {
+    	  "title" : "${basePage.pageTitle @context='unsafe'}",
+    	  "browserTitle" : "${basePage.pageTitle @context='unsafe'}",
+    	  "description" :  "${basePage.pageDesc @context='html'}",
+    	  "pageUrl" : "${basePage.pageUrl @context='unsafe'}",
+    	  "keywords" : "${basePage.keywords @context='unsafe'}",
+    	  "country" :  "${basePage.country @context='unsafe'}",
+    	  "language" : "${basePage.language @context='unsafe'}",
+    	  "secondaryLanguage" : "",
+    	  "locale" : "",
+    	  "tags" : "${basePage.formattedTags @context='unsafe'}",
+    	  "createDate" :  "${'dd MMM yyyy' @ format=basePage.createdDate,context='unsafe'}",
+    	  "publicationDate" :  "${'dd MMM yyyy' @ format=basePage.publicationDate,context='unsafe'}",
+    	  "revisedDate" : "${'dd MMM yyyy' @ format=basePage.revisedDate,context='unsafe'}",
+    	  "originalReleaseDate" : "${'dd MMM yyyy' @ format=basePage.originalReleaseDate,context='unsafe'}",
+    	  "embargoedScheduledPublishingDate" : "",
+    	  "expiryDate" : "${'dd MMM yyyy' @ format=basePage.expiryDate,context='unsafe'}",
+    	  "effectiveAsOfDate" : "",
+    	  "contentId" : "${basePage.contentID @context='unsafe'}",
+    	  "audience" : "${basePage.audience @context='unsafe'}",
+    	  "privateGroup" : "${basePage.privateGroup @context='unsafe'}",
+    	  "accessLevel" : "${basePage.accessLevel @context='unsafe'}",
+    	  "license" : "${basePage.license @context='unsafe'}",
+    	  "relatedContentLinks" : "",
+    	  "relatedFaqLinks" : "",
+    	  "relatedTemplatesLinks" : "",
+    	  "relatedExampleLinks" : "",
+    	  "relatedIndustryInsightsLinks" : "",
+    	  "relatedSmes" : "",
+    	  "source" : "${basePage.standardSetter @context='unsafe'}",
+    	  "issuingBody" : "${basePage.standardSetter @context='unsafe'}",
+    	  "vanityUrl" : "",
+    	  "redirectUrl" : "",
+    	  "canonicalUrl" : "${basePage.canonicalUrl @context='unsafe'}",
+    	  "hideFromSiteSearch" : "${basePage.hiddenFromSiteSearch ? '1' : '0' @context='unsafe'}",
+    	  "hideFromGoogle" : "",
+    	  "copyright" : "",
+    	  "templateCategory" : "",
+    	  "shortCode" : "",
+    	  "approvedBy" : "",
+    	  "rejectedBy" : "",
+    	  "approvedRejectedDate" : ""
+    	};
+
+    </script>
+    
+</sly>

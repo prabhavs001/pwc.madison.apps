@@ -1,0 +1,159 @@
+<section class="is-paddingless is-hidden-mobile is-hidden-tablet-only">
+    <div class="container space-bar-content">
+        <div class="spacer-border"></div>
+    </div>
+</section>
+<sly data-sly-resource="${'nextPrev' @resourceType='pwc-madison/components/ditacontent/previous-link'}" />
+<sly data-sly-use.tocList="com.pwc.madison.core.models.TocModel"/>
+<sly data-sly-use.header="com.pwc.madison.core.models.DitaDocumentHeader"/>
+<section>
+    <div class="container" id="content-page-full-container">
+        <div class="news main-body-content">
+            <div class="columns">
+                <div data-sly-test="${tocList.showToc}" class="onloadToc toc-spacer-line is-hidden-mobile is-hidden-tablet-only">
+                    <div></div>
+                    <span class="toc-rail-toggle  toc-button" data-show-static-toc="${header.showStaticToc ? 'true' : 'false'}">
+                    <span class="toc-tooltip" data-title="${'toc_click_to_open' @i18n}">
+                        <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/toc-new-icon.svg" alt="Expand" class="toc-plus-image icon-ToC">
+                    </span>
+                   </span>
+                </div>
+                <div class="column content-page-main ${tocList.showToc ? '' : 'no-toc'}" data-toc-chapter-page="${tocList.isChapterToc ? tocList.chapterTocBasePath : ''}" data-toc-base-page="${tocList.basePath}">
+                    <div id="overlay"></div>
+                    <div class="content-page-container">
+                        <sly data-sly-resource="${'docreader' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+                    </div>
+                    <div id="navbar-toc" class="navbar-toc"  data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+                        <div class="toc-action-navbar toc-wrapper toc-page-nav is-hidden-mobile">
+                            <div class="toc_icon">
+                                <ul>
+                                    <li data-sly-test="${tocList.showToc}" class="list-view-icon non-static-toc toc-button icon-ToC" data-title="${'toc_helptext' @i18n}">
+                                        <a href="#">
+                                            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/toc-new-icon.svg" class="list-view-icon icon-ToC">
+                                            <span class="nav-title icon-ToC">${'Common_Document_Header_Toc_Text' @i18n}</span>
+                                        </a>
+                                    </li>
+                                    <li data-sly-test="${tocList.showToc}" class="stick-nav-title" style="display: none;">${header.tocTitle}</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="share_icons">
+                                    <li>
+                                        <div data-sly-use.favorite="com.pwc.madison.core.models.FavoriteModel"
+                                            class="favorites-toggle favorite-list-component" data-page-path="${currentPage.path}"
+                                            data-page-href="${favorite.currentPageURL}" data-is-content-page="true">
+                                            <div>
+                                                <span>
+                                                    <div class="favorite-toggle-tooltip">${'UserReg_Favorite_List_Content_AddTo_Favorites' @i18n}</div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                	<li style="display: none">
+                                		<a href="javascript:void(0);" data-title="${'Join_View_Button_Hover' @ i18n}" onclick="joinbtnclick();" class="icon-Join" ></a>
+                                	</li>
+                                	<li>
+								    	<sly data-sly-test.subject="${'emailShare' @ i18n}" />
+								        <sly data-sly-use.sme="${'com.pwc.madison.core.models.Sme' @ subjectText=subject}" data-sly-test="${sme.smeList.smeListItems.size != 0}" data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.smeTemplate="/apps/pwc-madison/components/content/sme-list/sme-list.html" data-sly-call="${smeTemplate.smeList @ list = sme.smeList, subject = sme.encodedSubjectText}"/>
+                                	</li>
+                                    <li data-sly-test="${!header.hideSearchWithInDocument}">
+                                        <a href="#autocompleteSearch" data-title="${'Search_Within_Document' @ i18n}" class="search-link search-doc-link is-initializing">
+                                        	<span class="icon-magnifier-document"></span>
+                                        	<div class="searchdoc-loader"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            data-sly-test="${header.isShareViaEmailOnly}"
+                                            data-title="${'Share' @i18n}"
+                                            href="javascript:void(0);"
+                                            class="icon-share share-tooltip-popout"
+                                            data-tooltip-content="#toolbar_tip_home"
+                                            data-tippy-placement="bottom"
+                                        ></a>
+                                        <sly data-sly-test="${!header.isShareViaEmailOnly}" data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+                                            <sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='false', url='', title=''}" />
+                                        </sly>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" data-title="${'Copy_Link' @i18n}" onclick="copyToClipboard();" class="icon-link link-tooltip-popout"></a>
+                                    </li>
+                                    <li data-sly-test="${!header.disablePDFDownload}">
+                                        <a href="javascript:void(0);" data-title="${'Download_And_Print_Full_Document' @i18n}" onclick="printPDF(this);" class="icon-download"></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" data-title="${'Print_Current_Screen' @i18n}" onclick="print_info_modal()" class="icon-print"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--<div class="toc-line"></div>
+                        &lt;!&ndash; ATTRIBUTE BASED TOC SHOW &ndash;&gt;
+                        <div data-sly-test="${tocList.showToc}" class="list-view-icon toc-button  icon-ToC" data-title="${'Common_Document_Header_Toc_Text' @i18n}" data-show-static-toc="${header.showStaticToc ? 'true' : 'false'}">
+                            <span class="icon-caret-right toc-arrow icon-ToC"></span>
+                            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/toc-new-icon.svg" alt="${'Common_Document_Header_Toc_Text' @i18n}" class=" icon-ToC"/>
+                        </div>-->
+                        <!-- TOC COMPONENT: START -->
+                        <sly data-sly-resource="${'toc' @resourceType='pwc-madison/components/ditacontent/toc'}" />
+                        <div class="pagebreak"></div>
+                        <!-- TOC COMPONENT: END -->
+                        <input type="hidden" id="pagePath" value="${pageProperties.downloadPDFPath}" />
+                        <input type="hidden" id="pdfTitle" value="${pageProperties.downloadPDFTitle}" />
+                        <input type="hidden" id="pdf-error" value="${'PDF_Dwnld_Fail' @i18n}" />
+                        <input type="hidden" id="run-mode" value="${header.runMode}" />
+                    </div>
+                    <div id="share_tooltip" class="tooltip-popout">
+                        <div class="share-tooltip-content" id="toolbar_tip_home">
+                            <sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+                                <sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url='', title=''}" />
+                            </sly>
+                            <sly data-sly-use.linkedInTemplate="pwc-madison/components/commons/linkedin/LinkedinTemplate.html">
+                                <sly
+                                    data-sly-use.linkedInShare="com.pwc.madison.core.models.LinkedInModel"
+                                    data-sly-call="${linkedInTemplate.linkedIn @ summary = '', unwrapli='true', 
+                   	isLinkedInShareEnabled=linkedInShare.isLinkedInShareEnabled, pageUrl=linkedInShare.pageUrl, title=linkedInShare.title}"
+                                />
+                            </sly>
+                            <sly data-sly-use.twitterTemplate="pwc-madison/components/commons/twitter/TwitterTemplate.html">
+                                <sly
+                                    data-sly-use.twitterShare="com.pwc.madison.core.models.TwitterModel"
+                                    data-sly-call="${twitterTemplate.tweet @ unwrapli='true',
+                   	 isTwitterShareEnabled=twitterShare.isTwitterShareEnabled, pageUrl=twitterShare.pageUrl, title=twitterShare.title}"
+                                />
+                            </sly>
+                        </div>
+                    </div>
+                    <div id="link_tooltip" class="tooltip-popout">
+                        <div class="">
+                            <div class="link-tooltip-content">
+                                <div class="inner-lins">${'Link_Copied' @i18n}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer-line is-hidden-mobile is-hidden-tablet-only">
+                    <div class=""></div>
+                    <div class="right_rail_toggle">
+                        <span class="rcl-closed-tooltip" data-title="${'rc_click_to_open' @i18n}">
+                            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/rcl-icon.svg" alt="Expand" class="cross_image plus_sign" />
+                        </span>
+                        <span class="rcl-opened-tooltip" data-title="${'rc_click_to_close' @i18n}">
+                            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/rcl-icon.svg" alt="Expand" class="cross_image" />
+                        </span>
+                        <div class="divider_line"></div>
+                        <span class="RCL-resize" data-title="${'rcl_tool_tip' @i18n}">
+                            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/resize.svg" alt="Resize" class="RCL-drag">
+                        </span>
+                    </div>
+                </div>
+                <div class="search-filters is-hidden-mobile is-hidden-tablet-only">
+                    <sly data-sly-resource="${'rail' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+                </div>
+                <sly data-sly-use.pwcDocContextModel="com.pwc.madison.core.models.SearchWithinDocModel">
+                    <input id="pubpointdoccontext" type="hidden" data-title="US PwC non-public audit guide 3400" value="${pwcDocContextModel.pubPointDocContext}">
+                </sly>
+            </div>
+        </div>
+    </div>
+</section>

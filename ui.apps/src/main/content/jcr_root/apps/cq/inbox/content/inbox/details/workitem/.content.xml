@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Work Item"
+        sling:resourceType="granite/ui/components/shell/propertiespage"
+        backHref="/mnt/overlay/cq/inbox/content/inbox.html">
+        <actions jcr:primaryType="nt:unstructured">
+            <regenerate-topics
+                granite:rel="inbox-details-workitem-action--regenerate"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                icon="publish"
+                text="Generate / Regenerate"
+                variant="actionBar">
+                <granite:rendercondition
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pwc-madison/components/rendercondition/workitem-regenerate-button"
+                    roles="[publishers]"/>
+            </regenerate-topics>
+            <inline-review-page
+                granite:rel="inbox-details-workitem-inline-review"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                icon="edit"
+                text="Inline review page"
+                variant="actionBar">
+                <granite:rendercondition
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pwc-madison/components/rendercondition/inline-review-button"
+                    roles="[publishers]"/>
+            </inline-review-page>
+            <map-version-comparison
+                granite:rel="inbox-details-workitem-ditamaps-review"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                icon="history"
+                text="Review Map Revisions"
+                variant="actionBar">
+                <granite:rendercondition
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pwc-madison/components/rendercondition/inline-review-button"
+                    roles="[publishers]"/>
+            </map-version-comparison>
+        </actions>
+    </jcr:content>
+</jcr:root>

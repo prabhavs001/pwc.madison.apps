@@ -1,0 +1,77 @@
+.template_type_list {
+  .menu-items{
+    max-height: 660px;
+    overflow: scroll;
+    overflow-x: hidden;
+    @media(max-width: 1087px) and (min-width: 769px) {
+      max-height: 474px !important;
+    }
+    .scrollable {
+      @media(max-width: 1087px) and (min-width: 769px) {
+        max-height: 474px !important;
+      }
+    }
+
+    .menu-item{
+      height: 80px;
+      display: flex !important;
+      border-bottom: 1px solid #CFCFCF;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-right: 27px;
+      width: 275px;
+
+      @media(min-width: 1472px) {
+        width: 320px;
+      }
+
+      @media(max-width: 1087px) and (min-width: 769px) {
+        width: 243px;
+        height: 68px;
+      }
+      .text{
+        padding: 0px 10px 0px 10px;
+        line-height: 18px;
+        margin: auto 0;
+        a{
+          font-family: "PwC Helvetica Neue";
+          text-align: left;
+          color: $color-dark;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 21px;
+          line-height: 21px;
+          @media(max-width: 1087px) and (min-width: 769px) {
+            font-size: 18px;
+            line-height: 18px;
+          }
+          &:hover{
+            color: $color-primary-checkbox;
+          }
+        }
+        a.active{
+          color: $color-primary-checkbox;
+        }
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }  
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .template_type_list {
+    .menu-items{
+      //000z-index: 9999;
+      position: relative;
+      left: 4px;
+    }
+  }
+}

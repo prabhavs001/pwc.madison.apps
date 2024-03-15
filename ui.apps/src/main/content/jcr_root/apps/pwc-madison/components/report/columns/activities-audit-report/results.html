@@ -1,0 +1,12 @@
+<sly data-sly-use.fileReport="com.pwc.madison.core.reports.models.ActivitiesAuditReportModel">
+	<sly data-sly-test.path="${properties.value == 'path'}">
+		<td is="coral-table-cell"  value="${fileReport.activityFieldValue}">
+			<a target="_blank" href="#" data-href="/assets.html${fileReport.activityFieldValue @context='html'}" class="coral-Link">${fileReport.activityFieldValue}</a>
+		</td>
+	</sly>
+	<sly data-sly-test="${!path}">
+	<td is="coral-table-cell" >
+		${fileReport.activityFieldValue}
+	</td>
+	</sly>
+</sly>

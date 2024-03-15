@@ -1,0 +1,53 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Recently Viewed Component" class="cq-placeholder"></p>
+<sly data-sly-use.model="com.pwc.madison.core.models.RecentlyViewedModel">
+  <section class="recently-viewed-component"
+           data-sly-test="${model.isUserLoggedIn && model.recentlyViewedItemsList.size != 0}">
+    <div class="container">
+      <section>
+        <div>
+          <h2>${properties.title}</h2>
+        </div>
+        <div class='recently-viewed-slider-container'>
+          <div class="recently-viewed-slider">
+            <sly data-sly-list.item="${model.recentlyViewedItemsList}">
+              <div class="tile is-parent item">
+                <h4>
+                  <a href="${item.pagePath}"
+                     data-component-name="${model.componentName}"
+                     data-link-title="${item.contentTitle}"
+                     class="limitedword"
+                     data-sly-attribute.data-access-type="${item.AccessType}"
+                     data-sly-attribute.data-license-types="${item.licenseTypes}">${item.contentTitle}</a>
+                </h4>
+                <div>
+                  <sly data-sly-test="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                  <span data-sly-test="${item.newsSource}">|</span>
+                  <a data-sly-test="${item.newsSource}"
+                     data-component-name="${model.componentName}"
+                     data-link-title="${item.contentTitle}"
+                     data-sly-attribute.href="${item.sourceLink}${item.isInternalUrl == false ? '' : '.html'}"
+                     style="${item.sourceLink ? 'cursor:default' : '' @ context='html'}"
+                     data-sly-attribute.target="${item.isInternalUrl == false ? '_blank' : ''}">${item.newsSource}
+                    <span class="icon-up-arrow"></span>
+                  </a>
+                </div>
+                <div class="space-bar"></div>
+              </div>
+            </sly>
+            <div
+                    class="recently-show-more show-toggle is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd" data-sly-test="${model.recentlyViewedItemsList.size>2}">
+              <span data-showmore-text='${"Homepage_RecentlyViewed_ShowMore_Label" @ i18n,
+              locale=pageProperties.jcr:language}' data-showless-text='${"Homepage_RecentlyViewed_ShowLess_Label" @ i18n,
+              locale=pageProperties.jcr:language}'>${"Homepage_RecentlyViewed_ShowMore_Label" @ i18n,
+                locale=pageProperties.jcr:language}</span>
+              <div class="arrow">
+                <i class="left"></i>
+                <i class="right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</sly>

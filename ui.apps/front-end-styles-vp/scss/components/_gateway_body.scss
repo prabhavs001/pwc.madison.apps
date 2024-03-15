@@ -1,0 +1,218 @@
+.gateway-body{
+  .modal-content {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+       display: flex !important;
+       height: auto;
+     }
+
+     .gateway-modal-decor {
+       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+         margin: auto !important;
+         align-self: center !important;
+       }
+     }
+   }
+  .modal-content, .modal-card {
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 444px;
+    .gateway-modal-decor{
+      background-color: $background-color-alert;
+      padding: 40px;
+      .gateway-header{
+        font-family: $font-itc-charter;
+        font-size: 44px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        color: $color-dark;
+      }
+      .gateway-message{
+        padding-top: 26px;
+        font-family: $font-helvetica;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        color: $color-dark;
+        .msg-click-here{
+          color: $color-primary;
+          font-weight: 600;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .gateway-buttons{
+        padding-top: 30px;
+        // display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: flex-start;
+        .action-btn{
+          width: 100px;
+          height: 42px;
+          background-color: $color-primary;
+          border: none;
+          margin-right: 20px;
+          font-family: $font-helvetica;
+          font-size: 12px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.25;
+          letter-spacing: 0.6px;
+          color: $color-white;
+          cursor: pointer;
+          text-transform: uppercase;
+        }
+        a{
+          background-color: transparent !important;
+          height: auto !important;
+          color: $color-dark !important;
+        }
+      }
+    }
+  }
+  .modal-close:after{
+    height: 100% !important;
+  }
+  .modal-close:before{
+    width: 100%;
+  }
+}
+
+.gateway-mobile-slide{
+  background-color: $background-color-alert !important;
+  overflow-y: hidden !important;
+  .mobile-search-filtersmodal-content{
+    padding: 0px 15px;
+  }
+  .close-animatedTemplateModal{
+    .icon-close-popup{
+      font-size: 20px;
+      color: $color-dark;
+    }
+  }
+  .modal-content{
+    max-height: 100vh;
+    margin: 0px 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+.gateway-body{
+  .modal-close{
+    @media only screen and (min-device-width: 414px) 
+      and (max-device-width: 736px) 
+      and (orientation: landscape) {
+      right: 85px; 
+    }
+  }
+}
+@media (min-width: 240px) and (max-width: 768px) {
+  /*.gateway-mobile-slide{
+    .modal-content{
+      .gateway-modal-decor{
+        .gateway-header{
+          padding-top: 20px;
+          font-family: $font-itc-charter;
+          font-size: 38px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.13;
+          letter-spacing: normal;
+          color: $color-white;
+        }
+        .gateway-message{
+          padding-top: 26px;
+          font-family: $font-helvetica;
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.21;
+          letter-spacing: normal;
+          color: $color-dark;
+        }
+        .gateway-buttons{
+          padding-top: 30px;
+          .action-btn{
+            width: 100%;
+            height: 42px;
+            background-color: $color-primary;
+            border: none;
+            margin-bottom: 20px;
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0.6px;
+            color: $color-white;
+            cursor: pointer;
+            &:focus {
+              outline:0;
+            }
+          }
+        }
+      } 
+    }
+  }*/
+  .gateway-body{
+    .modal-content{
+      max-height: 100vh;
+      width: auto;
+      .gateway-modal-decor{
+        height: 100vh;
+        padding: 20px;
+        overflow-y: auto;
+        .gateway-header{
+          margin-top: 60px;
+        }
+        .gateway-buttons{
+          .action-btn{
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .modal-close{
+      top: 30px;
+      @media only screen and (min-device-width: 240px) 
+                   and (max-device-width: 670px) 
+                   and (orientation: landscape) {
+        right: 50px;
+      }
+      @media only screen and (min-device-width: 768px) 
+                   and (max-device-width: 1024px) 
+                   and (orientation: portrait) {
+        right: 100px; 
+      }
+    }
+    .modal-close::before, .modal-close::after {
+      background-color: $color-dark;
+      content: "";
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+    }
+    .modal-close::after{
+      height: 100%;
+    }
+    .modal-close::before{
+      width: 100%;
+    }
+  }
+}

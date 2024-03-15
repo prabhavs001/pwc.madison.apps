@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          externalizer.domains="[local http://localhost:4502,author https://auth-viewpoint-stg.pwc.com,publish https://viewpoint-stg.pwc.com]"
+          externalizer.host=""
+          externalizer.contextpath=""/>

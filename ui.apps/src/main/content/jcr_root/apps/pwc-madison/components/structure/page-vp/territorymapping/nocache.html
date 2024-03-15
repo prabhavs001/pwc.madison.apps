@@ -1,0 +1,7 @@
+<sly data-sly-use.caching="com.pwc.madison.core.models.StructureComponentCaching"
+     data-sly-test.isinternal="${caching.isInternalUser}">
+    <!--#include virtual="${currentPage.path @ selectors = ['territorymapping', 'internal'], extension = 'html'}" -->
+</sly>
+<sly data-sly-test="${!isinternal}">
+    <!--#include virtual="${currentPage.path @ selectors = ['territorymapping', 'external'], extension = 'html'}" -->
+</sly>

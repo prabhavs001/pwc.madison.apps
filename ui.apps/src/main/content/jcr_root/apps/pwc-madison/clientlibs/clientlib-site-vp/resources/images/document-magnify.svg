@@ -1,0 +1,13 @@
+<svg id="Group_5921" data-name="Group 5921" xmlns="http://www.w3.org/2000/svg" width="25.842" height="26.772" viewBox="0 0 25.842 26.772">
+  <g id="Path_3478" data-name="Path 3478" transform="translate(0 0)">
+    <path id="Path_1" data-name="Path 1" d="M6.671,0H17.712a2.7,2.7,0,0,1,2.8,2.577V20.6a2.7,2.7,0,0,1-2.8,2.577H2.8A2.7,2.7,0,0,1,0,20.6V6.259S5.817,0,6.671,0Z" transform="translate(0 0)" fill="none"/>
+    <path id="Path_2" data-name="Path 2" d="M7.2,1.841A68.1,68.1,0,0,0,2,6.941V20.6a.768.768,0,0,0,.8.733H17.713a.768.768,0,0,0,.8-.733V2.574a.768.768,0,0,0-.8-.733H7.2M6.671,0H17.713a2.692,2.692,0,0,1,2.8,2.574V20.6a2.692,2.692,0,0,1-2.8,2.574H2.8A2.692,2.692,0,0,1,0,20.6V6.257S5.817,0,6.671,0Z" transform="translate(0 0)" fill="#2a2a2a"/>
+  </g>
+  <path id="Path_3479" data-name="Path 3479" d="M576.316,253.925v5.969h-6.834" transform="translate(-569.033 -252.13)" fill="none" stroke="#000" stroke-width="1"/>
+  <line id="Line_5269" data-name="Line 5269" x2="5.945" transform="translate(8.61 6.618)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_5270" data-name="Line 5270" x2="10.449" transform="translate(4.405 10.274)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_5271" data-name="Line 5271" x2="10.449" transform="translate(4.405 13.93)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_5272" data-name="Line 5272" x2="10.449" transform="translate(4.405 17.586)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+  <line id="Line_5273" data-name="Line 5273" x1="4.411" y1="4.606" transform="translate(20.159 20.894)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.8"/>
+  <ellipse id="Ellipse_20" data-name="Ellipse 20" cx="6.725" cy="6.725" rx="6.725" ry="6.725" transform="translate(8.722 9.374)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1.8"/>
+</svg>

@@ -1,0 +1,61 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Hero Tile Component" class="cq-placeholder"></p>
+
+<sly data-sly-use.model="com.pwc.madison.core.models.HeroTileModel">
+<sly data-sly-use.template="rendition-template.html">
+<sly data-sly-test.bgColorStyleValue="${properties.backgroundColor ? properties.backgroundColor : '#D04A02' @ context = 'styleToken'}">
+</sly>
+
+<sly data-sly-test.bgColorValue="background: linear-gradient(90deg, ${bgColorStyleValue  @ context = 'styleToken'} 20%, #464646 20%);">
+</sly>
+
+  <section class="is-paddingless">
+    <div class="withoutBgHero hero-tile section-banner hero" style="${bgColorValue @ context='html'}">
+      <div class=" container is-paddingless">
+        <div class="rows">
+          <div class="row is-hidden-mobile welcome-title">
+            <div data-sly-test="${properties.bgType == 'color'}" class="skew-background" style="background:${bgColorStyleValue  @ context = 'styleToken'};"></div>
+            <div data-sly-test="${properties.bgType == 'image'}" class="skew-background" style="background:url('${properties.bgImagePath @ context='styleString'}');"></div>
+            <div class=" s-block banner-left-block is-paddingless">
+              <span class="zig-zag-text">
+                <h1 data-sly-test=${properties.text1}>
+                  ${properties.text1}
+				        </h1>
+                <h1 data-sly-test=${properties.text2}>
+                  ${properties.text2}
+				        </h1>
+                <p class="hero-sub-heading" data-sly-test=${properties.text3}>
+                  ${properties.text3}
+				        </p>
+              </span>
+            </div>
+          </div>
+          <div data-sly-attribute.class="row thick-border">
+            <div class="hero-overlay"></div>
+            <div data-slick-increment-seconds="${properties.autoScroll ? properties.autoScroll : 5}" data-sly-attribute.class="s-block banner-right-block thick-border" data-sly-list="${model.filteredList}">
+              <sly data-sly-test="${item.renditionStyle == 'thumbnail'}">
+                <sly data-sly-call="${template.thumbnailRendition @ item=item, compName=model.componentName}"></sly>
+              </sly>
+              <sly data-sly-test="${item.renditionStyle == 'standard'}">
+                <sly data-sly-call="${template.standardRendition @ item=item, compName=model.componentName}"></sly>
+              </sly>
+              <sly data-sly-test="${item.renditionStyle == 'card'}">
+                <sly data-sly-call="${template.cardImageRendition @ item=item, compName=model.componentName}"></sly>
+              </sly>
+              <sly data-sly-test="${item.renditionStyle == 'bgImage'}">
+                <sly data-sly-call="${template.bgImageRendition @ item=item, compName=model.componentName}"></sly>
+              </sly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</sly>
+</sly>
+<script data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}">
+	window.dispatchEvent(new CustomEvent("initFavoriteListComponent"));
+</script>
+
+<script>
+  window.dispatchEvent(new CustomEvent("slickInit"));
+</script>

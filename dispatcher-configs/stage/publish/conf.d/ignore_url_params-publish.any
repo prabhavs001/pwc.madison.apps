@@ -1,0 +1,16 @@
+/0001 { /glob "*" /type "allow" }
+/0002 { /glob "uri" /type "deny" }
+/0003 { /glob "territory" /type "deny" }
+/0004 { /glob "locale" /type "deny" }
+/0005 { /glob "referer" /type "deny" }
+/0006 { /glob "isPremium" /type "deny" }
+/0007 { /glob "refererHeader" /type "deny" }
+/0008 { /glob "resource" /type "deny" }
+/0009 { /glob "isGatedActivationPage" /type "deny" }
+/00010 { /glob "activationRequest" /type "deny" }
+/00011 { /glob "isInvitation" /type "deny" }
+/00012 { /glob "activationSuccess" /type "deny" }
+/00013 { /glob "showLogin" /type "deny" }
+/00014 { /glob "resetPasswordRequest" /type "deny" }
+/00015 { /glob "samlerror" /type "deny" }
+/00016 { /glob "auth" /type "deny" }

@@ -1,0 +1,144 @@
+.user_activation {
+  @media (min-width: 320px) and (max-width: 768px) {
+    .modal-close::before {
+      width: 20px;
+      background-color: $color-dark;
+    }
+    .modal-close::after {
+      height: 20px;
+      background-color: $color-dark;
+    }
+  }
+
+  .modal-content{
+    @media all and (-ms-high-contrast: none) and (min-width: 769px), (-ms-high-contrast: active) and (min-width: 769px) {
+      align-self: center;
+      height: auto !important;
+
+      .columns {
+        margin: 0;
+      }
+    }
+
+    overflow-x: hidden;
+    @media (min-width: 320px) and (max-width: 768px) {
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+  }
+
+  .user_activation-content{
+    border: 48px solid $border-color;
+    background-color: $color-white;
+    @media (min-width: 320px) and (max-width: 768px) {
+      border: none;
+    }
+
+    &.columns {
+      @media (min-width: 320px) and (max-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    .user_activation-left {
+      background-color: $background-color-light;
+      @media (min-width: 320px) and (max-width: 768px) {
+        display: none;
+      }
+
+      .welcome-users {
+        display: flex;
+        align-items: center;
+        padding: 160px 0;
+        .welcome-note{
+          font-family: $font-itc-charter;
+          font-size: 54px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 0.8;
+          letter-spacing: normal;
+          text-align: center;
+          color: $muted-text-color;
+        }
+      }
+    }
+
+    .user_activation-right{
+      padding: 43px 40px;
+
+      @media (min-width: 320px) and (max-width: 768px) {
+          height: auto;
+          padding: 50px 15px;
+      }
+
+      .title {
+        font-family: $font-itc-charter;
+        font-size: 32px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 0.98;
+        letter-spacing: normal;
+        text-align: left;
+        color: $muted-text-color;
+        @media (min-width: 320px) and (max-width: 768px) {
+          font-size: 30px;
+          border-bottom: 1px solid $color-light;
+          padding-bottom: 1.5rem;
+        }
+      }
+      .remark {
+          font-family: $font-helvetica;
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.21;
+          letter-spacing: normal;
+          color: $muted-text-color;
+      }
+        .user_activation-action {
+          display: flex;
+          padding-top: 25px;
+          margin-bottom: 40px;
+
+          @media (min-width: 320px) and (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            flex-flow: column-reverse;
+          }
+
+          .activation-btn {
+            border: 1px solid $color-primary;
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: $color-primary;
+            background-color: transparent;
+            padding: 12px 28px;
+            cursor: pointer;
+          }
+        }
+        .margin-bottom {
+          margin-bottom: 0;
+          }
+    }
+  } 
+  @media (min-width: 240px) and (max-width: 768px) {
+    .modal-content{
+        max-height: calc(100vh - 160px);
+        margin: 0px 0px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    .modal-background {
+        background-color: #FFFFFF;
+      }
+  }
+}

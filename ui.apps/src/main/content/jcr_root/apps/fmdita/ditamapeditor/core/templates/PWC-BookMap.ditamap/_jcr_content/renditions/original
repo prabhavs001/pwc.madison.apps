@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//PWC//DTD DITA PWC BookMap//EN" "pwc-bookmap.dtd"> 
+<bookmap>
+	<booktitle>
+		<mainbooktitle/>
+	</booktitle>
+	<chapter type="topic" format="dita"></chapter>
+	<appendix></appendix>
+</bookmap> 

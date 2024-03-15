@@ -1,0 +1,6 @@
+function check() {
+    var scene7SyncFilterService = sling.getService(Packages.com.pwc.madison.core.services.Scene7SyncFilterService);
+
+    var path = workflowData.getPayload().toString();
+    return scene7SyncFilterService.isAssetAllowed(path, resolver);
+}

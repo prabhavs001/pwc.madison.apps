@@ -1,0 +1,7 @@
+.edit-expiry-radio.coral-RadioGroup,.publishing-point-radio.coral-RadioGroup{
+    border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	break-before: always;
+}

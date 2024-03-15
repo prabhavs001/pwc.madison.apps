@@ -1,0 +1,7 @@
+<sly data-sly-use.caching="com.pwc.madison.core.models.StructureComponentCaching"
+	data-sly-test.iscached="${caching.isCachingEnabled && wcmmode.disabled}">
+	<!--#include virtual="${[currentPage.path,'jcr:content'] @ join='/', selectors=['media', 'nocache'], extension='html'}" -->
+</sly>
+<sly data-sly-test="${!iscached}"
+	data-sly-resource="${[currentPage.path,'jcr:content'] @ join='/', selectors='media'}">
+</sly>

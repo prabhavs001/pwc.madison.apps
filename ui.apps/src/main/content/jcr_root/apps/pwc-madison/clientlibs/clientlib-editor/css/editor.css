@@ -1,0 +1,672 @@
+.title {
+	color: #eb452f;
+	font-size: 20px;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+div.topic.subsection {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    padding: 15px 0;
+    color: #052d44;
+    font-size: 16px;
+    line-height: 1.38;
+}
+
+div.table {
+    border: none;
+    overflow-x: auto;
+    min-height: 0.01%;
+}
+
+table.tgroup {
+    table-layout: fixed;
+    font-size: 12px;
+    line-height: 14px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+a.xref {
+    color: #eb452f !important;
+    text-decoration: underline !important;
+    background-color: transparent !important;
+}
+
+a.xref:active, a.xref:hover {
+    outline: 0 !important;
+}
+
+div.p.norm-text {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 16px;
+}
+
+body.cke_editable .missing-rendition {
+    height: 3em;
+    width: 3em;
+}
+
+/* MD-5352 Element Highlighted  */
+body.cke_editable .callout-content {
+    border: 1px dashed #999999;
+    background-color: #fafafa;
+    border-radius: 7px;
+    font-size: 21px;
+    line-height: 1.33;
+    color: #933401;
+    position: relative;
+    z-index: 1;
+    margin: 5px 0;
+    padding: 10px 5px;
+    min-height: 52px;
+}
+
+body.cke_editable .callout-content.tcx-empty-element {
+    line-height: 1;
+}
+
+body.cke_editable .pwc-observation.tcx-empty-element::before,
+body.cke_editable .callout-content.tcx-empty-element::before,
+body.cke_editable .excerpt-content.tcx-empty-element::before {
+    content: attr(data-tcx-placeholder);
+    display: block;
+    position: absolute;
+    font-size: 1rem;
+    color: #d3d3d3;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+span.shade {
+    padding: 0 2px;
+}
+
+p.shade, div.shade {
+    padding: 7px 13px;
+}
+
+.rose {
+    background-color: #F8DCE1;
+}
+
+.light-orange {
+    background-color: #F6DBCC;
+}
+
+.dark-rose {
+    background-color: #db536a;
+    color: white
+}
+
+.light-yellow {
+    background-color: #FFEED4;
+}
+
+.grey {
+    background-color: #D5D5D5;
+}
+
+.hangindent1 {
+    margin-left: 45px;
+    text-indent: -30px; }
+
+.hangindent2 {
+    margin-left: 95px;
+    text-indent: -30px; }
+
+.hangindent3 {
+    margin-left: 145px;
+    text-indent: -30px; }
+
+.hangindent4 {
+    margin-left: 195px;
+    text-indent: -30px; }
+
+.hangindent5 {
+    margin-left: 245px;
+    text-indent: -30px; }
+
+.hangindent6 {
+    margin-left: 295px;
+    text-indent: -30px; }
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .hangindent1 {
+        margin-left: 24px;
+        text-indent: -22px; }
+    .hangindent2 {
+        margin-left: 40px;
+        text-indent: -24px; }
+    .hangindent3 {
+        margin-left: 60px;
+        text-indent: -24px; }
+    .hangindent4 {
+        margin-left: 80px;
+        text-indent: -24px; }
+    .hangindent5 {
+        margin-left: 100px;
+        text-indent: -24px; }
+    .hangindent6 {
+        margin-left: 120px;
+        text-indent: -24px; } }
+
+body.cke_editable ol[data-tcx-attr-otherprops] {
+  background-color: transparent;
+}
+
+ol[data-tcx-attr-outputclass="outputclass@a"] {
+    list-style-type: lower-alpha !important;
+}
+
+ol[data-tcx-attr-outputclass="outputclass@A"] {
+    list-style-type: upper-alpha !important;
+}
+
+ol[data-tcx-attr-outputclass="outputclass@i"] {
+    list-style-type: lower-roman !important;
+}
+
+ol[data-tcx-attr-outputclass="outputclass@I"] {
+    list-style-type: upper-roman !important;
+}
+ul[data-tcx-attr-outputclass="outputclass@square"]{
+	list-style-type: none;
+    margin-left: 36px;
+    font-family: "PwC Helvetica Neue";
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: left;
+    color: #2D2D2D;
+}
+
+ul[data-tcx-attr-outputclass="outputclass@square"] >li:before {
+    content: '';
+    position: relative;
+    top: 17px;
+    left: -22px;
+    width: 12px;
+    height: 12px;
+    border: solid 1px #7D7D7D;
+    display: flex;
+    box-sizing: inherit;
+}
+ul[data-tcx-attr-outputclass="outputclass@square"] >li{
+    padding-bottom: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.fig .title{
+	text-align:left;
+}
+
+div.lq {
+    padding-left: 50px;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    div.lq {
+        padding-left: 20px;
+    }
+}
+
+.obsolete {
+    text-decoration: line-through;
+}
+
+.excerpt-title {
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.30;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+}
+
+[data-tcx-tag="br"] {
+    display: block !important;
+}
+
+.previewbody .text-right, .pwc-topic .text-right {
+    text-align: right !important;
+}
+
+.previewbody .text-center, .pwc-topic .text-center {
+    text-align: center !important;
+}
+
+.previewbody .text-right, .pwc-topic .text-right {
+    text-align: right !important;
+}
+
+.previewbody .text-center, .pwc-topic .text-center {
+    text-align: center !important;
+}
+
+body .shade[data-tcx-placeholder="<Table Caption>"], .table h1.title.shade {
+    font-size: 21px !important;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    padding: 6px 0;
+    margin-bottom: 0 !important;
+}
+
+.shade.dark-yellow[data-tcx-placeholder="<Table Caption>"], .table h1.title.shade.dark-yellow {
+    background-color: #ffa929 !important;
+    color: #fff !important;
+}
+
+.shade.dark[data-tcx-placeholder="<Table Caption>"], .table h1.title.shade.dark {
+    background-color: #2d2d2d !important;
+    color: #fff !important;
+}
+
+.shade.dark-orange[data-tcx-placeholder="<Table Caption>"], .table h1.title.shade.dark-orange {
+    background-color: #D04A02 !important;
+    color: #fff !important;
+}
+
+.shade.dark-rose[data-tcx-placeholder="<Table Caption>"], .table h1.title.shade.dark-rose {
+    background-color: #db536a !important;
+    color: #fff !important;
+}
+
+.text-center[data-tcx-placeholder="<Table Caption>"], .table h1.title.text-center {
+    text-align: center;
+}
+
+
+div[data-tcx-tag="table"] table {
+    margin-top: 0;
+}
+
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > tbody > tr > td,
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > thead > tr > td,
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > tfoot > tr > td,
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > tbody > tr > th,
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > thead > tr > th,
+.cke_show_borders .outer-borders-only[data-tcx-tag="table"] table.cke_show_border > tfoot > tr > th,
+.outer-borders-only[data-tcx-tag="table"] table > thead > tr > td, 
+.outer-borders-only[data-tcx-tag="table"] table > tbody > tr > td, 
+.outer-borders-only[data-tcx-tag="table"] table > tfoot > tr > td, 
+.outer-borders-only[data-tcx-tag="table"] table > thead > tr > th, 
+.outer-borders-only[data-tcx-tag="table"] table > tbody > tr > th, 
+.outer-borders-only[data-tcx-tag="table"] table > tfoot > tr > th  {
+    border: none;
+}
+
+.outer-borders-only[data-tcx-tag="table"] table thead tr th {
+    border-top: 1px solid #7d7d7d !important;
+}
+.outer-borders-only[data-tcx-tag="table"] table thead tr th:first-child {
+    border-left: 1px solid #7d7d7d !important;
+}
+.outer-borders-only[data-tcx-tag="table"] table thead tr th:last-child {
+    border-right: 1px solid #7d7d7d !important;
+}
+
+.outer-borders-only[data-tcx-tag="table"] table tbody tr:last-child td {
+    border-bottom: 1px solid #7d7d7d !important;
+}
+.outer-borders-only[data-tcx-tag="table"] table tbody tr td:first-child {
+    border-left: 1px solid #7d7d7d !important;
+}
+.outer-borders-only[data-tcx-tag="table"] table tbody tr td:last-child {
+    border-right: 1px solid #7d7d7d !important;
+}
+
+.rowsep .row, .row.rowsep, .simpletable .strow, tr[data-tcx-attr-rowsep="rowsep@1"] {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.previewbody .colsep, .pwc-topic .colsep, td[data-tcx-attr-colsep="colsep@1"] {
+    border-right: 1px solid #7D7D7D !important;
+}
+
+div[data-tcx-tag="lq"] {
+    padding-left: 50px !important;
+    font-style: normal !important;
+    border: none !important;
+}
+
+.dthd, .ddhd, .dt {
+	font-weight: normal;
+}
+
+.dd {
+	margin-bottom: 0px;
+}
+
+div[data-tcx-attr-outputclass="outputclass@double"][data-tcx-tag="u"], [data-tcx-attr-outputclass="outputclass@double"][data-tcx-tag="u"] {
+    text-decoration-style: double !important;
+}
+
+ul ol, ol ol {
+    list-style-type: decimal;
+}
+
+/********UI Team CSS**********/
+body [data-tcx-tag="title"] {
+    font-size: 42px !important;
+    font-weight: normal;
+    font-family: inherit;
+    line-height: 56px;
+    color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+}
+
+div[data-tcx-attr-outputclass="outputclass@hangingindent1"] {
+    margin-left: 10px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+div[data-tcx-attr-outputclass="outputclass@hangingindent2"] {
+    margin-left: 60px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+div[data-tcx-attr-outputclass="outputclass@hangingindent3"] {
+	margin-left: 110px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+div[data-tcx-attr-outputclass="outputclass@hangingindent4"] {
+    margin-left: 160px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+div[data-tcx-attr-outputclass="outputclass@hangingindent5"] {
+	margin-left: 210px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+div[data-tcx-attr-outputclass="outputclass@hangingindent6"] {
+    margin-left: 260px;
+    text-indent: -65px;
+    padding-left: 25px;
+}
+
+/********Only for AEM Preview page**********/
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent1"] {
+  margin-left: 10px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent2"] {
+  margin-left: 60px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent3"] {
+  margin-left: 110px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent4"] {
+  margin-left: 160px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent5"] {
+  margin-left: 210px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+.previewbody div[data-tcx-attr-outputclass="outputclass@hangingindent6"] {
+  margin-left: 260px !important;
+  text-indent: -25px !important;
+  padding-left: 25px !important;
+}
+
+
+body.cke_editable.show-tags .tag-end,
+body.cke_editable.show-tags .tag-start {
+    text-indent: 0;
+}
+body.cke_editable.show-tags .tag-start>.tag-name:after {
+    text-indent: 0;
+}
+div[data-tcx-attr-outputclass="outputclass@h1"] {
+    font-family: "PwC Helvetica Neue";
+    font-size: 42px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 56px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+    padding: 9px 0;
+}
+[data-tcx-attr-outputclass="outputclass@h2"] {
+	font-family: "PwC Helvetica Neue" !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+    padding: 9px 0;
+    margin-bottom: 0 !important;
+}
+[data-tcx-attr-outputclass="outputclass@h3"] {
+    font-family: "PwC Helvetica Neue";
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+    padding: 9px 0;
+}
+[data-tcx-attr-outputclass="outputclass@h4"] {
+    font-family: "PwC Helvetica Neue";
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+    padding: 9px 0;
+}
+[data-tcx-attr-outputclass="outputclass@h5"] {
+    font-family: "PwC Helvetica Neue";
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+    padding: 9px 0;
+}
+
+div[data-tcx-attr-outputclass="outputclass@indent1"] {
+	margin-left: 35px;
+}
+div[data-tcx-attr-outputclass="outputclass@indent2"] {
+    margin-left: calc( 95px - 8px);
+}
+div[data-tcx-attr-outputclass="outputclass@indent3"] {
+	margin-left: calc( 145px - 8px);
+}
+div[data-tcx-attr-outputclass="outputclass@indent4"] {
+	margin-left: calc( 195px - 8px);
+}
+div[data-tcx-attr-outputclass="outputclass@indent5"] {
+    margin-left: calc( 245px - 8px);
+}
+div[data-tcx-attr-outputclass="outputclass@indent6"] {
+    margin-left: calc( 295px - 8px);
+}
+[data-tcx-tag="sup"] {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    left: -0.25em;
+        top: -0.5em;
+}
+[data-tcx-tag="sub"] {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    bottom: -0.25em;
+}
+body .body-callout .callout-title, body .body-callout .callout-attribution, .body-callout[data-tcx-tag="body-callout"] .callout-content {
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #933401;
+}
+body .bodydiv .body-callout[data-tcx-tag="body-callout"] {
+    border-top: 1px solid #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 34px;
+    padding-bottom: 29px;
+    margin-bottom: 41px;
+}
+body .bodydiv .body-callout[data-tcx-tag="body-callout"] .callout-content {
+	border: 0;
+	border-radius: 0;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 15px !important;
+    font-weight: normal !important;
+}
+[data-tcx-tag="callout-content"] [data-tcx-attr-format="format@pdf"]{
+	color: black !important;
+    text-decoration: none !important;
+}
+body .body-excerpt {
+    border-left: 1px solid #2d2d2d;
+    border-right: 1px solid #2d2d2d;
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-bottom: 39px;
+    margin-left: 29px;
+    margin-right: 29px;
+    padding-bottom: 0;
+}
+body .note {
+    border-top: 1px solid #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 34px;
+    padding-bottom: 29px;
+    margin-bottom: 41px;
+    border: 0;
+    background: #fff;
+}
+body .body-callout .callout-attribution {
+	text-align: right;
+}
+body .bodydiv [data-tcx-tag="key-points"] {
+    border-top: 1px solid #2d2d2d !important;
+    border-bottom: 1px solid #2d2d2d !important;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 34px;
+    padding-bottom: 29px;
+    margin-bottom: 41px;
+}
+body .bodydiv [data-tcx-tag="key-points"]  [data-tcx-reftag="ol"] {
+    margin-left: 36px;
+    font-family: "PwC Helvetica Neue";
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: left;
+    color: #2d2d2d;
+
+}
+body .bodydiv [data-tcx-tag="key-points"]:before {
+		content:'Key-Points' !important;
+   	color: #933401 !important;
+    font-size: 21px;
+    font-weight: bold; 
+}
+body.cke_editable:not(.show-tags) .note>.tag-start:after {
+	content: none !important;
+}
+body .bodydiv div[data-tcx-attr-outputclass="outputclass@watermark"] {
+	background-image: url(/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/watermarkImage.png);
+    background-repeat: repeat;
+    padding: 0 10px;
+}
+body .bodydiv [data-tcx-tag="pwc-observation"] {
+	background-color: #f7f7f7;
+    padding: 17px 20px;
+    font-size: 18px;
+    color: #2d2d2d;
+    line-height: 1.38;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+}
+body .bodydiv [data-tcx-tag="pwc-observation"]:before {
+	content: 'PwC Observation';
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    color: #2d2d2d !important;
+    margin-bottom: 5px;
+}
+.bodydiv [data-tcx-tag="body-excerpt"] [data-tcx-tag="excerpt-content"] {
+    font-size: 18px;
+    color: #2d2d2d;
+    line-height: 1.38;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    padding-bottom: 15px;
+    word-break: break-word;
+}
+body.cke_editable [data-tcx-attr-rev]{
+    /* avoid yellow background on rev attribute */
+	background-color: transparent;
+}
+body .bodydiv [data-tcx-tag="cite"],body .cite, body [data-tcx-tag="cite"]{
+	font-style: italic;
+}

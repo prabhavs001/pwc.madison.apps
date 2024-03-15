@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="This component would be used for displaying featured content including multimedia content in tile format."
+    jcr:primaryType="cq:Component"
+    jcr:title="Featured Content Tile"
+    componentGroup="PwC Madison Content"/>

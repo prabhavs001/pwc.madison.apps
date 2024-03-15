@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    event.filter="(!(event.application=*))"
+    event.queue.length="{Decimal}100"
+    eventrecorder.enabled="{Boolean}true"
+    eventrecorder.eventtypes="[ASSET_CREATED,ASSET_MOVED,ASSET_REMOVED,ASSET_EXPIRED,ASSET_EXPIRING,DOWNLOADED,METADATA_UPDATED,ASSET_VIEWED,ASSET_PUBLISHED]"/>

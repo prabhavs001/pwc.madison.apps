@@ -1,0 +1,32 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Topic FAQ Tile" class="cq-placeholder"></p>
+<sly data-sly-use.currentTime = "/apps/pwc-madison/components/utils/timestamp.js" data-sly-test.timeInNano ="${currentTime.nanoseconds}" />
+<div class="faqs" data-sly-use.topicFaqTile="com.pwc.madison.core.models.TopicFaqTile">
+    <div class='header' data-sly-test.title="${topicFaqTile.title ? topicFaqTile.title : 'Topic_FAQ_Default_Text' @i18n, locale=pageProperties.jcr:language}">
+        <h2>${title}</h2>
+    </div>
+    <div class="slider faqs-topics-slider" data-sly-list.topicFaqTileContent="${topicFaqTile.topicFaqTileContentList}">
+        <div class="item">
+            <div class="index-card">
+                <h3>${'Topic_FAQ_Question_Text' @i18n, locale=pageProperties.jcr:language}</h3>
+                <div class="question-container-dummy">
+                    <sly  data-sly-test.questionPath="${topicFaqTileContent.questionPath}" data-sly-resource="${@path=questionPath}">
+                    </sly>
+                </div>
+                <a href="javascript:;" class="primary-orange read-more is-hidden-desktop is-hidden-tablet faq-toggle-dummy" data-more-target="#faq-read-more" data-see-answer="${'Topic_FAQ_See_Answer' @i18n, locale=pageProperties.jcr:language}" data-hide-answer="${'Topic_FAQ_Hide_Answer' @i18n, locale=pageProperties.jcr:language}"><i>${'Topic_FAQ_See_Answer' @i18n, locale=pageProperties.jcr:language}</i>
+                    <span class="icon is-small">
+                        <span class="icon-caret-down"></span>
+                    </span>
+                </a>
+                <span id="faq-read-more" class="read-more-hidden">
+                  <h3 class="answer">${'Topic_FAQ_Answer_Text' @i18n, locale=pageProperties.jcr:language}</h3>
+                  <div class="answer-container-dummy">
+                      <sly data-sly-test.answerPath="${topicFaqTileContent.answerPath}" data-sly-resource="${@path=answerPath}"/>
+                  </div>
+                    <a href="${topicFaqTileContent.faqPath}" class="primary-orange read-more is-hidden"><i>${'Topic_FAQ_Read_More' @i18n, locale=pageProperties.jcr:language}</i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+

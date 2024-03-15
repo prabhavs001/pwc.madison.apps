@@ -1,0 +1,34 @@
+#Enable proxy Https call support and Env variable read
+
+SSLProxyEngine on
+ProxyPassInterpolateEnv On
+
+# Set Fusion Authentication Header
+<LocationMatch "^/bin/pwc-madison/(vp-search|vp-typeahead|vp-signal)">
+RequestHeader set Authorization "Basic dmlld3BvaW50OnZpZXdwb2ludGZ1c2lvbjE="
+RequestHeader unset Cookie
+</LocationMatch>
+
+# Redirect to actual Fusion Search endpoint
+RewriteRule ^/bin/pwc-madison/vp-search(.*)$  https://pwc-stg.b.lucidworks.cloud/api/apps/viewpoint/query/viewpoint_search$1 [P,L]
+
+# Redirect to actual Fusion Typeahead endpoint
+RewriteRule ^/bin/pwc-madison/vp-typeahead(.*)$  https://pwc-stg.b.lucidworks.cloud/api/apps/viewpoint/query/viewpoint_typeahead$1 [P,L]
+
+# Redirect to actual Fusion Typeahead endpoint
+RewriteRule ^/bin/pwc-madison/vp-signal$  https://pwc-stg.b.lucidworks.cloud/api/signals/viewpoint [P,L]
+
+# Unset Content-Disposition header to open sitemap.xml instead of downloading
+RewriteCond %{REQUEST_URI} sitemap[0-9]*\.xml [NC,OR]
+RewriteCond %{REQUEST_URI} sitemap_incremental[0-9]*\.xml [NC,OR]
+RewriteCond %{REQUEST_URI} sitemap_decremental\.xml [NC,OR]
+RewriteCond %{REQUEST_URI} records\.xml [NC,OR]
+RewriteRule .* - [E=smap:true]
+
+RewriteCond %{REQUEST_URI} robots\.txt [NC]
+RewriteRule .* - [E=srobots:true]
+
+<IfModule mod_headers.c>
+    Header unset Content-Disposition env=smap
+    Header unset Content-Disposition env=srobots
+</IfModule>

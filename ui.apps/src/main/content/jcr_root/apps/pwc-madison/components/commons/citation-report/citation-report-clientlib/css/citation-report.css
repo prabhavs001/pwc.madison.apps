@@ -1,0 +1,26 @@
+.citation-report-wrapper .coral-Modal coral-wait{
+    margin-left: 200px;
+    margin-right: auto;
+}
+.citation-report-wrapper #autolink-disabled{
+    color: red;
+}
+.citation-report-wrapper .citation-console-wait.hidden{
+    display: none;
+}
+.citation-report-wrapper .coral-Modal{
+    background: lightgray;
+}
+.citation-report-wrapper .topic-error-msg{
+    color: red;
+}
+.citation-report-wrapper,.autolink-button{
+    margin-left: 1%;
+}
+.citation-report-wrapper .coral-Form-fieldlabel{
+    font-size: medium;
+}
+.citation-report-wrapper .coral-Form-fieldwrapper{
+    margin-left: -0.5% !important;
+    margin-top: 1% !important;
+}

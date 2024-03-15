@@ -1,0 +1,282 @@
+// This mixin is only for default styles for list inside of doc body content and right rail. 
+@mixin default-ul {
+
+  // Ordered and Unordered Lists
+  ol {
+    margin-left: 36px;
+    font-family: $font-helvetica;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: left;
+    color: $color-dark;
+    li {
+      line-height: 1.33;
+      &.no-bullet {
+        list-style: none;
+      }
+    }
+    ol, ul {
+      margin-left: 50px;
+      // padding-top: 10px;
+    }
+    ol {
+      margin-top: 10px;
+    }
+
+    ol, ul {
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  li {
+    padding-bottom: 10px;
+  }
+
+  li > p, li > div, li > span {
+    padding: 0 !important;
+
+    &.spacer {
+      outline: none !important;
+    }
+  }
+
+  ul:not(.disc):not(.square):not(.circle):not(.list-inline):not(.emdash):not(.none):not(.bullet) {
+    list-style-type: none;
+    > li {
+      &:before {
+        content: '';
+        position: relative;
+        top: 17px;
+        left: -20px;
+        width: 8px;
+        height: 8px;
+        background-color: $color-dark;
+        border-radius: 50px;
+        display: flex;
+      }
+      &.no-bullet {
+        list-style: none;
+        &:before {
+          content: none;
+        }
+      }
+    }
+    .disc {
+      margin-left: 50px;
+    }
+    .square {
+      margin-left: 50px;
+    }
+    .circle {
+      margin-left: 50px;
+    }
+    ul{
+      margin-left: 50px;
+    }
+  }
+  ul {
+    margin-left: 36px;
+    font-family: $font-helvetica;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: left;
+    color: $color-dark;
+
+    &.emdash {
+      & > li {
+        display: flex;
+        flex-flow: row nowrap;
+        &:before {
+          content: "\2014";
+          align-items: center;
+          margin: 0 26px auto 0px;
+          width: 8px;
+          height: auto;
+          border-radius: 50px;
+          flex-shrink: 0;
+          display: flex;
+        }
+      }
+    }
+    &.bullet {
+      & > li {
+        display: flex;
+        flex-flow: row nowrap;
+        &:before {
+          content: "";
+          align-items: center;
+          margin: auto 19px auto 8px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50px;
+          display: flex;
+          flex-shrink: 0;
+          background-color: #2D2D2D;
+        }
+      }
+    }
+    &.none {
+      & > li {
+        display: flex;
+        flex-flow: row nowrap;
+        &:before {
+          content: "";
+          align-items: center;
+          margin: auto 19px auto 8px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50px;
+          display: flex;
+          flex-shrink: 0;
+          background-color: none;
+        }
+      }
+    }
+    ol {
+      margin-left: 50px;
+      margin-top: 10px;
+    }
+    ul {
+      padding-bottom: 0px !important;
+    }
+    ol, ul {
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+    &.circle, &.disc, &.square {
+      // padding-bottom: 28px;
+    }
+  
+    &.disc {
+      list-style-type: none;
+      > li {
+        &:before {
+          content: '';
+          position: relative;
+          top: 17px;
+          left: -20px;
+          width: 8px;
+          height: 8px;
+          background-color: $color-dark;
+          border-radius: 50px;
+          display: flex;
+        }
+        &.no-bullet {
+          list-style: none;
+          &:before {
+            content: none;
+          }
+        }
+      }
+      .disc {
+        margin-left: 50px;
+      }
+      .square {
+        margin-left: 50px;
+      }
+      .circle {
+        margin-left: 50px;
+      }
+      ul{
+        margin-left: 50px;
+      }
+    }
+  
+    &.square {
+      list-style-type: none;
+      > li {
+        &:before {
+          content: '';
+          position: relative;
+          top: 17px;
+          left: -22px;
+          width: 12px;
+          height: 12px;
+          border: solid 1px $color-light;
+          display: flex;
+        }
+        &.no-bullet {
+          list-style: none;
+          &:before {
+            content: none;
+          }
+        }
+      }
+      .disc{
+        margin-left: 50px;
+      }
+      .square{
+        margin-left: 50px;
+      }
+      .circle{
+        margin-left: 50px;
+      }
+      ul{
+        margin-left: 50px;
+      }
+    }
+  
+    &.circle {
+      list-style-type: none;
+      > li {
+        &:before {
+          content: '';
+          position: relative;
+          top: 17px;
+          left: -20px;
+          width: 8px;
+          height: 8px;
+          border: 1px solid black;
+          display: flex;
+          border-radius: 50% !important;
+        }
+        &.no-bullet {
+          list-style: none;
+          &:before {
+            content: none;
+          }
+        }
+      }
+      .disc{
+        margin-left: 50px;
+      }
+      .square{
+        margin-left: 50px;
+      }
+      .circle{
+        margin-left: 50px;
+      }
+      ul{
+        margin-left: 50px;
+      }
+    }
+    &.indent1 {
+      margin-left: 35px;
+    }
+    &.indent2 {
+      margin-left: 70px;
+    }
+    &.indent3 {
+      margin-left:105px;
+    }
+    &.indent4 {
+      margin-left: 140px;
+    }
+    &.indent5 {
+      margin-left: 175px;
+    }
+    &.indent6 {
+      margin-left: 210px;
+    }
+    &.indent7 {
+      margin-left: 245px;
+    }
+    &.indent8 {
+      margin-left: 280px;
+    }
+  }
+}
+

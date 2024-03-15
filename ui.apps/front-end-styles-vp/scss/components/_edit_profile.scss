@@ -1,0 +1,643 @@
+// Edit Profile CSS
+#editProfile {
+  font-family: $font-helvetica;
+  padding: 32px 42px 42px 42px;
+
+  /* IE11 hack for password button starts */
+  @media all and (-ms-high-contrast: none) {
+
+    *::-ms-backdrop,
+    .pswd-btn,
+    .previous,
+    .save-exit,
+    .next,
+    .cancel-button {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+  }
+
+  @supports (-ms-ime-align:auto) {
+    .pswd-btn,
+    .previous,
+    .save-exit,
+    .next,
+    .cancel-button {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+  }
+
+  /* IE11 hack for password button ends */
+
+  //     .will-be-hidden, 
+  #editProfile-h-0,
+  #editProfile-h-1,
+  #editProfile-h-2,
+  #editProfile-h-3 {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  .profile-header-block {
+    margin-bottom: 20px;
+
+    .column {
+      padding-bottom: 0px;
+    }
+  }
+
+  h3.title {
+    display: none !important;
+  }
+
+  p.title-description {
+    font-size: 14px;
+  }
+
+  .steps {
+    ul {
+      display: none !important;
+    }
+  }
+
+  fieldset { 
+    overflow: hidden;
+    position: relative;
+    //         min-height: 35em;	
+    display: block;
+    width: 100% 
+  }
+  
+  .file-label {
+    .custom-file-upload {
+      align-items: center;
+      display: flex;
+      color: $color-primary;
+
+      img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 5px solid $color-primary;
+        margin-right: 20px;
+      }
+    }
+
+    .file-input {
+      cursor: pointer;
+    }
+
+    .file-cta {
+      display: none;
+    }
+  }
+
+  .title {
+    font-family: $font-itc-charter;
+    font-size: 44px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.98;
+    letter-spacing: normal;
+    color: $color-dark;
+    margin-bottom: 20px !important;
+  }
+
+  .field-top-margin {
+    //margin-top: 30px;
+  }
+
+  .input,
+  select,
+  .button {
+    font-family: $font-helvetica;
+  }
+
+  .input,
+  select {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 18px;
+  }
+
+  p {
+    color: $color-light;
+  }
+
+  .field-body {
+    .field-body-title {
+      font-family: $font-helvetica;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      color: $muted-text-color;
+    }
+  }
+
+  .field {
+    margin-bottom: 28px;
+
+    .label {
+      font-family: $font-helvetica;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      color: $muted-text-color;
+      margin-bottom: 0;
+
+      .label-note {
+        font-size: 11px;
+      }
+    }
+
+    .input {
+      border: none;
+      border-bottom: 1px solid $color-light;
+    }
+
+    ::-webkit-input-placeholder {
+      font-size: 18px;
+      color: $color-dark;
+    }
+
+    .hide-show-passworf {
+      color: $muted-text-color;
+
+      i {
+        position: absolute;
+        right: 0px;
+
+        .icon-password_show, .icon-password_hide {
+          position: relative;
+          top: -27px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .pswd-btn {
+      margin: 50px 0 100px;
+      display: flex;
+      line-height: 1;
+      padding: 20px 40px;
+    }
+
+    p {
+      color: $color-light;
+      font-size: 12px;
+    }
+  }
+
+  .password-fields {
+    .password-instruction {
+      font-family: $font-helvetica;
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      color: $color-light;
+    }
+  }
+
+  .button {
+    font-weight: bold;
+    padding: 12px 30px 27px;
+    font-size: 12px;
+    min-width: 160px;
+    border: 1px solid $color-dark;
+    color: $color-dark;
+    display: inline-block;
+  }
+  .control {
+    .previous{
+      min-width: 90px;
+    }
+    .cancel-button{
+      min-width: 110px;
+    }
+  }
+  .pagenumber{
+    .column{
+      padding: 0.75rem 0.75rem 0 0.75rem
+    }
+  }
+  .btn-primary {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white
+    }
+  }
+
+  .select select {
+    border: 0;
+    border: 0;
+    border-bottom: 1px solid $color-dark;
+  }
+
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: $color-primary;
+  }
+
+  .footer-buttons {
+    margin-top: 100px;
+
+    .previous {
+      padding-left: 0;
+    }
+    .button {
+      margin-right: 14px;
+    }
+    .next{
+      margin-right: 0px;
+    }
+    .previous{
+      padding-left: 40px;
+      padding-right: 10px;
+      margin-right: 0;
+    }
+    .no-border {
+      border: 0;
+    }
+    .control {
+      display: flex;
+      flex-flow: row nowrap;
+
+      @media(max-width: 767px) {
+        flex-flow: row wrap;
+      }
+
+
+      .cancel-button-mobile {
+        @media(max-width: 706px) {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      button {
+        display: flex !important;
+        line-height: 1;
+        padding: 20px 6px !important;
+        margin: 0 12px 0 0;
+
+        &.previous {
+          @media(min-width: 706px) {
+            margin-left: 20px;
+          }
+        }
+
+        @media(max-width: 706px) {
+          max-width: 100%;
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+  #editProfile-p-2{
+    .button {
+      margin-right: 0px;
+    }
+  }
+
+  .page-numbers {
+    color: $color-light;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .sign-in {
+    margin-top: 50px;
+
+    a {
+      font-weight: bold;
+      color: $color-dark;
+    }
+  }
+
+  .mandatory-field {
+    color: $color-primary;
+    font-size: 12px;
+    position: absolute;
+	display: block;
+  }
+
+  .remember-me {
+    margin-bottom: 10px;
+
+    .check {
+      .profile-terms {
+        font-size: 12px;
+        
+        a{
+          text-decoration: underline;
+          &:hover{
+            color: #363636;
+          }
+        }
+        .i-icon-a{
+          color: #7D7D7D;
+        }
+      }
+    }
+
+    .i-icon{
+      position: absolute;
+      top: 6px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+    }
+
+    checked~span {
+      font-weight: bold;
+    }
+  }
+
+  .listing-bottom-option {
+    color: $color-primary !important;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .check-head {
+    font-size: 14px;
+    color: $muted-text-color !important;
+    @media (min-width: 320px) and (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+  #editProfileModalOne ,#editProfile-p-0{
+    overflow: inherit;
+  }
+}
+
+.edit-profile-modal {
+  .modal-content {
+    max-width: 100%; 
+
+    @media(min-height: 769px) {
+      max-height: none !important;
+      height: auto !important; 
+    }
+  }
+}
+
+.sitePreference {
+  p {
+    margin-bottom: 17px;
+  }
+
+
+}
+
+// Phone Media Queries
+@media only screen and (max-width: 600px) {
+  .edit-profile-modal {
+    .modal-content {
+      max-height: 100vh;
+      max-width: 100%;
+      min-height: 100%;
+    }
+
+    .modal-close::before {
+      width: 20px;
+      background-color: $color-dark;
+    }
+
+    .modal-close::after {
+      height: 20px;
+      background-color: $color-dark;
+    }
+
+    p.title-description {
+      line-height: 18px;
+    }
+
+    .footer-buttons {
+      .control {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .button {
+          margin: 0 0 10px !important;
+          padding: 13px 26px 27px !important;
+          width: 100%;
+        }
+        .previous{
+          min-width: auto !important;
+        }
+        .cancel-button{
+          min-width: auto !important;
+        }
+        .save-exit,
+        .next {
+          order: -1;
+        }
+
+        .cancel-button-mobile {
+          float: right;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .modal-content {
+    max-height: 100%;
+  }
+
+  #editProfile {
+    padding: 20px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 38px;
+      padding-top: 59px;
+    }
+    
+    .file-label {
+      margin: 0 auto;
+
+      img {
+        margin-right: 0;
+      }
+    }
+
+    .field-top-margin {
+      margin-top: 0;
+    }
+
+    .mobile-bottom-border {
+      .column {
+        border-bottom: 2px solid $background-color-light;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .remember-me {
+      .check {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .pswd-btn {
+      display: block;
+      margin-right: auto !important;
+      margin-left: 0 !important;
+      margin-top: 46px !important;
+      margin-bottom: 0 !important;
+    }
+
+    .custom-radio-wrap {
+      .field {
+        margin-bottom: 10px;
+      }
+    }
+
+    .footer-buttons {
+      margin-top: 20px;
+
+      .button {
+        margin-bottom: 20px;
+      }
+    }
+
+    .file:before,
+    .file:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background: $color-athens-grey;
+      top: 42px;
+      width: 100%;
+    }
+    .file:before {
+      right: 65%;
+      margin-right: 10px;
+    }
+    .file:after {
+      left: 60%;
+      margin-left: 10px;
+    }
+  }
+
+  .sitePreference {
+    .is-3 {
+
+      border-bottom: 1px solid $color-light;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      .listing-bottom-option {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .sign-in {
+    margin-top: 20px;
+  }
+}
+
+.actions {
+  ul {
+    display: flex;
+
+    li {
+      border: 1px solid $color-dark;
+
+      margin-right: 15px;
+      color: $color-dark;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+
+      a {
+        color: $color-dark;
+        padding: 10px 20px;
+        display: block;
+      }
+
+      &:hover {
+        background: $color-dark;
+
+        a {
+          color: $color-white;
+        }
+      }
+
+      &:nth-child(2) {
+
+        border: 1px solid $color-primary;
+
+        a {
+          color: $color-primary
+        }
+
+        &:hover {
+          background: $color-primary;
+
+          a {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    // 		min-height:670px; 
+    display: flex;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .edit-profile-modal{
+    .modal-content{
+      max-height: 100vh;
+      max-width: 100%;
+      min-height: 100%;
+    }
+    .modal-close::before {
+      width: 28px;
+      background-color: $color-dark;
+    }
+    .modal-close::after {
+      height: 28px;
+      background-color: $color-dark;
+    }
+  }
+}

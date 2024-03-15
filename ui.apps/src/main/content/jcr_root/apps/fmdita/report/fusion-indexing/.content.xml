@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Fusion Indexing"
+        sling:resourceType="granite/ui/components/shell/propertiespage"
+        backHref=""
+        coral2="{Boolean}true">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[apps.pwc.report.fusionindexing]"/>
+        </head>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="dam/gui/coral/components/commons/ui/shell/title"
+            path="${requestPathInfo.suffix}"
+            title="Fusion Indexing"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            class="hide-overflow"
+            maximized="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <report
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="/apps/pwc-madison/components/commons/fusion-indexing"/>
+            </items>
+        </content>
+        <rails
+            jcr:primaryType="nt:unstructured"
+            alwaysActive="{Boolean}true">
+            <filter
+                granite:class="cq-rail-filter"
+                granite:id="aem-assets-rail-filter"
+                jcr:primaryType="nt:unstructured"
+                jcr:title=""
+                sling:resourceType="granite/ui/components/coral/foundation/panel/railpanel"
+                active="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <locale
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Locale"
+                        name="locale">
+                        <datasource
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="pwc-madison/utilities/dialog/locales"
+                            sort="{Boolean}true"/>
+                    </locale>
+                    <actions
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Actions"
+                        name="actionName">
+                        <items jcr:primaryType="nt:unstructured">
+                            <start-full-indexing
+                                jcr:primaryType="nt:unstructured"
+                                text="Start Full Indexing"
+                                value="full/actions"/>
+                            <check-status-full-indexing
+                                jcr:primaryType="nt:unstructured"
+                                text="Check Status - Full Indexing"
+                                value="full"/>
+                            <start-incremental-indexing
+                                jcr:primaryType="nt:unstructured"
+                                text="Start Incremental Indexing"
+                                value="incr/actions"/>
+                            <check-status-incremental-indexing
+                                jcr:primaryType="nt:unstructured"
+                                text="Check Status - Incremental Indexing"
+                                value="incr"/>
+                        </items>
+                    </actions>
+                    <generate
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/components/iconbutton"
+                        icon="coral-Icon--report"
+                        text="Submit"/>
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                        level="4"
+                        text="Status:"/>
+                    <info1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                        level="4"
+                        text="Success - Indexing has finished"/>
+                    <info2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                        level="4"
+                        text="Running - Indexing is running"/>
+                    <info3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                        level="4"
+                        text="Failed - Indexing has failed"/>
+                </items>
+            </filter>
+        </rails>
+    </jcr:content>
+</jcr:root>

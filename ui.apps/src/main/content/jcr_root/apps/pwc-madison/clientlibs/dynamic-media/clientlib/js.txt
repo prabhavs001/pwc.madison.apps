@@ -1,0 +1,4 @@
+viewerUtils.js
+//Commenting pwc-VideoViewer.js so that the OOTB VideoViewer.js from Scene7 is loaded ref. MD-12723
+//pwc-VideoViewer.js
+video-player.js

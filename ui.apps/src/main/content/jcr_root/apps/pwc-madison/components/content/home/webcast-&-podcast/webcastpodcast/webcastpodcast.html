@@ -1,0 +1,45 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="${'Webcast & Podcast component'}" class="cq-placeholder"></div>
+<div class="webcast-podcast-section">
+<sly data-sly-use.model="com.pwc.madison.core.models.WebcastPodcastModel">
+    <aside class="webCastCover">
+        <h2>${properties.componentTitle}</h2>
+        <div class="scrollbar-outer">
+            <div class="tile is-parent news-card" data-sly-list="${model.podcastList}">
+                <div class="tile is-parent item">
+					<div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}">
+					</div>
+                    <div class="is-flex webpod_thumb">
+                        <div class="image is-68x68">
+                            <img src="${item.imagePath}" alt="Thumbnail">
+                        </div>
+                        <h4>
+                            <a data-component-name="${model.componentName}" data-link-title="${item.topicTitle}" href="${item.articlePagePath}" class="limitpodcast"
+                               data-sly-attribute.data-access-type="${item.AccessType}"
+                               data-sly-attribute.data-license-types="${item.licenseTypes}">
+                                ${item.topicTitle}
+                            </a>
+                            <p class="brief">
+                                ${item.country} ${item.contentFieldValue @ i18n, locale=pageProperties.jcr:language}
+                            </p>
+                            <p class="date">
+                                <sly data-sly-test="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                            </p>
+                        </h4>
+                    </div>
+                    
+                    <div class="space-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div data-sly-test="${model.podcastList.size >  2}" class="news-show-more"
+             data-less-label='${"Homepage_WebcastPodcast_ShowLess_Label" @ i18n, locale=pageProperties.jcr:language}'
+             data-more-label='${"Homepage_WebcastPodcast_ShowMore_Label" @ i18n, locale=pageProperties.jcr:language}'>
+            <a>${"Homepage_WebcastPodcast_ShowMore_Label" @ i18n, locale=pageProperties.jcr:language}</a>
+            <div class="arrow">
+                <i class="left"></i>
+                <i class="right"></i>
+            </div>
+        </div>
+    </aside>
+</sly>
+</div>

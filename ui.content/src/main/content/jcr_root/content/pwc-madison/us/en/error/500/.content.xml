@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/pwc-madison/settings/wcm/templates/generic-template"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:language="en_us"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Internal Server Error"
+        sling:resourceType="pwc-madison/components/structure/page-vp"
+        pwc-access="free"
+        pwc-audience="internalExternal"
+		pwc-contentType="ContentType_Site_Error_Page_FW"
+        pwc-expirationDate="{Date}2019-05-31T13:51:00.000+05:30"
+        pwc-metaRobots="noindex,nofollow"
+        pwc-originalReleaseDate="{Date}2019-05-31T13:51:00.000+05:30">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <page_maincontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pwc-madison/components/structure/page-maincontainer">
+                <maincontainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+		            <responsivegrid
+		                jcr:primaryType="nt:unstructured"
+		                sling:resourceType="wcm/foundation/components/responsivegrid">
+		                <error
+		                    jcr:primaryType="nt:unstructured"
+		                    sling:resourceType="pwc-madison/components/content/error"/>
+		            </responsivegrid>
+		    	</maincontainer>
+			</page_maincontainer>
+        </root>
+    </jcr:content>
+</jcr:root>

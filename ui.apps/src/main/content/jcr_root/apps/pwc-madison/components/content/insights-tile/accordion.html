@@ -1,0 +1,17 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Insights Tile Component" class="cq-placeholder"></p>
+<sly data-sly-use.insightsTile="com.pwc.madison.core.models.InsightsTile"/>
+<div class="mobile-module-card insights-link">
+    <sly data-sly-list.insightsContent="${insightsTile.insightsTiles}">
+        <a data-sly-test.insightsLink="${insightsContent.insightsContentUrl}" class="${insightsContentList.index == 0 ? 'active' : 'hide'}" href="${insightsLink}" target="_blank">
+            <span class="source" data-sly-test.contentLabel="${insightsContent.insightsContentLabel}">${contentLabel}</span>
+            <span class="title page-title" data-sly-test.contentPageTitle="${insightsContent.contentPageTitle}">${contentPageTitle}</span>
+            <img class="module-image" data-sly-test.image="${insightsContent.insightsContentImage}" src="${image}">
+            <span class="date" data-sly-test.createdDate="${insightsContent.contentCreatedDate}">${createdDate}</span>
+        </a>
+    </sly>
+    <a class="insight-default-link ${insightsTile.insightsTiles ? 'hide' : 'active'}" data-sly-test.insightsDefaultLinkText="${insightsTile.insightsDefaultLinkText}" data-sly-test.defaultLink="${insightsTile.insightsDefaultLink}" href="${defaultLink}" target="_blank">
+        <span class="date mobileSwap">
+            <span class="link-style">${insightsDefaultLinkText}</span>
+        </span>
+    </a>
+</div>

@@ -1,0 +1,49 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Column Control" class="cq-placeholder"></p>
+<sly data-sly-use.columnControl="com.pwc.madison.core.models.ColumnControl" />
+<div class="columns" data-sly-test="${columnControl.pageType == 'homePage'}">
+    <sly data-sly-repeat.column="${columnControl.columns}">
+        <div class="column is-${column} ${column==1 ? 'spacer-line' : ''} ${column== 4 ? 'news' : ''}">
+            <sly data-sly-test="${column!=1}">
+                <sly data-sly-test.parsysResourceName="${['parsys',columnList.index] @ join = '-'}"
+                	 data-sly-resource="${ @path=parsysResourceName, resourceType='wcm/foundation/components/responsivegrid' }">
+                </sly>
+            </sly>
+            <sly data-sly-test="${column==1}">
+                <div> </div>
+            </sly>
+        </div>
+    </sly>
+</div>
+
+
+<section class="is-paddingless topics-landing" data-sly-test="${columnControl.pageType == 'landingPage'}">
+    <div class="">
+        <div class="container faqs-container">
+            <section class="news">
+                <div class="columns t-type-layout" data-sly-list.column="${columnControl.columns}">
+                    <div data-sly-test="${column!=1}" class="column is-${column} ${column==3 ? 'template_type_list' : 'topics-landing'} column-type-layout">
+                        <sly data-sly-test.parsysResourceName="${['parsys',columnList.index] @ join = '-'}"
+                             data-sly-resource="${ @path=parsysResourceName, resourceType='wcm/foundation/components/responsivegrid' }">
+                        </sly>
+                    </div>
+                    <div data-sly-test="${column==1}" class="column is-${column} ${column==1 ? 'spacer-line' : ''} is-hidden-mobile is-hidden-tablet-only">
+                        <div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+
+<div class="row genericPage" data-sly-test="${columnControl.pageType == 'genericPage'}">
+ <div class="container">
+   <div class="columns" data-sly-list.column="${columnControl.columns}"> 
+     <div class="column is-${column}">        
+        <sly data-sly-test.parsysResourceName="${['parsys',columnList.index] @ join = '-'}"
+        	 data-sly-resource="${ @path=parsysResourceName, resourceType='wcm/foundation/components/responsivegrid' }">
+        </sly>
+     </div>
+   </div>
+ </div>
+</div>

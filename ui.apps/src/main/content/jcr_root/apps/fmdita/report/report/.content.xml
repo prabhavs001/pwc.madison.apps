@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <actions jcr:primaryType="nt:unstructured">
+            <header jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <selection jcr:primaryType="nt:unstructured">
+                        <items
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideChildren="[review]">
+                            <contentpubworkflowfull
+                                granite:class="initiate-review"
+                                granite:id="full-cycle-review-button"
+                                granite:rel="foundation-damadmin-properties-activator"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                                action="foundation.link"
+                                activeSelectionCount="multiple"
+                                href="#"
+                                icon="projectAdd"
+                                text="Create full cycle workflow"
+                                variant="actionBar">
+                                <granite:rendercondition
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                                    assetPath="${requestPathInfo.suffix}"
+                                    roles="[publishers,authors]"/>
+                            </contentpubworkflowfull>
+                            <contentpubworkflowsimple
+                                granite:class="initiate-review"
+                                granite:id="simple-workflow-review-button"
+                                granite:rel="foundation-damadmin-properties-activator"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                                action="foundation.link"
+                                activeSelectionCount="multiple"
+                                href="#"
+                                icon="projectAdd"
+                                text="Create simplified workflow"
+                                variant="actionBar">
+                                <granite:rendercondition
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                                    assetPath="${requestPathInfo.suffix}"
+                                    roles="[publishers,authors]"/>
+                            </contentpubworkflowsimple>
+                        </items>
+                    </selection>
+                    <preview-output-view
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"/>
+                    <output-view
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <generate
+                                granite:class="btn-op-generate"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="publish"
+                                text="Generate"
+                                title="Generate"
+                                variant="actionBar">
+                                <granite:rendercondition
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="pwc-madison/components/rendercondition/publish-renderer"/>
+                            </generate>
+                            <edit
+                                granite:id="btn-op-edit"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="edit"
+                                text="Edit"
+                                title="Edit"
+                                variant="actionBar"/>
+                            <duplicate
+                                granite:id="btn-op-duplicate"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="duplicate"
+                                text="Duplicate"
+                                title="Duplicate"
+                                variant="actionBar"/>
+                            <create
+                                granite:id="btn-op-create"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="add"
+                                text="Create"
+                                title="Create"
+                                variant="actionBar"/>
+                            <delete
+                                granite:class="btn-op-delete"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="delete"
+                                text="Delete Preset"
+                                title="Delete Preset"
+                                variant="actionBar"/>
+                            <schedule
+                                granite:class="fm_hide btn-op-schedule"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="publishSchedule"
+                                text="Schedule"
+                                title="Schedule"
+                                variant="actionBar"/>
+                            <unpublish
+                                granite:class="btn-op-unpublish"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/button"
+                                icon="publishRemove"
+                                text="Unpublish"
+                                title="Unpublish"
+                                variant="actionBar">
+                                <granite:rendercondition
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="pwc-madison/components/rendercondition/unpublish-renderer"/>
+                            </unpublish>
+                        </items>
+                        <granite:rendercondition
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                            assetPath="${requestPathInfo.suffix}"
+                            roles="[publishers]"/>
+                    </output-view>
+                </items>
+            </header>
+        </actions>
+    </jcr:content>
+</jcr:root>

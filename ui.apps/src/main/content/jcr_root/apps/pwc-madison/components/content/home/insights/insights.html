@@ -1,0 +1,6 @@
+<sly data-sly-test="${wcmmode.disabled}">
+<!--#include virtual="${currentNode.path}.insights.nocache.html" -->
+</sly>
+
+<sly data-sly-test="${!wcmmode.disabled}" data-sly-include="./insights/insights.html">
+</sly>

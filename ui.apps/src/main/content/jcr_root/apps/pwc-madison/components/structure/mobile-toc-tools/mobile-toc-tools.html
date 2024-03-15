@@ -1,0 +1,40 @@
+<div class="toc-mobile-bar is-hidden-desktop" data-sly-use.tocList="com.pwc.madison.core.models.TocModel">
+    <div data-sly-test.showTOC="${tocList.showToc}">
+      <a href="#animatedTableOfContentModal" id="animatedTableOfContent" >
+         <span class="toc-title-wrapper">
+          <sly data-sly-test.tocText = "${'Common_Document_Header_Toc_Text' @i18n}">
+             ${tocText.toUpperCase}
+          </sly>
+         </span>
+          <span class="toc-tooltip">
+            <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/toc-new-icon.svg" alt="Expand" class="toc-plus-image icon-ToC">
+        </span>
+      </a>
+    </div>
+    <div id="toolsWrapper" class="mobile-tools-wrapper">
+      <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/icon-toolbox.svg" alt="Tools" class="mobile-icon-tools">
+    </div>
+    <div id="rclWrapper" class="mobile-rcl-wrapper">
+      <img src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/rcl-icon.svg" alt="Rcl" class="mobile-icon-rcl"> 
+    </div>
+   <div data-sly-test="${showTOC}" id="animatedTableOfContentModal" class="is-hidden-desktop mobile-table-content" style="display:none">
+      <div class="close-animatedTableOfContentModal title-header"> 
+         <span class="table-layout-title">${'Common_Document_Header_Toc_Text' @i18n}</span>
+         <span class="icon-close-popup"></span>
+      </div>
+      <div id="toc-mobile-content" class="mobile-table-content-data">    
+          <sly data-sly-resource="${'toc' @ resourceType='pwc-madison/components/ditacontent/toc'}"/>
+       </div>
+   </div>
+	<!-- <div id="animatedToolesModal" class="is-hidden-desktop mobile-table-content tools-more" style="display:none">
+       <div class="close-animatedToolesModal title-header">
+          <span class="table-layout-title">${'Common_Document_Body_Tools_And_More' @i18n}</span>
+          <span class="icon-close-popup"></span>
+       </div>
+        <sly data-sly-resource="${'tools-n-more' @ resourceType='pwc-madison/components/content/accordion-mobile'}"/> 
+    </div> 
+   -->
+	<div id="animatedToolesModalNew" class="is-hidden-desktop mobile-table-content tools-more hide-tools-modal" >
+        <sly data-sly-resource="${'tools-n-more' @ resourceType='pwc-madison/components/content/accordion-mobile'}"/> 
+    </div> 
+</div>

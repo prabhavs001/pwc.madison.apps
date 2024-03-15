@@ -1,0 +1,11 @@
+#base=js
+
+bootstrap-datepicker.min.js
+bootstrap-sprockets.js
+//jquery.touchSwipe.min.js
+select2.js
+tooltipster.bundle.min.js
+vue.min.js
+handlebars.js
+clamp.js
+simplebar.js

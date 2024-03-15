@@ -1,0 +1,23 @@
+<sly data-sly-use.tnc="com.pwc.madison.core.models.UserRegistrationModel">
+	<input id="redirect-logout-url" type="hidden" value="${tnc.homePagePath}">
+	${tnc.i18nKeyForTncContent @ i18n, locale = tnc.locale, context = 'html'}
+</sly>
+<div data-sly-test="${wcmmode.edit || wcmmode.design}">
+	Configure Terms and Conditions Component
+</div>
+<div class="term-and-condition" data-sly-test="${tnc.showButton}">
+	<div class="container container-top">
+		<div class="columns">
+			<div class="column is-7-desktop">
+				<div class="accept-tnc stick-return">
+					<a href="${tnc.homePagePath}" class="is-hide-mobile btn-primary">${'UserReg_Tnc_Previous_Page_Button'
+						@ i18n, locale = tnc.locale}</a> <a href="#" class="btn-secondary"
+						id="accept-tnc">${'UserReg_Tnc_Acceptance_Button' @ i18n,
+						locale = tnc.locale}</a> <a href="${tnc.homePagePath}"
+						class="is-hide-tablet btn-primary">${'UserReg_Tnc_Previous_Page_Button'
+						@ i18n, locale = tnc.locale}</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

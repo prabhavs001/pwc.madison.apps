@@ -1,0 +1,64 @@
+<sly data-sly-test="${wcmmode.disabled || wcmmode.preview}" data-sly-use.tutorialService="com.pwc.madison.core.services.TutorialScene7VideoConfigurationService">
+    <img id="signin_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-gif="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/gifs/gif-homepage.gif" alt="signin option" /> 
+    <img id="menu_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-gif="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/gifs/gif-menu.gif" alt="menu option" /> 
+    <img id="suggested_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/suggested.jpg"  alt="suggested option" /> 
+    <img id="contentmouse_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/contentmouse.jpg"  alt="contentmouse option" /> 
+    <img id="displaycontent_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/displaycontent.jpg"  alt="displaycontent option" /> 
+    <img id="contentpage_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/contentpage.jpg"  alt="contentpage option" /> 
+    <img id="relatedlink_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/relatedlink.jpg"  alt="relatedlink option" /> 
+    <img id="prevandafter_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/prevandafter.jpg"  alt="prevandafter option" /> 
+    <img id="trending_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/trending.jpg"  alt="trending option" /> 
+    <img id="searchicon_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif"  data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/searchicon.jpg"  alt="searchicon option" />
+    <img id="search_option" class="hideslide" src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-gif="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/gifs/gif-search.gif" alt="search option" /> 
+    <img id="feedback_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/feedback.jpg"  alt="feedback option" /> 
+    <img id="end_option" class="hideslide"  src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/clear.gif" data-src="/etc.clientlibs/pwc-madison/clientlibs/clientlib-site-vp/resources/images/tutorial/endmessage.jpg"  alt="end slide" /> 
+	<div class="modal sitetour_pop">
+        <span class="close-tutModal" aria-label="close modal">&#10005;</span>
+        <div class="modal-background not-close"></div>
+        <div class="modal-content">
+            <div class="box guide-start">
+                <h1>${"Tutorial_Welcome_Title_Label" @ i18n, locale=pageProperties.jcr:language}</h1>
+                <p>${"Tutorial_Welcome_Description_Label" @ i18n, locale=pageProperties.jcr:language}</p>
+                <div class="tutorial-btns bottomzipp has-text-centered">
+                    <button class="btn btn-primary btn-lg end-tour" id="domeStartGuideBtn2">${"Tutorial_English_Leave_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                    <button class="btn btn-primary btn-lg" id="guideLanguageSelect">${"Tutorial_Start_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                </div>
+            </div>
+            <div class="box guide-start-2">
+                <h1>${"Tutorial_Option_Title_Label" @ i18n, locale=pageProperties.jcr:language}</h1>
+                <p>${"Tutorial_Option_Description_Label" @ i18n, locale=pageProperties.jcr:language}</p>
+                <div class="tutorial-btns bottomzipp has-text-centered">
+                    <button class="btn btn-primary btn-lg end-tour">${"Tutorial_English_Leave_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                    <button class="btn btn-primary btn-lg" id="startEnTutorial">${"Tutorial_English_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                    <button class="btn btn-primary btn-lg" id="startFrTutorial">${"Tutorial_French_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                    <button class="btn btn-primary btn-lg" id="startJpTutorial">${"Tutorial_Japanese_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+                </div>
+            </div>
+            <div class="box video-container">
+                <div class="video-wrap">
+                    <video width="100%" height="99%" 
+                        data-jp-mp4="${tutorialService.japaneseTutorialLink}"  
+                        data-fr-mp4="${tutorialService.frenchTutorialLink}" controls>
+                        <source type="video/mp4" class="mp4">
+                        ${"Tutorial_Video_Not_Supported" @ i18n, locale=pageProperties.jcr:language}
+                    </video>
+                </div>
+                <button class="btn btn-primary btn-lg end-tour" data-jp-leave-label="${'Tutorial_Japanese_Leave_Label' @ i18n, locale=pageProperties.jcr:language}"
+                  data-fr-leave-label="${'Tutorial_French_Leave_Label' @ i18n, locale=pageProperties.jcr:language}">
+                    ${"Tutorial_English_Leave_Label" @ i18n, locale=pageProperties.jcr:language}
+				</button>
+            </div>
+        </div>
+    </div>
+    <div class="guide-overlay"></div>
+    <div class="sitetour_arrows animated flash">
+        <div class="sitetour_buttons">
+            <button class="btn btn-primary btn-lg"  id="endGuideBtn" onclick="endTour()">${"Tutorial_English_Leave_Label" @ i18n, locale=pageProperties.jcr:language}</button>
+            <button class="btn btn-primary btn-lg"  id="prevGuideBtn" onclick="prev()"> <span>${"Tutorial_Previous_Label" @ i18n, locale=pageProperties.jcr:language}</span><span class="is-hidden-desktop" >&lt;</span></button>
+            <button class="btn btn-primary btn-lg"  id="nextGuideBtn" onclick="next()"><span>${"Tutorial_Next_Label" @ i18n, locale=pageProperties.jcr:language}</span><span class="is-hidden-desktop">&gt;</span></button>
+        </div>
+        <div class="sitetour_arrows_cover">
+            <progress class="sitetour_progress  progress" value="" max="" ></progress>
+        </div>
+    </div>
+</sly>

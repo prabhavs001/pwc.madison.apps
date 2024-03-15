@@ -1,0 +1,6 @@
+<template data-sly-template.email="${@ toAddress, subject, body}">
+    <a href="mailto:${toAddress}?subject= ${subject}&body= ${body}" target="_blank">${toaddress}</a>
+</template>
+<template data-sly-template.icon="${@ toAddress, subject, body}">
+    <a href="mailto:${toAddress}?subject= ${subject}&body= ${body}" title="${'Share_Via_Email' @i18n}" aria-label="Mail" target="_blank"><span class="icon-mail"></span></a>
+</template>

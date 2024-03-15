@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ditacomponentmap>	   
+   <ditaelement>
+      <name>pwc-topic</name>
+      <class>- topic/topic pwc-topic/pwc-topic</class>
+      <componentpath>fmdita/components/dita/topic</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic') or contains(@class, 'pwc-topic/pwc-topic')]]]></xpath>
+      <attributemap>
+         <attribute from="id" to="id" />
+         <attribute from="%doc-body-content" to="class" />
+          <attribute from="xtrf" to="xtrf" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-topic</name>
+      <class>- topic/topic pwc-topic/pwc-topic</class>
+      <componentpath>fmdita/components/dita/topic</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/topic') or contains(@class, 'pwc-topic/pwc-topic')]]]></xpath>
+      <attributemap>
+         <attribute from="id" to="id" />
+         <attribute from="%doc-body-content" to="class" />
+          <attribute from="xtrf" to="xtrf" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>topic</name>
+      <class>- topic/topic</class>
+      <componentpath>fmdita/components/dita/topic</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <attributemap>
+         <attribute from="id" to="id" />
+         <attribute from="%doc-body-content" to="class" />
+         <attribute from="xtrf" to="xtrf" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>topic</name>
+      <class>- topic/topic</class>
+      <componentpath>fmdita/components/dita/topic</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/topic') and (contains(@class, 'asc-topic/asc-topic') or contains(@class, 'asc/subsection'))]]]></xpath>
+      <attributemap>
+         <attribute from="id" to="id" />
+         <attribute from="%doc-body-content" to="class" />
+          <attribute from="xtrf" to="xtrf" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>object</name>
+      <class>- topic/object</class>
+      <componentpath>pwc-madison/components/ditacontent/dynamicmedia</componentpath>
+      <type>STANDALONE</type>
+      <xmlprop>data</xmlprop>
+      <target>para</target>
+      <wrapclass>h2</wrapclass>
+      <attributemap>
+         <attribute from="data" to="fileReference" ispath="true" rel="source"/>
+         <attribute from="%/conf/global/settings/dam/dm/presets/viewer/PwC_Video_Preset|VIDEO|true" to="s7ViewerPreset"/>
+         <attribute from="%/pwc/PwC_Video_Preset|VIDEO|true" to="s7ViewerPresetPath"/>
+         <attribute from="%viewer" to="s7PresetType"/>
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+        <name>asc-ancestry</name>
+        <class>- topic/data asc/asc-ancestry</class>
+        <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+        <wrapelement>div</wrapelement>
+        <wrapclass>asc-ancestry</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>asc-topic-number</name>
+      <class>- topic/data/ asc/asc-topic-number</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>STANDALONE</type>
+      <target>para</target>
+      <textprops>
+         <textprop path="~">ascTopicNum</textprop>
+      </textprops>
+      <wrapelement>div</wrapelement>
+      <wrapclass>asc-topic-number</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>asc-subtopic-number</name>
+      <class>- topic/data/ asc/asc-subtopic-number</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>STANDALONE</type>
+      <target>para</target>
+      <textprops>
+         <textprop path="~">ascSubtopicNum</textprop>
+      </textprops>
+      <wrapelement>div</wrapelement>
+      <wrapclass>asc-subtopic-number</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>asc-section-number</name>
+      <class>- topic/data/ asc/asc-section-number</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>STANDALONE</type>
+      <target>para</target>
+      <textprops>
+         <textprop path="~">ascSectionNum</textprop>
+      </textprops>
+      <wrapelement>div</wrapelement>
+      <wrapclass>asc-section-number</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>pgroup</name>
+      <class>- topic/topic pgroup/pgroup</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>pgroup</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>body</name>
+      <class>- topic/body</class>
+      <componentpath>fmdita/components/dita/delegator</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+      <name>body</name>
+      <class>- topic/body</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[/topic/*[contains(@class, 'topic/body')]]]></xpath>
+      <wrapelement>div</wrapelement>
+      <wrapclass>doc-body-content</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>asc-body</name>
+      <class>- topic/body</class>
+      <componentpath>fmdita/components/dita/topic</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/body') and contains(@class, 'asc/asc-body')]]]></xpath>
+      <attributemap>
+         <attribute from="id" to="id" />
+         <attribute from="%doc-body-content" to="class" />
+          <attribute from="xtrf" to="xtrf" />
+      </attributemap>
+   </ditaelement>
+    <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/documenttitle</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>h1</wrapelement>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')  and not(contains(@class, 'pwc-abstract/pwc-abstract'))]/*[contains(@class, 'topic/title')]]]></xpath>
+      <textprops>
+         <textprop path="~" mode="replace">pageTitle</textprop>
+      </textprops>
+   </ditaelement>
+   <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[/dita/*[contains(@class, 'topic/topic')]//*[contains(@class, 'pwc-topic/pwc-topic') or contains(@class, 'asc-topic/asc-topic') or contains(@class, 'asc/subsection')or contains(@class, 'topic/topic')]/title]]></xpath>
+      <target>para</target>
+      <wrapelement>h4</wrapelement>
+       <textprops>
+           <textprop path="~">topicTitles</textprop>
+       </textprops>
+   </ditaelement>
+   <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[//pgroup/title]]></xpath>
+      <target>para</target>
+      <wrapelement>h3</wrapelement>
+      <wrapclass>pgroup-title title</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>div</name>
+      <class>- topic/div</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <wrapelement>div</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pending-content-parameters</name>
+      <class>- topic/div transition-d/pending-content-parameters</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <wrapelement>div</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+         <attribute from="earlyAdoptionAllowedNon-Public" to="earlyAdoptionAllowedNonPublic" />
+         <attribute from="earlyAdoptionAllowedPublic" to="earlyAdoptionAllowedPublic" />
+         <attribute from="outOfSystemScope" to="outOfSystemScope" />
+         <attribute from="specialCase" to="specialCase" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>p</name>
+      <class>- topic/p</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+	  <wrapclass>qa-lead-content</wrapclass>
+      <xpath><![CDATA[(/dita | /.)//answer-text/p]]></xpath>
+   </ditaelement>
+   <ditaelement>
+      <name>p</name>
+      <class>- topic/p</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <class>- topic/body</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[//*[contains(@class, 'topic/body')][table]]]></xpath>
+      <target>para</target>
+      <wrapclass>doc-body-content</wrapclass>
+      <wrapelement>div</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>row</name>
+      <class>- topic/row</class>
+      <componentpath>fmdita/components/dita/tbody</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <attributemap>
+         <attribute from="valign" to="valign" />
+         <attribute from="rowsep" to="rowsep" />
+         <attribute from="colsep" to="colsep" />
+         <attribute from="%tr" to="tag" />
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>entry</name>
+      <class>- topic/entry</class>
+      <componentpath>pwc-madison/components/ditacontent/stentry</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <attributemap>
+         <attribute from="valign" to="valign" />
+         <attribute from="align" to="align" />
+         <attribute from="rowsep" to="rowsep" />
+         <attribute from="colsep" to="colsep" />
+         <attribute from="colname" to="colname" />
+         <attribute from="%stentry" to="tag" />
+         <attribute from="outputclass" to="outputclass" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>entry</name>
+      <class>- topic/entry</class>
+      <componentpath>pwc-madison/components/ditacontent/stentry</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <xpath><![CDATA[//entry[contains(@align, 'right')]]]></xpath>  
+      <attributemap>
+		<attribute from="%text-right" to="class" />
+		<attribute from="valign" to="valign" />
+        <attribute from="rowsep" to="rowsep" />
+        <attribute from="colsep" to="colsep" />
+        <attribute from="colname" to="colname" />
+        <attribute from="%stentry" to="tag" />
+        <attribute from="outputclass" to="outputclass" />        
+      </attributemap>
+   </ditaelement>
+    <ditaelement>
+      <name>entry</name>
+      <class>- topic/entry</class>
+      <componentpath>pwc-madison/components/ditacontent/stentry</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <xpath><![CDATA[//*[contains(@align, 'center')]]]></xpath>  
+      <attributemap>
+		<attribute from="%text-center" to="class" />
+		<attribute from="valign" to="valign" />
+        <attribute from="rowsep" to="rowsep" />
+        <attribute from="colsep" to="colsep" />
+        <attribute from="colname" to="colname" />
+        <attribute from="%stentry" to="tag" />
+        <attribute from="outputclass" to="outputclass" />          
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>image</name>
+      <class>- topic/image</class>
+      <componentpath>pwc-madison/components/ditacontent/image</componentpath>
+      <type>STANDALONE</type>
+      <xmlprop>data</xmlprop>
+      <target>para</target>
+      <attributemap>
+         <attribute from="href" to="fileReference" ispath="true" rel="source" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>ul</name>
+      <class>- topic/ul</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>ul</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>ol</name>
+      <class>- topic/ol</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper-ol</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>ol</wrapelement>
+      <attributemap>
+         <attribute from="otherprops" to="start" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>li</name>
+      <class>- topic/li</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>li</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+         <attribute from="linum" to="linum" />
+      </attributemap>
+   </ditaelement>
+    <ditaelement>
+        <name>data</name>
+        <class>- topic/data</class>
+        <componentpath>fmdita/components/dita/wrapper</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+    </ditaelement>
+   <ditaelement>
+      <name>data</name>
+      <class>- topic/data</class>
+      <componentpath>fmdita/components/dita/discard</componentpath>
+      <type>STANDALONE</type>
+      <target>head</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/prolog')]/*[contains(@name, 'long_title')]]]></xpath>
+      <attributemap>
+         <attribute from="value" to="longTitle" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>data</name>
+      <class>- topic/data</class>
+      <componentpath>fmdita/components/dita/discard</componentpath>
+      <type>STANDALONE</type>
+      <target>head</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/prolog')]/*[contains(@name, 'section_num')]]]></xpath>
+      <attributemap>
+         <attribute from="value" to="sectionNum" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>data</name>
+      <class>- topic/data</class>
+      <componentpath>fmdita/components/dita/discard</componentpath>
+      <type>STANDALONE</type>
+      <target>head</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/prolog')]/*[contains(@name, 'subtopic_num')]]]></xpath>
+      <attributemap>
+         <attribute from="value" to="subtopicNum" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>data</name>
+      <class>- topic/data</class>
+      <componentpath>fmdita/components/dita/discard</componentpath>
+      <type>STANDALONE</type>
+      <target>head</target>
+      <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'topic/topic')]/*[contains(@class, 'topic/prolog')]/*[contains(@name, 'topic_num')]]]></xpath>
+      <attributemap>
+         <attribute from="value" to="topicNum" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>transition-guidance</name>
+      <class>+ topic/div transition-d/transition-guidance</class>
+      <componentpath>fmdita/components/dita/discard</componentpath>
+      <type>STANDALONE</type>
+   </ditaelement>
+   <ditaelement>
+      <class>- topic/b asc/principle</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>p</wrapelement>
+   </ditaelement>
+   <ditaelement>
+	  <name>fig</name>
+      <class>- topic/fig</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapclass>figure-caption</wrapclass>
+      <wrapelement>div</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>ph</name>
+      <class>- topic/ph</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>sfragment</name>
+      <class>- topic/div sfragment-d/sfragment</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+         <attribute from="para-sequence" to="paraSequence" />
+         <attribute from="para-number" to="paraNumber" />
+         <attribute from="standard-name" to="standardName" />
+         <attribute from="standard-number" to="standardNumber" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>lq</name>
+      <class>- topic/lq</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>blockquote</wrapelement>
+   </ditaelement>
+   <ditaelement>
+	  <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/pwcfiguretitle</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[//fig/title[contains(@class, 'topic/title')]]]></xpath>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+     <name>title</name>
+     <class>- topic/title</class>
+     <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+     <type>COMPOSITE</type>
+       <xpath><![CDATA[//*[contains(@class, 'topic/topic')]//section/title[contains(@class, 'topic/title')]]]></xpath>
+     <target>para</target>
+     <wrapelement>h4</wrapelement>
+     <wrapclass>small-margin</wrapclass>
+    </ditaelement>
+   <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <xpath><![CDATA[//*[contains(@class, 'topic/table')]/*[contains(@class, 'topic/title')]]]></xpath>
+      <componentpath>pwc-madison/components/ditacontent/tableheader</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <attributemap>
+         <attribute from="%Table: " to="label" />
+         <attribute from="outputclass" to="outputclass" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>obsolete</name>
+      <class>+ topic/ph pwc-common-d/obsolete</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+      <wrapclass>strikethrough</wrapclass>
+   </ditaelement>
+  <ditaelement>
+      <name>question-text</name>
+      <class>- topic/section  pwc-faq/question-text</class>
+      <componentpath>pwc-madison/components/ditacontent/pwctopicheader</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[//question-text]]></xpath>
+   </ditaelement>
+   <ditaelement>
+      <name>answer-text</name>
+      <class>- topic/section  pwc-faq/answer-text</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <attributemap>
+         <attribute from="%PwC response" to="showPWCResponse" />
+      </attributemap>
+      <wrapelement>div</wrapelement>
+      <wrapclass>qa-lead-content</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>analysis-text</name>
+      <class>- topic/section  pwc-example/analysis-text</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <attributemap>
+         <attribute from="%Analysis" to="showAnalysisText" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-xref</name>
+      <class>+ topic/xref pwc-common-d/pwc-xref</class>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <textprop>text</textprop>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="TARGET" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-xref</name>
+      <class>+ topic/xref pwc-common-d/pwc-xref</class>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapclass>download</wrapclass>
+      <textprop>text</textprop>
+      <xpath><![CDATA[//*[contains(@class, 'topic/xref pwc-common-d/pwc-xref') and ((@format='pdf') or (@format='download'))]]]></xpath>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="source" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-xref</name>
+      <class>+ topic/xref pwc-common-d/pwc-xref</class>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <textprop>text</textprop>
+      <xpath><![CDATA[//*[contains(@class, 'topic/xref') and string(@format) and not(@format='dita') and not(@format='pdf')]]]></xpath>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="source" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>xref-group</name>
+      <class>+ topic/ph xref-group-d/xref-group</class>
+      <componentpath>pwc-madison/components/ditacontent/xrefgroup</componentpath>
+      <type>COMPOSITE</type>
+   </ditaelement>
+   <ditaelement>
+      <name>xref</name>
+      <class>- topic/xref</class>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <textprop>text</textprop>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="TARGET" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />         
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>xref</name>
+      <class>- topic/xref</class>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <textprop>text</textprop>
+      <xpath><![CDATA[//*[contains(@class, 'topic/xref') and string(@format) and not(@format='dita')]]]></xpath>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="source" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>body-excerpt</name>
+      <class>+ topic/div pwc-common-d/body-excerpt</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>exerpt</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>excerpt-title</name>
+      <class>+ topic/p pwc-common-d/excerpt-title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>p</wrapelement>
+      <attributemap>
+         <attribute from="%true" to="showCalloutTitle" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>excerpt-content</name>
+      <class>+ topic/div pwc-common-d/excerpt-content</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>p</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>body-callout</name>
+      <class>+ topic/div pwc-common-d/body-callout</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>callout</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>callout-title</name>
+      <class>+ topic/p pwc-common-d/callout-title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <attributemap>
+         <attribute from="%true" to="showCalloutTitle" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>callout-content</name>
+      <class>+ topic/div pwc-common-d/callout-content</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>p</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>callout-attribution</name>
+      <class>+ topic/p pwc-common-d/callout-attribution</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>p</wrapelement>
+      <wrapclass>text-right</wrapclass>
+      <attributemap>
+         <attribute from="%true" to="showCalloutTitle" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>table</name>
+      <class>- topic/table</class>
+      <componentpath>pwc-madison/components/ditacontent/table</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <wrapclass>table table-fixed</wrapclass>
+      <attributemap>
+         <attribute from="colsep" to="colsep" />
+         <attribute from="rowsep" to="rowsep" />
+         <attribute from="outputclass" to="outputclass" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>table</name>
+      <class>- topic/table</class>
+      <componentpath>pwc-madison/components/ditacontent/table</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[//subsection//table]]></xpath>
+      <target>para</target>
+      <xmlprop>data</xmlprop>
+      <wrapclass>table table-fixed asu_table</wrapclass>
+      <attributemap>
+         <attribute from="colsep" to="colsep" />
+         <attribute from="rowsep" to="rowsep" />
+         <attribute from="outputclass" to="outputclass" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+	  <name>pwc-abstract-body</name>
+	  <class>- topic/body  pwc-abstract/pwc-abstract-body</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>at-a-glance</wrapclass>
+      <attributemap>
+         <attribute from="%true" to="showPwCAbstractTitle" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+       <name>title</name>
+       <class>- topic/title</class>
+       <componentpath>fmdita/components/dita/discard</componentpath>
+       <xpath><![CDATA[(/dita | /.)/*[contains(@class, 'pwc-abstract/pwc-abstract')]/*[contains(@class, 'topic/title')]]]></xpath>
+       <type>STANDALONE</type>
+       <target>para</target>
+       <textprops>
+           <textprop path="~" mode="replace">pageTitle</textprop>
+       </textprops>
+   </ditaelement>
+   <ditaelement>
+      <name>key-points</name>
+      <class>+ topic/note pwc-common-d/key-points</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>callout</wrapclass>
+      <attributemap>
+         <attribute from="%Key points" to="showKeyPoints" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-observation</name>
+      <class>+ topic/div pwc-common-d/pwc-observation</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>at-a-glance</wrapclass>
+      <attributemap>
+         <attribute from="%PwC Observation" to="showObservations" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pre-ph</name>
+      <class>+ topic/ph pwc-d/pre-ph</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>pre</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>pre</name>
+	  <class>+ topic/pre</class>
+	  <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+	  <type>COMPOSITE</type>
+	  <target>para</target>
+	  <wrapelement>pre</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>u</name>
+      <class>+ topic/ph hi-d/u</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>u</wrapelement>
+      <attributemap>
+         <attribute from="outputclass" to="class" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>br</name>
+      <class>+ topic/ph pwc-common-d/br</class>
+      <componentpath>pwc-madison/components/ditacontent/linebreak</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+      <name>bodydiv</name>
+      <class>- topic/bodydiv</class>
+      <componentpath>fmdita/components/dita/delegator</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+      <name>anchor-id</name>
+      <class>+ topic/data pwc-common-d/anchor-id</class>
+      <componentpath>fmdita/components/dita/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+       <attributemap>
+         <attribute from="id" to="id" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pwc-xref</name>
+      <class>+ topic/xref pwc-common-d/pwc-xref</class>
+      <componentpath>dam/cfm/components/contentfragment</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[//pwc-xref[@type="contentfragment"]]]></xpath>
+      <attributemap>
+         <attribute from="href" to="fileReference" ispath="true" rel="source" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+         <attribute from="%body" to="element" />
+      </attributemap>
+   </ditaelement>
+    <ditaelement>
+        <name>faq-bodydiv</name>
+        <class>- topic/bodydiv  pwc-faq/faq-bodydiv</class>
+        <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+        <wrapelement>div</wrapelement>
+        <wrapclass>qa-lead</wrapclass>
+    </ditaelement>
+    <ditaelement>
+        <name>linkpool</name>
+        <class>- topic/linkpool</class>
+        <componentpath>fmdita/components/dita/discard</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+        <xpath><![CDATA[//linkpool[not(@type)]]></xpath>
+    </ditaelement>
+	<ditaelement>
+	  <name>pwc-xref</name>
+	  <class>+ topic/xref pwc-common-d/pwc-xref</class>
+	  <componentpath>pwc-madison/components/ditacontent/mediawrapper</componentpath>
+	  <type>COMPOSITE</type>
+	  <target>para</target>
+	  <textprop>text</textprop>
+	  <xpath><![CDATA[//*[contains(@type, 'mediawrapper')]]]></xpath>
+	  <attributemap>
+		 <attribute from="href" to="link" ispath="true" rel="TARGET" />
+		 <attribute from="format" to="format" />
+		 <attribute from="scope" to="scope" />
+	  </attributemap>
+	</ditaelement>
+	<ditaelement>
+	  <name>xref</name>
+	  <class>- topic/xref</class>
+	  <componentpath>pwc-madison/components/ditacontent/mediawrapper</componentpath>
+	  <type>COMPOSITE</type>
+	  <target>para</target>
+	  <textprop>text</textprop>
+	  <xpath><![CDATA[//*[contains(@type, 'mediawrapper')]]]></xpath>
+	  <attributemap>
+		 <attribute from="href" to="link" ispath="true" rel="TARGET" />
+		 <attribute from="format" to="format" />
+		 <attribute from="scope" to="scope" />
+	  </attributemap>
+	</ditaelement>
+    <ditaelement>
+        <name>related-links</name>
+        <class>- topic/related-links</class>
+        <componentpath>pwc-madison/components/ditacontent/related</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+    </ditaelement>
+    <ditaelement>
+        <name>pwc-faq</name>
+        <class>- topic/topic pwc-faq/pwc-faq</class>
+        <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+        <wrapelement>div</wrapelement>
+        <wrapclass>doc-body-content</wrapclass>
+    </ditaelement>
+    <ditaelement>
+        <name>example-text</name>
+        <class>- topic/section  pwc-example/example-text</class>
+        <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+        <wrapelement>div</wrapelement>
+        <wrapclass>example-text</wrapclass>
+    </ditaelement>
+    <ditaelement>
+        <name>related-content</name>
+        <class>+ topic/data pwc-common-d/related-content</class>
+        <componentpath>fmdita/components/dita/discard</componentpath>
+        <type>COMPOSITE</type>
+        <target>para</target>
+    </ditaelement>
+   <ditaelement>
+      <name>sub</name>
+      <class>+ topic/ph hi-d/sub</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>sub</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>sup</name>
+      <class>+ topic/ph hi-d/sup</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>sup</wrapelement>
+   </ditaelement>
+   <ditaelement>
+		<name>i</name>
+		<class>+ topic/ph hi-d/i</class>
+		<componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+		<type>COMPOSITE</type>
+		<wrapelement>i</wrapelement>
+	</ditaelement>
+	<ditaelement>
+		<name>b</name>
+		<class>+ topic/ph hi-d/b</class>
+		<componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+		<type>COMPOSITE</type>
+		<wrapelement>b</wrapelement>
+	</ditaelement>
+	<ditaelement>
+		<name>fn</name>
+		<class>- topic/fn</class>
+		<componentpath>pwc-madison/components/ditacontent/footnote</componentpath>
+		<type>COMPOSITE</type>
+		<textprop>text</textprop>
+		<attributemap>
+			<attribute from="callout" to="callout" />
+			<attribute from="id" to="id" />
+		</attributemap>
+	</ditaelement>
+	<ditaelement>
+		<!-- xref element referencing a footnote -->
+		<name>pwc-xref</name>
+		<class>+ topic/xref pwc-common-d/pwc-xref</class>
+		<componentpath>pwc-madison/components/ditacontent/footnotelink</componentpath>
+		<type>STANDALONE</type>
+		<xpath><![CDATA[//*[contains(@type, 'fn')]]]></xpath>
+		<textprop>text</textprop>
+		<attributemap>
+			<attribute from="href" to="link" ispath="true" rel="TARGET" />
+			<attribute from="type" to="type"/>
+		</attributemap>	
+	</ditaelement>
+	<ditaelement>
+      <name>xref</name>
+      <class>- topic/xref</class>
+      <componentpath>pwc-madison/components/ditacontent/footnotelink</componentpath>
+     <type>STANDALONE</type>
+		<xpath><![CDATA[//*[contains(@type, 'fn')]]]></xpath>
+		<textprop>text</textprop>
+		<attributemap>
+			<attribute from="href" to="link" ispath="true" rel="TARGET" />
+			<attribute from="type" to="type"/>
+		</attributemap>	
+   </ditaelement>
+   <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[/dita/*[contains(@class, 'topic/topic')]//*[contains(@class, 'topic/topic asc-topic/asc-topic') or contains(@class, 'topic/topic asc/subsection') or contains(@class, 'topic/topic aicpa-topic/aicpa-topic')]/title]]></xpath>
+      <target>para</target>
+      <wrapelement>h3</wrapelement>
+       <textprops>
+           <textprop path="~">topicTitles</textprop>
+       </textprops>
+   </ditaelement>
+   <ditaelement>
+      <name>title</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[//*[contains(@class, 'topic/topic aicpa-topic/aicpa-topic')]//section/title]]></xpath>
+      <target>para</target>
+      <wrapelement>h3</wrapelement>
+       <textprops>
+           <textprop path="~">topicTitles</textprop>
+       </textprops>
+   </ditaelement>
+   <ditaelement>
+      <name>p-norm</name>
+      <class>- topic/div transition-d/p-norm</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>p-norm</wrapclass>
+      <attributemap>
+         <attribute from="pnum" to="pnum"/>
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>pending-text</name>
+      <class>- topic/div pcontent-d/pending-text</class>
+      <componentpath>pwc-madison/components/ditacontent/pendingtext</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+      <name>date-effective</name>
+      <class>- topic/data asc/date-effective</class>
+      <componentpath>pwc-madison/components/ditacontent/discard</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+   </ditaelement>
+   <ditaelement>
+      <name>asc-glossterm</name>
+      <class>- topic/title</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <xpath><![CDATA[/dita/*[contains(@class, 'topic/topic')]//*[contains(@class, 'topic/topic concept/concept')]/asc-glossterm]]></xpath>
+      <target>para</target>
+      <wrapelement>h3</wrapelement>
+       <textprops>
+           <textprop path="~">topicTitles</textprop>
+       </textprops>
+   </ditaelement>
+   <ditaelement>
+	  <name>div</name>
+	  <class>- topic/div</class>
+	  <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+	  <type>COMPOSITE</type>
+	  <xpath><![CDATA[//bodydiv/div[1][@outputclass='watermark']]]></xpath>
+	  <target>para</target>
+	  <wrapelement>div</wrapelement>
+	  <wrapclass>watermark</wrapclass>
+	</ditaelement>
+	<ditaelement>
+      <name>xbrlElement</name>
+      <class>- topic/topic asc/xbrlElement</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>xbrlElement</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>elementLabel</name>
+      <class>- topic/title asc/elementLabel</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>elementLabel</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>elementName</name>
+      <class>- topic/shortdesc asc/elementName</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>elementName</wrapclass>
+      <attributemap>
+         <attribute from="%true" to="xbrlElementName" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>xbrlRevisionDate</name>
+      <class>- topic/data asc/xbrlRevisionDate</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+      <wrapclass>xbrlRevisionDate</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>paranum</name>
+      <class>- topic/navtitle</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>composite</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+   </ditaelement>
+   <ditaelement>
+      <name>xbrl-prolog</name>
+      <class>- topic/prolog asc/xbrl-prolog</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <xpath><![CDATA[//xbrlElement/xbrl-prolog]]></xpath>
+    </ditaelement>
+   <ditaelement>
+      <name>xbrlRevisionDate</name>
+      <class>- topic/data asc/xbrlRevisionDate</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>span</wrapelement>
+      <wrapclass>xbrlRevisionDate</wrapclass>
+   </ditaelement>
+   <ditaelement>
+      <name>references</name>
+      <class>- topic/related-links asc/references</class>
+      <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapelement>div</wrapelement>
+      <wrapclass>references</wrapclass>
+      <attributemap>
+         <attribute from="%true" to="xbrlReferences" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+      <name>link</name>
+      <componentpath>fmdita/components/dita/link</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <wrapclass>references-link</wrapclass>
+      <textprop>text</textprop>
+      <xpath><![CDATA[//xbrlElement/references/link]]></xpath>
+      <attributemap>
+         <attribute from="href" to="link" ispath="true" rel="source" />
+         <attribute from="format" to="format" />
+         <attribute from="scope" to="scope" />
+      </attributemap>
+   </ditaelement>
+   <ditaelement>
+     <name>desc</name>
+     <class>- topic/desc</class>
+     <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+     <type>COMPOSITE</type>
+     <target>para</target>
+     <wrapelement>span</wrapelement>
+     <xpath><![CDATA[//xbrlElement/references/link/desc]]></xpath>
+   </ditaelement>
+   <ditaelement>
+      <name>linktext</name>
+	  <class>- topic/linktext</class>
+	  <componentpath>pwc-madison/components/ditacontent/wrapper</componentpath>
+	  <type>COMPOSITE</type>
+	  <target>para</target>
+	  <xpath><![CDATA[//xbrlElement/references/link/linktext]]></xpath>
+	  <wrapelement>span</wrapelement>
+	  <wrapclass>tooltip_templates</wrapclass>
+   </ditaelement>
+   <ditaelement>
+     <name>pwc-buzzsprout</name>
+     <class>+ topic/pre pwcBuzzsprout-d/pwc-buzzsprout</class>
+     <componentpath>pwc-madison/components/ditacontent/pwcbuzzsprout</componentpath>
+     <type>STANDALONE</type>
+     <target>para</target>
+     <textprop>data</textprop>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-block</name>
+    <class>+ topic/div pwcCallout-d/pwc-callout-block</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccalloutblock</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+   <attributemap>
+	   <attribute from="callout-type" to="type" />
+	   <attribute from="background-color" to="bgColor" />
+   </attributemap>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout</name>
+    <class>+ topic/div pwcCallout-d/pwc-callout</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccallout</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+    <attributemap>
+        <attribute from="category" to="category" />
+        <attribute from="content-id" to="contentId" />
+        <attribute from="format" to="format" />
+        <attribute from="scope" to="scope" />
+     </attributemap>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-title</name>
+    <class>+ topic/p pwcCallout-d/pwc-callout-title</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccallouttitle</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+    <textprop>title</textprop>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-desc</name>
+    <class>+ topic/p pwcCallout-d/pwc-callout-desc</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccalloutdesc</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+    <textprop>description</textprop>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-dates</name>
+    <class>+ topic/data pwcCallout-d/pwc-callout-dates</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccalloutdates</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+    <attributemap>
+        <attribute from="publication" to="publicationDate" />
+        <attribute from="revision" to="revisionDate" />
+     </attributemap>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-ednote</name>
+    <class>+ topic/p pwcCallout-d/pwc-callout-ednote</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccalloutednote</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+    <textprop>edNote</textprop>
+  </ditaelement>
+  <ditaelement>
+    <name>pwc-callout-image</name>
+    <class>+ topic/image pwcCallout-d/pwc-callout-image</class>
+    <componentpath>pwc-madison/components/ditacontent/inbodycallout/pwccallouteimage</componentpath>
+    <type>COMPOSITE</type>
+    <target>para</target>
+	<attributemap>
+        <attribute from="href" to="imagePath" ispath="true" rel="source"/>
+     </attributemap>
+  </ditaelement>
+   <ditaelement>
+      <name>alt</name>
+      <class>- topic/alt</class>
+      <componentpath>fmdita/components/dita/text</componentpath>
+      <type>COMPOSITE</type>
+      <target>para</target>
+      <textprop>alt</textprop>
+   </ditaelement>
+</ditacomponentmap>

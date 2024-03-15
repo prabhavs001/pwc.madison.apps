@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:SystemUser"
+    jcr:uuid="bdbd08f0-a49d-347f-bc12-3273edde6700"
+    rep:authorizableId="madison-content-admin"
+    rep:principalName="madison-content-admin"/>

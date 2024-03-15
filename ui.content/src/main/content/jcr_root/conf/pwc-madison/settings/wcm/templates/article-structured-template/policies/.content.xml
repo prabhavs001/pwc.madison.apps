@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+                cq:policy="wcm/foundation/components/responsivegrid/policy_211544220806355"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping">
+            <page_maincontainer jcr:primaryType="nt:unstructured">
+                <maincontainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping">
+                    <article_structured_content
+                            cq:policy="wcm/foundation/components/responsivegrid/policy_1695383456712"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/core/components/policies/mapping">
+                        <teaser_container
+                                jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="wcm/core/components/policies/mapping">
+	                        <teaser
+		                        cq:policy="pwc-madison/components/inloop/teaser/policy_1708421078322"
+		                        jcr:primaryType="nt:unstructured"
+		                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </teaser_container>
+                        <inloop_download_container
+                                cq:policy="wcm/foundation/components/responsivegrid/policy_1595654109237"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping">
+                            <pwc-madison jcr:primaryType="nt:unstructured">
+                                <components jcr:primaryType="nt:unstructured">
+                                    <core jcr:primaryType="nt:unstructured">
+	                                    <download
+	                                        cq:policy="pwc-madison/components/core/download/policy_1708421178605"
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </core>
+                                </components>
+                            </pwc-madison>
+                        </inloop_download_container>
+                        <inloop_main_container
+                                cq:policy="wcm/foundation/components/responsivegrid/policy_39314586154048"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping">
+                            <pwc-madison jcr:primaryType="nt:unstructured">
+                                <components jcr:primaryType="nt:unstructured">
+                                    <inloop jcr:primaryType="nt:unstructured">
+                                        <quotebox
+                                                cq:policy="pwc-madison/components/inloop/quotebox/policy_1695963929431"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                        <table
+                                                cq:policy="pwc-madison/components/inloop/table/policy_1695962634567"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                        <teaser
+                                            cq:policy="pwc-madison/components/inloop/teaser/policy_1708421078322"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                        <related-content
+                                            cq:policy="pwc-madison/components/inloop/related-content/policy_1708421470601"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </inloop>
+                                    <core jcr:primaryType="nt:unstructured">
+                                        <text
+                                            cq:policy="pwc-madison/components/core/text/policy_1704701407983"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    <container
+	                                        cq:policy="pwc-madison/components/core/container/policy_1708414153203"
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    <download
+	                                        cq:policy="pwc-madison/components/core/download/policy_1708421178605"
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                    </core>
+                                </components>
+                            </pwc-madison>
+	                        <inloop_flexible_container
+	                                jcr:primaryType="nt:unstructured"
+	                                cq:policy="pwc-madison/components/core/container/policy_1708414153203"
+	                                sling:resourceType="wcm/core/components/policies/mapping">
+	                            <columnControl
+	                                    cq:policy="pwc-madison/components/inloop/columnControl/policy_1685702535689"
+	                                    jcr:primaryType="nt:unstructured"
+	                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+	                            <table
+	                                    cq:policy="pwc-madison/components/inloop/table/policy_1695962634567"
+	                                    jcr:primaryType="nt:unstructured"
+	                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+	                            <pwc-madison jcr:primaryType="nt:unstructured">
+	                                <components jcr:primaryType="nt:unstructured">
+	                                    <inloop jcr:primaryType="nt:unstructured">
+	                                        <quotebox
+	                                                cq:policy="pwc-madison/components/inloop/quotebox/policy_1695963929431"
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <table
+	                                                cq:policy="pwc-madison/components/inloop/table/policy_1695962634567"
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <teaser
+	                                            cq:policy="pwc-madison/components/inloop/teaser/policy_1708421078322"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <related-content
+	                                            cq:policy="pwc-madison/components/inloop/related-content/policy_1708421470601"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    </inloop>
+	                                    <core jcr:primaryType="nt:unstructured">
+	                                        <text
+	                                            cq:policy="pwc-madison/components/core/text/policy_1704701407983"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+		                                    <container
+		                                        cq:policy="pwc-madison/components/core/container/policy_1708414153203"
+		                                        jcr:primaryType="nt:unstructured"
+		                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+		                                    <download
+		                                        cq:policy="pwc-madison/components/core/download/policy_1708421178605"
+		                                        jcr:primaryType="nt:unstructured"
+		                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    </core>
+	                                </components>
+	                            </pwc-madison>
+	                        </inloop_flexible_container>
+	                        <inloop_content_container
+	                                jcr:primaryType="nt:unstructured"
+	                                cq:policy="pwc-madison/components/core/container/policy_1708414153203"
+	                                sling:resourceType="wcm/core/components/policies/mapping">
+	                            <columnControl
+	                                    cq:policy="pwc-madison/components/inloop/columnControl/policy_1685702535689"
+	                                    jcr:primaryType="nt:unstructured"
+	                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+	                            <table
+	                                    cq:policy="pwc-madison/components/inloop/table/policy_1695962634567"
+	                                    jcr:primaryType="nt:unstructured"
+	                                    sling:resourceType="wcm/core/components/policies/mapping"/>
+	                            <pwc-madison jcr:primaryType="nt:unstructured">
+	                                <components jcr:primaryType="nt:unstructured">
+	                                    <inloop jcr:primaryType="nt:unstructured">
+	                                        <quotebox
+	                                                cq:policy="pwc-madison/components/inloop/quotebox/policy_1695963929431"
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <table
+	                                                cq:policy="pwc-madison/components/inloop/table/policy_1695962634567"
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <teaser
+	                                            cq:policy="pwc-madison/components/inloop/teaser/policy_1708421078322"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                        <related-content
+	                                            cq:policy="pwc-madison/components/inloop/related-content/policy_1708421470601"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    </inloop>
+	                                    <core jcr:primaryType="nt:unstructured">
+	                                        <text
+	                                            cq:policy="pwc-madison/components/core/text/policy_1704701407983"
+	                                            jcr:primaryType="nt:unstructured"
+	                                            sling:resourceType="wcm/core/components/policies/mapping"/>
+		                                    <container
+		                                        cq:policy="pwc-madison/components/core/container/policy_1708414153203"
+		                                        jcr:primaryType="nt:unstructured"
+		                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+		                                    <download
+		                                        cq:policy="pwc-madison/components/core/download/policy_1708421178605"
+		                                        jcr:primaryType="nt:unstructured"
+		                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+	                                    </core>
+	                                </components>
+	                            </pwc-madison>
+	                        </inloop_content_container>
+                        </inloop_main_container>
+                    </article_structured_content>
+                </maincontainer>
+            </page_maincontainer>
+        </root>
+    </jcr:content>
+</jcr:root>

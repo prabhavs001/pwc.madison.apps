@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <headerfields
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Header Fields"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <logourl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Enter Logo URL"
+                                        fieldLabel="Logo URL"
+                                        name="./logoURL"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                    <sitename
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter Site Name To Be Shown In Header"
+                                        fieldLabel="Site Name"
+                                        name="./siteName"
+                                        required="{Boolean}true"/>
+                                    <help
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Enter Help Text"
+                                        fieldLabel="Help label"
+                                        name="./help"
+                                        required="{Boolean}true"/>
+                                    <searchpath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Enter Search page URL"
+                                        fieldLabel="Search page"
+                                        name="./searchURL"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                    <maxsuggestion
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                        defaultValue="5"
+                                        fieldDescription="Enter Search suggestion count"
+                                        fieldLabel="Maximum search suggestions"
+                                        min="{Long}1"
+                                        name="./maxsuggestion"/>                                        
+                                    <mincharsuggestions
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                        defaultValue="3"
+                                        fieldDescription="Enter Min Char Suggestion count"
+                                        fieldLabel="Min Char Suggestion count"
+                                        min="{Long}1"
+                                        name="./mincharsuggestion"/>
+                                    <maxsuggestedguidance
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                        defaultValue="5"
+                                        fieldDescription="Enter Max Search Suggestion Guidance Count"
+                                        fieldLabel="Maximum search guidance suggestions"
+                                        min="{Long}1"
+                                        name="./maxsuggestedGuidance"/>
+                                    <maxsuggestedguidanceslides
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                        defaultValue="6"
+                                        fieldDescription="Enter Maximum suggested guidance slides Count"
+                                        fieldLabel="Maximum suggested guidance slides"
+                                        min="{Long}1"
+                                        name="./maxsuggestedGuidanceSlides"/>
+                                    <suggestedguidance-timeout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                            defaultValue="400"
+                                            fieldDescription="Timeout value between each call of suggested guidance(milliseconds)"
+                                            fieldLabel="Suggested Guidance Timeout"
+                                            min="{Long}1"
+                                            name="./suggestedGuidanceTimeout"/>
+                                    <notificationMessage
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldDescription="Enter system notification (such as an outage notification/ maintenance)"
+                                            fieldLabel="System Notification Message"
+                                            name="./notificationMessage"
+                                            useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="bold,italic"/>
+                                            <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="-"/>
+                                            <links
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="modifylink,unlink"/>
+                                            <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            <misctools jcr:primaryType="nt:unstructured">
+                                                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                    <chars jcr:primaryType="nt:unstructured">
+                                                        <default_copyright
+                                                                jcr:primaryType="nt:unstructured"
+                                                                entity="&amp;copy;"
+                                                                name="copyright"/>
+                                                        <default_euro
+                                                                jcr:primaryType="nt:unstructured"
+                                                                entity="&amp;euro;"
+                                                                name="euro"/>
+                                                        <default_registered
+                                                                jcr:primaryType="nt:unstructured"
+                                                                entity="&amp;reg;"
+                                                                name="registered"/>
+                                                        <default_trademark
+                                                                jcr:primaryType="nt:unstructured"
+                                                                entity="&amp;trade;"
+                                                                name="trademark"/>
+                                                    </chars>
+                                                </specialCharsConfig>
+                                            </misctools>
+                                            <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*">
+                                                <formats jcr:primaryType="nt:unstructured">
+                                                    <default_span
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Span"
+                                                            tag="span"/>
+                                                    <default_p
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Paragraph"
+                                                            tag="p"/>
+                                                    <default_h1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 1"
+                                                            tag="h1"/>
+                                                    <default_h2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 2"
+                                                            tag="h2"/>
+                                                    <default_h3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 3"
+                                                            tag="h3"/>
+                                                    <default_h4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 4"
+                                                            tag="h4"/>
+                                                    <default_h5
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 5"
+                                                            tag="h5"/>
+                                                    <default_h6
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Heading 6"
+                                                            tag="h6"/>
+                                                    <default_blockquote
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Quote"
+                                                            tag="blockquote"/>
+                                                    <default_pre
+                                                            jcr:primaryType="nt:unstructured"
+                                                            description="Preformatted"
+                                                            tag="pre"/>
+                                                </formats>
+                                            </paraformat>
+                                            <table
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="-">
+                                                <hiddenHeaderConfig
+                                                        jcr:primaryType="nt:unstructured"
+                                                        hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                        hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                            </table>
+                                            <tracklinks
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <justify
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                                ref="justify"/>
+                                                        <lists
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                ref="lists"/>
+                                                        <paraformat
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="paraformat:getFormats:paraformat-pulldown"
+                                                                ref="paraformat"/>
+                                                    </popovers>
+                                                </inline>
+                                                <dialogFullScreen
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,table#createoredit,#paraformat,image#imageProps]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <paraformat
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="paraformat:getFormats:paraformat-pulldown"
+                                                                ref="paraformat"/>
+                                                    </popovers>
+                                                </dialogFullScreen>
+                                                <tableEditOptions
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                            </cui>
+                                        </uiSettings>
+                                    </notificationMessage>
+                                </items>
+                            </tab>
+                        </items>
+                    </headerfields>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,10 @@
+<div class="pending-callout" data-sly-use.pendingText="com.pwc.madison.core.models.PendingText">
+    <div class="head-info" >
+        <h5>${'Pending_Content' @ i18n}:</h5>
+        <p><strong>${'Transition_Date' @ i18n}:</strong> <sly data-sly-resource="${pendingText.dateEffective @ appendPath='_text'}"></sly><br>
+            <strong>${'Transition_Guidance' @ i18n}:</strong> <sly data-sly-resource="${pendingText.transitionRef}"></sly></p>
+    </div>
+    <div class="body-info" data-sly-list.ascTextList="${pendingText.ascTextList}">
+        <sly data-sly-resource="${ascTextList}"></sly>
+    </div>
+</div>

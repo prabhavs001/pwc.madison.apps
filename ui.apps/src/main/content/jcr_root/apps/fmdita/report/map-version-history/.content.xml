@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Map versions"
+        sling:resourceType="granite/ui/components/coral/foundation/page">
+        <head jcr:primaryType="nt:unstructured">
+            <viewport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/admin/page/viewport"/>
+            <favicon
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/page/favicon"/>
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[granite.ui.foundation,cq.gui.damadmin.reviewtask,apps.fmdita.rh-js,cq.projects.admin,apps.pwc.report.review-maps-version-diff]"/>
+        </head>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/page/body">
+            <items jcr:primaryType="nt:unstructured">
+                <form
+                    granite:class="hide-steps coral-Form--vertical foundation-form mode-default"
+                    granite:rel="apps-dita-map-versions"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                    foundationForm="{Boolean}false"
+                    foundationFormAjax="{Boolean}false"
+                    maximized="{Boolean}true"
+                    novalidate="{Boolean}true"
+                    style="vertical">
+                    <items jcr:primaryType="nt:unstructured">
+                        <wizard
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Review Map Revisions"
+                            sling:resourceType="granite/ui/components/coral/foundation/wizard"
+                            cancelHref="/aem/inbox.html">
+                            <items jcr:primaryType="nt:unstructured">
+                                <step1
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Map Versions"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <properties
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+                                            active="{Boolean}true"
+                                            class="project-collectionsettings"
+                                            rel="project-taskmanagement-addtaskwizard"
+                                            title="Map versions">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <maps-listing
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/components/commons/maps-listing"/>
+                                                <version-diff-component
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="pwc-madison/components/commons/maps-revision"/>
+                                            </items>
+                                        </properties>
+                                    </items>
+                                     <parentConfig jcr:primaryType="nt:unstructured">
+                                        <next
+                                            granite:class="hidden"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button">
+                                        </next>
+                                    </parentConfig>
+                                </step1>
+                            </items>
+                        </wizard>
+                    </items>
+                </form>
+            </items>
+        </body>
+    </jcr:content>
+</jcr:root>

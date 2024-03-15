@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+	jcr:primaryType="oak:Unstructured"
+     async="[async,nrt]"
+     codec="Lucene46"
+     compatVersion="{Long}2"
+     evaluatePathRestrictions="{Boolean}true"
+     queryPaths="[/content/pwc-madison]"
+     includedPaths="[/content/pwc-madison]"
+     type="lucene">
+     <aggregates jcr:primaryType="nt:unstructured">
+         <cq:Page jcr:primaryType="nt:unstructured">
+             <include0
+                 jcr:primaryType="nt:unstructured"
+                 path="jcr:content"
+                 primaryType="[cq:PageContent]"
+                 relativeNode="{Boolean}true"/>
+         </cq:Page>
+     </aggregates>
+     <indexRules jcr:primaryType="nt:unstructured">
+         <cq:Page jcr:primaryType="nt:unstructured">
+             <properties jcr:primaryType="nt:unstructured">
+                 <cqLastReplicated
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/cq:lastReplicated"
+                     propertyIndex="{Boolean}true"
+                     type="Date"/>
+                 <hideInNav
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/hideInNav"
+                     nullCheckEnabled="{Boolean}true"
+                     propertyIndex="{Boolean}true"
+                     type="String"/>
+                 <deleted
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/deleted"
+                     nullCheckEnabled="{Boolean}true"
+                     propertyIndex="{Boolean}true"/>
+                 <cqlastReplicationAction
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/cq:lastReplicationAction"
+                     propertyIndex="{Boolean}true"
+                     type="String"/>
+                 <pwc-hiddenFromSiteSearch
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/pwc-hiddenFromSiteSearch"
+                     nullCheckEnabled="{Boolean}true"
+                     propertyIndex="{Boolean}true"
+                     type="String"/>
+                 <slingresourceType
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/sling:resourceType"
+                     notNullCheckEnabled="{Boolean}true"
+                     propertyIndex="{Boolean}true"/>
+                 <pwc-metaRobots
+                     jcr:primaryType="nt:unstructured"
+                     name="jcr:content/pwc-metaRobots"
+                     propertyIndex="{Boolean}true"
+                     type="String"/>
+             </properties>
+         </cq:Page>
+     </indexRules>
+</jcr:root>

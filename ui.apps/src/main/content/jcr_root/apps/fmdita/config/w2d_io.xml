@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<w2dIO>
+    <!-- This configuration supports multiple input/output directory combinations.This can be acheived by creating several other 'config' elements  as the default one shown below. To avoid data loss while upgrading build, it is recommended to create a duplicate config file with the same folder hierarchy under apps and modify that instead of modifying this file.-->
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/precodificationsuper</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/precodificationsuper</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/pwc</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/pwc</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/otherus</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/otherus</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/sec</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/sec</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/pcaob</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/pcaob</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/gao</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/gao</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/omb</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/omb</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/finrec</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/finrec</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/fasab</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/fasab</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/eitf</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/eitf</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/coso</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/coso</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/asb</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/asb</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>    
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/us/en/fasb_financial_accou</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/us/en/fasb_financial_accou</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <!-- NEW ENTRIES ADDED AS PART OF MD-9444 TO INCLUDE UK AND GX FOLDERS -->
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/gx/en/pwc/manual_of_accounting</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/gx/en/pwc/manual_of_accounting</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/gx/en/iaasb</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/gx/en/iaasb</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/gx/en/iasb</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/gx/en/iasb</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/uk/en/pwc/audit_guide/audit_guide_2019</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/uk/en/pwc/audit_guide/audit_guide_2019</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/uk/en/pwc/manual_of_accounting</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/uk/en/pwc/manual_of_accounting</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/uk/en/frc</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/uk/en/frc</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/uk/en/uk_gov</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/uk/en/uk_gov</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+    <config>
+        <inputDir>/content/dam/pwc-madison/ditaroot/uk/en/fca</inputDir><!-- All the files uploaded to this directory will ungergo transformation -->
+        <outputDir>/content/dam/pwc-madison/ditaroot/uk/en/fca</outputDir><!-- Output files will be uploaded in this directory -->
+        <createRev>true</createRev><!-- If set to true and the output file already exists, a revision of the file is created.  -->
+        <s2tMap>/apps/fmdita/word2dita/word-to-dita-pwc-style.xml</s2tMap><!-- The path of the style2tag map file to be used for word2dita conversion  -->
+    </config>
+</w2dIO>

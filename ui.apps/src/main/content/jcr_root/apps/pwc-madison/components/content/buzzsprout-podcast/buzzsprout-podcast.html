@@ -1,0 +1,9 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Buzzsprout Podcast Component" class="cq-placeholder"></p>
+<h2 class="suggested-content" data-sly-use.buzzsprout="com.pwc.madison.core.models.BuzzsproutPodcast">
+	${properties.buzzsproutTitle}
+</h2>
+<div class="menu-items scrollbar-outer scrollable-container menu-items--podcast">
+    <div class="scrollable" data-sly-list="${buzzsprout.scripts.listChildren}">
+        ${item.buzzsproutScript @ context = 'unsafe'}
+    </div>
+</div>

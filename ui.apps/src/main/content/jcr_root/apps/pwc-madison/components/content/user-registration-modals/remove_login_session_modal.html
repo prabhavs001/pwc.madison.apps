@@ -1,0 +1,23 @@
+<template data-sly-template.removeLoginSession="${@ locale}">
+	<div class="modal gateway-body" id="removeSessionModal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="gateway-modal-decor">
+				<div class="gateway-header external-user" style="font-size:32px;">
+					${'UserReg_Remove_Session_Heading' @ i18n, locale=locale}
+				</div>
+				<div class="gateway-message">
+					${'UserReg_Remove_Session_Top_Message' @ i18n, locale=locale, context='html'}
+				</div>
+				<div class="gateway-buttons">
+					<button class="action-btn remove-login-continue">${'UserReg_Remove_Session_Continue_Label' @ i18n, locale=locale}</button>
+					<button class="action-btn remove-login-cancel">${'UserReg_Remove_Session_Cancel_Label' @ i18n, locale=locale}</button>
+				</div>
+				<div class="gateway-message">
+					${'UserReg_Remove_Session_Bottom_Message' @ i18n, locale=locale, context='html'}
+				</div>
+			</div>
+		</div>
+		<button class="modal-close is-large remove-login-continue" aria-label="${'UserReg_Remove_Session_Cancel_Label' @ i18n, locale=locale}"></button>
+	</div>
+</template>

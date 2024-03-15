@@ -1,0 +1,22 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty = true}"></sly>
+<div class="hidden-sm hidden-xs col-md-4" data-sly-use.accordion="com.pwc.madison.core.models.Accordion" data-sly-test.show="${accordion.show}">
+	<noindex>
+	<div id="r-content-loader">
+            <div class="r-loader"></div>
+        </div>
+		<div class="sticky-right-content r-op">
+			<div class="accordion-wrap"  data-spy="affix" data-offset-top="74" data-offset-bottom="0">
+				<div class="panel-group content-toolbar" id="toolbarPanel" role="tablist" aria-multiselectable="false">
+					<sly data-sly-resource="${ @path='accordionparsys', resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+			    </div>
+			</div>
+		</div>
+	</noindex>
+</div>
+<script data-sly-test="${!show}">
+	var mainBodyContent = document.getElementsByClassName('main-body-content');
+	if(mainBodyContent.length){
+		mainBodyContent[0].classList.add('hide_right_rail');
+	}
+</script>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    scheduler.name="Delete Sitemap Generation Scheduler"
+    service.enabled="{Boolean}true"
+    scheduler.concurrent="{Boolean}true"
+    scheduler.expression="0 15 1,5,9,13,17,21 ? * * *"
+    sitemap.file.name="sitemap_delete.txt"
+    replication.minutes="240"
+    sitemap.url.number.per.language="100000"/>

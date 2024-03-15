@@ -1,0 +1,33 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-call="${templates.placeholder @ isEmpty = !properties.sectionHeading}"></sly>
+<div data-sly-test="${currentNode.name != 'accordion_item_1455521035'}" class="panel">
+    <div class="panel-heading" role="tab" id="heading_${currentNode.name}">
+        <h4 class="panel-title has-pagination" data-sly-unwrap="${!properties.sectionHeading}">
+            <div class="accordion-header collapsed accordion-button" type="button">
+                <span class="panel-title-width is-pulled-left">${properties.sectionHeading @i18n} <span class="item-count-heading"></span></span>
+                <span class="is-pulled-right">
+                    <ul class="list-inline ul-list-top panel-paginate is-pulled-left">
+                        <li><a class="arrow left-arrow disabled relatedCarouselPrevious" href="javascript:void(0);"></a></li>
+                        <!-- controls specific to related, js will need to be re written to isolate controls for each specific carousel/page item from desktop-mobile -->
+                        <li><span class="dynamic-count">1</span>&nbsp;${'Accordion_Item_Pagination_Of' @i18n}&nbsp;<span class="total-count item-count-${resource.name}"></span></li>
+                        <li><a class="arrow right-arrow relatedCarouselNext" href="javascript:void(0);"></a></li>
+                    </ul>
+                    <div class="icon is-pulled-right">
+                    	<span class="icon-caret-down"></span>
+                    </div>
+                </span>
+            </div>
+        </h4>
+    </div>
+    <sly data-sly-test="${wcmmode.disabled || wcmmode.preview}">
+        <div class="accordion-content">
+        	<div class="full-border is-hidden-desktop"></div>
+            <sly data-sly-resource="${ @path='accordionitemparsys', resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${wcmmode.edit}">
+        <div class="accordion-content">
+        	<div class="full-border is-hidden-desktop"></div>
+            <sly data-sly-resource="${ @path='accordionitemparsys', resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+        </div>
+    </sly>
+</div>

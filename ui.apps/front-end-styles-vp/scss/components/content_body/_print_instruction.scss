@@ -1,0 +1,125 @@
+.print-instruction-body{
+  .modal-content{
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 444px;
+    .print-modal-decor{
+      background-color: #FFA929;
+      padding: 37px 40px 40px;
+      .instruction-content{
+        font-family: $font-itc-charter;
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        color: $color-dark;
+        span{
+          font-style: italic;
+        }
+      }
+      .print-action{
+        padding-top: 25px;
+        display: flex;
+        align-items: baseline;
+        .continue-print{
+          background-color: $color-primary;
+          padding: 13px 19px;
+          font-family: $font-helvetica;
+          font-size: 12px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.25;
+          letter-spacing: 0.6px;
+          text-align: center;
+          color: $color-white;
+          display: inline-block;
+        }
+        .show-message{
+          padding-left: 20px;
+          a {
+            color: $color-light;
+            text-decoration: underline;
+          }
+          .check {
+            padding-left: 3px;
+            display: block;
+            position: relative;
+            padding-left: 32px;
+            //margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            input { /* Hide the browser's default checkbox */
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+            span{
+              display: inline-block;
+              padding-top: 9px;
+              font-family: $font-helvetica;
+              font-size: 14px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1;
+              letter-spacing: normal;
+              text-align: left;
+              color: $color-dark;
+            }
+          }
+          /* Create a custom checkbox */
+          .checkmark {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: $color-white;
+            border: 1px solid $muted-text-color;
+          }
+          /* On mouse-over, add a grey background color */
+          .check:hover input ~ .checkmark {
+            background-color: $color-white;
+          }
+          /* When the checkbox is checked, add a blue background */
+          .check input:checked ~ .checkmark {
+            background-color: $color-primary;
+          }
+          .check input:focus ~ .checkmark {
+            outline: auto -webkit-focus-ring-color;
+          }
+          /* Create the checkmark/indicator (hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+          /* Show the checkmark when checked */
+          .check input:checked ~ .checkmark:after {
+            display: block;
+          }
+          /* Style the checkmark/indicator */
+          .check .checkmark:after {
+            left: 6px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

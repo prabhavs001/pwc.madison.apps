@@ -1,0 +1,5 @@
+<div class="footnotes" data-sly-use.footNote="com.pwc.madison.core.models.FootNote" >
+    <sly data-sly-list.keys="${footNote.footNoteMap}">
+        ${footNote.footNoteMap[keys] @ context='unsafe'}
+    </sly>
+</div>

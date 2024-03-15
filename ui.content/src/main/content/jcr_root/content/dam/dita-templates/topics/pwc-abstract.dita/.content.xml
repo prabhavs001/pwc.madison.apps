@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="e8ec54cc-a301-4fc6-a8ed-62a216641497">
+    <jcr:content
+        dam:assetState="processed"
+        dam:parentAssetID="6d238e78-31c5-4b2c-8326-3515ccc0303c"
+        dam:relativePath="topic-templates/pwc-abstract.dita"
+        jcr:primaryType="dam:AssetContent"
+        fmdita-dita-template="{Boolean}true"
+        fmdita-newfile="{Boolean}true"
+        fmErrors="Unable to parse due to: Unable to fetch profile for path /content/dam/topic-templates/pwc-abstract.dita Please check whether a Profile has been assigned"
+        templateDescription="PwC Abstract template"
+        templateTitle="PwC Abstract&#xa;">
+        <metadata
+            dam:sha1="5c826cf23d55bc2422a2656d4c796bd0ebf978de"
+            dam:size="{Long}248"
+            dc:format="application/xml"
+            dc:title="PwC Abstract"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            docstate="Draft"/>
+    </jcr:content>
+</jcr:root>

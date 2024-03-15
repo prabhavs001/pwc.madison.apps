@@ -1,0 +1,32 @@
+<h2 class="report-heading">Details</h2>
+      <div data-sly-use.expiryModel="com.pwc.madison.core.models.ExpirationListModel" class="report-details">
+          <input id="pwc-userID" type="hidden" value="${expiryModel.loggedInUserId}"> 
+          <table class="report-details__table"> 
+              <thead>
+                <tr>
+                    <td class="report-details__topic">TITLE</td>
+                    <td class="report-details__author">AUTHOR</td>
+                    <td class="report-details__state">EXPIRATION DATE</td>
+                    <td class="report-details__missing-elem">EXPIRED</td>
+                    <td data-sly-test="${expiryModel.currentUserRole == 'approvers'}">APPROVE/REJECT</td>
+                    <td data-sly-test="${expiryModel.currentUserRole == 'publishers'}">APPROVED</td>
+                    <td>&nbsp;</td>
+                </tr>
+              </thead>
+                <tbody>
+                    <tr data-sly-test="${expiryModel.expiredNotApprovedList.size == 0 && expiryModel.expiredApprovedList.size == 0 && expiryModel.expiringList.size == 0}">
+                        <td>
+                            <h4>Sorry! No Expiration Content available with current filter. Kindly change the filter and try. </h4>
+                        </td>
+                    </tr>
+                    <sly data-sly-use.display="expirationlisttemplate.html">
+                        <sly data-sly-call="${display.templates @ expiryModel = expiryModel, item = expiryModel.expiredNotApprovedList }">
+                        </sly>
+                        <sly data-sly-call="${display.templates @ expiryModel = expiryModel, item = expiryModel.expiredApprovedList }">
+                        </sly>
+                        <sly data-sly-call="${display.templates @ expiryModel = expiryModel, item = expiryModel.expiringList }">
+                        </sly>
+                    </sly>
+                </tbody>
+            </table> 
+      </div>

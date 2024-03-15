@@ -1,0 +1,82 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Multimedia Modal" class="cq-placeholder"></p>
+
+<div id="multimedia-messages"
+     data-continue-video-message="${'Multimedia_Continue_Watching_Message' @ i18n, locale=pageProperties.jcr:language}"
+     data-thank-you-video-message="${'Multimedia_Thank_You_Message' @ i18n, locale=pageProperties.jcr:language}"
+     data-continue-audio-message="${'Multimedia_Audio_Continue_Message' @ i18n, locale=pageProperties.jcr:language}"
+     data-thank-you-audio-message="${'Multimedia_Audio_Thank_You_Message' @ i18n, locale=pageProperties.jcr:language}">
+</div>
+<sly data-sly-use.article="com.pwc.madison.core.models.ArticleMultimediaModal"
+     data-sly-list.multimedia="${article.multimediaMap}">
+    <div class="modal modal-multimedia-view" data-asset-id-target="${article.multimediaMap[multimedia][2]}">
+        <div class="modal-background dm-modal-background"></div>
+        <div class="modal-content">
+            <button class="modal-close dm-modal-close is-large" aria-label="close">
+                <span class="icon-close-popup"></span>
+            </button>
+            <div class="slider-data">
+                <div class="slider multimedia-view-slider">
+                    <div class="modal-multimedia-item">
+                        <div class="mm-title ellipsis-line">
+                            ${article.countryLabel} ${article.contentType @ i18n, locale=pageProperties.jcr:language}
+                        </div>
+                        <div class="video-up-next">
+                            <div class="video-link-block">
+                                <div class="columns modal-multimedia-columns">
+                                    <div class="column details article" data-content-id="${article.contentId}"
+                                         data-wrapper-page-title="${article.pageTitle}"
+                                         data-page-type="${article.multimediaMap[multimedia][1]}"
+                                         data-country-label="${article.countryLabel}"
+                                         data-content-type="${article.contentType @ i18n, locale=pageProperties.jcr:language}"
+                                         style="max-width: none">
+                                        <p class="description video-message ellipsis-line"></p>
+                                        <div data-sly-test.dmComponentPath="${article.multimediaMap[multimedia][0]}"
+                                             data-sly-resource="${@ path=dmComponentPath, selectors='modal', wcmmode='disabled'}">
+                                        </div>
+                                        <p class="description">
+                                            <span class="clamp-text-slick" data-lines-to-clamp="3">
+                                                <sly data-sly-test.contentId="${article.contentId}">${contentId} – </sly>${article.pageTitle}
+                                            </span>
+                                        </p>
+                                        <sly data-sly-test="${!article.hidePublicationDate}">
+                                            <p class="date">${article.viewDate}</p>
+                                        </sly>
+                                        <p class="note ellipsis-line article">
+                                            ${article.countryLabel} ${article.contentType @ i18n, locale=pageProperties.jcr:language}
+                                        </p>
+                                        <a href="${currentPage.path @ extension='html'}" class="go-to">
+                                            ${'Multimedia_Transcription_Link_Button_Text' @ i18n, locale=pageProperties.jcr:language}
+                                            <span class="icon-up-arrow"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mm-below-info">
+                            <div class="info-title">
+                                <span class="clamp-text-slick" data-lines-to-clamp="3">
+                                    <sly data-sly-test.contentId="${article.contentId}">${contentId} – </sly>${article.pageTitle}
+                                </span>
+                                <span class="mediaLength" data-sly-test.mediaLength="${article.multimediaMap[multimedia][3]}">
+                                    (${mediaLength})
+                                </span>
+                                <sly data-sly-test.formattedRevisedDate="${article.formattedRevisedDate}">
+                                    (${'Multimedia_Revised' @ i18n, locale=pageProperties.jcr:language} ${formattedRevisedDate})
+                                </sly>
+                                <sly data-sly-test="${!article.hidePublicationDate}">
+                                    <div class="date">${article.viewDate}</div>
+                                </sly>
+                            </div>
+                            <div class="link">
+                                <a href="${currentPage.path @ extension='html'}">
+                                    ${'Multimedia_Transcription_Link_Button_Text' @ i18n, locale=pageProperties.jcr:language}
+                                    <span class="icon-submit-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

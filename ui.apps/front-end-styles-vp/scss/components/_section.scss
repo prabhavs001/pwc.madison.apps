@@ -1,0 +1,77 @@
+body {
+  > section:first-of-type {
+    padding-top: 2.5rem;
+  }
+  > section:last-of-type {
+    padding-bottom: 2.5rem;
+  }
+}
+section, .section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  .is-white-background {
+    background-color: white !important;
+  }
+  .container {
+    h2 {
+      font-size: 42px;
+      font-family: 'ITCCharterCom-Regular';
+      color: $color-dark;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .spacer-line {
+      display: flex;
+      justify-content: center;
+      padding-right: 11px;
+      background-color: white;
+      div:nth-child(1) {
+        width: 1px;
+        background-color: #7D7D7D;
+      }
+    }
+    // .spacer-line-right-padded {
+    //   display: flex;
+    //   justify-content: center;
+    //   padding-right: 2rem;
+    //   div {
+    //     height: 100%;
+    //     width: 1px;
+    //     background-color: #7D7D7D;
+    //   }
+    // }
+  }
+}
+.home-page-module, .recently-viewed-component {
+    .container {
+      h2 {
+        font-size: 22px;
+        font-family: 'PwC Helvetica Neue';
+        font-weight: bold;
+        color: #2D2D2D;
+        margin-bottom: 10px;
+        
+    }
+  }
+}
+.recently-viewed-component {
+    .container {
+      h2 {
+        margin-left: -20px;
+        
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .section, section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .container {
+      padding: 0px .75rem;
+      h2 {
+        margin-top: 0px;
+      }
+    }
+  }
+}

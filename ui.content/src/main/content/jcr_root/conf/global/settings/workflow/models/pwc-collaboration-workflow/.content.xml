@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="PwC Collaboration Workflow"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process_435474266
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Create Review"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.MadisonCreateReview"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_435474266>
+            <process_334404401
+                jcr:description="This step does the task management for review.&#xd;&#xa;Assign tasks to individual reviewers"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Assign Review Task "
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.pwc.madison.core.workflows.AssignReviewTasks"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_334404401>
+            <process_379460941
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Send Review Email"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.fmdita.collab.review.SendReviewEmail"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_379460941>
+            <process_325431940
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Schedule Job to close review"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.fmdita.collab.review.ScheduleCloseReview"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_325431940>
+        </flow>
+    </jcr:content>
+</jcr:root>

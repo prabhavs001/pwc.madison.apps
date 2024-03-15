@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          cq:dialogMode="floating"
+          cq:disableTargeting="{Boolean}true"
+          jcr:primaryType="cq:EditConfig">
+          <cq:inplaceEditing
+          		jcr:primaryType="cq:InplaceEditingConfig"
+          		editorType="table"
+          		configPath="inplaceEditingConfig"
+          		active="{Boolean}true">
+          		<inpaceEditingConfig
+          			jcr:primaryType="nt:unstructured">
+  			        	<rtePlugins jcr:primaryType="nt:unstructured">
+                            <edit
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*">
+                                <htmlPasteRules jcr:primaryType="nt:unstructured">
+                                    <allowBasics
+                                            jcr:primaryType="nt:unstructured"
+                                            anchor="{Boolean}true"
+                                            bold="{Boolean}true"
+                                            image="{Boolean}true"
+                                            italic="{Boolean}true"
+                                            underline="{Boolean}true"/>
+                                </htmlPasteRules>
+                            </edit>
+                            <undo
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <format
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <subsuperscript
+                                    jcr:primaryType="nt:unstructured"
+                                    features="[subscript,superscript]"/>
+                            <justify
+                                    jcr:primaryType="nt:unstructured"
+                                    features="[justifyleft,justifycenter,justifyright,justifyjustify]"/>
+                            <links
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <lists
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <keys
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <image
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*"/>
+                            <table
+                                    jcr:primaryType="nt:unstructured"
+                                    features="*">
+                                <hiddenHeaderConfig
+                                        jcr:primaryType="nt:unstructured"
+                                        hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                        hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                            </table>
+                        </rtePlugins>
+          		</inpaceEditingConfig>
+          </cq:inplaceEditing>
+</jcr:root>

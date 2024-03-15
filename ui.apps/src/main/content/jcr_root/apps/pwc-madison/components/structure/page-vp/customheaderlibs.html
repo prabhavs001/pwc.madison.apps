@@ -1,0 +1,44 @@
+<!--/*
+    Custom Headerlibs for PWC ViewPoint Site
+*/-->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='pwc-vp.base'}"/>
+
+<sly data-sly-include="metatags.html"></sly>
+
+<sly data-sly-call="${clientlib.js @ categories='pwc-vp.analytics'}"/>
+
+<script>
+	//prehiding snippet for Adobe Target with asynchronous Launch deployment
+	(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);
+</script>
+<script>
+    //IE11 compatible function for startsWith
+    if (!String.prototype.startsWith) {
+      String.prototype.startsWith = function(searchString, position) {
+        position = position || 0;
+        return this.indexOf(searchString, position) === position;
+      };
+    }
+     //IE11 compatible function for includes
+	if (!String.prototype.includes) {
+      String.prototype.includes = function(search, start) {
+        'use strict';
+
+        if (search instanceof RegExp) {
+          throw TypeError('first argument must not be a RegExp');
+        }
+        if (start === undefined) { start = 0; }
+        return this.indexOf(search, start) !== -1;
+      };
+    }
+     //IE11 compatible function for endsWith
+	if (!String.prototype.endsWith) {
+        String.prototype.endsWith = function(search, this_len) {
+            if (this_len === undefined || this_len > this.length) {
+                this_len = this.length;
+            }
+            return this.substring(this_len - search.length, this_len) === search;
+        };
+    }
+</script>

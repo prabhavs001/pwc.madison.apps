@@ -1,0 +1,115 @@
+iframe[height="375"] {
+  height: 375px !important;
+}
+iframe[height="200"] {
+  height: 200px !important;
+}
+
+div[id^="buzzsprout-large-player"] {
+  iframe {
+    height: 375px !important;;
+  }
+}
+
+div[id^="buzzsprout-player"], div[id^="buzzsprout-small-player"] {
+  iframe {
+    height: 200px !important;
+  }
+}
+
+//handle scrollbar
+.buzzsprout-podcast {
+  .menu-items.scrollbar-outer {
+    .scroll-element.scroll-y {
+      right: -4px;
+      &.scroll-scrollx_visible {
+        .scroll-element_size, .scroll-element_track {
+          top: 0;
+        }
+      } 
+      .scroll-element_outer {
+        left: 0;
+        width: 6px !important;
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          width: 8px !important;
+        }
+        .scroll-bar {
+          height: 200px !important;
+          // background-color: #DEDEDE !important;
+        }
+      }
+    } 
+  }
+} 
+
+.single-podcast-subscribe {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 20px;
+    padding-right: 12px !important;
+    margin: auto auto 6px 0;
+    align-self: center;
+  }
+
+  .podcasts-contain {
+    display: flex;
+    flex-flow: row nowrap;
+
+    //To hide the external link effect
+    a.external {
+      &:before {
+        display: none !important;
+      }
+    }
+
+    & > a {
+      display: flex;
+      flex-flow: row nowrap;
+      text-decoration: none !important;
+      color: $pure-black !important;
+      margin-right: 0;
+      flex-shrink: 0;
+      transition: all .4s linear;
+      width: 44px;
+      overflow: hidden;
+
+      img {
+        max-height: 32px;
+        align-self: center;
+        flex-shrink: 0;
+        margin-right: 12px;
+      }
+
+      span {
+        width: auto;
+        align-self: center;
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 16px;
+        padding-right: 12px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          width: 220px;
+          margin-right: 16px;
+        }
+      }
+
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        &:hover {
+          margin-right: 16px;
+          width: 220px;
+        }
+      }
+    }
+  }
+}
+
+.dynamicmedia {
+  max-width: 600px;
+}

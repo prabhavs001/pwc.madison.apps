@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:trigger="modification"
+    jcr:description="Viewpoint custom ollout config for updating source links to target links"
+    jcr:primaryType="cq:RolloutConfig"
+    jcr:title="Viewpoint Update References">
+    <UpdateMadisonReferences jcr:primaryType="cq:LiveSyncAction"/>
+</jcr:root>

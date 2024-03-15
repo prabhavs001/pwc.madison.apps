@@ -1,0 +1,25 @@
+<div class="modal print-instruction-body">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- start modal content -->
+    <div class="print-modal-decor">
+      <div class="instruction-content">
+        ${'Common_Document_PrintModal_PleaseEnsure' @i18n}<br> 
+        ${'Common_Document_PrintModal_SelectText' @i18n}<br> 
+        <span>${'Common_Document_PrintModal_PrintBGMsg' @i18n}</span>
+        ${'Common_Document_PrintModal_WhenPrint' @i18n}
+      </div>
+      <div class="print-action">
+        <a onclick="printElementByClick()" class="continue-print" href="javascript:;">${'Common_Document_PrintModal_ContinueBtnText' @i18n}</a>
+        <div class="show-message">
+          <label class="check"> <span>${'Common_Document_PrintModal_ChkBoxMsg' @i18n}</span>
+            <input type="checkbox" id="remember_print_event">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>    
+    <!-- end modal content -->
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

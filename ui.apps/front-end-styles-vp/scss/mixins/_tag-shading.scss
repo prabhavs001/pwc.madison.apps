@@ -1,0 +1,81 @@
+
+@mixin tag-shading {
+  span {
+    &.shade {
+      padding-left: 2px;
+      padding-right: 2px;
+      &.grey {
+        background-color: $background-color-tiles !important;
+      }
+      &.light-yellow {
+        background-color: $text-shading-yellow !important;
+      }
+      &.light-orange {
+        background-color: $text-shading-orange !important;
+      }
+      &.rose {
+        background-color: $text-shading-rose !important;
+      }
+      &.dark-rose {
+        background-color: $table-dark-rose !important;
+        color: #fff;
+      }
+    }
+  }
+  
+  p, div {
+    &.shade {
+      padding: 7px 13px 7px 13px;
+      margin-bottom: 15px;
+      &.light-yellow {
+        background-color: $text-shading-yellow !important;
+      }
+      &.light-orange {
+        background-color: $text-shading-orange !important;
+      }
+      &.rose {
+        background-color: $text-shading-rose !important;
+      }
+      &.dark-rose {
+        background-color: $table-dark-rose !important;
+        color: #fff;
+      }
+      p{
+        padding-bottom: 0px;
+      }
+    }
+  }
+  *[data-outputclass="shade grey"] {
+    background-color: $background-color-tiles !important;
+    display: block;
+  }
+  
+  li {
+    &.shade {
+      //padding: 7px 13px 7px 13px;
+      margin-bottom: 15px;
+      &.grey {
+        background-color: $background-color-tiles !important;
+      }
+      &.light-yellow {
+        background-color: $text-shading-yellow !important;
+      }
+      &.light-orange {
+        background-color: $text-shading-orange !important;
+      }
+      &.rose {
+        background-color: $text-shading-rose !important;
+      }
+      &.dark-rose {
+        background-color: $table-dark-rose !important;
+        color: #fff;
+     }
+    }
+    &.shade {
+      p {
+        padding: 0px 13px 0px 13px !important;
+      }
+    }
+  }
+
+}

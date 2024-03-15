@@ -1,0 +1,495 @@
+#searchdocv2-form{
+  input[type="text"]{
+    &::placeholder {
+      color:$color-white;
+      opacity: 0.5;
+    }
+     &:-ms-input-placeholder {
+      color:$color-white;
+    }    
+    &::-ms-input-placeholder { 
+      color:$color-white;
+    }
+
+    @media(max-width: 1088px) {
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(185, 185, 185);
+        opacity: 1; /* Firefox */
+      }
+      
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: rgb(185, 185, 185);
+      }
+      
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: rgb(185, 185, 185);
+      }
+    }
+}
+}
+#searchdocv2-form,#searchdocv2-form-clone{
+  input[type="text"]{
+    outline: none;
+  }
+  .hide-searchform-popup{
+    visibility: hidden;
+    margin: 4px 6px 4px 0;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 5px;
+  }
+}
+.navbar-toc.sticky-toc {
+  .searchdoc-v2.searchdoc-v2--desktop {
+    display: none !important;
+  }
+}
+
+.searchdoc-v2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: white;
+  transition: opacity .25s ease-in-out;
+
+  @media(max-width: 1087px) {
+    top: 0;
+    left: 0;
+  }
+
+  &.searchdoc-v2--desktop, &.searchdoc-v2--scroll {
+    display: flex !important;
+    position: absolute;
+    max-width: 420px;
+    width: 420px;
+    top: 0;
+    right: 75%;
+    height: auto;
+    max-height: 600px;
+
+    @media(min-width: 1088px) and (max-width: 1148px) {
+      width: 320px;
+    }
+
+    @media(min-width: 1149px) and (max-width: 1242px) {
+      width: 360px;
+    }
+
+
+    .searchdoc-header {
+      background-color: #d04a02;
+      .searchdoc-header-text{
+        article {
+          p {
+            color: white;
+            padding: 0;
+          } 
+          
+          h2 {
+            color: white;
+            font-family: "ITCCharterCom-Regular" !important;
+            font-size: 20px !important;
+            letter-spacing: normal;
+            line-height: 1;
+            margin-bottom: 4px !important;
+            padding: 0;
+            font-weight: normal !important;
+            
+            @media(min-width: 1088px) {
+              font-size: 22px !important;
+            }
+          }
+          a {
+            color:#FFCE7A;
+          }
+        }
+      }
+    }
+.loadedToc{
+  display: none;
+}
+    .searchdoc-body {
+      background-color: #F7F7F7;
+      .searchdocv2-content {
+        width: 100%;
+        .toc-container {
+          overflow-y: visible !important;
+        }
+      }
+    }
+  }
+
+  &.searchdoc-v2--scroll {
+    position: fixed;
+    top: 14px;
+    right: 300px;
+  }
+
+  &.is-hiding {
+    opacity: 0;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    display: none !important;
+  }
+
+  .searchdoc-header {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #F7F7F7;
+    width: 100%;
+    padding: 12px 15px 12px;
+    position: relative;
+    flex-shrink: 0;
+    align-self: flex-start;
+
+    &:after {
+      content: "";
+      width: 95%;
+      height: 1px;
+      background-color: #2d2d2d;
+      bottom: 0;
+      position: absolute;
+
+      @media(min-width: 1088px) {
+        display: none !important;
+      }
+    }
+
+    .searchdoc-header-text {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      position: relative;
+      flex-shrink: 0;
+      align-self: flex-start;
+
+      button.icon-close-popup {
+        @media(min-width: 1088px) {
+          display: none;
+        }
+      }
+    }
+
+    form {
+      border-bottom: 1px solid #d04a02;
+      color: #d04a02;
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 4px;
+      opacity: 0;
+      display: none;
+      transition: all .25s ease-in-out;
+
+      @media(min-width: 1088px) {
+        color: #FFCE7A;
+        border-color: #FFCE7A;
+
+        .searchsubmit{
+            background-image: url('../resources/images/yellow-arrow.svg');
+            border-left: 1px solid $border-color-yellow;
+        }
+      }
+
+      &.showingForm {
+        display: flex;
+      }
+      &.showForm {
+        opacity: 1;
+      }
+
+      input[type="submit"] {
+        width: 32px;
+        padding: 0 0 0 10px;
+        margin: 4px 4px 4px 0;
+        background-color: transparent;
+        border: none;
+        border-left: 1px solid #d04a02;
+        border-radius: 0;
+        //orange arrow
+        background-image: url('../resources/images/orange-arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        cursor: pointer;
+
+        @media(min-width: 1088px) {
+          background-image: url('../resources/images/yellow-arrow.svg');
+          border-color: #FFCE7A;
+        }
+    }    
+
+      input[type="text"] {
+        width: auto;
+        flex-grow: 2;
+        background-color: transparent;
+        border: none;
+        line-height: 1;
+
+        @media(min-width: 1088px) {
+          color: white;
+          outline: none;
+
+          &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgb(185, 185, 185);
+            opacity: 1; /* Firefox */
+          }
+          
+          &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: rgb(185, 185, 185);
+          }
+          
+          &::-ms-input-placeholder { /* Microsoft Edge */
+            color: rgb(185, 185, 185);
+          }
+        }
+      }
+    }
+
+    article {
+      color: #2D2D2D;
+      padding-right: 8px;
+
+      h2 {
+        font-family: "ITCCharterCom-Regular";
+        font-size: 20px;
+        letter-spacing: normal;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "PwC Helvetica Neue", arial, serif;
+        line-height: 1.2;
+
+        @media(min-width: 1088px) {
+          font-size: 13px;
+        }
+
+        a {
+          color: #d04a02;
+          display: inline;
+          text-decoration: underline;
+
+          &:after {
+            position: relative;
+            content: "";
+            background-image: url(../resources/images/orange-magnify.svg);
+            background-repeat: no-repeat;
+            display: inline-block;
+            background-position: center;
+            width: 16px;
+            height: 15px;
+            background-size: contain;
+            margin: 0px 0 -1px 4px;
+            align-self: center;
+          }
+
+          @media(min-width: 1088px) {
+            position: relative;
+            overflow: visible;
+            &:after {
+              background-image: url(../resources/images/yellow-magnify.svg);
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+    button {
+      align-self: center;
+      font-size: 22px;
+      border: none;
+      background-color: transparent;
+      margin: auto 0 auto auto;
+
+    }
+
+    .searchsubmit{
+      content: "";
+        background-image: url('../resources/images/orange-arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        font-size: 0px;
+        width: 32px;
+        height: 18px;
+        border-left: 1px solid $color-primary;
+        cursor: pointer;
+    }
+  }
+  
+  @media all and (-ms-high-contrast:none)
+  {
+    .searchdoc-body { 
+        @media(min-width: 1088px) {
+          max-height: 600px !important;
+        }
+   } /* IE10 */
+    *::-ms-backdrop, .searchdoc-body { 
+      @media(min-width: 1088px) {
+        max-height: 600px !important;
+      }
+     } /* IE11 */
+  }
+
+  .searchdoc-body {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    align-self: flex-start;
+    overflow: auto;
+
+    @media(min-width: 1088px) {
+      max-height: 100%;
+    }
+
+    .searchdocv2-content {
+      padding: 0 !important;
+      overflow: hidden;
+      height: 100%;
+      padding: 12px 0 !important;
+
+      @media(max-width: 1087px) {
+        height: auto !important;
+      }
+
+      @media(min-width: 1088px) {
+        overflow: initial;
+        height: auto !important;
+      }
+
+      .toc-item {
+        button {
+          left: -6px;
+        }
+        a {
+          font-size: 14px;
+          font-weight: normal;
+        }
+
+        button img {
+          pointer-events: none;
+        }
+
+        &.show-searchdoc {
+          a {
+            background-color: #d04a02;
+            color: white;
+            border-radius: 2px;
+          }
+
+          .toc-item {
+            display: none !important;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-flow: column nowrap;
+        }
+      } 
+
+      .toc-container {
+        padding: 0 15px;
+        max-height: none;
+
+        @media(min-width: 1088px) {
+          height: auto;
+          max-height: none;
+        }
+
+        .searchbox-clone {
+          margin-left: 30px;
+        }
+
+        .toc-item {
+          & > .spacer {
+            width: 29px;
+            max-width: 29px;
+          }
+          & .searchbox-clone {
+            margin-left: 62px !important;
+          }
+
+          & .toc-item {
+            margin-left: 25px !important;
+          }
+        }
+
+        .searchbox-clone {
+          margin-left: 30px;
+          margin-top: 8px;
+          display: flex;
+          flex-flow: row nowrap;
+          border-bottom: 1px solid #d04a02;
+          color: #d04a02;
+          flex-grow: 2;
+          opacity: 1;
+          transition: opacity .25s ease-in-out;
+
+          &.is-fade {
+            opacity: 0;
+          }
+
+          &.searchbox-clone--haschildren {
+            margin-left: 49px;
+          }
+
+          .searchsubmit {
+            width: 32px;
+            padding: 0 0 0 10px;
+            margin: 4px 4px 4px 0;
+            background-color: transparent;
+            border: none;
+            border-left: 1px solid #d04a02;
+            border-radius: 0;
+            //orange arrow
+            background-image: url('../resources/images/orange-arrow.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            font-size: 0px;
+            cursor: pointer;
+          }
+          
+          input[type="text"] {
+            width: auto;
+            flex-grow: 2;
+            background-color: transparent;
+            border: none;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.searchdocv2-content .toc-item .spacer {
+  max-width: 18px;
+}
+
+// "MD-13028-old-static-toc" branch change
+.searchdoc-v2--desktop, .searchdoc-v2--mobile, .searchdoc-v2--scroll {
+  .searchdoc-body .searchdocv2-content{
+    width: 100% !important;
+    opacity: 1 !important;
+    top: 0px !important;
+
+    .loadedToc{
+      display: none;
+    }
+
+    .toc-title{
+      display: none;
+    }
+  }
+}

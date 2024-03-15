@@ -1,0 +1,14 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Landing Page Module" class="cq-placeholder"></p>
+<div data-sly-use.landingPageModule="com.pwc.madison.core.models.LandingPageModule" class="module-landing">
+    <div class="container">
+        <div class="module-contain">
+
+            <div class="${edit ? '' : 'hidden-xs hidden-sm'}"
+                 data-sly-resource="${ @path='columnControl', resourceType='pwc-madison/components/structure/columncontrol' }"></div>
+
+            <sly data-sly-test="${!edit}" data-sly-use.templates="mobile-accordion-template.html"
+                 data-sly-call="${templates.mobileAccordion @ landingPageModule = landingPageModule}"></sly>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Featured Content Tile"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="featuredContentTile"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+         <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+             <fields
+                 jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/container">
+              <items jcr:primaryType="nt:unstructured">
+                <tab
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <items jcr:primaryType="nt:unstructured">
+                       <section_header_text
+                           jcr:primaryType="nt:unstructured"
+                           sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                           fieldLabel="Section Header Text"
+                           name="./title"
+                           required="{Boolean}true"/>
+                        <configure_tile_content_text
+                           jcr:primaryType="nt:unstructured"
+                           sling:resourceType="granite/ui/components/coral/foundation/text"
+                           text="Configure Tile Content"/>
+                        <configure_tile_content
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                maxitemsallowed = "5"/>
+                          <field
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/container"
+                                  name="./configureTileContent">
+                            <items jcr:primaryType="nt:unstructured">
+                               <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                 <items jcr:primaryType="nt:unstructured">
+                                    <content_type
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Select type of content"
+                                        fieldLabel="Content Type"
+                                        name="./contentType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <regular
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Regular"
+                                                value="regular"/>
+                                            <multimedia
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Multimedia"
+                                                value="multimedia"/>
+                                        </items>
+                                    </content_type>
+                                    <content_url
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldLabel="Content URL"
+                                        name="./contentURL"
+                                        required="{Boolean}true"/>
+                                   <open_new_window
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                       name="./openInNewWindow"
+                                       text="Open in new window"
+                                       value="_blank"/>
+                                 </items>
+                               </column>
+                            </items>
+                          </field>
+                        </configure_tile_content>
+                      </items>
+                    </tab>
+                  </items>
+               </fields>
+             </items>
+           </tabs>
+        </items>
+    </content>
+</jcr:root>

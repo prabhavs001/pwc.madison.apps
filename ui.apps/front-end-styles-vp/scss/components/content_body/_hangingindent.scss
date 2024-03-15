@@ -1,0 +1,52 @@
+.hangingindent1 {
+  margin-left: 36px;
+  text-indent: -20px;
+}
+
+@for $i from 2 through 10 {
+  .hangingindent#{$i} {
+    margin-left: (50px * ( $i - 1 )) + 36px;
+    text-indent: -20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .hangingindent1 {
+    margin-left: 24px;
+    text-indent: -22px;
+  }
+  @for $i from 2 through 10 {
+    .hangingindent#{$i} {
+      margin-left: 20px * $i;
+      text-indent: -24px;
+    }
+  }
+}
+
+
+// indent style
+.indent1 {
+  //margin-left: 15px;
+  margin-left: 35px;
+}
+
+@function calc_indent($base,$diff) {
+  @return  (($diff * ( $base - 1 )) + 45);
+}
+
+@for $i from 2 through 10 {
+  .indent#{$i} {
+    margin-left:calc( #{calc_indent($i,50)}px - 8px);
+  }
+ }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .indent1 {
+    margin-left: 0px;
+  }
+  @for $i from 2 through 10 {
+    .indent#{$i} {
+      margin-left:calc( #{calc_indent($i,20)}px - 50px);
+    }
+   }
+}

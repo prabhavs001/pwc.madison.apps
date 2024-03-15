@@ -1,0 +1,11 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Column Control"
+	class="cq-placeholder"></p>
+<div class="row"
+	data-sly-use.columnControl="com.pwc.madison.core.models.ColumnControl">
+	<div data-sly-repeat.column="${columnControl.columns}"
+		class="col-md-${column}">
+		<sly
+			data-sly-test.parsysResourceName="${['parsys',columnList.index] @ join = '-'}"
+			data-sly-resource="${ @path=parsysResourceName, resourceType='wcm/foundation/components/responsivegrid' }"></sly>
+	</div>
+</div>

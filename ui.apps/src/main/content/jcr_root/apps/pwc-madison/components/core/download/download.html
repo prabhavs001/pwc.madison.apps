@@ -1,0 +1,43 @@
+<div data-sly-use.download="com.adobe.cq.wcm.core.components.models.Download"
+     data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${download.filename}"
+     id="${component.id}"
+     class="cmp-download${!wcmmode.disabled ? ' cq-dd-file' : ''}">
+     <div class="container download-wrapper">
+    <div class="cmp-download__content">
+        <h3 class="cmp-download__title" data-sly-use.model="com.pwc.madison.core.models.TeaserModel">
+            ${'download_this' @ i18n} ${model.contentType @ i18n, locale=pageProperties.jcr:language}
+        </h3>
+        <div class="cmp-download__description" data-sly-test.description="${download.description}">${description @ context="html"}</div>
+        <dl data-sly-test="${(download.displayFilename && download.filename) || (download.displaySize && download.size) || (download.displayFormat && download.format)}" class="cmp-download__properties">
+            <div data-sly-test="${download.displayFilename && download.filename}" class="cmp-download__property cmp-download__property--filename">
+                <dt class="cmp-download__property-label">${'Filename' @ i18n}</dt>
+                <dd class="cmp-download__property-content">${download.filename}</dd>
+            </div>
+            <div data-sly-test="${download.displaySize && download.size}" class="cmp-download__property cmp-download__property--size">
+                <dt class="cmp-download__property-label">${'Size' @ i18n}</dt>
+                <dd class="cmp-download__property-content">${download.size}</dd>
+            </div>
+            <div data-sly-test="${download.displayFormat && download.format}" class="cmp-download__property cmp-download__property--format">
+                <dt class="cmp-download__property-label">${'Format' @ i18n}</dt>
+                <dd class="cmp-download__property-content">${download.format}</dd>
+            </div>
+        </dl>
+    </div>
+    <a data-sly-test="${download.url}" target="_blank" class="cmp-download__action" href="${download.url}">
+        <svg class="cmp-download__action__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <g id="Outline-v2" transform="translate(0.001)">
+              <g id="Download" transform="translate(0 0)">
+                <path id="Combined-Shape" d="M623.384,791.635h0v-1.81l-3.922-3.923a.75.75,0,0,0-1.061,1.061l5.733,5.733,5.733-5.733a.75.75,0,0,0-1.06-1.061l-3.923,3.923v-8.689h-1.5v10.5Zm-9.75,6h21a1.5,1.5,0,0,0,1.5-1.5v-16.5h-11.25v1.5h9.75v15h-21v-15h9.75v-1.5h-11.25v16.5A1.5,1.5,0,0,0,613.634,797.636Zm9.75-18h1.5v-6h-1.5Zm0,1.5h1.5v-1.5h-1.5Z" transform="translate(-612.134 -773.636)"/>
+              </g>
+            </g>
+        </svg>
+        <span class="cmp-download__action-text" data-sly-use.model="com.pwc.madison.core.models.TeaserModel">
+            <span class="cmp-download__action-text-meta">${'download_this' @ i18n} ${model.contentType @ i18n, locale=pageProperties.jcr:language}</span>
+            ${download.actionText ? download.actionText : "Download"}
+        </span>
+    </a>
+</div>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-download cq-dd-file'}"></sly>

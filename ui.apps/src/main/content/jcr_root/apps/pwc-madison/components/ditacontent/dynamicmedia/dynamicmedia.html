@@ -1,0 +1,39 @@
+<sly data-sly-use.mediaInfo="com.pwc.madison.core.models.DynamicMediaAudioVideo">
+	<sly data-sly-test="${mediaInfo.isAudioFile}">
+		<div data-sly-use.assetInfo="pwc_dm_audio.js" class="dm-overlay" data-sly-test="${mediaInfo.s7PublishUrl}">
+            <img class="dm-thumbnail"
+                 id="asset-thumbnail"
+                 data-wrapper-page-path="${currentPage.path}"
+                 data-asset-id="${assetInfo.assetID}"
+                 src="${mediaInfo.thumbnailPath}"/>
+            <div class="dm-button"></div>
+    
+        </div>
+        <!-- /* Placeholder when there is no content */ -->
+        <div data-sly-test="${!mediaInfo.s7PublishUrl}"
+             class="${assetInfo.placeholder.css}"
+             data-emptytext="${assetInfo.placeholder.text}"></div>
+    </sly>
+    <sly data-sly-test="${!mediaInfo.isAudioFile}">
+        <div data-sly-use.dmInfo="pwc_dm_sly.js"
+             data-sly-test="${dmInfo.isDMEnabled || dmInfo.isS7Enabled || dmInfo.isWCMDisabled}"
+             data-sly-unwrap>
+            <!-- /* Viewer container when there is an asset */ -->
+            <div class="dm-overlay" data-sly-test="${dmInfo.asset.path}">
+                <img class="dm-thumbnail"
+                     id="asset-thumbnail"
+                     data-wrapper-page-path="${currentPage.path}"
+                     data-asset-id="${dmInfo.asset.path}"
+                     src="${dmInfo.thumbnailPath}"/>
+                <div class="dm-button"></div>
+        
+            </div>
+            <!-- /* Placeholder when there is no content */ -->
+            <div data-sly-test="${!dmInfo.asset.path}"
+                 class="${dmInfo.placeholder.css}"
+                 data-emptytext="${dmInfo.placeholder.text}"></div>
+        </div>
+    </sly>
+</sly>
+
+

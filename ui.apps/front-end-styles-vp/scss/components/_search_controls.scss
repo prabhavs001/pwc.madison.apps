@@ -1,0 +1,63 @@
+.search-controls {
+  .mobile-filters {
+    .landing_page &{
+      padding-bottom: 18px;
+    }
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid $color-primary;
+    .spacer {
+      height: 42px;
+      width: 1px;
+      background-color: $color-primary;
+      top: -10px;
+      position: relative;
+    }
+  }
+  .dropdown-trigger{
+    a{
+      span{
+        margin-left: 40px;
+        .icon-caret-down{
+          font-size: 9px;
+          color: $color-primary;
+          margin-left: -10px;
+        }
+      }
+    }
+  }
+  .sort{
+    .dropdown-trigger{
+      border-bottom: 1px solid $color-primary;;
+      padding-bottom: 8px;
+      width: 100%;
+      padding-left: 40px;
+      text-align: right;
+      a{
+        font-size: 12px;
+      }
+    }
+    .dropdown-menu{
+      top: 27px;
+    }
+  }
+}
+.search{
+  .madison-card-block{
+    .madison-card{
+      .madison-card-exta-info {
+        position: relative;
+        bottom: 0px;
+      }
+      article {
+        min-height: 100% !important;
+      }
+    } 
+  } 
+}
+#content-loader {
+  .loader {
+    position: fixed;
+  }
+}

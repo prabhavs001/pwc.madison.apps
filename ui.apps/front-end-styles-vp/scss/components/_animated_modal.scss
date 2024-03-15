@@ -1,0 +1,667 @@
+div > [class$="Modal-off"] {
+  height: 0px !important;
+  width: 0px !important;
+}
+
+.mobile-search-filtersmodal-content {
+  padding: 0 6px;
+  h2 {
+    border-bottom: 1px solid #444444;
+    padding-bottom: 36px;
+    margin-bottom: 0 !important;
+  }
+}
+
+#animatedFilterModal {
+  overflow-y: unset !important;
+  .close-animatedFilterModal{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+      color: $color-white;
+    }
+  }
+  h2 {
+    color: #ffff;
+    padding-left: 12px;
+    border: none;
+    padding-bottom: 10px;
+  }
+  .search-filter-details-toggle {
+    border-bottom: 1px solid #444444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    justify-content: space-around;
+    a {
+      color: white;
+      flex: 1 1 0;
+      margin-bottom: 6px;
+      padding: 8px 0;
+      text-align: center;
+      &.selected{
+        color: $color-primary;
+      }
+      &.js-all-filters-toggle{
+        border-right: 1px solid #DEDEDE;
+      }
+    }
+  }
+  .menu-items{
+    padding: 0 12px;
+    overflow-y: scroll;
+    height: calc(100vh - 218px);
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu-item{
+    background-color: #242424;
+    border-bottom: 1px solid #444444;
+    padding: 0;
+    .text{
+      color: #fff;
+    }
+    .submenu{
+      padding: 0 9px;
+      li{
+        border: 1px solid #444444;
+        color: #fff;
+      }
+    } 
+  }
+  .show {
+    display: block;
+  }
+  .applied-filter-list {
+    display: none;
+    ul {
+      margin: 0 9px;
+      li {
+        align-items: center;
+        border: 1px solid #444444;
+        color: #fff;
+        display: flex;
+        font-family: 'PwC Helvetica Neue';
+        font-size: 16px;
+        height: 36px;
+        justify-content: space-between;
+        letter-spacing: -0.1px;
+        line-height: 1.19;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        padding: 0px 12px;
+  
+        &.active {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+  .search-filter-details-toggle{
+    display: none !important;
+  }
+  .filters-mobile{
+    padding-left: 13px;
+    .title{
+      font-family: $font-helvetica;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: $color-white;
+    }
+    span{
+      font-family: $font-helvetica;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      color: $color-light;
+      padding-right: 10px;
+    }
+  }
+}
+
+.mobile-filter-apply-bar {
+  width:100%;
+  background-color: white;
+  position: fixed;
+  padding: 12px;
+  bottom: 0;
+  left:0;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  -webkit-backface-visibility: hidden;
+  a {
+    height: 51px;
+    text-align: center;
+    color: $color-primary;
+    padding: 0px;
+    border: 1px solid white;
+    // display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    //justify-content: center;
+    &.apply-filters,
+    &.update-filters{
+      flex: none;
+      padding: 0px 15px;
+      border-color: $color-primary;
+      font-weight: 700;
+      &.disabled {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+    &.update-filters{
+      display: none;
+    }
+    &.update {
+      padding: 0px 15px;
+      border-color: $color-primary;
+      font-weight: 700;
+    }
+    &.default-filters{
+      display: none;
+      //border-right-color: $color-primary;
+    }
+  }
+
+}
+
+#animatedRelevancyModal {
+  .close-animatedRelevancyModal{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  h2{
+    color: #ffff;
+    padding-left: 12px;
+  }
+  .menu-item{
+    background-color: #242424;
+    border-bottom: 1px solid #444444;
+    .text{
+      color: #fff;
+    }
+    .submenu li{
+      color: #fff;
+      border: 1px solid #444444;
+    }
+  }
+  .menu-item.active{
+    background-color: #db536a;
+    color: #fff;
+    color: #2d2d2d;
+    .text{
+      color: #2d2d2d;
+    }
+    .icon-caret-right{
+      font-size: 24px;
+      color: $color-dark;
+    }
+    .icon-caret-up{
+      font-size: 14px;
+      color: $color-dark;
+    }
+  }
+}
+
+#animatedTemplateModal {
+  overflow-y: unset !important;
+  .mobile-search-filtersmodal-content {
+    margin-top: 25px;
+  }
+  .close-animatedTemplateModal{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    
+  }
+  h2{
+    color: #ffffff !important;
+    padding-left: 12px;
+  }
+  .menu-items{
+    padding: 0 12px;
+    overflow-y: scroll;
+    height: calc(100vh - 130px);
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu-item{
+    background-color: #242424;
+    border-bottom: 1px solid #444444;
+    padding: 0;
+    .submenu{
+      padding: 0 9px;
+    } 
+    .text{
+      color: #fff !important;
+      a {
+        color: #fff !important;
+      }
+      a.active{
+        color: #d14a02 !important;
+      }
+    }
+  }
+}
+#animatedTemplateModalRegister {
+  .mobile-search-filtersmodal-content {
+    margin-top: 25px;
+  }
+  .close-animatedTemplateModalRegister{
+    justify-content: flex-end;
+    display: flex;
+    color: $color-dark;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+    }
+  }
+}
+
+#animatedTemplateModalGateway {
+  .mobile-search-filtersmodal-content {
+    margin-top: 25px;
+  }
+  .close-animatedTemplateModalGateway{
+    justify-content: flex-end;
+    display: flex;
+    color: $color-dark;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+    }
+  }
+}
+
+/* hybrid modal css */
+#animatedHybridModal {
+  overflow-y: unset !important;
+  .hybrid-close{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+      color: $color-white;
+    }
+  }
+ .hybrid-modal-content{
+   width: 500px;
+   background-color: #fff;
+   margin: 80px auto 0;
+   padding: 0px 10px;
+   .hybrid-title{
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2d2d2d;
+    padding: 15px 0px 0px 0px;  
+    font-family: "ITCCharterCom-Regular";
+    @media(max-width: 320px){
+    font-size: 28px;
+    }
+     @media(min-width: 321px) and (max-width: 767px){
+      padding: 15px 15px 20px 15px;
+      font-family: "ITCCharterCom-Regular";
+      text-align: left;
+      line-height: normal;
+    }    
+   }
+   .hybrid-content-list{
+    max-height: 340px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 10px 80px 0px;
+        li{
+          padding: 5px 0px;
+          border-bottom: 1px solid #eaeaea;
+          color: #575757;
+          font-size: 18px;
+          position: relative;
+          font-family: "PwC Helvetica Neue";
+          // column-count: 2;
+          display: flex;
+          span{
+           cursor: default;
+           align-self: center;
+            &.available{
+              display: inline-block;
+              background-color: #175d2d;
+              padding: 3px 10px;
+              color: #fff;
+              text-transform: uppercase;
+              font-size: 11px;
+              margin-right: 12px;
+              border-radius: 2px;
+              font-weight: bold;
+              min-width: 115px;
+              max-width: 115px;
+              text-align: center;
+              max-height: 38px;
+            }
+            &.unavailable{
+              display: inline-block;
+              background-color: #e0301e;
+              padding: 3px 10px;
+              color: #fff;
+              text-transform: uppercase;
+              font-size: 11px;
+              margin-right: 12px;
+              border-radius: 2px;
+              font-weight: bold;
+              min-width: 115px;
+              max-width: 115px;
+              position: relative;
+              text-align: left;
+              max-height: 38px;
+              &:after{
+                content: '';
+                background-image: url('../resources/images/question_mark_icon.svg');
+                width: 12px;
+                height: 14px;
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                right: 5px;
+                top: 5px;
+              }
+              &:hover{
+                &:before{
+                  content: attr(data-text);
+                  background-color: #FFFFFF;
+                  padding: 3px 6px;
+                  border: 1px solid #ccc;
+                  pointer-events: none;
+                  transition: all .25s ease-in-out;
+                  position: absolute;
+                  left: -40px;
+                  text-decoration: none !important;
+                  z-index: 9;
+                  font-size: 0.75rem;
+                  font-weight: bold;
+                  top: 25px;
+                  opacity: 1;
+                  color: #000;
+                  width: 205px;
+                  text-transform: none;
+                  @media(max-width: 767px){
+                    left: 0%;
+                    width: 170px;
+                  }
+  
+                }
+              }
+            
+            }
+          }
+        
+        }
+     
+   }
+
+  .hybrid-content-list{
+    li{
+      &:last-of-type{
+        border-bottom: medium none;
+        .unavailable{
+          &:hover{
+            &:before{
+              top: -20px;
+              left: 105%;
+              //opacity: 1;
+              @media(max-width: 767px){
+                width: 170px;
+              }
+            }
+          }
+        }
+      }
+    }
+    li:only-child {
+      min-height: 10vh;
+      @media(max-width: 767px){
+        min-height: 12vh;
+      }
+    }
+  }
+   .hybrid-button{
+     text-align: center;
+     .button {
+       &.is-outlined{
+        border: 2px solid $color-primary !important;
+        height: auto;
+        min-width: 160px;
+        white-space: normal;        
+        cursor: pointer;
+        margin-top: 25px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        font-family: "PwC Helvetica Neue";
+        color: $color-primary;
+        outline: 0;
+        padding: 8px 10px;
+        &:hover{
+          color: #FFFFFF !important;
+          background-color: $color-primary !important;
+          
+      
+        }
+       }
+     }
+   }
+   @media(max-width: 320px){
+    width: calc(100% - 20px);
+    margin: 100px auto 0px;
+  
+    .hybrid-content-list{
+          padding: 0px 5px 0px; 
+      li{
+        border: medium none;
+      
+      span{
+        max-width: 100px !important;
+        min-width: 100px !important;
+        font-size: 10px !important;
+        text-align: left;
+        padding: 2px 10px !important;
+
+        &.unavailable{
+          &:hover{
+            &:before{
+              width: 110px;
+            }
+          }
+        }
+      }
+    }
+    }
+  }
+   @media(min-width: 321px) and (max-width: 767px){
+     width: calc(100% - 20px);
+     margin: 20px auto 0px;
+     .hybrid-content-list{
+      max-height: 40vh;
+      padding: 0px 15px 0px;
+     }
+   }
+   @media(max-width: 480px){
+    margin: 100px auto 0px;
+   }
+   @media(min-width: 800px) and (max-width: 850px){
+    margin: 5px auto 0px;
+    .hybrid-content-list{
+     max-height: 50vh;
+    }
+  }
+ }
+}
+
+
+/* time out session popup */
+#timeOutWarningPopup {
+  overflow-y: unset !important;
+  .timeoutSession-close{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+      color: $color-white;
+    }
+  }
+ .timeout-popup-content{
+  width: 450px;
+  background-color: #fff;
+  margin: 80px auto 0;
+  padding: 30px;
+   .timeout-title{
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2d2d2d;
+    font-family: "ITCCharterCom-Regular";
+    text-align: left;
+    padding-bottom: 10px;
+    @media(max-width: 320px){
+    font-size: 28px;
+    }
+     @media(min-width: 321px) and (max-width: 767px){
+      padding: 15px 15px 20px 15px;
+      font-family: "ITCCharterCom-Regular";
+      text-align: left;
+      line-height: normal;
+    }    
+   }
+   .timeout-text{
+     font-size: 18px;
+      color: #363636;
+     a{
+       color: #e0301e;
+     }
+   }
+   @media(max-width: 767px){
+    width: calc(100% - 50px);
+    background-color: #fff;
+    margin: 80px auto 0;
+    padding: 15px;
+ }
+ }
+  &.timeOutWarningPopup-off{
+    display: none;
+  }
+  .timeoutSession-close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 9;
+  }
+}
+
+
+/* forced logout session */
+#forceLogoutPopup {
+  overflow-y: unset !important;
+  .timeoutSession-close{
+    justify-content: flex-end;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    .icon-close-popup{
+      font-size: 24px;
+      color: $color-white;
+    }
+  }
+ .forceLogout-content{
+  width: 450px;
+  background-color: #fff;
+  margin: 80px auto 0;
+  padding: 18px;
+   .timeout-title{
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2d2d2d;
+    font-family: "ITCCharterCom-Regular";
+    text-align: left;
+    padding-bottom: 10px;
+    @media(max-width: 320px){
+    font-size: 28px;
+    }
+     @media(min-width: 321px) and (max-width: 767px){
+      padding: 15px 15px 20px 15px;
+      font-family: "ITCCharterCom-Regular";
+      text-align: left;
+      line-height: normal;
+    }    
+   }
+   .forceLogout-text{
+     font-size: 18px;
+     color: #363636;
+   }
+   @media(max-width: 767px)
+   {
+      width: calc(100% - 50px);
+      background-color: #fff;
+      margin: 80px auto 0;
+      padding: 15px;
+   }
+   .forceLogout-button{
+    text-align: center;
+    .button {
+      &.is-outlined{
+       border: 2px solid $color-primary !important;
+       height: auto;
+       min-width: 160px;
+       white-space: normal;        
+       cursor: pointer;
+       margin-top: 25px;
+       margin-bottom: 10px;
+       font-size: 14px;
+       font-family: "PwC Helvetica Neue";
+       color: $color-primary;
+       outline: 0;
+       padding: 8px 10px;
+       &:hover{
+         color: #FFFFFF !important;
+         background-color: $color-primary !important;
+         
+     
+       }
+      }
+    }
+  }
+ }
+  &.forceLogoutPopup-off{
+    display: none;
+  }
+}

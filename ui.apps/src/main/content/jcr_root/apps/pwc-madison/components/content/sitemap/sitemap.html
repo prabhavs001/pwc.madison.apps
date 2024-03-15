@@ -1,0 +1,19 @@
+<div class="container sitemap-page-title"
+	data-sly-use.siteMap="com.pwc.madison.core.models.SiteMap">
+	${siteMap.siteMapLabel}
+</div>
+<section>
+	<div class="container sitemap-main masonry">
+		<div class="sitemap-list site-item"
+			data-sly-repeat.siteMapItems="${siteMap.siteMapItems}">
+			<div class="item-list" data-sly-repeat.group="${siteMapItems}">
+				<div class="list-title"><a href="${group.groupPath}">${group.groupText}</a></div>
+				<ul data-sly-list.itemLink="${group.multiFieldSitemapLinksBeanList}">
+					<li><a href="${itemLink.navigationURL}"
+						target="${itemLink.openLinkNewWindow}">${itemLink.navigationText}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

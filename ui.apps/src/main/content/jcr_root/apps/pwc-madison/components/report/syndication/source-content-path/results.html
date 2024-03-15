@@ -1,0 +1,12 @@
+<td is="coral-table-cell" data-sly-use.sourcePathReportCellValue="com.pwc.madison.core.reports.SyndicationSourceContentPathValue" value="${sourcePathReportCellValue.path}">
+    <sly data-sly-test.isLink="${properties.link}">
+        <a target="_blank" href="#" data-href="${sourcePathReportCellValue.assetDetailsPath}" class="coral-Link">
+            ${sourcePathReportCellValue.path}
+        </a>
+    </sly>
+    <sly data-sly-test="${!isLink}">
+        ${sourcePathReportCellValue.path}
+    </sly>
+</td>
+
+

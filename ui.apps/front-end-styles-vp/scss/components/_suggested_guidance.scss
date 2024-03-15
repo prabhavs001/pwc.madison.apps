@@ -1,0 +1,133 @@
+.blank-height{
+  height: 1844px;
+}
+.suggested-guidance {
+  margin-top: 34px;
+  margin-bottom: 0;
+  width: 100%;
+  .sg-header {
+    h2{
+      font-size: 1rem !important;
+      font-family: 'PwC Helvetica Neue Bold';
+      margin: 0 !important;
+      font-weight: bold;
+      padding: 0;
+      @media (min-width: 769px) and (max-width: 1025px) {
+        margin: 0 -10px !important;
+        padding: 0;
+      }
+      @media (min-width: 276px) and (max-width: 768px) {
+        margin: 0 !important;
+        padding: 0;
+      }
+    }
+  }
+  
+  .search-guidance {
+    .slick-arrow {
+      display: block !important;
+      &[aria-disabled="true"]{
+          color: $color-athens-grey;
+          cursor: default;
+      }
+    }
+    &.results {
+      margin: 0 30px;
+      @media (min-width: 769px) and (max-width: 1025px) {
+        margin: 0 15px;
+      }
+      @media (min-width: 276px) and (max-width: 768px) {
+        margin: 0;
+        .sg-show-more {
+          padding: 15px 0;
+          border-bottom: 1px solid #dedede;
+      }
+      }
+    }
+    .slick-arrow.icon-caret-left {
+      left: 0;
+      bottom: 33px;
+      font-size: 23px;
+    }
+    .slick-arrow.icon-caret-right {
+      right: 0;
+      bottom: 33px;
+      font-size: 23px;
+    }
+    ul{
+      padding-top: 15px;
+
+      .slick-track {   //this cls is initialized by slick slider
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      .thin-row {
+        display: flex;
+        flex-flow: row nowrap;
+        border: 1px solid #d5d5d5;
+        flex: 0 1 auto;
+        padding: 10px;
+        background-color: #f6f6f6;
+        @media (min-width: 276px) and (max-width: 768px) {
+          margin-bottom: 5px;
+          &:nth-child(n + 4) {    //Show only 3 tiles
+            display: none;
+          }
+        }
+        @media (min-width: 769px) {
+          margin-right: 5px;
+        }
+        a {
+          overflow: hidden;
+          word-break: normal;
+          width: 100%;
+          .sg-title {
+            font-family: "ITCCharterCom-Regular";
+            font-size: 16px;
+            line-height: 1.34;
+            color: #d04a02;
+            font-weight: normal;
+            white-space: inherit;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            margin-bottom: 10px;
+            width: calc(100% - 25px);
+
+            @media (min-width: 268px) and (max-width: 1025px) {
+              font-size: 16px;
+            }
+          }
+
+          .brief{
+            font-family: 'PwC Helvetica Neue Bold';
+            font-size: 12px;
+            line-height: 1.6;
+            color: $new-grey-color3;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;         
+            @media (min-width: 268px) and (max-width: 1025px) {
+              font-size: 12px;
+            }
+            padding-top: 2px;
+            margin-bottom: 2px;
+          }
+
+          &:hover {
+            .sg-title {
+              text-decoration: underline;
+            }
+          }
+        }
+        .is-emphasized {
+          font-weight: bold;
+        }
+      }
+    }
+    
+  }
+  
+}

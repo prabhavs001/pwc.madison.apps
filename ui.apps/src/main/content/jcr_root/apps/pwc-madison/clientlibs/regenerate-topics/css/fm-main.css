@@ -1,0 +1,254 @@
+
+
+
+#fm_toctopicsContainer{height: 100%;}
+#fm_toctopics #fm_assetDetails{
+    box-sizing: border-box;
+    display: inline-block;
+    top : 50px;
+    position: relative;
+    z-index: 1;
+    
+}
+#fm_toctopics #fm_topMap{
+    display: none;
+}
+
+
+#fm_toctopics  .coral-Icon--sizeS {
+    font-size: 14px;
+    color: #999;
+}
+#fm_toctopics .coral-Table-row{
+    height: 51px;
+}
+
+#fm_toctopics .coral-Table-cell{
+    border-top: .0625rem solid #f0f0f0;
+}
+
+#fm_toctopics .coral-Table-cell .coral-Table-cell{
+    border: none;
+}
+
+#fm_toctopics h4{
+    font-size: 12px;
+    margin:auto;
+}
+
+.fm_tocIndex{
+    display:none;
+}
+
+#topics_tab .coral-Table-row {
+  cursor: default;
+}
+
+
+
+.reltable-width {
+    width: calc(100% - 560px);
+    /* height: 100%; */
+    overflow-y: auto;
+}
+
+#reltable_holder {
+    width: 550px;
+    float: right;
+    height: calc(100% - 11px);
+    display: none;
+    overflow-y: auto;
+    position: absolute;
+    top: 11px;
+    right: 0px;
+}
+
+
+.reltable-wrapper table:nth-child(2){
+
+margin-top : 10px;
+        }
+
+        .reltable-wrapper{padding:10px;overflow-x:auto;display:inline-block;min-width: 520px;border: 1px solid #e9e9e9;margin-bottom: 7px;}
+
+
+#reltable_holder .coral-Textfield {
+    width: 100%;
+    min-width: 0px;
+}
+
+#reltable_holder .coral-Table-row td{
+border-bottom: 1px solid #e9e9e9;
+
+}
+
+#reltable_holder .coral-Tag{
+
+    margin: 4px;
+}
+
+.toctopiccell{
+width:85%;
+    }
+
+
+      .rel_input{
+
+            border-color: transparent !important;
+  background-color: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: #4b4b4b !important;
+
+      }
+      .rel_input:focus{
+
+            outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+      }
+
+#reltable_holder .coral-TagList-tag:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+#reltable_holder .coral-Table-row {
+    cursor: default;
+}
+
+#fm_assetDetails .coral-TabPanel-pane:nth-child(3) {
+    height: calc(100% - 10px);
+    /*margin: 10px 10px 0px 10px;*/
+}
+
+.table-cell-topic {
+  width: 40%;
+}
+
+.table-cell-keys {
+  width: 15%;
+}
+
+.table-cell-attrs {
+  width: 15%;
+}
+
+.fm_chevron {
+  cursor: pointer;
+}
+
+.fm_chevron-empty {
+  padding-left: 17px;
+}
+
+#fm_toctopics > .fm_toctopic[data-type="map"].map-expanded > td:first-child,
+#fm_toctopics > .map-content > td:first-child{
+  border-left: 4px solid #ddd;
+}
+
+.map-content .coral-Table .coral-Table-cell:first-of-type {
+    border: none;
+}
+
+.wrapper {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.keys-wrapper,
+.attrs-wrapper {
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.taglist {
+  display: table-cell;
+  border-collapse: separate;
+  border-spacing: 5px;
+  vertical-align: top;
+  padding-left: 50px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 4px 0px 4px 4px;
+  padding: 10px;
+  background-color: #d8d8d8;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.map-content > td {
+}
+
+.map-content table {
+  width: 100%;
+  border: none;
+}
+
+table.fm_toctopicDetailsTable{
+min-width: 711px;
+
+}
+
+.coral-Link.is-disabled {
+    opacity: 1;
+    text-decoration: none !important;
+    color: rgb(75, 75, 75);
+    cursor: default !important;
+    }
+        .reltable-wrapper{
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .reltable tr td{
+      min-width: 76px;
+    }
+
+
+
+#reltable_holder .reltable-wrapper:nth-child(1){
+  border-top: 1px solid #e5e5e5;
+}
+.fm_ghostName {
+    max-width: 200px;
+    }
+
+.coral-TagList-tag, .coral-Tag{
+  margin: 10px;
+}
+
+  .coral-TagList-tag, .coral-Tag{
+  margin: 10px;
+}
+
+.coral-TagList-tag .coral-TagList-tag{
+  margin: 0px;
+}
+.coral-Tag .coral-Tag{
+  margin:0px;
+}
+.fm_ditaType.custom::before{
+    transform: scale(1.4);  
+    display: block;
+}
+.fm_ditaType.topic::before{
+  content: url(/libs/fmdita/ditamapeditor/images/topic.svg/jcr:content/renditions/original/jcr:content) !important;    
+}
+
+.fm_ditaType.task::before{
+  content: url(/libs/fmdita/ditamapeditor/images/task.svg/jcr:content/renditions/original/jcr:content) !important;
+
+}
+.fm_ditaType.concept::before{
+  content: url(/libs/fmdita/ditamapeditor/images/concept.svg/jcr:content/renditions/original/jcr:content) !important;    
+}
+.fm_ditaType.reference::before{
+  content: url(/libs/fmdita/ditamapeditor/images/reference.svg/jcr:content/renditions/original/jcr:content) !important;    
+}
+
+.fm_ditaType.map::before{
+  content: url(/libs/fmdita/ditamapeditor/images/map.svg/jcr:content/renditions/original/jcr:content) !important;                
+}

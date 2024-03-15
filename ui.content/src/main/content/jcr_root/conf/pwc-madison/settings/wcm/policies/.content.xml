@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <policy_1531393342535
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Default Components"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/ditacontent/next-link, /apps/acs-commons/components/content/generic-text,/libs/foundation/components/image,/libs/wcm/foundation/components/responsivegrid,/libs/foundation/components/list]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Container Style"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="row reader-row"
+                                        cq:styleId="1535533172028"
+                                        cq:styleLabel="Reader Row"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="doc-reader external"
+                                        cq:styleId="1535533209240"
+                                        cq:styleLabel="Document Reader"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1531393342535>
+                    <policy_45741848728910
+                        cq:styleDefaultClasses=""
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Topic Page Right Rail"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/acs-commons/components/content/generic-text,/libs/foundation/components/list,/apps/pwc-madison/components/content/accordion/accordion-container,/apps/pwc-madison/components/content/accordion/accordion-item,/apps/pwc-madison/components/content/madison-list,/apps/pwc-madison/components/content/related-content-links,/apps/pwc-madison/components/content/sme-list]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_45741848728910>
+                    <policy_468605940967905
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Structure Components"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:PwC Madison Content,/apps/pwc-madison/components/structure/frog-home/columncontrol,/apps/pwc-madison/components/content/title]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_468605940967905>
+                    <policy_608549044977832
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Document Body Components and Style"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,/apps/pwc-madison/components/content/image,/apps/pwc-madison/components/content/list,/apps/pwc-madison/components/content/text]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_608549044977832>
+                    <policy_191185032879388
+                        cq:styleDefaultClasses="search-container"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC search components"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="group:PwC Madison Search">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_191185032879388>
+                    <policy_702247827193832
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Madison Home Page"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:PwC Madison Content,/apps/pwc-madison/components/structure/footer]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_702247827193832>
+                    <policy_1548665351359
+                        cq:styleDefaultClasses=""
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Document Body"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/pwc-madison/components/ditacontent/ditadocumentheader,/apps/pwc-madison/components/ditacontent/toc,/apps/pwc-madison/components/ditacontent/next-link,/apps/pwc-madison/components/ditacontent/previous-link]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1548665351359>
+                    <policy_11788629421221
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC-Madison User Registration Tnc"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:PwC User Registration]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_11788629421221>
+                    <policy_51585984822102
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Home Page Module Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/pwc-madison/components/content/frog-home/columncontrol">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_51585984822102>
+                    <policy_51912046813072
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Home Page Root Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/content/home/recently-viewed,/apps/pwc-madison/components/structure/footer,/apps/pwc-madison/components/structure/header/v1/header,/apps/pwc-madison/components/structure/home-page-module,/apps/pwc-madison/components/structure/global-navigation]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_51912046813072>
+                    <policy_111014222406576
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Landing Page Global Components Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/pwc-madison/components/content/home/featured-content,/apps/pwc-madison/components/content/overview,/apps/pwc-madison/components/structure/footer/v1/footer,/apps/pwc-madison/components/structure/header/v1/header,/apps/pwc-madison/components/structure/global-navigation,/apps/pwc-madison/components/content/reference-links,/apps/pwc-madison/components/content/sme-contact,/apps/pwc-madison/components/content/breadcrumb]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_111014222406576>
+                    <policy_371655405993800
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Ghost Page Template Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/pwc-madison/components/structure/ghost-page-module">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_371655405993800>
+                    <policy_33909558617244
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Landing Page Layout Container Components Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/content/buzzsprout-podcast,/apps/pwc-madison/components/content/reference-links,/apps/pwc-madison/components/content/topic-faq-tile,/apps/pwc-madison/components/content/home/featured-content,/apps/pwc-madison/components/content/home/insights,/apps/pwc-madison/components/structure/frog-home/columncontrol]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_33909558617244>
+                    <policy_211544220806355
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Root Layout Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/structure/page-maincontainer,/apps/pwc-madison/components/content/user-registration-modals,/apps/pwc-madison/components/content/multimedia-modal,/apps/pwc-madison/components/content/tutorial-modal]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_211544220806355>
+                    <policy_155469499034800
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Experience Fragment Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/content/home/featured-content,/apps/pwc-madison/components/content/home/hero-tile]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_155469499034800>
+                    <policy_1595508185949
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Most Popular List Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/pwc-madison/components/content/home/most-popular">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1595508185949>
+                    <policy_1595508244449
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Webcasts and News List Component Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/pwc-madison/components/content/home/webcast-&amp;-podcast,/apps/pwc-madison/components/content/home/news-list]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1595508244449>
+                    <policy_1695374132460
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Madison Article Page Components Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        cq:styleDefaultClasses="in-the-loop-template"
+                        components="[group:PwC Madison Article,group:PwC Madison WCM Core,/apps/pwc-madison/components/content/buzzsprout-podcast,/apps/pwc-madison/components/ditacontent/dynamicmedia]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1695374132460>
+                    <policy_1695366841807
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Madison Article Page Limited Width Components Policy"
+                        cq:styleDefaultClasses="container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:PwC Madison Article,group:PwC Madison WCM Core,/apps/pwc-madison/components/content/buzzsprout-podcast,/apps/pwc-madison/components/ditacontent/dynamicmedia]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1695366841807>
+                    <policy_1695383456712
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="PwC Madison Article Page Main Container Policy"
+                            cq:styleDefaultClasses="in-the-loop-template"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1695383456712>
+                    <policy_1595654109237
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="PwC Madison Article Page Download Container Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/apps/pwc-madison/components/core/download]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1595654109237>
+                    <policy_39314586154048
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="PwC Article Structured Page Main Container"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:PwC Madison Article,group:PwC Madison WCM Core,/apps/pwc-madison/components/content/buzzsprout-podcast,/apps/pwc-madison/components/ditacontent/dynamicmedia]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_39314586154048>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+    <pwc-madison jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <structure jcr:primaryType="nt:unstructured">
+                <page jcr:primaryType="nt:unstructured">
+                    <policy_1536900249127
+                        cq:styleDefaultClasses="index document-reader"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC DITA Content Page Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="pwc.madison-clientlib-content-page">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1536900249127>
+                    <policy_26310026749117
+                        cq:styleDefaultClasses="content_page body"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Content Page Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="pwc.madison-clientlib-content-page">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_26310026749117>
+                </page>
+                <page-vp jcr:primaryType="nt:unstructured">
+                    <policy_1553021333618
+                        cq:styleDefaultClasses="home body"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Home Page Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="pwc-madison.clientlib-home-page">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1553021333618>
+                    <policy_441365181336638
+                        cq:styleDefaultClasses="landing_page_template"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Landing Page Template Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_441365181336638>
+                    <policy_402485592392360
+                        cq:styleDefaultClasses="content_page body"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Content-Page"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="pwc.madison-clientlib-content-page">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_402485592392360>
+                    <policy_281727754522100
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="FASB-CROSSREF-CLIENTLIB-PAGE-POLICY"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        clientlibs="fasb-crossref-tool">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_281727754522100>
+                </page-vp>
+                <search-page jcr:primaryType="nt:unstructured">
+                    <policy_1556614970805
+                        cq:styleDefaultClasses="search"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="PwC Search Page Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1556614970805>
+                </search-page>
+            </structure>
+            <inloop jcr:primaryType="nt:unstructured">
+                <columnControl jcr:primaryType="nt:unstructured">
+                    <policy_1685702535689
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Column-Control Free Section Content Detail Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:PwC Madison Article]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1685702535689>
+                </columnControl>
+                <quotebox jcr:primaryType="nt:unstructured">
+                    <policy_1695963929431
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Quotebox Color"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            cq:styleDefaultClasses="aem-blockqoute_orange"
+                            quoteType="default">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                    cq:styleGroupLabel="color"
+                                    jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                            cq:styleClasses="aem-blockqoute_gray"
+                                            cq:styleId="1695964306830"
+                                            cq:styleLabel="grey"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                            cq:styleClasses="aem-blockqoute_pink"
+                                            cq:styleId="1695964337528"
+                                            cq:styleLabel="pink"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                            cq:styleClasses="aem-blockqoute_orange"
+                                            cq:styleId="1695964344542"
+                                            cq:styleLabel="orange"
+                                            jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1695963929431>
+                </quotebox>
+                <table jcr:primaryType="nt:unstructured">
+                    <policy_1695962634567
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Table Color"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            quoteType="default">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                    cq:styleGroupLabel="Table Color Themes"
+                                    jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                            cq:styleClasses="aem-table-gray"
+                                            cq:styleId="1695967733445"
+                                            cq:styleLabel="Grey White"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                            cq:styleClasses="aem-table-pink"
+                                            cq:styleId="169597733446"
+                                            cq:styleLabel="Pink Border"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                            cq:styleClasses="table-bg-pink"
+                                            cq:styleId="169597733447"
+                                            cq:styleLabel="Pink Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                            cq:styleClasses="table-bg-grey"
+                                            cq:styleId="169597733448"
+                                            cq:styleLabel="Grey Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item4
+                                            cq:styleClasses="table-bg-orange"
+                                            cq:styleId="169597733449"
+                                            cq:styleLabel="Orange Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item5
+                                            cq:styleClasses="alt-row-bg-orange"
+                                            cq:styleId="169597733450"
+                                            cq:styleLabel="Alternate Row Orange Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item6
+                                            cq:styleClasses="alt-row-bg-pink"
+                                            cq:styleId="169597733451"
+                                            cq:styleLabel="Alternate Row Pink Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    <item7
+                                            cq:styleClasses="alt-row-bg-grey"
+                                            cq:styleId="169597733452"
+                                            cq:styleLabel="Alternate Row Grey Background"
+                                            jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1695962634567>
+                </table>
+                <teaser jcr:primaryType="nt:unstructured">
+                    <policy_1708421078322
+                        jcr:lastModified="{Date}2024-02-20T14:56:12.260+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Teaser Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        showTitleType="false">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Themes"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-teaser--bg-yellow"
+                                        cq:styleId="1708421118436"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-teaser--bg-pink"
+                                        cq:styleId="1708421129211"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="cmp-teaser--bg-orange"
+                                        cq:styleId="1708421131851"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="cmp-teaser--bg-grey"
+                                        cq:styleId="1708421134513"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item4
+                                        cq:styleClasses="cmp-teaser--bg-black"
+                                        cq:styleId="1708421136846"
+                                        cq:styleLabel="Black"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1708421078322>
+                </teaser>
+                <related-content jcr:primaryType="nt:unstructured">
+                    <policy_1708421470601
+                        jcr:lastModified="{Date}2024-02-20T15:02:23.426+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Related Content Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Themes"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="related-content-section--bg-yellow"
+                                        cq:styleId="1708421488148"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="related-content-section--bg-orange"
+                                        cq:styleId="1708421496561"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="related-content-section--bg-grey"
+                                        cq:styleId="1708421502449"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="related-content-section--bg-pink"
+                                        cq:styleId="1708421507435"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1708421470601>
+                </related-content>
+                
+            </inloop>
+            <core jcr:primaryType="nt:unstructured">
+                <text jcr:primaryType="nt:unstructured">
+                    <policy_1704701407983
+                        jcr:lastModified="{Date}2024-01-08T13:55:52.504+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Text Component Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Border Line"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-border-pink"
+                                        cq:styleId="1704701138202"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-border-grey"
+                                        cq:styleId="1704701150405"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="cmp-border-orange"
+                                        cq:styleId="1704701158417"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="cmp-border-black"
+                                        cq:styleId="1704701163309"
+                                        cq:styleLabel="Black"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                            <item1
+                                cq:styleGroupLabel="Background Shading"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-bg-pink"
+                                        cq:styleId="1704701261039"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-bg-grey"
+                                        cq:styleId="1704701284067"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="cmp-bg-orange"
+                                        cq:styleId="1704701288459"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item1>
+                            <item2
+                                cq:styleGroupLabel="Headline/text Color"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-font-pink"
+                                        cq:styleId="1704701334992"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-font-grey"
+                                        cq:styleId="1704701351587"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="cmp-font-orange"
+                                        cq:styleId="1704701357730"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="cmp-font-red"
+                                        cq:styleId="1704701361575"
+                                        cq:styleLabel="Red"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item4
+                                        cq:styleClasses="cmp-font-white"
+                                        cq:styleId="1704878423847"
+                                        cq:styleLabel="White"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item5
+                                        cq:styleClasses="cmp-font-black"
+                                        cq:styleId="1704878423890"
+                                        cq:styleLabel="Black"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item5
+                                        cq:styleClasses="cmp-font-yellow"
+                                        cq:styleId="1704878423890"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item2>
+                        </cq:styleGroups>
+                    </policy_1704701407983>
+                </text>
+                <container jcr:primaryType="nt:unstructured">
+                    <policy_1708414153203
+                        components="[group:PwC Madison Article,group:PwC Madison WCM Core,/apps/pwc-madison/components/content/buzzsprout-podcast,/apps/pwc-madison/components/ditacontent/dynamicmedia]"
+                        jcr:lastModified="{Date}2024-02-20T13:37:37.280+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Page Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Container Size"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="container--full-width"
+                                        cq:styleId="1708410407525"
+                                        cq:styleLabel="Full Width"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="container--full-bgColor-width"
+                                        cq:styleId="1708410427133"
+                                        cq:styleLabel="Full Width with Color"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                            <item1
+                                cq:styleGroupLabel="Background Color"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="container--bg-black"
+                                        cq:styleId="1708410472369"
+                                        cq:styleLabel="Black"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="container--bg-orange"
+                                        cq:styleId="1708410480932"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="container--bg-pink"
+                                        cq:styleId="1708410485115"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="container--bg-yellow"
+                                        cq:styleId="1708410489181"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item4
+                                        cq:styleClasses="container--bg-grey"
+                                        cq:styleId="1708410492808"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item5
+                                        cq:styleClasses="container--bg-white"
+                                        cq:styleId="1708410492807"
+                                        cq:styleLabel="White"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item1>
+                        </cq:styleGroups>
+                    </policy_1708414153203>
+                </container>
+                <download jcr:primaryType="nt:unstructured">
+                    <policy_1708421178605
+                        jcr:lastModified="{Date}2024-02-20T14:57:33.563+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article Download Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        allowUpload="false"
+                        displayFilename="true"
+                        displayFormat="true"
+                        displaySize="true">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Themes"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-download--bg-yellow"
+                                        cq:styleId="1708421204697"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-download--bg-pink"
+                                        cq:styleId="1708421207268"
+                                        cq:styleLabel="Pink"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="cmp-download--bg-orange"
+                                        cq:styleId="1708421210323"
+                                        cq:styleLabel="Orange"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="cmp-download--bg-grey"
+                                        cq:styleId="1708421212899"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item4
+                                        cq:styleClasses="cmp-download--bg-black"
+                                        cq:styleId="1708421215303"
+                                        cq:styleLabel="Black"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1708421178605>
+                </download>
+            </core>            
+        </components>
+    </pwc-madison>
+    <policy_1547020068209
+        jcr:primaryType="nt:unstructured"
+        jcr:title="PwC Image Component"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/apps/pwc-madison/components/content/image]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1547020068209>
+    <policy_1547564115260
+        jcr:primaryType="nt:unstructured"
+        jcr:title="PwC Quick Access Component"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="/apps/pwc-madison/components/content/quick-access">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1547564115260>
+    <policy_1549302386460
+        jcr:primaryType="nt:unstructured"
+        jcr:title="PwC Info Tile and Reference Links Component"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/apps/pwc-madison/components/content/info-tile,/apps/pwc-madison/components/content/reference-links]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1549302386460>
+    <policy_1549434389584
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Home Page Module Structure Policy"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/apps/pwc-madison/components/structure/columncontrol]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1549434389584>
+</jcr:root>

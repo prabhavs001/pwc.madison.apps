@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <metadataeditor/>
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <actions jcr:primaryType="nt:unstructured">
+            <secondary/>
+            <selection jcr:primaryType="nt:unstructured">
+                <edit/>
+                <contentpubworkflowfull
+                        granite:id="full-cycle-review-button"
+                        granite:rel="foundation-damadmin-properties-activator"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                        action="foundation.link"
+                        activeSelectionCount="multiple"
+                        href="#"
+                        icon="projectAdd"
+                        text="Create full cycle workflow"
+                        variant="actionBar"
+                        sling:orderBefore="share">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                        assetPath="${requestPathInfo.suffix}"
+                        roles="[publishers,authors]"/>
+                </contentpubworkflowfull>
+                <contentpubworkflowsimple
+                        granite:id="simple-workflow-review-button"
+                        granite:rel="foundation-damadmin-properties-activator"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                        action="foundation.link"
+                        activeSelectionCount="multiple"
+                        href="#"
+                        icon="projectAdd"
+                        text="Create simplified workflow"
+                        variant="actionBar"
+                        sling:orderBefore="share">
+                    <granite:rendercondition
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                            assetPath="${requestPathInfo.suffix}"
+                            roles="[publishers,authors]"/>
+                </contentpubworkflowsimple>
+                <createcollaboration
+                    granite:id="collaborate-dita-button"
+                    granite:rel="foundation-damadmin-properties-activator"
+                    jcr:primaryType="nt:unstructured"
+                    sling:orderBefore="contentpubworkflowfull"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    action="foundation.link"
+                    activeSelectionCount="multiple"
+                    href="#"
+                    icon="projectAdd"
+                    text="Collaborate"
+                    variant="actionBar">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="fmdita/rendercondition/assetpath-role-combo"
+                        assetPath="${requestPathInfo.suffix}"
+                        roles="[publishers,authors]"/>
+                </createcollaboration>
+                <autolink
+                    granite:class="cq-damadmin-admin-dita-actions-delete-activator"
+                    granite:rel="dam-asset-createtask-action-activator"
+                    jcr:primaryType="nt:unstructured"
+                    sling:orderBefore="managetags"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    action="foundation.link"
+                    activeSelectionCount="single"
+                    icon="wand"
+                    target=".cq-damadmin-admin-childpages"
+                    text="Autolink"
+                    title="Autolink"
+                    variant="actionBar">
+                    <data
+                        jcr:primaryType="nt:unstructured"
+                        href.uritemplate="/apps/pwc-madison/components/report/citation-report.html"/>
+                </autolink>
+                <review/>
+                <approval/>
+                <openinfm/>
+                <editTopics/>
+                <delete/>
+                <lock/>
+                <unlock/>
+                <releaselock/>
+            </selection>
+            <primary/>
+        </actions>
+        <header/>
+        <rails/>
+    </jcr:content>
+    <assetpage/>
+    <moveassetwizard/>
+</jcr:root>

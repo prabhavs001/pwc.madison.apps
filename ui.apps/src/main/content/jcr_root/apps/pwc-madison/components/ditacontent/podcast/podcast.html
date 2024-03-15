@@ -1,0 +1,11 @@
+<div data-sly-use.podcast="com.pwc.madison.core.models.PodcastModel" data-sly-test="${podcast.podcastEnabled}" class="single-podcast-subscribe">
+	<h3>${'subscribe_to_our_podcast' @i18n}</h3>
+	<div class="podcasts-contain">
+		<sly data-sly-list.podList="${podcast.podcastList}" >
+		    <a data-sly-test="${podList.url && podList.imgPath}" href="${podList.url}" title="${podList.name @i18n}" target="_blank" >
+		    	<img src="${podList.imgPath}" alt="${podcastKey}" /> 
+				<span>${podList.name @i18n}</span>
+		    </a>
+		</sly>
+	</div>
+</div>

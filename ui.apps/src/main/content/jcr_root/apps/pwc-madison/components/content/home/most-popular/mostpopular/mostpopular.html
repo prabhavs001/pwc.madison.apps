@@ -1,0 +1,104 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Most Popular Component" class="cq-placeholder"></p>
+<sly data-sly-use.model="com.pwc.madison.core.models.MostPopularModel">
+   <div class="popular-section">
+      <h2>${properties.mostPopularHeading}</h2>
+      <div class="columns is-flex" data-sly-list=${model.filteredList}>
+         <div class="column" data-sly-test="${itemList.count >= 1 && itemList.count <= 2}">
+            <div class='is-block madison-card-block'>
+               <a class=""
+                  data-component-name="${model.componentName}"
+                  data-link-title="${item.topicTitle}"
+                  href="${item.articlePagePath}"
+                  data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : (item.openInNewWindow == true ? '_blank' : '') }"
+                  data-sly-attribute.data-access-type="${item.AccessType}"
+                  data-sly-attribute.data-license-types="${item.licenseTypes}">
+                  <div class="madison-card  ">
+                     <article class="is-radiusless">
+                        <sly data-sly-test="${item.imagePath}">
+                           <img class="popular-card-img" src="${item.imagePath}"/>
+                       </sly>
+                        <div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}">
+						</div>
+                        <p class="reference" data-sly-test="${item.contentId}">${item.contentId @
+                           i18n, locale=pageProperties.jcr:language}</p>
+                        <p class="module-heading most-popular-text ${item.abstractDesc!=''?'withdesc':''}">
+                           ${item.topicTitle}
+                        </p>
+                     </article>
+                     <p class="popular-tile-abstract">${item.abstractDesc}</p>
+                     <div class="madison-card-exta-info">
+                        <p class="brief">
+                           <sly
+                                   data-sly-test.contentTypeValue="${item.contentType @ i18n, locale=pageProperties.jcr:language}"
+                                   data-sly-test.standardSetterValue="${item.standardSetterType @ i18n, local=pageProperties.jcr:language}"
+                                   data-sly-test.pwcSource="${item.pwcSourceValue @ i18n, local=pageProperties.jcr:language}">
+                           </sly>
+                           ${item.country} ${standardSetterValue != "" ? (standardSetterValue ==
+                           pwcSource
+                           ? contentTypeValue
+                           : standardSetterValue) : contentTypeValue}
+                        </p>
+                        <p class="date">
+                           <sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                           <span data-sly-test=${item.revisedDate}><sly data-sly-test=${hidePublicationDate}>|</sly></span>
+                           <span data-sly-test="${item.revisedDate}">${"Homepage_Most_Popular_Updated_Label" @ i18n,
+                              locale=pageProperties.jcr:language} ${item.revisedDate}</span>
+                        </p>
+                     </div>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </div>
+      <section>
+         <div class="spacer-border"></div>
+      </section>
+      <div class="columns is-flex" data-sly-list=${model.filteredList}>
+         <div class="column" data-sly-test="${itemList.count >= 3 && itemList.count <= 4}">
+            <div class='is-block madison-card-block'>
+               <a class="" href="${item.articlePagePath}"
+                  data-component-name="${model.componentName}"
+                  data-link-title="${item.topicTitle}"
+                  data-sly-attribute.target="${item.isUrlInternal == false ? '_blank' : (item.openInNewWindow == true ? '_blank' : '') }"
+                  data-sly-attribute.data-access-type="${item.AccessType}"
+                  data-sly-attribute.data-license-types="${item.licenseTypes}">
+                  <div class="madison-card  ">
+                     <article class="is-radiusless">
+                        <sly data-sly-test="${item.imagePath}">
+                           <img class="popular-card-img" src="${item.imagePath}"/>
+                       </sly>
+                        <div data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test="${favoriteListService.isFavoriteListEnabled}" class="favorites-toggle-small favorite-list-component" data-page-path="${item.path}" data-page-href="${item.articlePagePath}">
+						</div>
+                        <p class="reference" data-sly-test="${item.contentId}">${item.contentId @
+                           i18n, locale=pageProperties.jcr:language}</p>
+                        <p class="module-heading most-popular-text">
+                           ${item.topicTitle}
+                        </p>
+                     </article>
+                     <p class="popular-tile-abstract">${item.abstractDesc}</p>
+                     <div class="madison-card-exta-info">
+                        <p class="brief">
+                           <sly
+                                   data-sly-test.contentTypeValue="${item.contentType @ i18n, locale=pageProperties.jcr:language}"
+                                   data-sly-test.standardSetterValue="${item.standardSetterType @ i18n, local=pageProperties.jcr:language}"
+                                   data-sly-test.pwcSource="${item.pwcSourceValue @ i18n, local=pageProperties.jcr:language}">
+                           </sly>
+                           ${item.country} ${standardSetterValue != "" ? (standardSetterValue ==
+                           pwcSource
+                           ? contentTypeValue
+                           : standardSetterValue) : contentTypeValue}
+                        </p>
+                        <p class="date">
+                           <sly data-sly-test.hidePublicationDate="${!item.hidePublicationDate}"> ${item.publicationDate} </sly>
+                           <span data-sly-test=${item.revisedDate}><sly data-sly-test=${hidePublicationDate}>|</sly></span>
+                           <span data-sly-test="${item.revisedDate}">${"Homepage_Most_Popular_Updated_Label" @ i18n,
+                              locale=pageProperties.jcr:language} ${item.revisedDate}</span>
+                        </p>
+                     </div>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</sly>

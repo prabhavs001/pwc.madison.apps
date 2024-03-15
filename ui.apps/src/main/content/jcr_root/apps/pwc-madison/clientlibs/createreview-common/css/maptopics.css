@@ -1,0 +1,36 @@
+#review-maptopics .coral-Table-cell {
+    border-top: .0625rem solid #f0f0f0;
+    display: table-cell;
+    background-color: #fff;
+}
+
+#review-maptopics .coral-Table-headerCell {
+    display: table-cell;
+}
+
+#review-maptopics .topic-status {
+    float: right;
+}
+
+#review-maptopics .inner-table-cell {
+    border-top: none;
+}
+
+#review-maptopics .file-icon {
+    font-size: 14px;
+    color: #999;
+}
+
+#review-maptopics .coral-Table-row.disabled,
+#review-maptopics .coral-Table-row.disabled .file-icon,
+#review-maptopics .coral-Table-row.disabled .topic-title{
+    color: #ccc;
+}
+
+#review-maptopics .coral-Collapsible-header:focus .coral-Collapsible-title {
+    text-decoration: none;
+}
+
+#review-maptopics .coral-Collapsible-title {
+    font-weight: normal;
+}

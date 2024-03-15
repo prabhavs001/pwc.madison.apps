@@ -1,0 +1,6 @@
+<sly data-sly-use.contentCopyright="com.pwc.madison.core.models.ContentCopyright"/>
+<div data-sly-test="${contentCopyright.copyrightText}" class="doc-body-copyright">
+    <sly data-sly-list="${contentCopyright.copyrightText}">
+        <p>${item @ context='html'}</p>
+    </sly>
+</div>

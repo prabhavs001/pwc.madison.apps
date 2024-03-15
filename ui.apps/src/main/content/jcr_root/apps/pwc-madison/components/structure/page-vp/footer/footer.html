@@ -1,0 +1,56 @@
+<!--New htl file for the footer component-->
+<noindex>
+<footer class="footer"
+	 data-sly-use.footer="com.pwc.madison.core.models.Footer">
+	<div class="container primary is-flex">
+		<sly data-sly-list="${footer.FooterLinks}">
+			<div class="navbar-item">
+				<a data-component-name="${footer.componentName}"
+                   data-link-title="${item.linkTitle}"
+				   href="${item.linkPath}" 
+				   target="${item.openInNewWindow}">${item.linkTitle}</a>
+			</div>
+
+		</sly>
+	</div>
+	<div class="container spacer"></div>
+	<div class="container subnav is-flex">
+		<sly data-sly-list="${footer.SecondRowLinks}">
+			<div class="navbar-item">
+				<a  data-component-name="${footer.componentName}"
+                   data-link-title="${item.linkTitle}"
+				   href="${item.linkPath}" 
+				   target="${item.openInNewWindow}">${item.linkTitle}</a>
+			</div>
+		</sly>
+		<sly data-sly-test.tutorialLinkText="${footer.tutorialLinkText}">
+			<div class="navbar-item is-hidden-touch">
+				<a  data-component-name="${footer.componentName}"
+                   data-link-title="${tutorialLinkText}"
+				   id="tutorial-link" 
+				   href="javascript:void(0)">${tutorialLinkText}</a>
+			</div>
+		</sly>
+		<div class="copyright">
+			<p>${footer.copyRight @context='html'}</p>
+		</div>
+	</div>
+	<div class="cookie-wrapper" id="cookieWrapper" data-sly-test="${footer.cookieEnabled}">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 cookie-container">
+					<p class="cookie-text" data-sly-test.pagePath="${currentPage.path}">
+						${'cookie_consent_text' @i18n, locale=pageProperties.jcr:language,context='html'}
+					</p>
+					<button class="btn cookie-accept" id="acceptCookie" data-sly-attribute.pageTerritory="${footer.currentPageTerritory}">
+						${'cookie_consent_button_text' @i18n, locale=pageProperties.jcr:language}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</noindex>
+<noindex>
+<div data-sly-test.disclaimer="${'printDisclaimer' @ i18n}" class="copyright-protected"><p>${disclaimer}</p></div>
+</noindex>

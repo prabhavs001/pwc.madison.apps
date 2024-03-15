@@ -1,0 +1,549 @@
+{
+  "topbar": {
+    "type": "blockGroup",
+    "title": "Topbar",
+    "extraclass": "toolbar views coral--dark",
+    "items": [
+      {
+        "type": "buttonGroup",
+        "extraclass": "app-title",
+        "items": [
+          {
+            "type": "button",
+            "icon": "adobeExperienceManagerColor",
+            "title": "XML Web Editor",
+            "label": "XML Web Editor",
+            "variant": "quiet",
+            "iconsize": "M"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "extraclass": "editor-views",
+        "items": [
+          {
+            "type": "button",
+            "selected": "@isAuthorMode",
+            "icon": "edit",
+            "title": "Author",
+            "label": "Author",
+            "variant": "quiet",
+            "on-click": "APP_SHOW_AUTHOR_VIEW"
+          },
+          {
+            "type": "button",
+            "selected": "@isSourceMode",
+            "icon": "code",
+            "title": "Source",
+            "label": "Source",
+            "variant": "quiet",
+            "on-click": "APP_SHOW_SOURCE_VIEW"
+          },
+          {
+            "type": "button",
+            "selected": "@isPreviewMode",
+            "icon": "preview",
+            "title": "Preview",
+            "label": "Preview",
+            "variant": "quiet",
+            "hide": ["@isDitavalMode", "@isMapEditMode"],
+            "on-click": "APP_SHOW_PREVIEW"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "extraclass": "app-close",
+        "items": [
+          {
+            "type": "button",
+            "title": "Close",
+            "label": "Close",
+            "variant": "quiet",
+            "on-click": "APP_CLOSE"
+          }
+        ]
+      }
+    ]
+  },
+  "toolbar": {
+    "type": "blockGroup",
+    "extraclass": "toolbar operations",
+    "items": [
+      {
+        "type": "buttonGroup",
+        "extraclass": "left-controls",
+        "label": "Left Controls",
+        "items": [
+          {
+            "type": "button",
+            "icon": "railLeft",
+            "variant": "quiet",
+            "title": "Toggle Left Panels",
+            "on-click": "APP_TOGGLE_LEFT_PANELS"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Standard",
+        "items": [
+          {
+            "type": "button",
+            "icon": "save",
+            "variant": "quiet",
+            "title": "@titles.APP_SAVE_ALL",
+            "hide": "@isPreviewMode",
+            "on-click": "APP_SAVE_ALL"
+          },
+          {
+            "type": "button",
+            "icon": "dataUpload",
+            "variant": "quiet",
+            "title": "Save Revision",
+            "hide": "@isPreviewMode",
+            "on-click": "APP_SAVE_REVISION"
+          },
+          {
+            "type": "button",
+            "icon": "key",
+            "variant": "quiet",
+            "title": "Key Resolution",
+            "on-click": "APP_SHOW_KEYSPACE_SETTINGS"
+          },
+          {
+            "type": "button",
+            "icon": "tag",
+            "variant": "quiet",
+            "title": "Toggle Partial Tags view",
+            "on-click": "AUTHOR_TOGGLE_TAG_VIEW",
+            "show": ["@isXmlMode", "@isAuthorMode"]
+          },
+          {
+            "type": "button",
+            "icon": "annotate",
+            "variant": "quiet",
+            "title": "Enable/Disable Tracked Changes",
+            "selected": "@inTrackChangeMode",
+            "on-click": "APP_TOGGLE_TRACK_CHANGE",
+            "show": ["@isHtmlContentMode", "@isAuthorMode"]
+          },
+          {
+            "type": "button",
+            "extraclass": "file-find",
+            "icon": "findAndReplace",
+            "variant": "quiet",
+            "title": "@titles.APP_SHOW_FIND_REPLACE_DIALOG",
+            "on-click": "APP_SHOW_FIND_REPLACE_DIALOG",
+            "show": "@isSourceMode"
+          },
+          {
+            "type": "button",
+            "icon": "findAndReplace",
+            "extraclass": "file-find",
+            "variant": "quiet",
+            "title": "@titles.APP_SHOW_FIND_REPLACE_DIALOG",
+            "on-click": "APP_SHOW_FIND_REPLACE_DIALOG",
+            "show": ["@isHtmlContentMode", "@isAuthorMode"]
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Ditaval",
+        "show": ["@isDitavalMode", "@isAuthorMode"],
+        "items": [
+          {
+            "type": "button",
+            "icon": "addCircle",
+            "variant": "quiet",
+            "title": "Add prop",
+            "on-click": "APP_ADD_PROP"
+          },
+          {
+            "type": "button",
+            "icon": "multipleAdd",
+            "variant": "quiet",
+            "title": "Add All props",
+            "on-click": "APP_ADD_PROPS"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Tools",
+        "show": "@isSourceMode",
+        "items": [
+          {
+            "type": "button",
+            "icon": "textIndentIncrease",
+            "variant": "quiet",
+            "title": "Auto Indent",
+            "on-click": "SORUCE_AUTO_INDENT"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Insert",
+        "show": ["@isXmlMode", "@isAuthorMode"],
+        "items": [
+          {
+            "type": "button",
+            "icon": "add",
+            "variant": "quiet",
+            "title": "Insert Element",
+            "on-click": "AUTHOR_SHOW_INSERT_ELEMENT_UI"
+          },
+          {
+            "type": "button",
+            "icon": "fileCode",
+            "variant": "quiet",
+            "title": "@titles.AUTHOR_SHOW_INSERT_SNIPPET_UI",
+            "on-click": "AUTHOR_SHOW_INSERT_SNIPPET_UI"
+          },
+          {
+            "type": "button",
+            "icon": "textNumbered",
+            "variant": "quiet",
+            "title": "Insert Numbered List",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "ol"}
+          },
+          {
+            "type": "button",
+            "icon": "textBulleted",
+            "variant": "quiet",
+            "title": "Insert Bulleted List",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "ul"}
+          },
+          {
+            "type": "button",
+            "icon": "table",
+            "variant": "quiet",
+            "title": "Insert Simple Table",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "simpletable"}
+          },
+          {
+            "type": "button",
+            "icon": "table",
+            "variant": "quiet",
+            "title": "Insert Dita Table",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "table"}
+          },
+          {
+            "type": "button",
+            "icon": "image",
+            "variant": "quiet",
+            "title": "Insert Image",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "image"}
+          },
+          {
+            "type": "button",
+            "extraclass": "insert-multimedia",
+            "icon": "playCircle",
+            "variant": "quiet",
+            "title": "Insert Multimedia",
+            "elementid": "toolbar_insert_multimedia",
+            "on-click": {
+              "name": "APP_SHOW_OPTIONS_POPOVER",
+              "args": {
+                "target": "toolbar_insert_multimedia",
+                "extraclass": "insert-multimedia-options",
+                "items": [
+                  {
+                    "name":"audio_file",
+                    "displayName":"Audio File",
+                    "icon":"play",
+                    "iconClass":"local-audio",
+                    "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "object"}
+                  },
+                  {
+                    "name":"video_file",
+                    "displayName":"Video File",
+                    "icon":"playCircle",
+                    "iconClass":"local-video",
+                    "class": "menu-seperator",
+                    "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "object"}
+                  },
+                  {
+                    "name":"youtube",
+                    "displayName":"YouTube",
+                    "icon":"youTube",
+                    "on-click": {"name": "AUTHOR_INSERT_XML", "args": "<object data='http://youtube.com'></object>"}
+                  },
+                  {
+                    "name":"vimeo",
+                    "displayName":"Vimeo",
+                    "icon":"playCircle",
+                    "iconClass":"vimeo-video",
+                    "class": "menu-seperator",
+                    "on-click": {"name": "AUTHOR_INSERT_XML", "args": "<object data='http://vimeo.com'></object>"}
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "button",
+            "icon": "textParagraph",
+            "variant": "quiet",
+            "title": "Insert Paragraph",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "p"}
+          },
+          {
+            "type": "button",
+            "icon": "link",
+            "variant": "quiet",
+            "title": "Insert Reference",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "xref"}
+          },
+          {
+            "type": "button",
+            "icon": "linkPage",
+            "variant": "quiet",
+            "title": "@titles.AUTHOR_INSERT_REUSABLE_CONTENT",
+            "on-click": "AUTHOR_INSERT_REUSABLE_CONTENT"
+          },
+          {
+            "type": "button",
+            "icon": "brackets",
+            "variant": "quiet",
+            "title": "Insert Keyword",
+            "on-click": {"name": "AUTHOR_INSERT_ELEMENT", "args": "keyword"}
+          },
+          {
+            "type": "button",
+            "icon": "starburst",
+            "variant": "quiet",
+            "title": "@titles.AUTHOR_INSERT_SYMBOL",
+            "on-click": "AUTHOR_INSERT_SYMBOL"
+          },
+          {
+            "type": "button",
+            "icon": "imageMapRectangle",
+            "variant": "quiet",
+            "title": "Insert/Edit Image Map",
+            "on-click": "AUTHOR_MANAGE_IMAGEMAP",
+            "show": "@isImageMode"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "MapEdit",
+        "show": [
+          "@isMapEditMode",
+          "@isAuthorMode"
+        ],
+        "items": [
+          {
+            "type": "button",
+            "icon": "fileAdd",
+            "show": "@mapItemCanInsertTopicref",
+            "variant": "quiet",
+            "title": "Insert Topic Reference",
+            "on-click": "AUTHOR_MAP_NEW_TOPIC"
+          },
+          {
+            "type": "button",
+            "icon": "breakdownAdd",
+            "show": "@mapItemCanInsertGroup",
+            "variant": "quiet",
+            "title": "Insert Topic Group",
+            "on-click": "AUTHOR_MAP_NEW_GROUP"
+          },
+          {
+            "type": "button",
+            "icon": "breakdownAdd",
+            "show": "@mapItemCanInsertKey",
+            "variant": "quiet",
+            "title": "Insert Key Definition",
+            "on-click": "AUTHOR_MAP_NEW_KEY"
+          },
+          {
+            "type": "button",
+            "icon": "tableAdd",
+            "show": "@mapItemCanInsertReltable",
+            "variant": "quiet",
+            "title": "Insert Relationship Table",
+            "on-click": "AUTHOR_MAP_NEW_RELTABLE"
+          },
+          {
+            "type": "button",
+            "icon": "textSpaceAfter",
+            "show": "@mapItemCanInsertElementAfter",
+            "variant": "quiet",
+            "title": "Insert After",
+            "on-click": "AUTHOR_SHOW_INSERT_ELEMENT_AFTER_UI"
+          },
+          {
+            "type": "button",
+            "icon": "textIndentIncrease",
+            "show": "@mapItemCanInsertElementAsChild",
+            "variant": "quiet",
+            "title": "Insert Child",
+            "on-click": "AUTHOR_SHOW_INSERT_ELEMENT_UI"
+          },
+          {
+            "type": "button",
+            "icon": "delete",
+            "show": "@mapCanDeleteItems",
+            "variant": "quiet",
+            "title": "Delete",
+            "on-click": "AUTHOR_MAP_DELETE_ITEMS"
+          },
+          {
+            "type": "button",
+            "icon": "undo",
+            "show": "@mapIsUndoable",
+            "variant": "quiet",
+            "title": "Undo",
+            "on-click": "AUTHOR_UNDO"
+          },
+          {
+            "type": "button",
+            "icon": "redo",
+            "show": "@mapIsRedoable",
+            "variant": "quiet",
+            "title": "Redo",
+            "on-click": "AUTHOR_REDO"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Lock Buttons",
+        "items": [
+          {
+            "type": "button",
+            "icon": "lockOn",
+            "variant": "quiet",
+            "title": "Checkout",
+            "on-click": "editorCheckout",
+            "show": "@canCheckOut"
+          },
+          {
+            "type": "button",
+            "icon": "lockOff",
+            "variant": "quiet",
+            "title": "Checkin",
+            "on-click": "editorCheckin",
+            "show": "@canCheckIn"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Copy Links to RCL",
+        "extraclass": "auto-generate-links",
+        "hide": "@isDitavalMode",
+        "items": [
+          {
+            "type": "button",
+            "icon": "dolly",
+            "variant": "quiet",
+            "title": "Copy Links to RCL",
+            "on-click": "APP_GENERATE_RCL"
+          }
+        ]
+      },
+      {
+        "type": "buttonGroup",
+        "label": "Right Controls",
+        "extraclass": "right-controls",
+        "hide": "@isDitavalMode",
+        "items": [
+          {
+            "type": "button",
+            "icon": "railRight",
+            "variant": "quiet",
+            "title": "Toggle Right Panels",
+            "on-click": "APP_TOGGLE_RIGHT_PANELS"
+          }
+        ]
+      }
+    ]
+  },
+  "shortcuts": [
+  	{
+      "shortcut": ["CTRL+SHIFT+S", "CMD+SHIFT+S"],
+      "event": "APP_SAVE",
+      "title": "SAVE (CTRL+SHIFT+S)"
+    },
+    {
+      "shortcut": ["CTRL+S", "CMD+S"],
+      "event": "APP_SAVE_ALL",
+      "title": "SAVE ALL (CTRL+S)"
+    },
+    {
+      "shortcut": "ALT+ENTER",
+      "event": "AUTHOR_SHOW_INSERT_ELEMENT_UI"
+    },
+    {
+      "shortcut": ["CTRL+1", "CMD+1"],
+      "event": "AUTHOR_SHOW_INSERT_SNIPPET_UI",
+      "title": "Insert Snippet (CTRL+1)"
+    },
+    {
+      "shortcut": ["CTRL+2", "CMD+2"],
+      "event": "AUTHOR_INSERT_REUSABLE_CONTENT",
+      "title": "Insert Reuse Content (CTRL+2)"
+    },
+    {
+      "shortcut": ["CTRL+3", "CMD+3"],
+      "event": "AUTHOR_INSERT_SYMBOL",
+      "title": "Insert Special Character (CTRL+3)"
+    },
+    {
+      "shortcut": "ALT+SHIFT+ENTER",
+      "event": "AUTHOR_SHOW_INSERT_ELEMENT_BEFORE_UI"
+    },
+    {
+      "shortcut": "CTRL+ALT+ENTER",
+      "event": "AUTHOR_SHOW_INSERT_ELEMENT_AFTER_UI"
+    },
+    {
+      "shortcut": ["CTRL+ALT+L", "CMD+ALT+L"],
+      "event": "SORUCE_AUTO_INDENT"
+    },
+    {
+      "shortcut": ["CTRL+Z", "CMD+Z"],
+      "event": "AUTHOR_UNDO"
+    },
+    {
+      "shortcut": ["CTRL+Y", "CMD+Y"],
+      "event": "AUTHOR_REDO"
+    },
+    {
+      "shortcut": ["CTRL+F", "CMD+F"],
+      "event": "APP_SHOW_FIND_REPLACE_DIALOG",
+      "title": "Find and Replace (CTRL+F)"
+    }
+  ],
+  "browseFilters": [
+    {
+      "title": "Active Content",
+      "property": "jcr:content/metadata/pwc-content-status",
+      "value": "active"
+    },
+    {
+      "title": "Inactive Content",
+      "property": "jcr:content/metadata/pwc-content-status",
+      "value": "in-active"
+    }
+  ],
+  "templates" : {
+    "default": {
+      "p": "<p></p>",
+      "simpletable": "<simpletable relcolwidth='1*1*'><strow><stentry></stentry><stentry></stentry></strow><strow><stentry></stentry><stentry></stentry></strow><strow><stentry></stentry><stentry></stentry></strow></simpletable>",
+      "table": "<table><tgroup cols='2'><colspec colname='col0' colwidth='1*'></colspec><colspec colname='col1' colwidth='1*'></colspec><tbody><row><entry></entry><entry></entry></row><row><entry></entry><entry></entry></row><row><entry></entry><entry></entry></row></tbody></tgroup></table>",
+      "body": "<body><p></p></body>",
+      "body-callout": "<body-callout><callout-title>&lt;Callout title&gt;</callout-title><callout-content>&lt;Call out can be added using these elements. Add content here.&gt;</callout-content><callout-attribution>&lt;Callout attribution&gt;</callout-attribution></body-callout>",
+      "body-excerpt" : "<body-excerpt><excerpt-title>&lt;Excerpt title&gt;</excerpt-title><excerpt-content>&lt;Excerpt can be added using these elements. Add content here.&gt;</excerpt-content></body-excerpt>",
+      "pwc-observation" : "<pwc-observation>&lt;Observation can be added using this element. Add text here.&gt;</pwc-observation>",
+      "pwc-xref" : "<pwc-xref scope='peer'></pwc-xref>",
+      "link" : "<link scope='peer'></link>"
+    }
+  }
+}

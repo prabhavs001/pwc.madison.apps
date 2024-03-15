@@ -1,0 +1,77 @@
+<sly data-sly-use.listComponent="com.pwc.madison.core.models.RelatedContentLinks" id="collapsetoolbarPanel0" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingtoolbarPanel0" aria-expanded="false" style="display: block;">
+    <div class="slider-content">
+        <sly data-sly-list="${listComponent.relatedContents}" data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+            <div class="slider-items">
+                <div class="panel-body">
+                    <div class="panel-header">
+                        <sly data-sly-test.pwcContentId="${item.ditaContentId}" data-sly-test.pwcContent="${item.ditaIssuingBody == listComponent.pwcSourceValue}" />
+                        <span data-sly-test="${pwcContentId}" class="panel-title"><span class="is-uppercase">${item.ditaCountry}</span> ${item.ditaContentId}</span>
+                        <sly data-sly-test="${!pwcContentId}">
+                        <span data-sly-test="${pwcContent}" class="panel-title"><span class="is-uppercase">${item.ditaCountry}</span> ${item.ditaContentType @i18n}</span>
+                        <span class="panel-title" data-sly-test="${!pwcContent}"><span class="is-uppercase">${item.ditaCountry}</span> ${item.ditaIssuingBody @i18n}</span>
+                         </sly>
+                        <ul class="list-inline panel-paginate go-to-content-paging">
+                            <li>
+                                <sly data-sly-test.linkTarget="${item.ditaInternal? '_self' : '_blank'}">
+                                    <sly data-sly-use.linkTempalate="pwc-madison/components/commons/link/LinkTemplate.html" data-sly-call="${linkTempalate.link @ linkText='Go to content',
+                                    linkValue=item.ditaPageUrl, linkTarget=linkTarget, linkStyle='go-to-link'}" />
+                                </sly>
+                            </li>
+                            <li class="seperator"></li>
+							<li>
+							<div class="favorites-toggle-small favorite-list-component"
+								 data-page-path="${item.pagePath}" data-page-href="${item.ditaPageUrl}">
+							</div>
+							</li>
+							<li class="seperator"></li>
+					        <li>
+                            	<sly data-sly-test="${item.isShareViaEmailOnly}">
+	                            	<a href="javascript:;" class="icon-share right-rail-share-popout" data-tooltip-content="#toobar_tip${properties.itemType}${itemList.index}" data-tippy-placement="bottom"></a>
+	                            	<div class="tooltip_templates">
+	                            		<div id="toobar_tip${itemList.index}${properties.itemType}" class="tooltip-popout">
+										    <div class="share-tooltip-content" id="toobar_tip${properties.itemType}${itemList.index}">
+										        <sly data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+													<sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url=item.encodedDitaPageUrl, title=item.encodedTitle}" />
+												</sly>
+												<sly data-sly-use.linkedInTemplate="pwc-madison/components/commons/linkedin/LinkedinTemplate.html">
+						                            <sly data-sly-use.linkedInShare="com.pwc.madison.core.models.LinkedInModel" data-sly-call="${linkedInTemplate.linkedIn @ summary = '', unwrapli='true', 
+						                            	isLinkedInShareEnabled=linkedInShare.isLinkedInShareEnabled, pageUrl=item.ditaPageUrl, title=item.ditaTitleVal}" />
+						                        </sly>
+						                        <sly data-sly-use.twitterTemplate="pwc-madison/components/commons/twitter/TwitterTemplate.html">
+						                            <sly data-sly-use.twitterShare="com.pwc.madison.core.models.TwitterModel" data-sly-call="${twitterTemplate.tweet @ unwrapli='true',
+						                            	 isTwitterShareEnabled=twitterShare.isTwitterShareEnabled, pageUrl=item.ditaPageUrl, title=item.ditaTitleVal}" />
+						                        </sly>
+										    </div>
+										</div>
+	                            	</div>
+                            	</sly>
+                            	<sly data-sly-test="${!item.isShareViaEmailOnly}" data-sly-use.pageShareEmailTemplate="pwc-madison/components/commons/page-email-share/page-email-share.html">
+									<sly data-sly-call="${pageShareEmailTemplate.pageEmail @ unwrapli='true', url=item.encodedDitaPageUrl, title=item.encodedTitle}" />
+								</sly>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-content">
+                        <sly data-sly-use.display="industry-insights-item.html">
+                            <sly data-sly-test="${properties.itemType == 'iil'}" data-sly-call="${display.industryInsights @ item = item , index = itemList.index}">
+                            </sly>
+                        </sly>
+                        <sly data-sly-use.displays="faq-item.html">
+                            <sly data-sly-test="${properties.itemType == 'faq'}" data-sly-call="${displays.faq @ item = item , index = itemList.index}">
+                            </sly>
+                        </sly>
+                        <sly data-sly-use.displays="template-item.html">
+                            <sly data-sly-test="${properties.itemType == 'templates-links'}" data-sly-call="${displays.templates @ item = item , index = itemList.index}"></sly>
+                        </sly>
+                        <sly data-sly-use.displays="inline-links.html">
+                            <sly data-sly-test="${properties.itemType == 'inline-links'}" data-sly-call="${displays.templates @ item = item , index = itemList.index}"></sly>
+                        </sly>
+                        <sly data-sly-use.displays="example.html">
+                            <sly data-sly-test="${properties.itemType == 'example-links'}" data-sly-call="${displays.example @ item = item , index = itemList.index}"></sly>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </sly>
+    </div>
+</sly>

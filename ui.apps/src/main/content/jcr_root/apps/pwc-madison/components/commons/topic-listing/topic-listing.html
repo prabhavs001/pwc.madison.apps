@@ -1,0 +1,85 @@
+<coral-tabview id="report-tabview" class="coral3-TabView" __vent-id__="6" data-sly-use.topic="com.pwc.madison.core.models.TopicOutputGenerationModel">
+   <input type="hidden" class="root-ditamap" value="${topic.ditaMap}" />
+   <coral-panelstack id="report-panelstack" name="report-panel" class="coral3-PanelStack" role="presentation">
+      <coral-panel class="report-panel topics coral3-Panel is-selected" role="tabpanel" id="coral-id-23"
+         aria-labelledby="fm_endorSelection" aria-hidden="false" selected="">
+         <coral-panel-content>
+            <div id="topics_tab" style="">
+               <section id="fm_toctopicsContainer">
+                  <table is="coral-table" class="fm_toctopicDetailsTable coral-Table--hover coral-Table-wrapper coral-Table-wrapper--default"
+                     role="presentation" style="position: relative;">
+                     <div handle="container" class=" coral-Table-wrapper-container" role="presentation"
+                        coral-table-scroll="">
+                        <table handle="table" class=" coral-Table" role="grid" aria-multiselectable="false">
+                           <thead is="coral-table-head" class="coral-Table-head coral-Table-divider--row" divider="row"
+                              role="rowgroup">
+                              <tr is="coral-table-row" class="coral-Table-row" role="row" aria-selected="false">
+                                 <th class="table-cell-topic">
+                                    <div class="fm_chevron-empty coral-Table-headerCell">
+                                    </div>
+                                    <div data-sly-test.isPageList="${!topic.pageList}" class="toctopiccell coral-Table-headerCell">Topics</div>
+                                    <div data-sly-test="${!isPageList}" class="toctopiccell coral-Table-headerCell">Generated pages</div>
+                                 </th>
+                              </tr>
+                           </thead>
+                           <tbody is="coral-table-body" id="fm_toctopics" class="topicslist coral-Table-body coral-Table-divider--row"
+                              divider="row" role="rowgroup">
+                              <tr is="coral-table-row" class="fm_toctopic coral-Table-row" role="row" aria-selected="false"
+                                 data-type="topic">
+                                 <td is="coral-table-cell" style="padding-left: 0px" class="table-cell-topic coral-Table-cell"
+                                    value="" role="gridcell" aria-selected="false">
+                                    <div data-sly-test="${isPageList}" class="wrapper" data-sly-list="${topic.topicList}">
+                                       <input type="hidden" class="topic-content-path" value="${item.path}" />
+                                       <div class="coral-Table-cell fm_toccheckbox">
+                                          <coral-checkbox value="kittens" checked disabled></coral-checkbox>
+                                       </div>
+                                       <div class="coral-Table-cell">
+                                          <i class="fm_ditaType coral-Icon coral-Icon--file coral-Icon--sizeS custom topic"></i>
+                                       </div>
+                                       <div data-sly-test.topicUrl="/assetdetails.html${item.path}" class="toctopiccell coral-Table-cell">
+                                          <a class="toctopiclink coral-Link" style=" cursor: pointer" href='${topicUrl}'
+                                             target="_blank"><span class="fm_toctopicName">${item.name}</span></a>
+                                       </div><br />
+                                    </div>
+                                    <div data-sly-test="${!isPageList}" class="wrapper" data-sly-list="${topic.pageList}">
+                                          <div class="toctopiccell coral-Table-cell">
+                                               <a data-sly-test.isPage="${item.cqPage}" class="toctopiclink coral-Link" style=" cursor: pointer" href='${item.pagePath}.html'
+                                                target="_blank"><span class="fm_toctopicName">${item.pagePath}</span></a>
+                                                <span data-sly-test="${!isPage}" class="fm_toctopicName">${item.pagePath}</span>
+                                                <span data-sly-test="${!isPage}" class="topic-error-msg">This topic could not be published.This may not be referred in the root Ditamap.</span>
+                                          </div><br />
+                                       </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </table>
+               </section>
+            </div>
+         </coral-panel-content>
+      </coral-panel>
+      <coral-panelstack>
+</coral-tabview>
+
+<div class="coral-Modal regenerate-success-modal coral-Modal--success hidden" data-type="success" aria-hidden="true" role="dialog" aria-labelledby="modal-header1552014231191-label"
+   aria-describedby="modal-header1552014231191-message" tabindex="-1" style="margin-left: -160px; margin-top: -84.5px; display: block;">
+   <div class="coral-Modal-header">
+      <i class="coral-Modal-typeIcon coral-Icon coral-Icon--sizeS coral-Icon--checkCircle"></i>
+      <h2 class="coral-Modal-title coral-Heading coral-Heading--2" id="modal-header1552014231191-label" tabindex="0">Success</h2>
+   </div>
+   <div class="coral-Modal-body" id="modal-header1552014231191-message" role="document" tabindex="0">Regeneration
+      process is kick started. Please wait until the pages are generated.</div>
+   <coral-wait>
+   </coral-wait>
+   <div class="coral-Modal-footer"><a class="coral-Button regeneration-success-button coral-Button--primary hidden" href="#">Show generated pages</a></div>
+</div>
+<div class="coral-Modal regenerate-failure-modal coral-Modal--error hidden" data-type="error" aria-hidden="true" role="dialog" aria-labelledby="modal-header1552014231191-label"
+   aria-describedby="modal-header1552014231191-message" tabindex="-1" style="margin-left: -160px; margin-top: -84.5px; display: block;">
+   <div class="coral-Modal-header">
+      <i class="coral-Modal-typeIcon coral-Icon coral-Icon--sizeS coral-Icon--alert"></i>
+      <h2 class="coral-Modal-title coral-Heading coral-Heading--2" id="modal-header1552014231191-label" tabindex="0">Failed</h2>
+   </div>
+   <div class="coral-Modal-body" id="modal-header1552014231191-message" role="document" tabindex="0">Request for regeneration failed</div>
+</div>
+<div class="regenerate-modal-background"></div>

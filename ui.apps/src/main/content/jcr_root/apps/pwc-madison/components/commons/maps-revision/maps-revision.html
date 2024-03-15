@@ -1,0 +1,58 @@
+<div class="coral-FixedColumn version-diff-section diff-console">
+  <div class="coral-FixedColumn-column review-map-version-column">
+    <div class="latest-version-container">
+      <script id="review-map-latest-version" type="text/x-handlebars-template">
+        <input is="coral-textfield" variant="quiet" name="field" value="Current version: {{version}}" readonly><br/>
+        <coral-accordion>
+          <coral-accordion-item>
+            <coral-accordion-item-label><span>XML structure:</span></coral-accordion-item-label>
+            <coral-accordion-item-content>
+      <textarea is="coral-textarea" class="latest-version-xml" placeholder="Ditamap structure" name="field" value="" readonly>
+      </textarea>
+    </coral-accordion-item-content>
+  </coral-accordion-item>
+</coral-accordion>
+      <input is="coral-textfield" variant="quiet" name="field" value="Topic list:" readonly><br/>
+      <coral-list>
+        {{#topicRefs}}
+          <coral-list-item icon="arrowRight" title="{{formatLink this}}">{{formatLink this}}</coral-list-item>
+        {{/topicRefs}}
+        </coral-list>
+        </script>
+    </div>
+  </div>
+
+  <div class="coral-FixedColumn-column review-map-version-column">
+    <input is="coral-textfield" class="no-older-versions hidden" variant="quiet" name="field"
+      value="No older versions to select" readonly>
+    <input is="coral-textfield" class="older-versions-text hidden" variant="quiet" name="field"
+           value="Older versions" readonly>
+    <select name="Select" placeholder="Choose a version" class="older-versions-container hidden">
+      <script id="review-map-older-versions" type="text/x-handlebars-template">
+
+        {{#each this}}
+        <option  class="old-version-item" value="{{version}}">
+          {{version}}
+        </option>
+        {{/each}}
+      </script>
+    </select> <br />
+    <coral-accordion>
+      <coral-accordion-item>
+        <coral-accordion-item-label><span>XML structure:</span></coral-accordion-item-label>
+        <coral-accordion-item-content>
+          <textarea is="coral-textarea" class="selected-version-xml" placeholder="Ditamap structure" name="field"
+            value="" readonly>
+          </textarea>
+        </coral-accordion-item-content>
+      </coral-accordion-item>
+    </coral-accordion>
+    <input is="coral-textfield" variant="quiet" name="field" value="Topic list:" readonly><br />
+    <coral-list class="topicrefs-container">
+      <script id="older-version-reftopics" type="text/x-handlebars-template">
+        {{#each this}}
+          <coral-list-item class="topic-ref-item" icon="arrowRight" title="{{formatLink this}}">{{formatLink this}}</coral-list-item>
+          {{/each}}
+      </script>
+    </coral-list>
+  </div>

@@ -1,0 +1,96 @@
+<sly data-sly-use.favoriteListService="com.pwc.madison.core.userreg.services.FavoriteListService" data-sly-test.isFavoriteListEnabled="${favoriteListService.isFavoriteListEnabled}">
+    <div id="favorite-list-page" v-if="isUserLoggedIn" class="favorite-list-page" data-favorite-list-items-per-page="${favoriteListService.favoriteListLimitPerPage}">
+	    <section>
+	        <div class="container ">
+	            <div class="news main-body-content ">
+	                <div class="columns">
+	                    <div class="column content-page-main">
+	                        <div id="overlay"></div>
+	                        <!-- Favorites Head COMPONENT: START -->
+	                        <section class="is-paddingless">
+	                            <div class="print-body-header">
+	                                <!-- Top Header for print css Component END -->
+	                                <div class="doc-body-head columns">
+	                                    <div class="column title">
+	                                        <h1>${"UserReg_Favorite_List_Dropdown_Heading" @ i18n, locale=pageProperties.jcr:language}</h1>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </section>
+	                        <!-- Favorites Head COMPONENT: END -->
+	                        <!-- SPACER LINE: START -->
+	                        <div class="spacer-border space-bar-top"></div>
+	                        <!-- SPACER LINE: END -->
+	                        <div class="favorites_list">
+	                            <p class="favorite-items">{{ numberOfItems }} ${"UserReg_Favorite_List_Items_Label" @ i18n, locale=pageProperties.jcr:language}</p>
+	                                    {{favoritedList}}
+	                            <div class="extended-cards">
+	                                <div class="flip_cover" v-for="(item, index) in pageOfItems" :key="item.pagePath">
+	                                    <div class="is-block madison-card-block">
+	                                        <a :href="item.pageHref">
+	                                            <div class="feature-front card__face">
+	                                                <div class="madison-card  is-light-background  is-full-width">
+                                                        <div class="favorite-remove throw-fav-error" @click.prevent="deleteItem(item.pagePath, item.pageHref, index)">
+                                                            <span class="favorite-toggle-error" :class="{active : isError && index === indexElement}"><p>${'UserReg_Favorite_List_Error' @ context="text", i18n, locale=pageProperties.jcr:language}</p></span>
+                                                        </div>
+                                                        <article class="is-radiusless">
+                                                            <p class="date">
+                                    							<span v-if="item.hidePublicationDate != true"> {{item.publicationDate}} | </span> ${"UserReg_Favorite_List_Favorited_On" @ i18n, locale=pageProperties.jcr:language} {{item.favoritedDate}}
+                                        					</p>
+                                                            <p class="module-heading ">
+                                                                {{item.title}} 
+                                                            </p>
+                                                        </article>
+                                                        <p class="feature-tile-content">
+                                                            {{item.description}}
+                                                        </p>
+                                                        <div class="madison-card-exta-info">
+                                                            <p class="brief is-pulled-left">
+                                                                {{item.country}} {{item.content}}
+                                                            </p>
+                                                        </div>
+	                                            	</div>
+	                                            </div>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                                <div class="madison-pagination">
+	                                    <div class="columns is-flex">
+	                                        <div class="column is-3">
+	                                            <a class="primary-orange back-to-top">
+	                                            <span>${"UserReg_Favorite_List_Back_To_Top" @ i18n, locale=pageProperties.jcr:language}</span>
+	                                            <span class="icon is-small">
+	                                            <span class="icon-up-arrow"></span>
+	                                            </span>
+	                                            </a>
+	                                        </div>
+	                                        <div class="column is-9">
+	                                            <div v-if="pager.pages && pager.pages.length" class="search-pagination is-right-aligned">
+	                                                <span class="counts">
+	                                                    <span class="previous" @click.prevent="setPage(pager.currentPage - 1)">
+	                                                    <span class="icon-caret-left"></span>
+	                                                    	${"UserReg_Favorite_List_Prev" @ i18n, locale=pageProperties.jcr:language}
+	                                                    </span>
+	                                                    <template v-for="(page, index) in pager.pages" :key="page">
+	                                                        <span :class="{'active': pager.currentPage === page}" @click.prevent="setPage(page)">
+	                                                        	{{page}}
+	                                                        </span>
+	                                                        <span v-if="index+1 < pager.pages.length" class="pagination-seperator"></span>
+	                                                    </template>
+	                                                    <span class="next" @click.prevent="setPage(pager.currentPage + 1)">
+	                                                    	${"UserReg_Favorite_List_Next" @ i18n, locale=pageProperties.jcr:language}
+	                                                    <span class="icon-caret-right"></span>
+	                                                    </span>
+	                                                </span>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	    </section>
+    </div>
+</sly>

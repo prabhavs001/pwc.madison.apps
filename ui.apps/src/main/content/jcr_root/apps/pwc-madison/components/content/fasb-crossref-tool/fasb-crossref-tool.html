@@ -1,0 +1,170 @@
+<section class="is-paddingless fabs-tool-header">
+    <div class="">
+        <div class="fasb-search">
+            <div class="fabs-tool-header">
+                <div class="container">
+                    <p class="title">${"FASB_Crossref_Label" @ i18n, locale=pageProperties.jcr:language}</p>
+                    <p class="toggle text-center">
+                        <a href="#" class="js-by-standard current">${"FASB_Crossref_byStandardLabel" @ i18n,
+                            locale=pageProperties.jcr:language}</a>
+                        <a href="#" class="js-by-codification">${"FASB_Crossref_byCodificationLabel" @ i18n,
+                            locale=pageProperties.jcr:language}</a>
+                    </p>
+                </div>
+            </div>
+            <form>
+                <div class="container">
+                    <div class="row js-by-standard-form" style="display: block;">
+                        <div class="col-xs-12 col-md-4 col-md-offset-2">
+                            <div class="form-group">
+                                <label>${"FASB_Crossref_standardType" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <div class="select-option">
+                                    <select class="js-select standardType-select select2-hidden-accessible"
+                                            tabindex="-1" aria-hidden="true"
+                                            data-option-standTypeLabel='${"FASB_Crossref_standardType_Label" @ i18n, locale=pageProperties.jcr:language}'>
+                                    </select>
+                                </div>
+                                <span class="select2 select2-container select2-container--default" dir="ltr"
+                                      style="width: 100%;"><span class="selection"><span
+                                        class="select2-selection select2-selection--single" role="combobox"
+                                        aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                        aria-labelledby="select2-oqxr-container"><span
+                                        class="select2-selection__rendered" id="select2-oqxr-container"
+                                        title="Select standard type">Select standard type</span><span
+                                        class="select2-selection__arrow" role="presentation"><b
+                                        role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="form-group">
+                                <label>${"FASB_Crossref_standardNumber" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <div class="select-option">
+                                    <select class="js-select select2-hidden-accessible standardNumber-select"
+                                            tabindex="-1" aria-hidden="true"
+                                            data-select-label='${"FASB_Crossref_standardNumber_Label" @ i18n, locale=pageProperties.jcr:language}'>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row js-by-codification-form" style="display: none;">
+                        <div class="col-xs-12 col-md-3">
+                            <div class="form-group">
+                                <label for="standard-number">${"FASB_Crossref_Topic" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <input type="text" class="form-control code-topic" id="standard-number"
+                                       placeholder='${"FASB_Crossref_Topic_Label" @ i18n,
+                                    locale=pageProperties.jcr:language}'>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <div class="form-group">
+                                <label for="standard-number">${"FASB_Crossref_subTopic" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <input type="text" class="form-control code-subtopic" id="standard-number"
+                                       placeholder='${"FASB_Crossref_subTopic_Label" @ i18n,
+                                    locale=pageProperties.jcr:language}'>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <div class="form-group">
+                                <label for="standard-number">${"FASB_Crossref_section" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <input type="text" class="form-control code-section" id="standard-number"
+                                       placeholder='${"FASB_Crossref_section_Label" @ i18n,
+                                    locale=pageProperties.jcr:language}'>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <div class="form-group">
+                                <label for="standard-number">${"FASB_Crossref_paragraph" @ i18n,
+                                    locale=pageProperties.jcr:language}</label>
+                                <input type="text" class="form-control code-paragraph" id="standard-number"
+                                       placeholder='${"FASB_Crossref_paragraphLabel" @ i18n,
+                                    locale=pageProperties.jcr:language}'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row button-row">
+                        <div class="col-xs-4 col-xs-offset-3 text-center">
+                            <a href="javascript:void(0);" class="btn submit add-new">${"FASB_Crossref_submitLabel" @
+                                i18n,
+                                locale=pageProperties.jcr:language}</a>
+                            <a href="javascript:void(0);" class="btn add-new reset-btn">${"FASB_Crossref_cancelLabel" @
+                                i18n,
+                                locale=pageProperties.jcr:language}</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="container is-paddingless">
+                <div class="no-result" style="display:none;">${"FASB_Crossref_noResultsMsg" @ i18n,
+                    locale=pageProperties.jcr:language}</div>
+                <div class="col-12 search-list" style="display: none;">
+                    <ul class="listing list">
+                        <!-- class of "grid" for grid layout, class of "list" for list layout -->
+                        <li class="col-labels result-div" data-limit=${properties.limit}>
+                            <span class="type sort-ascending table-header"
+                                  data-fieldName="standardType">${"FASB_Crossref_result_Type"
+                                @ i18n, locale=pageProperties.jcr:language}</span>
+                            <span class="standard-numbers sort-ascending table-header"
+                                  data-fieldName="standardNumber">${"FASB_Crossref_result_standardNumber" @ i18n,
+                                locale=pageProperties.jcr:language}</span>
+                            <span class="paragraph-label sort-ascending table-header"
+                                  data-fieldName="paragraphLabel">${"FASB_Crossref_result_Paragraph" @ i18n,
+                                locale=pageProperties.jcr:language}/<br>${"Label" @ i18n,
+                                locale=pageProperties.jcr:language}</span>
+                            <span class="topic sort-ascending table-header"
+                                  data-fieldName="topic">${"FASB_Crossref_result_Topic" @
+                                i18n, locale=pageProperties.jcr:language}</span>
+                            <span class="subtopic sort-ascending table-header"
+                                  data-fieldName="subtopic">${"FASB_Crossref_result_Subtopic" @ i18n,
+                                locale=pageProperties.jcr:language}</span>
+                            <span class="section sort-ascending table-header"
+                                  data-fieldName="section">${"FASB_Crossref_result_Section" @ i18n,
+                                locale=pageProperties.jcr:language}</span>
+                            <span class="paragraph sort-ascending table-header"
+                                  data-fieldName="paragraph">${"FASB_Crossref_result_Paragraph" @ i18n,
+                                locale=pageProperties.jcr:language}</span>
+                        </li>
+                        <script class="result-template" type="text/x-handlebars-template">
+                            {{#each this}}
+                            <li class="populate-results">
+                                <a href="{{path}}" class="external">
+                                    <span class="type">{{standardType}}</span>
+                                    <span class="standard-numbers"> {{standardNumber}}</span>
+                                    <span class="paragraph-label">{{paragraphLabel}}</span>
+                                    <span class="topic">{{topic}}</span>
+                                    <span class="subtopic">{{subtopic}}</span>
+                                    <span class="section">{{section}}</span>
+                                    <span class="paragraph">{{paragraph}}</span>
+                                </a>
+                            </li>
+                            {{/each}}
+                        </script>
+                    </ul>
+                </div>
+                <div class="loading-icon-style" style="display : none;">
+                    <div class="fasb-loading-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal must-enter-body">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <!-- start modal content -->
+        <div class="note"
+             data-codificationvalidMsg='${"FASB_Crossref_Codification_ValidationMsg" @ i18n, locale=pageProperties.jcr:language}'
+             data-standardValidMsg='${"FASB_Crossref_standard_validation" @ i18n, locale=pageProperties.jcr:language}'
+             data-serverErrorMsg='${"FASB_Crossref_errorMessage" @ i18n, locale=pageProperties.jcr:language}'></div>
+        <!-- end modal content -->
+        <div class="close-must-enter">${"FASB_Crossref_okayLabel" @ i18n,
+            locale=pageProperties.jcr:language}</div>
+    </div>
+</div>

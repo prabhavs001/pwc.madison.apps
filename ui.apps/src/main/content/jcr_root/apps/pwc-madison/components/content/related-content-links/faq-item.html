@@ -1,0 +1,20 @@
+<template data-sly-template.faq="${@ item, index}">
+		<div class="content-body">
+			<div class="question-answers">
+				<div class="question-item">
+					<div class="bold">Q:</div>
+					<div class="bold"><sly data-sly-resource="${item.ditaTitle @ appendPath='_text'}"></sly></div>
+				</div>
+				<sly data-sly-list.additionalQuestions="${item.additionalQuestions}">
+					<div class="question-item" >
+						<div class="bold"></div>
+						<div class="bold"><sly data-sly-resource="${additionalQuestions @ appendPath='_text'}"></sly></div>
+					</div>
+				</sly>
+				<div class="answer-item">
+					<div class="bold">A:</div>
+					<div data-lazy-load="${item.ditaBody}.pwcBody.html"></div>
+				</div>
+			</div>
+		</div>
+</template>

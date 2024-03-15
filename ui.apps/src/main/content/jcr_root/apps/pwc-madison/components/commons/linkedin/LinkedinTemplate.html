@@ -1,0 +1,5 @@
+<template data-sly-template.linkedIn="${ @ shortDesc, unwrapli, isLinkedInShareEnabled, pageUrl, title}">
+	<li data-sly-test="${isLinkedInShareEnabled && pageUrl}" data-sly-unwrap="${unwrapli}" >
+		<a target="_blank" title="${'Share_Via_Linkedin' @i18n}" href="https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${title}&source=PWC&summary=${shortDesc}"><span class="icon-linkedin"></span></a>
+    </li>
+</template>

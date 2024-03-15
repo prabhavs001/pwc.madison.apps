@@ -1,0 +1,40 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="Multimedia Modal" class="cq-placeholder"></p>
+
+<div id="multimedia-messages" data-continue-video-message="${'Multimedia_Continue_Watching_Message' @ i18n, locale=pageProperties.jcr:language}" data-thank-you-video-message="${'Multimedia_Thank_You_Message' @ i18n, locale=pageProperties.jcr:language}"
+    data-continue-audio-message="${'Multimedia_Audio_Continue_Message' @ i18n, locale=pageProperties.jcr:language}" data-thank-you-audio-message="${'Multimedia_Audio_Thank_You_Message' @ i18n, locale=pageProperties.jcr:language}"></div>
+
+<div id="multimedia-slick-prev-button" style="display: none;">
+    <span class='icon-caret-left' />
+    <div class="multimedia-list-item-details">
+        <div>${'Multimedia_Previous_Button_Text' @ i18n, locale=pageProperties.jcr:language}</div>
+        <div class="prev-country-label-content-type ellipsis-line"></div>
+        <div class="prev-content-id-content-title clamp-text" data-lines-to-clamp="4"></div>
+    </div>
+</div>
+
+<div id="multimedia-slick-next-button" style="display: none;">
+    <span class='icon-caret-right' />
+    <div class="multimedia-list-item-details">
+        <div>${'Multimedia_Next_Button_Text' @ i18n, locale=pageProperties.jcr:language}</div>
+        <div class="next-country-label-content-type ellipsis-line"></div>
+        <div class="next-content-id-content-title clamp-text" data-lines-to-clamp="4"></div>
+    </div>
+</div>
+
+<sly data-sly-use.multimediaModal="com.pwc.madison.core.models.MultimediaModal" data-sly-list.singleModalList="${multimediaModal.multimediaModalsList}">
+
+    <div class="modal modal-multimedia-view" data-asset-id-target="${singleModalList[0].assetId}">
+        <div class="modal-background dm-modal-background"></div>
+        <div class="modal-content">
+            <button class="modal-close dm-modal-close is-large" aria-label="close"><span class="icon-close-popup"></span></button>
+            <div class="slider-data ">
+                <div class="slider multimedia-view-slider" data-sly-list.modal="${singleModalList}">
+
+                    <sly data-sly-use.authTemplate="auth-check.html" data-sly-call="${authTemplate.authTemplate @ modal=modal}" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</sly>

@@ -1,0 +1,13 @@
+<!--Publish mode with Target-->
+<sly data-sly-test="${properties.targetActive && wcmmode.disabled}" data-sly-include="./featuredcontent/featuredcontent.html">
+</sly>
+
+<!--Publish mode with no Target-->
+<sly data-sly-test="${!properties.targetActive && wcmmode.disabled}">
+<!--#include virtual="${currentNode.path}.featuredcontent.nocache.html" -->
+</sly>
+
+<!--Author mode-->
+<sly data-sly-test="${!wcmmode.disabled}" data-sly-include="./featuredcontent/featuredcontent.html">
+</sly>
+

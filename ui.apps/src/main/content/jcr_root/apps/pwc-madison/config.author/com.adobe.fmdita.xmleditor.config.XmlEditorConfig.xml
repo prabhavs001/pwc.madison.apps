@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+        process.label="Xml Editor Configuration Manager"
+        xmleditor.autocheckout="{Boolean}false"
+        xmleditor.openinframebuttonshow="{Boolean}false"
+        fmdita.useapproval="{Boolean}false"
+        xmleditor.snippetspath=""
+        xmleditor.checkin="{Boolean}false"
+        xmleditor.openinsametab="{Boolean}false"
+        xmleditor.autosave= "{Boolean}true"
+        xmleditor.autosaveinterval="300"
+        xmleditor.preventcheckedoutcontentdeletion="{Boolean}false"
+        xmleditor.classes="topic, section, table, simpletable, fig, image, ul, ol"
+        xmleditor.pattern="${elementName}_${id}"/>

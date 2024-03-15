@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Sitemap Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+        granite:class="group-link-authoring">
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Configure Groups"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                	<groupJson
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pwc-madison/components/dialogform/nodeJson"
+                        nodeName="groups"
+                        nodeProperties="[useColumn,stackOn,groupId]"
+                        jsonVariableName="groupJsonData"/>
+                    <label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="please provide the label for sitemap"
+                        fieldLabel="Sitemap Label"
+                        name="./sitemapLabel"
+                        required="{Boolean}true"/>
+                    <groups
+                        granite:class="sitemap-group"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        name="./groups">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./groups">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <group_id
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                            name="./groupId"/>
+                                        <group_text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Name of Group Text"
+                                            fieldLabel="Group Text:"
+                                            name="./groupText"
+                                            required="{Boolean}true"/>
+                                        <group_url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                            fieldDescription="Path of Group Url"
+                                            fieldLabel="Group URL:"
+                                            name="./groupPath"/>
+                                        <use_column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Select Type of Column"
+                                            fieldLabel="Use Column(s)"
+                                            name="./useColumn"
+                                            granite:class="use-column">
+                                            <items jcr:primaryType="nt:unstructured"/>
+                                        </use_column>
+                                        <stack_on
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Stack On"
+                                            name="./stackOn"
+                                            granite:class="stack-on">
+                                            <items jcr:primaryType="nt:unstructured"/>
+                                        </stack_on>
+                                        <open_new_window
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            name="./openGroupNewWindow"
+                                            text="Open in new window"
+                                            value="_blank"/>
+                                        <user
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <visible_to
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/heading"
+                                                    level="6"
+                                                    text="Visible To"/>
+                                                <well
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <internal_user
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="true"
+                                                            name="./userType"
+                                                            text="Internal"
+                                                            value="internal"/>
+                                                        <external_user
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            name="./userType"
+                                                            text="External"
+                                                            value="external"/>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </user>
+                                        <configure_links
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <configure_links_heading
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/heading"
+                                                    level="6"
+                                                    text="Configure Links"/>
+                                                <well
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <links
+                                                            granite:class="sitemap-link"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                            composite="{Boolean}true"
+                                                            name="./links">
+                                                            <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="./links">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <column
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <navigation_text
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                fieldLabel="Navigation Text:"
+                                                                                name="./navigationText"
+                                                                                required="{Boolean}true"/>
+                                                                            <navigation_url
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                                fieldLabel="Navigation URL:"
+                                                                                name="./navigationURL"
+                                                                                required="{Boolean}true"/>
+                                                                            <open_new_window
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                name="./openLinkNewWindow"
+                                                                                text="Open in new window"
+                                                                                value="_blank"/>
+                                                                            <user
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items jcr:primaryType="nt:unstructured">
+                                                                                    <visible_to
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/heading"
+                                                                                        level="6"
+                                                                                        text="Visible To"/>
+                                                                                    <well
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                                            <internal_user
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                                checked="true"
+                                                                                                name="./userType"
+                                                                                                text="Internal"
+                                                                                                value="internal"/>
+                                                                                            <external_user
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                                name="./userType"
+                                                                                                text="External"
+                                                                                                value="external"/>
+                                                                                        </items>
+                                                                                    </well>
+                                                                                </items>
+                                                                            </user>
+                                                                        </items>
+                                                                    </column>
+                                                                </items>
+                                                            </field>
+                                                        </links>
+                                                    </items>
+                                                </well>
+                                            </items>
+                                        </configure_links>
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </groups>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

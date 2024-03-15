@@ -1,0 +1,168 @@
+.user-reg-body{
+  .modal-content{
+    .user-reg-content{
+      border: 48px solid $border-color;
+      background-color: #FFFFFF;
+      .user-reg-form-body{
+        width: 420px;
+        margin: 0 auto;
+        padding-top: 93px;
+        padding-bottom: 122px;
+        .title{
+          font-family: $font-itc-charter;
+          font-size: 44px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 0.98;
+          letter-spacing: normal;
+          color:$muted-text-color;
+        }
+        .remark{
+          font-family: $font-helvetica;
+          font-size: 14px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.21;
+          letter-spacing: normal;
+          color: $muted-text-color;
+          p{
+            margin-bottom: 20px;
+          }
+        }
+          .user-reg-btn{
+            font-family: $font-helvetica;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: $color-primary;
+            background-color: transparent;
+            border: 1px solid;
+            padding: 12px 20px;
+            margin-top: 18px;
+            cursor: pointer;
+          }
+          .btn-bottom {
+              padding: 12px 55px;
+          }
+          .reg-cancel{
+              display: inline;
+              padding-right: 45px;
+              a{
+                  color: $muted-text-color;
+                  font-family: "PwC Helvetica Neue";
+                  font-size: 12px;
+                  font-weight: bold;
+                  font-style: normal;
+                  font-stretch: normal;
+                  line-height: 1.25;
+                  letter-spacing: 0.6px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+              }
+          }
+          .control {
+            .input {
+            font-family: "PwC Helvetica Neue";
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.06;
+            letter-spacing: normal;
+            color: #2D2D2D;
+            border: none;
+            border-bottom: 1px solid #7D7D7D;
+            border-radius: 0px;
+            box-shadow: none;
+            padding-left: 0px;
+            }
+            a{
+              color: #2D2D2D;
+              i {
+                position: absolute;
+                right: 0px;
+                .icon-password_show, .icon-password_hide {
+                  position: relative;
+                  top: -27px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+            .help {
+              font-family: "PwC Helvetica Neue";
+              font-size: 12px;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.42;
+              letter-spacing: normal;
+              text-align: left;
+              color: #D04A02;
+              cursor: default;
+            }
+      }
+    }
+  }
+  .modal-close::before {
+    width: 28px;
+  }
+  .modal-close::after {
+    height: 28px;
+  }
+}
+
+
+@media only screen and (min-width: 240px) and (max-width: 767px){
+  .user-reg-body{
+    .modal-content{
+      margin: 0 auto;
+      max-height: 100vh;
+      overflow: hidden;
+      .user-reg-content{
+        border: 0px;
+        background-color: #FFFFFF;
+        height: 100vh;
+        .user-reg-form-body{
+          width: auto;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 60px;
+          padding-bottom: 0px;
+          .title{
+            font-size: 38px;
+            line-height: 1.13;
+            border-bottom: 1px solid $color-dark;
+            padding-bottom: 15px;
+          }
+          .remark{
+            color: $color-light;
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+    .modal-close::before {
+      background-color: $color-dark;
+    }
+    .modal-close::after {
+      background-color: $color-dark;
+    }
+  }
+}
+
+@media screen and (min-width: 769px), print{
+  .user-reg-body{
+    .modal-content {
+      margin: 0 auto;
+      max-height: calc(100vh - 40px);
+      width: 870px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.badge-favorited-container {
+  display: flex;
+}
+
+.badge-favorited {
+  display: none;
+  background-color: #ffb600;
+  min-width: 100px;
+  padding: 4px 10px !important;
+  text-align: center;
+  align-self: center;
+  font-size: 10px !important;
+  margin: 0 auto 0 0;
+  color: #2d2d2d;
+  font-family: 'PwC Helvetica Neue Bold', arial, serif !important;
+
+  &.active {
+    display: flex;
+    margin-bottom: 8px;
+  }
+}
